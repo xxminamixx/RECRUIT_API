@@ -97,6 +97,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="serviceAreaTableView" destination="uVm-2q-7Di" id="H92-dQ-g3z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEk-bg-lG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

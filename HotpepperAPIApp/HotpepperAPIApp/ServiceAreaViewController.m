@@ -7,8 +7,10 @@
 //
 
 #import "ServiceAreaViewController.h"
+#import "ServiceAreaTableViewCell.h"
 
 @interface ServiceAreaViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *serviceAreaTableView;
 
 @end
 
@@ -16,22 +18,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _serviceAreaTableView.delegate = self;
+    _serviceAreaTableView.dataSource = self;
+
+    //ViewControllerのViewにTableViewCellを登録
+    UINib *serviceAreaNib = [UINib nibWithNibName:@"ServiceAreaTableViewCell" bundle:nil];
+    [self.serviceAreaTableView registerNib:serviceAreaNib forCellReuseIdentifier:@"ServiceArea"];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger)tableView:(UITableView *)tableView
+numberOfRowsInSection:(NSInteger)section
+{
+    //セクションに含まれるセルの数を返す
+    return 20;
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+    //セルの内容を返す
+    ServiceAreaTableViewCell *areaCell = [ServiceAreaTableViewCell new];
+    areaCell = [_serviceAreaTableView dequeueReusableCellWithIdentifier:@"ServiceArea"];
+    return areaCell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   
+    return 125;
+}
+
+//セルがタップされたときの処理
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //一覧画面へ遷移する処理
+    //一覧を表示するためにフェッチャーでリクエスト
+    NSLog(@"%@", indexPath);
+}
+
 
 @end
