@@ -78,6 +78,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E956B9871D1A98050028FA1B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E956B9821D1A53A20028FA1B /* ServiceAreaEntity.h */,
+				E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */,
+				E901587D1D193C2400DF358C /* HotpepperAPIFetcher.h */,
+				E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E956B9881D1A98270028FA1B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */,
+				E99DDF391D18E3E6008374AD /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E956B9891D1A984D0028FA1B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E99DDF331D18E3E6008374AD /* AppDelegate.h */,
+				E99DDF341D18E3E6008374AD /* AppDelegate.m */,
+				E99DDF361D18E3E6008374AD /* HomeViewController.h */,
+				E99DDF371D18E3E6008374AD /* HomeViewController.m */,
+				E901586F1D19124500DF358C /* ServiceAreaViewController.h */,
+				E90158701D19124500DF358C /* ServiceAreaViewController.m */,
+				E90158721D1915CB00DF358C /* ServiceAreaTableViewCell.h */,
+				E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E956B98A1D1A9A680028FA1B /* Resourcese */ = {
+			isa = PBXGroup;
+			children = (
+				E901587A1D1932DC00DF358C /* hotpepperAPIDB.sqlite */,
+				E901587B1D1936C000DF358C /* libsqlite3.tbd */,
+			);
+			name = Resourcese;
+			sourceTree = "<group>";
+		};
 		E99DDF241D18E3E6008374AD = {
 			isa = PBXGroup;
 			children = (
@@ -99,22 +143,10 @@
 		E99DDF2F1D18E3E6008374AD /* HotpepperAPIApp */ = {
 			isa = PBXGroup;
 			children = (
-				E901587D1D193C2400DF358C /* HotpepperAPIFetcher.h */,
-				E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */,
-				E956B9821D1A53A20028FA1B /* ServiceAreaEntity.h */,
-				E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */,
-				E99DDF331D18E3E6008374AD /* AppDelegate.h */,
-				E99DDF341D18E3E6008374AD /* AppDelegate.m */,
-				E99DDF361D18E3E6008374AD /* HomeViewController.h */,
-				E99DDF371D18E3E6008374AD /* HomeViewController.m */,
-				E901586F1D19124500DF358C /* ServiceAreaViewController.h */,
-				E90158701D19124500DF358C /* ServiceAreaViewController.m */,
-				E90158721D1915CB00DF358C /* ServiceAreaTableViewCell.h */,
-				E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */,
-				E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */,
-				E99DDF391D18E3E6008374AD /* Main.storyboard */,
-				E901587A1D1932DC00DF358C /* hotpepperAPIDB.sqlite */,
-				E901587B1D1936C000DF358C /* libsqlite3.tbd */,
+				E956B98A1D1A9A680028FA1B /* Resourcese */,
+				E956B9871D1A98050028FA1B /* Model */,
+				E956B9881D1A98270028FA1B /* View */,
+				E956B9891D1A984D0028FA1B /* Controller */,
 				E99DDF3C1D18E3E6008374AD /* Assets.xcassets */,
 				E99DDF3E1D18E3E6008374AD /* LaunchScreen.storyboard */,
 				E99DDF411D18E3E6008374AD /* Info.plist */,
