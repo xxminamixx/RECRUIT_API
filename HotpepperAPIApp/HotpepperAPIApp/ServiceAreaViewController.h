@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ServiceAreaEntity.h"
 
 @interface ServiceAreaViewController : UIViewController
-
+@property (weak, nonatomic) NSMutableArray *areanameholder;
 @end

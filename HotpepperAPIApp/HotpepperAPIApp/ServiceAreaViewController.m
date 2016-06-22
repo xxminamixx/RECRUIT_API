@@ -13,6 +13,7 @@
 @interface ServiceAreaViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *serviceAreaTableView;
 
+
 @end
 
 @implementation ServiceAreaViewController
@@ -44,8 +45,9 @@ numberOfRowsInSection:(NSInteger)section
     //セルの内容を返す
     ServiceAreaTableViewCell *areaCell = [ServiceAreaTableViewCell new];
     areaCell = [_serviceAreaTableView dequeueReusableCellWithIdentifier:@"ServiceArea"];
-    //NSArray *areaname = [ServiceAreaEntity getAreaName];
-    //areaCell.textLabel.text = areaname[0];
+    ServiceAreaEntity *areaentity;
+    NSMutableArray *getareaname = [areaentity areaname];
+    areaCell.textLabel.text = getareaname[0];
     
     return areaCell;
 }

@@ -10,6 +10,6 @@
 
 @interface HotpepperAPIFetcher : NSObject
 - (void)serviceAreaRequest;
-@property BOOL is_servicearea;
-@property BOOL is_servicearea_name;
+@property BOOL is_servicearea; // サービスエリアタグの中に入ったか判別
+@property BOOL is_servicearea_name; // サービスエリアのネームタグに入ったか判別
 @end

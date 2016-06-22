@@ -8,9 +8,11 @@
 
 #import "HotpepperAPIFetcher.h"
 #import "ServiceAreaEntity.h"
+#import "ServiceAreaViewController.h"
 
 //const NSString *APIKey = @"4554e737d0d5ce93";
 NSMutableArray *areaname;
+ServiceAreaViewController *servicearea_viewcontroller;
 
 @implementation HotpepperAPIFetcher
 
@@ -41,6 +43,10 @@ NSMutableArray *areaname;
     NSLog(@"解析開始");
     //サービスエリア保存用のメモリ確保
     areaname = [NSMutableArray new];
+    servicearea_viewcontroller = [ServiceAreaViewController new];
+    
+    //配列のポインタをServiceViewControllerへ渡す
+    servicearea_viewcontroller.areanameholder = areaname;
 }
 
 //デリゲートメソッド(要素の開始タグを読み込んだ時)
@@ -51,8 +57,7 @@ didStartElement:(NSString *)elementName
      attributes:(NSDictionary *)attributeDict{
     
     NSLog(@"要素の開始タグを読み込んだ:%@",elementName);
-    
-    
+
     //サービスエリアのタグを発見したらis_servicearea のフラグを立てる
     if ([elementName isEqualToString:@"service_area"]) {
         _is_servicearea = YES;
@@ -67,7 +72,6 @@ didStartElement:(NSString *)elementName
 - (void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
     
     NSLog(@"タグ以外のテキストを読み込んだ:%@", string);
-    
     
     if (_is_servicearea_name && _is_servicearea) {
         //サービスエリアの名前を配列にセット
@@ -88,18 +92,24 @@ didStartElement:(NSString *)elementName
         _is_servicearea_name = NO;
         _is_servicearea = NO;
     }
+    
+    if ([elementName isEqualToString:@"results"]) {
+        ServiceAreaEntity *areaentity;
+        [areaentity setAreaname:areaname];
+    }
 }
 
 //デリゲートメソッド(解析終了時)
 -(void) parserDidEndDocument:(NSXMLParser *)parser{
     
     NSLog(@"解析終了");
-    ServiceAreaEntity *areaentity;
-    [areaentity setAreaname:areaname];
+    
+    // デバッグ用
     
     for (NSString *d in areaname) {
         NSLog(@"%@", d);
     }
+    
 }
 
 @end

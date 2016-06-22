@@ -19,6 +19,12 @@
 
 @implementation ViewController
 
+/*
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"このメソッドは画面遷移前に呼ばれます");
+}
+*/
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -30,6 +36,11 @@
 }
 
 - (IBAction)serviceAreaSearchButton:(id)sender {
+    
+    HotpepperAPIFetcher *areafetcher = [HotpepperAPIFetcher new];
+    [areafetcher serviceAreaRequest];
+
+    
     // ストーリーボードを指定する
     //ここで送るメッセージはstoryboard名前の“Main.storyboard”
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -38,8 +49,6 @@
     //ここで送るメッセージはsroryboard ID
     ServiceAreaViewController *areaView = [storyboard instantiateViewControllerWithIdentifier:@"ServiceArea"];
     
-    HotpepperAPIFetcher *areafetcher = [HotpepperAPIFetcher new];
-    [areafetcher serviceAreaRequest];
     
     
     // 画面をPUSHで遷移させる
