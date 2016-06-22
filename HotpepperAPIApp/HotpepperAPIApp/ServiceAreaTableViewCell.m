@@ -7,6 +7,7 @@
 //
 
 #import "ServiceAreaTableViewCell.h"
+#import "ServiceAreaEntity.h"
 
 @implementation ServiceAreaTableViewCell
 

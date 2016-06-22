@@ -7,8 +7,10 @@
 //
 
 #import "HotpepperAPIFetcher.h"
+#import "ServiceAreaEntity.h"
 
 //const NSString *APIKey = @"4554e737d0d5ce93";
+NSMutableArray *areaname;
 
 @implementation HotpepperAPIFetcher
 
@@ -37,6 +39,8 @@
 -(void) parserDidStartDocument:(NSXMLParser *)parser{
     
     NSLog(@"解析開始");
+    //サービスエリア保存用のメモリ確保
+    areaname = [NSMutableArray new];
 }
 
 //デリゲートメソッド(要素の開始タグを読み込んだ時)
@@ -48,13 +52,15 @@ didStartElement:(NSString *)elementName
     
     NSLog(@"要素の開始タグを読み込んだ:%@",elementName);
     
+    
     //サービスエリアのタグを発見したらis_servicearea のフラグを立てる
     if ([elementName isEqualToString:@"service_area"]) {
         _is_servicearea = YES;
     }
     
-    //large_areaの名前取得処理
-    
+    if ([elementName isEqualToString:@"name"]) {
+        _is_servicearea_name = YES;
+    }
 }
 
 //デリゲートメソッド(タグ以外のテキストを読み込んだ時)
@@ -62,6 +68,11 @@ didStartElement:(NSString *)elementName
     
     NSLog(@"タグ以外のテキストを読み込んだ:%@", string);
     
+    
+    if (_is_servicearea_name && _is_servicearea) {
+        //サービスエリアの名前を配列にセット
+        [areaname addObject:string];
+    }
 }
 
 //デリゲートメソッド(要素の終了タグを読み込んだ時)
@@ -74,6 +85,7 @@ didStartElement:(NSString *)elementName
     
     //nameの終了タグを見つけたらis_serviceareaのフラグを下す
     if([elementName isEqualToString:@"name"]) {
+        _is_servicearea_name = NO;
         _is_servicearea = NO;
     }
 }
@@ -82,11 +94,12 @@ didStartElement:(NSString *)elementName
 -(void) parserDidEndDocument:(NSXMLParser *)parser{
     
     NSLog(@"解析終了");
+    ServiceAreaEntity *areaentity;
+    [areaentity setAreaname:areaname];
+    
+    for (NSString *d in areaname) {
+        NSLog(@"%@", d);
+    }
 }
-
-
-
-
-
 
 @end

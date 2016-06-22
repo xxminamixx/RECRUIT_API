@@ -10,4 +10,26 @@
 
 @implementation ServiceAreaEntity
 
+/*
++ (NSArray *)getAreaCode
+{
+    return  areacode;
+}
+
++ (NSArray *)getAreaName
+{
+    return areaname;
+}
+
++ (void)setAreaCode:(NSString *)areacodestr
+{
+    [areacode addObject:areacodestr];
+}
+
++ (void)setAreaName:(NSString *)areanamestr
+{
+    [areaname addObject:areanamestr];
+}
+*/
+
 @end
