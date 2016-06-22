@@ -15,7 +15,11 @@ const NSString *APIKey = @"4554e737d0d5ce93";
 
 - (void)serviceAreaRequest
 {
-    NSURL *url = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key="];
+    NSURL *areaurl = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=4554e737d0d5ce93"];
+    
+    //URLからレスポンスを作成
+    NSURLRequest *arearequest = [NSURLRequest requestWithURL:areaurl];
+    
 }
 
 
