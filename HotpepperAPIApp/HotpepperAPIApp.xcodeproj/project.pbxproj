@@ -12,6 +12,7 @@
 		E90158761D1915CB00DF358C /* ServiceAreaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */; };
 		E901587C1D1936C000DF358C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E901587B1D1936C000DF358C /* libsqlite3.tbd */; };
 		E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */; };
+		E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */; };
 		E99DDF321D18E3E6008374AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF311D18E3E6008374AD /* main.m */; };
 		E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF341D18E3E6008374AD /* AppDelegate.m */; };
 		E99DDF381D18E3E6008374AD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF371D18E3E6008374AD /* HomeViewController.m */; };
@@ -41,6 +42,8 @@
 		E901587B1D1936C000DF358C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E901587D1D193C2400DF358C /* HotpepperAPIFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotpepperAPIFetcher.h; sourceTree = "<group>"; };
 		E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotpepperAPIFetcher.m; sourceTree = "<group>"; };
+		E956B9821D1A53A20028FA1B /* ServiceAreaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAreaEntity.h; sourceTree = "<group>"; };
+		E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaEntity.m; sourceTree = "<group>"; };
 		E99DDF2D1D18E3E6008374AD /* HotpepperAPIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotpepperAPIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99DDF311D18E3E6008374AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E99DDF331D18E3E6008374AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 			children = (
 				E901587D1D193C2400DF358C /* HotpepperAPIFetcher.h */,
 				E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */,
+				E956B9821D1A53A20028FA1B /* ServiceAreaEntity.h */,
+				E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */,
 				E99DDF331D18E3E6008374AD /* AppDelegate.h */,
 				E99DDF341D18E3E6008374AD /* AppDelegate.m */,
 				E99DDF361D18E3E6008374AD /* HomeViewController.h */,
@@ -240,6 +245,7 @@
 				E99DDF381D18E3E6008374AD /* HomeViewController.m in Sources */,
 				E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */,
 				E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */,
+				E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */,
 				E99DDF321D18E3E6008374AD /* main.m in Sources */,
 				E90158711D19124500DF358C /* ServiceAreaViewController.m in Sources */,
 				E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */,

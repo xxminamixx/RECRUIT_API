@@ -8,7 +8,7 @@
 
 #import "HotpepperAPIFetcher.h"
 
-const NSString *APIKey = @"4554e737d0d5ce93";
+//const NSString *APIKey = @"4554e737d0d5ce93";
 
 @implementation HotpepperAPIFetcher
 
@@ -16,11 +16,11 @@ const NSString *APIKey = @"4554e737d0d5ce93";
 {
     NSURL *areaurl = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/service_area/v1/?key=4554e737d0d5ce93"];
     
-    //URLからレスポンスを作成
-   // NSURLRequest *arearequest = [NSURLRequest requestWithURL:areaurl];
+    //セッションの作成
     NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession* session = [NSURLSession sessionWithConfiguration:config];
     
+    //データの送受信
     NSURLSessionDataTask* areatask =
     [session dataTaskWithURL:areaurl
            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -29,15 +29,7 @@ const NSString *APIKey = @"4554e737d0d5ce93";
                parser.delegate = self;
                [parser parse];
                
-               /*
-               NSArray *array = [NSArray arrayWithObject:data];
-               
-               for(NSArray *d in array){
-                   NSLog(@"%@",d);
-               }
-               */
            }];
-    
     [areatask resume];
 }
 
@@ -56,13 +48,12 @@ didStartElement:(NSString *)elementName
     
     NSLog(@"要素の開始タグを読み込んだ:%@",elementName);
     
-    // 解析中の要素名の保持
-    NSMutableString *_nowElm = [NSMutableString stringWithString:elementName];
-
+    //サービスエリアのタグを発見したらis_servicearea のフラグを立てる
     if ([elementName isEqualToString:@"service_area"]) {
-        if([elementName isEqualToString:@"name"])
-            NSLog(@"サービスエリア：%@", elementName);
+        _is_servicearea = YES;
     }
+    
+    //large_areaの名前取得処理
     
 }
 
@@ -80,6 +71,11 @@ didStartElement:(NSString *)elementName
   qualifiedName:(NSString *)qName{
     
     NSLog(@"要素の終了タグを読み込んだ:%@",elementName);
+    
+    //nameの終了タグを見つけたらis_serviceareaのフラグを下す
+    if([elementName isEqualToString:@"name"]) {
+        _is_servicearea = NO;
+    }
 }
 
 //デリゲートメソッド(解析終了時)

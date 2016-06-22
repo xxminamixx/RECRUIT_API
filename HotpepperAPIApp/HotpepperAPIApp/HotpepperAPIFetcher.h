@@ -10,5 +10,5 @@
 
 @interface HotpepperAPIFetcher : NSObject
 - (void)serviceAreaRequest;
-@property NSDictionary *json;
+@property BOOL is_servicearea;
 @end
