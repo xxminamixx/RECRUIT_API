@@ -8,12 +8,13 @@
 
 #import "HomeViewController.h"
 #import "ServiceAreaViewController.h"
-
+#import "HotpepperAPIFetcher.h"
 
 
 @interface ViewController ()
 - (IBAction)serviceAreaSearchButton:(id)sender;
 - (IBAction)genreSearchButton:(id)sender;
+@property HotpepperAPIFetcher *areafetcher;
 @end
 
 @implementation ViewController
@@ -36,6 +37,10 @@
     // 遷移先のViewControllerをStoryBoardをもとに作成
     //ここで送るメッセージはsroryboard ID
     ServiceAreaViewController *areaView = [storyboard instantiateViewControllerWithIdentifier:@"ServiceArea"];
+    
+    HotpepperAPIFetcher *areafetcher = [HotpepperAPIFetcher new];
+    [areafetcher serviceAreaRequest];
+    
     
     // 画面をPUSHで遷移させる
     [self.navigationController pushViewController:areaView animated:YES];

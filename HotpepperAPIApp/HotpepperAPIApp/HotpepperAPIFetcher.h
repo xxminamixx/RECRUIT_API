@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface HotpepperAPIFetcher : NSObject
-
+- (void)serviceAreaRequest;
+@property NSDictionary *json;
 @end
