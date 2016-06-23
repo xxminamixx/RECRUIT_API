@@ -18,7 +18,7 @@ NSString * const large_area = @"large_service_area";
 NSString *savecode;
 NSString *savename;
 ServiceAreaEntity *servicearea_entity;
-NSMutableArray *servicearea;
+
 
 
 @implementation HotpepperAPIFetcher
@@ -52,7 +52,7 @@ NSMutableArray *servicearea;
     
     NSLog(@"解析開始");
     // サービスエリア保存用のメモリ確保
-    servicearea = [NSMutableArray new];
+    _servicearea = [NSMutableArray new];
     
     // デフォルトでNOにしておく
     _is_large_servicearea = NO;
@@ -73,9 +73,6 @@ didStartElement:(NSString *)elementName
     // サービスエリアのタグを発見したらis_large_servicearea のフラグを立てる
     if ([elementName isEqualToString:large_area]) {
         _is_large_servicearea = YES;
-        
-        //ServiceAreaEntityを生成
-        servicearea_entity = [ServiceAreaEntity new];
     }
     
     // ネームタグを見つけたらis_servicearea_code のフラグを立てる
@@ -113,12 +110,14 @@ didStartElement:(NSString *)elementName
     if ([elementName isEqualToString:large_area]) {
         _is_large_servicearea = NO;
         
+        //ServiceAreaEntityを生成
+        servicearea_entity = [ServiceAreaEntity new];
+        
         [servicearea_entity setCode:savecode];
         [servicearea_entity setName:savename];
         
         //配列にcodeとnameの入ったEntityを格納
-        [servicearea addObject: servicearea_entity];
-        
+        [_servicearea addObject: servicearea_entity];
         NSLog(@"コードは%@", servicearea_entity.code);
         NSLog(@"ネームは%@", servicearea_entity.name);
     }
@@ -134,13 +133,8 @@ didStartElement:(NSString *)elementName
 }
 
 // デリゲートメソッド(解析終了時)
--(void) parserDidEndDocument:(NSXMLParser *)parser{
-    
+- (void) parserDidEndDocument:(NSXMLParser *)parser{
     NSLog(@"解析終了");
-    
-    
-    }
-
 }
 
 @end

@@ -38,10 +38,6 @@
     //ここで送るメッセージはsroryboard ID
     ServiceAreaViewController *areaView = [storyboard instantiateViewControllerWithIdentifier:@"ServiceArea"];
     
-    HotpepperAPIFetcher *areafetcher = [HotpepperAPIFetcher new];
-    [areafetcher serviceAreaRequest];
-    
-    
     // 画面をPUSHで遷移させる
     [self.navigationController pushViewController:areaView animated:YES];
 }
