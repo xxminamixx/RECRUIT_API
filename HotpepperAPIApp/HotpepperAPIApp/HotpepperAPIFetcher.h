@@ -10,6 +10,7 @@
 
 @interface HotpepperAPIFetcher : NSObject
 - (void)serviceAreaRequest;
-@property BOOL is_servicearea;
+@property BOOL is_large_servicearea;
+@property BOOL is_servicearea_code;
 @property BOOL is_servicearea_name;
 @end
