@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HotpepperAPIFetcher : NSObject
+@interface HotpepperAPIFetcher : NSObject <NSXMLParserDelegate>
 - (void)serviceAreaRequest;
 @property NSMutableArray *servicearea;
 @property BOOL is_large_servicearea;

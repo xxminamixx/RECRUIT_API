@@ -19,8 +19,6 @@ NSString *savecode;
 NSString *savename;
 ServiceAreaEntity *servicearea_entity;
 
-
-
 @implementation HotpepperAPIFetcher
 
 

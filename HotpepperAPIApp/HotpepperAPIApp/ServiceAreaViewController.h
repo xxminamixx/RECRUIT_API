@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ServiceAreaViewController : UIViewController
+@interface ServiceAreaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
