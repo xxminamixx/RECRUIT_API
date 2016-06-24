@@ -38,6 +38,7 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
     // HotpepperAPIに自身のポインタをセット
     areafetcher.delegate = self;
     [areafetcher serviceAreaRequest];
+    
     // フェッチャーから都道府県配列を受け取る
     // receive_servicearea = [areafetcher servicearea];
     
@@ -48,17 +49,14 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
     UINib *serviceAreaNib = [UINib nibWithNibName:servicearea_tableviewcell bundle:nil];
     [self.serviceAreaTableView registerNib:serviceAreaNib forCellReuseIdentifier:servicearea_tableviewcell];
     
-    
 }
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
-    
-    
     [self.serviceAreaTableView reloadData];
     [super viewWillAppear:animated];
 }
- */
+*/
 
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -74,25 +72,21 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section
 {
-    if (receive_servicearea == nil) {
-        return 0;
-    } else {
-        //セクションに含まれるセルの数を返す
-        return receive_servicearea.count;
-    }
+    //セクションに含まれるセルの数を返す
+    
+    return receive_servicearea.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     // セルの内容を返す
     areacell = [tableView dequeueReusableCellWithIdentifier:servicearea_tableviewcell forIndexPath:indexPath];
     areacell = [_serviceAreaTableView dequeueReusableCellWithIdentifier:servicearea_tableviewcell];
     
-    //ラベルに都道府県セット処理
+    // ラベルに都道府県セット処理
     areaenthity = [ServiceAreaEntity new];
     
-    //配列からEntityに戻せない
+    // 配列をEntityに戻す
     areaenthity = receive_servicearea[indexPath.row];
     areacell.textLabel.text = areaenthity.name;
     
@@ -101,7 +95,6 @@ numberOfRowsInSection:(NSInteger)section
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
     return 125;
 }
 
@@ -117,8 +110,8 @@ numberOfRowsInSection:(NSInteger)section
 {
     NSLog(@"デリゲードメソッドが呼ばれました");
     receive_servicearea = servicearea;
+    
+    [_serviceAreaTableView reloadData];
 }
-
-
 
 @end
