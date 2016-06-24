@@ -13,8 +13,8 @@
     
 }
 
-@property (weak, nonatomic) NSMutableArray *areacode;
-@property (weak, nonatomic) NSMutableArray *areaname;
+@property (nonatomic) NSString *code;
+@property (nonatomic) NSString *name;
 
 /*
 + (NSArray *)getAreaName;

@@ -8,8 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HotpepperAPIFetcher : NSObject
+@protocol serviceAreaDelegate <NSObject>
+
+- (void)getServiceArea:(NSMutableArray *)servicearea ; // コントローラーに配列を渡す
+
+@end
+
+@interface HotpepperAPIFetcher : NSObject <NSXMLParserDelegate>
 - (void)serviceAreaRequest;
-@property BOOL is_servicearea; // サービスエリアタグの中に入ったか判別
-@property BOOL is_servicearea_name; // サービスエリアのネームタグに入ったか判別
+
+@property (weak, nonatomic) id<serviceAreaDelegate> delegate;
+@property NSMutableArray *servicearea;
+@property BOOL is_large_servicearea;
+@property BOOL is_servicearea_code;
+@property BOOL is_servicearea_name;
+
 @end

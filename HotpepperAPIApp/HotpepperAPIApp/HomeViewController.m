@@ -48,9 +48,7 @@
     // 遷移先のViewControllerをStoryBoardをもとに作成
     //ここで送るメッセージはsroryboard ID
     ServiceAreaViewController *areaView = [storyboard instantiateViewControllerWithIdentifier:@"ServiceArea"];
-    
-    
-    
+
     // 画面をPUSHで遷移させる
     [self.navigationController pushViewController:areaView animated:YES];
 }
