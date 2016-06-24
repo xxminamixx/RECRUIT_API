@@ -95,7 +95,7 @@ numberOfRowsInSection:(NSInteger)section
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 125;
+    return 100;
 }
 
 // セルがタップされたときの処理
