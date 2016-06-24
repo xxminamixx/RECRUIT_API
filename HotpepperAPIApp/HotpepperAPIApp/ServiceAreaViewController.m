@@ -12,13 +12,12 @@
 #import "HotpepperAPIFetcher.h"
 
 NSString * const servicearea_tableviewcell = @"ServiceAreaTableViewCell";
-NSMutableArray *servicearea;
-//int count = 0;
+NSMutableArray *receive_servicearea;
 ServiceAreaTableViewCell *areacell;
 ServiceAreaEntity *areaenthity;
 HotpepperAPIFetcher *areafetcher;
 
-@interface ServiceAreaViewController ()
+@interface ServiceAreaViewController () <serviceAreaDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *serviceAreaTableView;
 @end
 
@@ -32,7 +31,15 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 都道府県リクエストを送る
+    // フェッチャクラスのメソッドが呼ばれる前にcellの処理が終わってしまう
+    areafetcher = [HotpepperAPIFetcher new];
     
+    // HotpepperAPIに自身のポインタをセット
+    areafetcher.delegate = self;
+    [areafetcher serviceAreaRequest];
+    // フェッチャーから都道府県配列を受け取る
+    // receive_servicearea = [areafetcher servicearea];
     
     _serviceAreaTableView.delegate = self;
     _serviceAreaTableView.dataSource = self;
@@ -44,21 +51,19 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
     
 }
 
+/*
 - (void)viewWillAppear:(BOOL)animated {
+    
+    
     [self.serviceAreaTableView reloadData];
     [super viewWillAppear:animated];
 }
+ */
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    // 都道府県リクエストを送る
-    // フェッチャクラスのメソッドが呼ばれる前にcellの処理が終わってしまう
-    areafetcher = [HotpepperAPIFetcher new];
-    [areafetcher serviceAreaRequest];
-    sleep(5);
-    // フェッチャーから都道府県配列を受け取る
-    servicearea = [areafetcher servicearea];
-   [self.serviceAreaTableView reloadData];
+    [self.serviceAreaTableView reloadData];
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,11 +74,15 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section
 {
-    //セクションに含まれるセルの数を返す
-    return servicearea.count;
+    if (receive_servicearea == nil) {
+        return 0;
+    } else {
+        //セクションに含まれるセルの数を返す
+        return receive_servicearea.count;
+    }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     // セルの内容を返す
@@ -84,7 +93,7 @@ numberOfRowsInSection:(NSInteger)section
     areaenthity = [ServiceAreaEntity new];
     
     //配列からEntityに戻せない
-    areaenthity = servicearea[indexPath.row];
+    areaenthity = receive_servicearea[indexPath.row];
     areacell.textLabel.text = areaenthity.name;
     
     return areacell;
@@ -102,6 +111,14 @@ numberOfRowsInSection:(NSInteger)section
     //一覧を表示するためにフェッチャーでリクエスト
     NSLog(@"%@", indexPath);
 }
+
+// デリゲードメソッド
+- (void) getServiceArea:(NSMutableArray *)servicearea
+{
+    NSLog(@"デリゲードメソッドが呼ばれました");
+    receive_servicearea = servicearea;
+}
+
 
 
 @end

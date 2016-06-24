@@ -142,6 +142,9 @@ didStartElement:(NSString *)elementName
 // デリゲートメソッド(解析終了時)
 - (void) parserDidEndDocument:(NSXMLParser *)parser{
     NSLog(@"解析終了");
+    
+    // デリゲートメソッドの呼び出し
+    [self.delegate getServiceArea:_servicearea];
 }
 
 @end
