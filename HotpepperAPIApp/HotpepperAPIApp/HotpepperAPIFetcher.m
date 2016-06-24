@@ -21,6 +21,7 @@ ServiceAreaEntity *servicearea_entity;
 
 @implementation HotpepperAPIFetcher
 
+
 - (void)serviceAreaRequest
 {
     //サービスエリアのURL

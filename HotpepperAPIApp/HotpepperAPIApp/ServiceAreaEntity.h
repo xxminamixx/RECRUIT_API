@@ -13,8 +13,8 @@
     
 }
 
-@property NSString *code;
-@property NSString *name;
+@property (nonatomic) NSString *code;
+@property (nonatomic) NSString *name;
 
 /*
 + (NSArray *)getAreaName;

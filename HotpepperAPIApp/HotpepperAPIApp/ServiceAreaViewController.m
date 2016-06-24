@@ -13,9 +13,7 @@
 
 NSString * const servicearea_tableviewcell = @"ServiceAreaTableViewCell";
 NSMutableArray *receive_servicearea;
-ServiceAreaTableViewCell *areacell;
-ServiceAreaEntity *areaenthity;
-HotpepperAPIFetcher *areafetcher;
+//HotpepperAPIFetcher *areafetcher;
 
 @interface ServiceAreaViewController () <serviceAreaDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *serviceAreaTableView;
@@ -30,10 +28,10 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // 都道府県リクエストを送る
     // フェッチャクラスのメソッドが呼ばれる前にcellの処理が終わってしまう
-    areafetcher = [HotpepperAPIFetcher new];
+    HotpepperAPIFetcher *areafetcher = [HotpepperAPIFetcher new];
     
     // HotpepperAPIに自身のポインタをセット
     areafetcher.delegate = self;
@@ -58,11 +56,13 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
 }
 */
 
+/*
 -(void)viewDidAppear:(BOOL)animated
 {
     [self.serviceAreaTableView reloadData];
     [super viewDidAppear:animated];
 }
+*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -80,28 +80,32 @@ numberOfRowsInSection:(NSInteger)section
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // セルの内容を返す
-    areacell = [tableView dequeueReusableCellWithIdentifier:servicearea_tableviewcell forIndexPath:indexPath];
-    areacell = [_serviceAreaTableView dequeueReusableCellWithIdentifier:servicearea_tableviewcell];
+    //ServiceAreaTableViewCell *areacell = [tableView dequeueReusableCellWithIdentifier:servicearea_tableviewcell forIndexPath:indexPath];
+    //修正
+     ServiceAreaTableViewCell *areacell = [_serviceAreaTableView dequeueReusableCellWithIdentifier:servicearea_tableviewcell];
     
     // ラベルに都道府県セット処理
-    areaenthity = [ServiceAreaEntity new];
+    ServiceAreaEntity *areaenthity = [ServiceAreaEntity new];
     
     // 配列をEntityに戻す
     areaenthity = receive_servicearea[indexPath.row];
-    areacell.textLabel.text = areaenthity.name;
+    //areacell.textLabel.text = areaenthity.name;
+    //修正　outletされたラベルにセットしていなかった。
+    areacell.areaname_label.text = areaenthity.name;
     
     return areacell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 70;
 }
 
 // セルがタップされたときの処理
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //一覧画面へ遷移する処理
     //一覧を表示するためにフェッチャーでリクエスト
+    HotpepperAPIFetcher *shopfetcher;
     NSLog(@"%@", indexPath);
 }
 
@@ -112,6 +116,11 @@ numberOfRowsInSection:(NSInteger)section
     receive_servicearea = servicearea;
     
     [_serviceAreaTableView reloadData];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.serviceAreaTableView reloadData];
+    });
+
 }
 
 @end
