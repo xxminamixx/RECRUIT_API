@@ -21,7 +21,6 @@ ServiceAreaEntity *servicearea_entity;
 
 @implementation HotpepperAPIFetcher
 
-
 - (void)serviceAreaRequest
 {
     //サービスエリアのURL
@@ -50,7 +49,7 @@ ServiceAreaEntity *servicearea_entity;
     
     NSLog(@"解析開始");
     // サービスエリア保存用のメモリ確保
-    _servicearea = [NSMutableArray new];
+    _servicearea = [NSMutableArray array];
     
     // デフォルトでNOにしておく
     _is_large_servicearea = NO;
@@ -105,26 +104,36 @@ didStartElement:(NSString *)elementName
     
     NSLog(@"要素の終了タグを読み込んだ:%@",elementName);
     
+    // large_service_areaの終了タグを見つけたらis_large_serviceareaのフラグを下す
     if ([elementName isEqualToString:large_area]) {
         _is_large_servicearea = NO;
         
-        //ServiceAreaEntityを生成
+        // ServiceAreaEntityを生成
         servicearea_entity = [ServiceAreaEntity new];
         
         [servicearea_entity setCode:savecode];
         [servicearea_entity setName:savename];
         
-        //配列にcodeとnameの入ったEntityを格納
+        // 配列にcodeとnameの入ったEntityを格納
         [_servicearea addObject: servicearea_entity];
+        
+        // デバッグ用
         NSLog(@"コードは%@", servicearea_entity.code);
         NSLog(@"ネームは%@", servicearea_entity.name);
+        
+        /*
+        ServiceAreaEntity *test = [ServiceAreaEntity new];
+        test = _servicearea[0];
+        NSLog(@"配列をエンティティに戻す%@", test.name);
+        */
     }
     
+    // codeの終了タグを見つけたらis_servicearea_codeのフラグを下す
     if ([elementName isEqualToString:code]) {
         _is_servicearea_code = NO;
     }
     
-    // nameの終了タグを見つけたらis_serviceareaのフラグを下す
+    // nameの終了タグを見つけたらis_servicearea_nameのフラグを下す
     if ([elementName isEqualToString:name]) {
         _is_servicearea_name = NO;
     }

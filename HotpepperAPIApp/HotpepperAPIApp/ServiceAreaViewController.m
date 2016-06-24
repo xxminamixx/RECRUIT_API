@@ -13,8 +13,10 @@
 
 NSString * const servicearea_tableviewcell = @"ServiceAreaTableViewCell";
 NSMutableArray *servicearea;
-int count = 0;
+//int count = 0;
 ServiceAreaTableViewCell *areacell;
+ServiceAreaEntity *areaenthity;
+HotpepperAPIFetcher *areafetcher;
 
 @interface ServiceAreaViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *serviceAreaTableView;
@@ -31,6 +33,7 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
     [super viewDidLoad];
     
     
+    
     _serviceAreaTableView.delegate = self;
     _serviceAreaTableView.dataSource = self;
 
@@ -41,9 +44,21 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
     
 }
 
-// Viewの表示直前に呼ばれる
 - (void)viewWillAppear:(BOOL)animated {
+    [self.serviceAreaTableView reloadData];
     [super viewWillAppear:animated];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    // 都道府県リクエストを送る
+    // フェッチャクラスのメソッドが呼ばれる前にcellの処理が終わってしまう
+    areafetcher = [HotpepperAPIFetcher new];
+    [areafetcher serviceAreaRequest];
+    sleep(5);
+    // フェッチャーから都道府県配列を受け取る
+    servicearea = [areafetcher servicearea];
+   [self.serviceAreaTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +70,7 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
 numberOfRowsInSection:(NSInteger)section
 {
     //セクションに含まれるセルの数を返す
-    return 20;
+    return servicearea.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
@@ -65,30 +80,12 @@ numberOfRowsInSection:(NSInteger)section
     areacell = [tableView dequeueReusableCellWithIdentifier:servicearea_tableviewcell forIndexPath:indexPath];
     areacell = [_serviceAreaTableView dequeueReusableCellWithIdentifier:servicearea_tableviewcell];
     
-    dispatch_queue_t queue = dispatch_queue_create("jp.mixi.ios.sample", DISPATCH_QUEUE_SERIAL);
-    dispatch_async(queue, ^{
-        
-        // 都道府県リクエストを送る
-        // フェッチャクラスのメソッドが呼ばれる前にcellの処理が終わってしまう
-        HotpepperAPIFetcher *areafetcher = [HotpepperAPIFetcher new];
-        [areafetcher serviceAreaRequest];
-        
-        // フェッチャーから都道府県配列を受け取る
-        servicearea = [areafetcher servicearea];
-        
-       
-        
-        //ラベルに都道府県セット処理
-        ServiceAreaEntity *servicearea_entity = [ServiceAreaEntity new];
-        servicearea_entity = servicearea[count];
-        areacell.textLabel.text = servicearea_entity.name;
-        count++;
-        
-        [self.serviceAreaTableView reloadData];
-        
-        
-        
-    });
+    //ラベルに都道府県セット処理
+    areaenthity = [ServiceAreaEntity new];
+    
+    //配列からEntityに戻せない
+    areaenthity = servicearea[indexPath.row];
+    areacell.textLabel.text = areaenthity.name;
     
     return areacell;
 }
