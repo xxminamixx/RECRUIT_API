@@ -8,7 +8,10 @@
 
 #import "ShopViewController.h"
 #import "HotpepperAPIFetcher.h"
+#import "ShopTableViewCell.h"
+#import "ShopEntity.h"
 
+NSString * const shop_tableviewcell = @"ShopTableViewCell";
 NSMutableArray *recieve_shop;
 
 @interface ShopViewController () <shopDelegate>
@@ -28,7 +31,10 @@ NSMutableArray *recieve_shop;
     
     //　メモリ確保
     recieve_shop = [NSMutableArray array];
-    // Do any additional setup after loading the view.
+    
+    //ViewControllerのViewにTableViewCellを登録
+    UINib *shopNib = [UINib nibWithNibName:shop_tableviewcell bundle:nil];
+    [self.shopTableView registerNib:shopNib forCellReuseIdentifier:shop_tableviewcell];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,14 +51,20 @@ numberOfRowsInSection:(NSInteger)section
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //セルを返す
-    UITableViewCell *cell = [UITableViewCell new];
-    return cell;
+    ShopTableViewCell *shopcell = [_shopTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
+    
+    // ラベルに都道府県セット処理
+    ShopEntity *shopEnthity = recieve_shop[indexPath.row];
+    
+    
+    shopcell.shopName.text = shopEnthity.name;
+
+    return shopcell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 70;
+    return 125;
 }
 
 - (void)getShop:(NSMutableArray *)shop

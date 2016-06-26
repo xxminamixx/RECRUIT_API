@@ -106,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */,
+				E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */,
 				E99DDF391D18E3E6008374AD /* Main.storyboard */,
 			);
 			name = View;
@@ -124,7 +125,6 @@
 				E9D38E9D1D1D296100F8FA0D /* ShopViewController.m */,
 				E9A180AB1D1F628500D64FC4 /* ShopTableViewCell.h */,
 				E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */,
-				E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */,
 				E90158721D1915CB00DF358C /* ServiceAreaTableViewCell.h */,
 				E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */,
 			);
