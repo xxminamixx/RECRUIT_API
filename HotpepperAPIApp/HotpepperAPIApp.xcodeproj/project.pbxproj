@@ -20,6 +20,8 @@
 		E99DDF3D1D18E3E6008374AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99DDF3C1D18E3E6008374AD /* Assets.xcassets */; };
 		E99DDF401D18E3E6008374AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99DDF3E1D18E3E6008374AD /* LaunchScreen.storyboard */; };
 		E99DDF4B1D18E3E7008374AD /* HotpepperAPIAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF4A1D18E3E7008374AD /* HotpepperAPIAppUITests.m */; };
+		E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */; };
+		E9A180AF1D1F628500D64FC4 /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */; };
 		E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */; };
 		E9D38E9E1D1D296100F8FA0D /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9D1D1D296100F8FA0D /* ShopViewController.m */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,9 @@
 		E99DDF461D18E3E7008374AD /* HotpepperAPIAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotpepperAPIAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99DDF4A1D18E3E7008374AD /* HotpepperAPIAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotpepperAPIAppUITests.m; sourceTree = "<group>"; };
 		E99DDF4C1D18E3E7008374AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9A180AB1D1F628500D64FC4 /* ShopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopTableViewCell.h; sourceTree = "<group>"; };
+		E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTableViewCell.m; sourceTree = "<group>"; };
+		E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
 		E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopEntity.h; sourceTree = "<group>"; };
 		E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopEntity.m; sourceTree = "<group>"; };
 		E9D38E9C1D1D296100F8FA0D /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopViewController.h; sourceTree = "<group>"; };
@@ -117,6 +122,9 @@
 				E90158701D19124500DF358C /* ServiceAreaViewController.m */,
 				E9D38E9C1D1D296100F8FA0D /* ShopViewController.h */,
 				E9D38E9D1D1D296100F8FA0D /* ShopViewController.m */,
+				E9A180AB1D1F628500D64FC4 /* ShopTableViewCell.h */,
+				E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */,
+				E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */,
 				E90158721D1915CB00DF358C /* ServiceAreaTableViewCell.h */,
 				E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */,
 			);
@@ -266,6 +274,7 @@
 				E99DDF401D18E3E6008374AD /* LaunchScreen.storyboard in Resources */,
 				E99DDF3D1D18E3E6008374AD /* Assets.xcassets in Resources */,
 				E90158761D1915CB00DF358C /* ServiceAreaTableViewCell.xib in Resources */,
+				E9A180AF1D1F628500D64FC4 /* ShopTableViewCell.xib in Resources */,
 				E99DDF3B1D18E3E6008374AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +302,7 @@
 				E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */,
 				E9D38E9E1D1D296100F8FA0D /* ShopViewController.m in Sources */,
 				E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */,
+				E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

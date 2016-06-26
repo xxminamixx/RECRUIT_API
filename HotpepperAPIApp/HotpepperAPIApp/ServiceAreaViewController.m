@@ -138,8 +138,4 @@ numberOfRowsInSection:(NSInteger)section
 
 }
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"画面遷移しました");
-}
-
 @end

@@ -40,7 +40,7 @@ NSMutableArray *recieve_shop;
 numberOfRowsInSection:(NSInteger)section
 {
     //セクションに含まれるセルの数を返す
-    return 0;
+    return recieve_shop.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -59,6 +59,11 @@ numberOfRowsInSection:(NSInteger)section
 {
     NSLog(@"デリゲードメソッドが呼ばれました");
     recieve_shop = shop;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.shopTableView reloadData];
+    });
+
 }
 
 

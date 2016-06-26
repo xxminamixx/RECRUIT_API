@@ -1,15 +1,14 @@
-//
-//  ServiceAreaTableViewCell.m
+ //
+//  ShopTableViewCell.m
 //  HotpepperAPIApp
 //
-//  Created by Minami Kyohei on 2016/06/21.
+//  Created by 南　京兵 on 2016/06/26.
 //  Copyright © 2016年 Minami Kyohei. All rights reserved.
 //
 
-#import "ServiceAreaTableViewCell.h"
-#import "ServiceAreaEntity.h"
+#import "ShopTableViewCell.h"
 
-@implementation ServiceAreaTableViewCell
+@implementation ShopTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -21,8 +20,5 @@
 
     // Configure the view for the selected state
 }
-
-
-
 
 @end
