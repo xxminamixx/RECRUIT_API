@@ -29,6 +29,10 @@ NSMutableArray *recieve_shop;
     _shopfetcher.shopdelegate = self;
     [_shopfetcher shopRequest:_areacode];
     
+    _shopTableView.delegate = self;
+    _shopTableView.dataSource = self;
+
+    
     //　メモリ確保
     recieve_shop = [NSMutableArray array];
     
