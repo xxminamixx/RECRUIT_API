@@ -136,7 +136,6 @@
         <!--Shop Detail View Controller-->
         <scene sceneID="hVM-aK-Lph">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RVd-qB-oVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ShopDetail" id="dHX-cg-WBk" customClass="ShopDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ylR-M4-4e9"/>
@@ -213,6 +212,7 @@
                         <outlet property="shopname" destination="DhI-Kw-bQv" id="tFB-If-iGH"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RVd-qB-oVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2027.5" y="-139.5"/>
         </scene>
