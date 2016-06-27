@@ -21,14 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _shopname.text = _shopEntity.name;
-    _detail.text = _shopEntity.detail;
-    _address.text = _shopEntity.address;
-    _open.text = _shopEntity.open;
-    _genre.text = _shopEntity.genre;
-    
-    
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

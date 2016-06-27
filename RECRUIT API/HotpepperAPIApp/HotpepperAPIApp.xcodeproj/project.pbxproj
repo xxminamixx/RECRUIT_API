@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E90158711D19124500DF358C /* ServiceAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90158701D19124500DF358C /* ServiceAreaViewController.m */; };
+		E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */; };
+		E90158761D1915CB00DF358C /* ServiceAreaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */; };
+		E901587C1D1936C000DF358C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E901587B1D1936C000DF358C /* libsqlite3.tbd */; };
+		E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */; };
+		E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */; };
+		E97747801D20CCD7002ABD77 /* ShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */; };
+		E99DDF321D18E3E6008374AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF311D18E3E6008374AD /* main.m */; };
+		E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF341D18E3E6008374AD /* AppDelegate.m */; };
+		E99DDF381D18E3E6008374AD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF371D18E3E6008374AD /* HomeViewController.m */; };
+		E99DDF3B1D18E3E6008374AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99DDF391D18E3E6008374AD /* Main.storyboard */; };
+		E99DDF3D1D18E3E6008374AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99DDF3C1D18E3E6008374AD /* Assets.xcassets */; };
+		E99DDF401D18E3E6008374AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99DDF3E1D18E3E6008374AD /* LaunchScreen.storyboard */; };
+		E99DDF4B1D18E3E7008374AD /* HotpepperAPIAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF4A1D18E3E7008374AD /* HotpepperAPIAppUITests.m */; };
+		E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */; };
+		E9A180AF1D1F628500D64FC4 /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */; };
+		E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */; };
+		E9D38E9E1D1D296100F8FA0D /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9D1D1D296100F8FA0D /* ShopViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E99DDF471D18E3E7008374AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E99DDF251D18E3E6008374AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E99DDF2C1D18E3E6008374AD;
+			remoteInfo = HotpepperAPIApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E901586F1D19124500DF358C /* ServiceAreaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAreaViewController.h; sourceTree = "<group>"; };
+		E90158701D19124500DF358C /* ServiceAreaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaViewController.m; sourceTree = "<group>"; };
+		E90158721D1915CB00DF358C /* ServiceAreaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAreaTableViewCell.h; sourceTree = "<group>"; };
+		E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaTableViewCell.m; sourceTree = "<group>"; };
+		E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceAreaTableViewCell.xib; sourceTree = "<group>"; };
+		E901587A1D1932DC00DF358C /* hotpepperAPIDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = hotpepperAPIDB.sqlite; path = ../../../hotpepperAPIDB.sqlite; sourceTree = "<group>"; };
+		E901587B1D1936C000DF358C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		E901587D1D193C2400DF358C /* HotpepperAPIFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotpepperAPIFetcher.h; sourceTree = "<group>"; };
+		E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotpepperAPIFetcher.m; sourceTree = "<group>"; };
+		E956B9821D1A53A20028FA1B /* ServiceAreaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAreaEntity.h; sourceTree = "<group>"; };
+		E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaEntity.m; sourceTree = "<group>"; };
+		E977477E1D20CCD7002ABD77 /* ShopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopDetailViewController.h; sourceTree = "<group>"; };
+		E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopDetailViewController.m; sourceTree = "<group>"; };
+		E99DDF2D1D18E3E6008374AD /* HotpepperAPIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotpepperAPIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E99DDF311D18E3E6008374AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E99DDF331D18E3E6008374AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E99DDF341D18E3E6008374AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E99DDF361D18E3E6008374AD /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		E99DDF371D18E3E6008374AD /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		E99DDF3A1D18E3E6008374AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E99DDF3C1D18E3E6008374AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E99DDF3F1D18E3E6008374AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E99DDF411D18E3E6008374AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E99DDF461D18E3E7008374AD /* HotpepperAPIAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotpepperAPIAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E99DDF4A1D18E3E7008374AD /* HotpepperAPIAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotpepperAPIAppUITests.m; sourceTree = "<group>"; };
+		E99DDF4C1D18E3E7008374AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9A180AB1D1F628500D64FC4 /* ShopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopTableViewCell.h; sourceTree = "<group>"; };
+		E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTableViewCell.m; sourceTree = "<group>"; };
+		E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
+		E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopEntity.h; sourceTree = "<group>"; };
+		E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopEntity.m; sourceTree = "<group>"; };
+		E9D38E9C1D1D296100F8FA0D /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopViewController.h; sourceTree = "<group>"; };
+		E9D38E9D1D1D296100F8FA0D /* ShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E99DDF2A1D18E3E6008374AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E901587C1D1936C000DF358C /* libsqlite3.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E99DDF431D18E3E7008374AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E956B9871D1A98050028FA1B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E956B9821D1A53A20028FA1B /* ServiceAreaEntity.h */,
+				E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */,
+				E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */,
+				E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */,
+				E901587D1D193C2400DF358C /* HotpepperAPIFetcher.h */,
+				E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E956B9881D1A98270028FA1B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */,
+				E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */,
+				E99DDF391D18E3E6008374AD /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E956B9891D1A984D0028FA1B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E99DDF331D18E3E6008374AD /* AppDelegate.h */,
+				E99DDF341D18E3E6008374AD /* AppDelegate.m */,
+				E99DDF361D18E3E6008374AD /* HomeViewController.h */,
+				E99DDF371D18E3E6008374AD /* HomeViewController.m */,
+				E901586F1D19124500DF358C /* ServiceAreaViewController.h */,
+				E90158701D19124500DF358C /* ServiceAreaViewController.m */,
+				E9D38E9C1D1D296100F8FA0D /* ShopViewController.h */,
+				E9D38E9D1D1D296100F8FA0D /* ShopViewController.m */,
+				E977477E1D20CCD7002ABD77 /* ShopDetailViewController.h */,
+				E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */,
+				E9A180AB1D1F628500D64FC4 /* ShopTableViewCell.h */,
+				E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */,
+				E90158721D1915CB00DF358C /* ServiceAreaTableViewCell.h */,
+				E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E956B98A1D1A9A680028FA1B /* Resourcese */ = {
+			isa = PBXGroup;
+			children = (
+				E901587A1D1932DC00DF358C /* hotpepperAPIDB.sqlite */,
+				E901587B1D1936C000DF358C /* libsqlite3.tbd */,
+			);
+			name = Resourcese;
+			sourceTree = "<group>";
+		};
+		E99DDF241D18E3E6008374AD = {
+			isa = PBXGroup;
+			children = (
+				E99DDF2F1D18E3E6008374AD /* HotpepperAPIApp */,
+				E99DDF491D18E3E7008374AD /* HotpepperAPIAppUITests */,
+				E99DDF2E1D18E3E6008374AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E99DDF2E1D18E3E6008374AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E99DDF2D1D18E3E6008374AD /* HotpepperAPIApp.app */,
+				E99DDF461D18E3E7008374AD /* HotpepperAPIAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E99DDF2F1D18E3E6008374AD /* HotpepperAPIApp */ = {
+			isa = PBXGroup;
+			children = (
+				E956B98A1D1A9A680028FA1B /* Resourcese */,
+				E956B9871D1A98050028FA1B /* Model */,
+				E956B9881D1A98270028FA1B /* View */,
+				E956B9891D1A984D0028FA1B /* Controller */,
+				E99DDF3C1D18E3E6008374AD /* Assets.xcassets */,
+				E99DDF3E1D18E3E6008374AD /* LaunchScreen.storyboard */,
+				E99DDF411D18E3E6008374AD /* Info.plist */,
+				E99DDF301D18E3E6008374AD /* Supporting Files */,
+			);
+			path = HotpepperAPIApp;
+			sourceTree = "<group>";
+		};
+		E99DDF301D18E3E6008374AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E99DDF311D18E3E6008374AD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E99DDF491D18E3E7008374AD /* HotpepperAPIAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E99DDF4A1D18E3E7008374AD /* HotpepperAPIAppUITests.m */,
+				E99DDF4C1D18E3E7008374AD /* Info.plist */,
+			);
+			path = HotpepperAPIAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E99DDF2C1D18E3E6008374AD /* HotpepperAPIApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E99DDF4F1D18E3E7008374AD /* Build configuration list for PBXNativeTarget "HotpepperAPIApp" */;
+			buildPhases = (
+				E99DDF291D18E3E6008374AD /* Sources */,
+				E99DDF2A1D18E3E6008374AD /* Frameworks */,
+				E99DDF2B1D18E3E6008374AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HotpepperAPIApp;
+			productName = HotpepperAPIApp;
+			productReference = E99DDF2D1D18E3E6008374AD /* HotpepperAPIApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E99DDF451D18E3E7008374AD /* HotpepperAPIAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E99DDF521D18E3E7008374AD /* Build configuration list for PBXNativeTarget "HotpepperAPIAppUITests" */;
+			buildPhases = (
+				E99DDF421D18E3E7008374AD /* Sources */,
+				E99DDF431D18E3E7008374AD /* Frameworks */,
+				E99DDF441D18E3E7008374AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E99DDF481D18E3E7008374AD /* PBXTargetDependency */,
+			);
+			name = HotpepperAPIAppUITests;
+			productName = HotpepperAPIAppUITests;
+			productReference = E99DDF461D18E3E7008374AD /* HotpepperAPIAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E99DDF251D18E3E6008374AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Minami Kyohei";
+				TargetAttributes = {
+					E99DDF2C1D18E3E6008374AD = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = EX674L8SA3;
+					};
+					E99DDF451D18E3E7008374AD = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = E99DDF2C1D18E3E6008374AD;
+					};
+				};
+			};
+			buildConfigurationList = E99DDF281D18E3E6008374AD /* Build configuration list for PBXProject "HotpepperAPIApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E99DDF241D18E3E6008374AD;
+			productRefGroup = E99DDF2E1D18E3E6008374AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E99DDF2C1D18E3E6008374AD /* HotpepperAPIApp */,
+				E99DDF451D18E3E7008374AD /* HotpepperAPIAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E99DDF2B1D18E3E6008374AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E99DDF401D18E3E6008374AD /* LaunchScreen.storyboard in Resources */,
+				E99DDF3D1D18E3E6008374AD /* Assets.xcassets in Resources */,
+				E90158761D1915CB00DF358C /* ServiceAreaTableViewCell.xib in Resources */,
+				E9A180AF1D1F628500D64FC4 /* ShopTableViewCell.xib in Resources */,
+				E99DDF3B1D18E3E6008374AD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E99DDF441D18E3E7008374AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E99DDF291D18E3E6008374AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E99DDF381D18E3E6008374AD /* HomeViewController.m in Sources */,
+				E97747801D20CCD7002ABD77 /* ShopDetailViewController.m in Sources */,
+				E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */,
+				E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */,
+				E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */,
+				E99DDF321D18E3E6008374AD /* main.m in Sources */,
+				E90158711D19124500DF358C /* ServiceAreaViewController.m in Sources */,
+				E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */,
+				E9D38E9E1D1D296100F8FA0D /* ShopViewController.m in Sources */,
+				E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */,
+				E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E99DDF421D18E3E7008374AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E99DDF4B1D18E3E7008374AD /* HotpepperAPIAppUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E99DDF481D18E3E7008374AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E99DDF2C1D18E3E6008374AD /* HotpepperAPIApp */;
+			targetProxy = E99DDF471D18E3E7008374AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E99DDF391D18E3E6008374AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E99DDF3A1D18E3E6008374AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E99DDF3E1D18E3E6008374AD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E99DDF3F1D18E3E6008374AD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E99DDF4D1D18E3E7008374AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E99DDF4E1D18E3E7008374AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E99DDF501D18E3E7008374AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = HotpepperAPIApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.HotpepperAPIApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E99DDF511D18E3E7008374AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = HotpepperAPIApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.HotpepperAPIApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		E99DDF531D18E3E7008374AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HotpepperAPIAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.HotpepperAPIAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HotpepperAPIApp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E99DDF541D18E3E7008374AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HotpepperAPIAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.HotpepperAPIAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HotpepperAPIApp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E99DDF281D18E3E6008374AD /* Build configuration list for PBXProject "HotpepperAPIApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E99DDF4D1D18E3E7008374AD /* Debug */,
+				E99DDF4E1D18E3E7008374AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E99DDF4F1D18E3E7008374AD /* Build configuration list for PBXNativeTarget "HotpepperAPIApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E99DDF501D18E3E7008374AD /* Debug */,
+				E99DDF511D18E3E7008374AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E99DDF521D18E3E7008374AD /* Build configuration list for PBXNativeTarget "HotpepperAPIAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E99DDF531D18E3E7008374AD /* Debug */,
+				E99DDF541D18E3E7008374AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E99DDF251D18E3E6008374AD /* Project object */;
+}

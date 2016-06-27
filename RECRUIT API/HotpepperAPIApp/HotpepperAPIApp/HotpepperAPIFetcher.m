@@ -21,16 +21,13 @@ NSString * const shop = @"shop";
 NSString * const logo = @"logo_image";
 NSString * const address = @"address";
 NSString * const genre = @"genre";
-NSString * const shopopen = @"open";
+NSString * const food = @"food";
 NSString * const detail = @"shop_detail_memo";
 
 NSString *savecode;
 NSString *savename;
 NSString *savelogo;
 NSString *savedetail;
-NSString *saveopen;
-NSString *savegenre;
-NSString *saveaddress;
 NSData *logo_image;
 
 BOOL is_large_servicearea = NO;
@@ -41,9 +38,6 @@ BOOL is_shop = NO;
 BOOL is_shop_name = NO;
 BOOL is_logo = NO;
 BOOL is_detail = NO;
-BOOL is_open = NO;
-BOOL is_genre = NO;
-BOOL is_address = NO;
 
 BOOL is_area_request = NO;
 BOOL is_shop_request = NO;
@@ -153,7 +147,6 @@ didStartElement:(NSString *)elementName
     
     //　都道府県からお店検索処理
     if (is_shop_request) {
-        // 特定のタグを見つけたらフラグを立てる
         if ([elementName isEqualToString:shop]) {
             is_shop = YES;
         }
@@ -168,18 +161,6 @@ didStartElement:(NSString *)elementName
         
         if ([elementName isEqualToString:detail]) {
             is_detail = YES;
-        }
-        
-        if ([elementName isEqualToString:shopopen]) {
-            is_open = YES;
-        }
-        
-        if ([elementName isEqualToString:address]) {
-            is_address = YES;
-        }
-        
-        if ([elementName isEqualToString:genre]) {
-            is_genre = YES;
         }
     }
 
@@ -201,7 +182,6 @@ didStartElement:(NSString *)elementName
     }
     
     if (is_shop_request) {
-        // 特定のタグのテキストのみ取得
         if (is_shop && is_shop_name) {
             savename = string;
         }
@@ -212,18 +192,6 @@ didStartElement:(NSString *)elementName
         
         if (is_detail) {
             savedetail = string;
-        }
-        
-        if (is_open) {
-            saveopen = string;
-        }
-        
-        if (is_address) {
-            saveaddress = string;
-        }
-        
-        if (is_genre) {
-            savegenre = string;
         }
     }
     
@@ -278,27 +246,12 @@ didStartElement:(NSString *)elementName
             is_detail = NO;
         }
         
-        if ([elementName isEqualToString:shopopen]) {
-            is_shop = NO;
-        }
-        
-        if ([elementName isEqualToString:address]) {
-            is_address = NO;
-        }
-        
-        if ([elementName isEqualToString:genre]) {
-            is_genre = NO;
-        }
-            
         // shopタグの終わりを見つけた時にエンティティを配列に格納
         if ([elementName isEqualToString:shop]) {
             ShopEntity *shopEntity = [ShopEntity new];
             [shopEntity setName:savename];
             [shopEntity setLogo:savelogo];
             [shopEntity setDetail:savedetail];
-            [shopEntity setGenre:savegenre];
-            [shopEntity setAddress:saveaddress];
-            [shopEntity setOpen:saveopen];
             
             [_shop addObject:shopEntity];
         }
