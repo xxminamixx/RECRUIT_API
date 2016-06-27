@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,22 +15,45 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="124.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtc-jX-9D6">
-                        <rect key="frame" x="8" y="8" width="304" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtc-jX-9D6">
+                        <rect key="frame" x="8" y="0.0" width="304" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iE3-31-CWd">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iE3-31-CWd">
                         <rect key="frame" x="0.0" y="25" width="160" height="99"/>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="テスト用のテキスト" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OgC-jb-oV7">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="テスト用のテキスト" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OgC-jb-oV7">
                         <rect key="frame" x="168" y="25" width="152" height="99"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="OgC-jb-oV7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="17" id="6gK-K6-9sP"/>
+                    <constraint firstItem="OgC-jb-oV7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="160" id="G98-fS-s2q"/>
+                    <constraint firstItem="OgC-jb-oV7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="160" id="K17-gi-zfb"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="gtc-jX-9D6" secondAttribute="leading" id="MBw-Ad-en8"/>
+                    <constraint firstItem="iE3-31-CWd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="MEl-xO-ibl"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="OgC-jb-oV7" secondAttribute="trailing" constant="-8" id="OSb-A2-SJ5"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="gtc-jX-9D6" secondAttribute="bottom" constant="95.5" id="PBq-W7-tlb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="gtc-jX-9D6" secondAttribute="trailing" id="SIu-LR-oyq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="iE3-31-CWd" secondAttribute="trailing" constant="152" id="SV9-5t-10G"/>
+                    <constraint firstItem="OgC-jb-oV7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="17" id="iF0-9T-ELL"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="gtc-jX-9D6" secondAttribute="leading" id="meY-p0-rjk"/>
+                    <constraint firstItem="iE3-31-CWd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="17" id="qzs-nX-4KH"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="PBq-W7-tlb"/>
+                        <exclude reference="meY-p0-rjk"/>
+                        <exclude reference="qzs-nX-4KH"/>
+                        <exclude reference="6gK-K6-9sP"/>
+                        <exclude reference="K17-gi-zfb"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="shopDescription" destination="OgC-jb-oV7" id="29f-Gd-zTY"/>

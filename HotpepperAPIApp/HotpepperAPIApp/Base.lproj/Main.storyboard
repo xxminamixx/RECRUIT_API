@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -53,14 +54,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldy-aO-O6b">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldy-aO-O6b">
                                 <rect key="frame" x="142" y="277" width="90" height="30"/>
                                 <state key="normal" title="ジャンル検索"/>
                                 <connections>
                                     <action selector="genreSearchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sfp-hS-ICF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGY-IW-VQ7">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGY-IW-VQ7">
                                 <rect key="frame" x="120" y="209" width="135" height="30"/>
                                 <state key="normal" title="サービスエリア検索"/>
                                 <connections>
@@ -69,13 +70,17 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ldy-aO-O6b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W3c-wY-Iko"/>
+                            <constraint firstItem="TGY-IW-VQ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nQm-Nb-RqM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9hA-oC-ke2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="429" y="-139"/>
+            <point key="canvasLocation" x="428.5" y="-139.5"/>
         </scene>
         <!--Service Area View Controller-->
         <scene sceneID="ZAH-i2-GFO">
@@ -145,76 +150,136 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OuD-Ta-JgW">
-                                <rect key="frame" x="20" y="129" width="335" height="157"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="お店の名前がここに入ります" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhI-Kw-bQv">
                                 <rect key="frame" x="20" y="85" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kaw-pt-5Ss">
-                                <rect key="frame" x="20" y="302" width="335" height="147"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kaw-pt-5Ss">
+                                <rect key="frame" x="20" y="313" width="335" height="99"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">お店の説明が
 ここに
-入ります。</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+入ります。
+お店の説明
+が</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ジャンル：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otU-QF-gXb">
-                                <rect key="frame" x="20" y="562" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EiR-DH-CFX">
+                                <rect key="frame" x="20" y="120" width="335" height="167"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="営業時間：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmS-E1-0lS">
+                                <rect key="frame" x="20" y="507" width="60" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="営業時間：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmS-E1-0lS">
-                                <rect key="frame" x="20" y="525" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="住所がここに入ります住所がここに入ります住所が" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDk-MK-pa7">
+                                <rect key="frame" x="20" y="479" width="276" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="アクセス：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLE-KM-QwV">
-                                <rect key="frame" x="20" y="484" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="ジャンル：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otU-QF-gXb">
+                                <rect key="frame" x="20" y="567" width="60" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="住所がここに入ります" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDk-MK-pa7">
-                                <rect key="frame" x="103" y="484" width="259" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="ジャンルがここに入りますジャンルがここに入ります" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UD-15-jxY">
+                                <rect key="frame" x="20" y="585" width="288" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="営業時間がここに入ります" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRe-n3-Pim">
-                                <rect key="frame" x="103" y="525" width="259" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="営業時間がここに入ります営業時間がここに入ります" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRe-n3-Pim">
+                                <rect key="frame" x="20" y="524" width="288" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ジャンルがここに入ります" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UD-15-jxY">
-                                <rect key="frame" x="103" y="562" width="259" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="アクセス：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLE-KM-QwV">
+                                <rect key="frame" x="20" y="456" width="60" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TmS-E1-0lS" firstAttribute="top" secondItem="ylR-M4-4e9" secondAttribute="bottom" constant="487" id="0Er-If-fYp"/>
+                            <constraint firstItem="IV7-Cn-f79" firstAttribute="top" secondItem="jDk-MK-pa7" secondAttribute="bottom" constant="157" id="ArC-pL-T2P"/>
+                            <constraint firstItem="2UD-15-jxY" firstAttribute="leading" secondItem="zUi-5F-Em5" secondAttribute="leadingMargin" constant="10" id="BmQ-zH-PSk"/>
+                            <constraint firstItem="XLE-KM-QwV" firstAttribute="leading" secondItem="zUi-5F-Em5" secondAttribute="leadingMargin" constant="10" id="H31-gy-Cm0"/>
+                            <constraint firstItem="IV7-Cn-f79" firstAttribute="top" secondItem="XLE-KM-QwV" secondAttribute="bottom" constant="157" id="Hgj-6X-jhi"/>
+                            <constraint firstItem="TmS-E1-0lS" firstAttribute="leading" secondItem="zUi-5F-Em5" secondAttribute="leadingMargin" constant="10" id="I5k-sB-y5w"/>
+                            <constraint firstItem="nRe-n3-Pim" firstAttribute="top" secondItem="TmS-E1-0lS" secondAttribute="bottom" constant="5" id="JRS-IC-ft9"/>
+                            <constraint firstItem="IV7-Cn-f79" firstAttribute="top" secondItem="TmS-E1-0lS" secondAttribute="bottom" constant="145" id="KC5-Ix-zdu"/>
+                            <constraint firstItem="XLE-KM-QwV" firstAttribute="top" secondItem="Kaw-pt-5Ss" secondAttribute="bottom" constant="10" id="Mvl-5Q-9GQ"/>
+                            <constraint firstItem="jDk-MK-pa7" firstAttribute="leading" secondItem="zUi-5F-Em5" secondAttribute="leadingMargin" constant="10" id="Mw2-wV-RXh"/>
+                            <constraint firstItem="otU-QF-gXb" firstAttribute="leading" secondItem="zUi-5F-Em5" secondAttribute="leadingMargin" constant="10" id="Nv0-PC-gYa"/>
+                            <constraint firstItem="nRe-n3-Pim" firstAttribute="leading" secondItem="zUi-5F-Em5" secondAttribute="leadingMargin" constant="10" id="PAz-Qi-PVD"/>
+                            <constraint firstItem="XLE-KM-QwV" firstAttribute="top" secondItem="Kaw-pt-5Ss" secondAttribute="bottom" constant="20" id="Qkp-C9-1Sb"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="XLE-KM-QwV" secondAttribute="leading" id="RNf-bZ-alR"/>
+                            <constraint firstItem="otU-QF-gXb" firstAttribute="top" secondItem="nRe-n3-Pim" secondAttribute="bottom" constant="20" id="YGz-A0-Tq1"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="EiR-DH-CFX" secondAttribute="leading" id="Yyi-YM-LU7"/>
+                            <constraint firstItem="jDk-MK-pa7" firstAttribute="top" secondItem="ylR-M4-4e9" secondAttribute="bottom" constant="475" id="b3H-Is-GDd"/>
+                            <constraint firstItem="XLE-KM-QwV" firstAttribute="top" secondItem="ylR-M4-4e9" secondAttribute="bottom" constant="475" id="c3h-Ta-13A"/>
+                            <constraint firstItem="2UD-15-jxY" firstAttribute="top" secondItem="otU-QF-gXb" secondAttribute="bottom" constant="5" id="fOR-Z5-gOM"/>
+                            <constraint firstItem="XLE-KM-QwV" firstAttribute="top" secondItem="ylR-M4-4e9" secondAttribute="bottom" constant="458" id="g0n-qR-sNr"/>
+                            <constraint firstItem="TmS-E1-0lS" firstAttribute="top" secondItem="jDk-MK-pa7" secondAttribute="bottom" constant="10" id="hhf-8T-5q2"/>
+                            <constraint firstItem="Kaw-pt-5Ss" firstAttribute="centerY" secondItem="zUi-5F-Em5" secondAttribute="centerY" id="icI-4d-e3d"/>
+                            <constraint firstItem="IV7-Cn-f79" firstAttribute="top" secondItem="XLE-KM-QwV" secondAttribute="bottom" constant="174.5" id="k8N-w5-tL5"/>
+                            <constraint firstItem="EiR-DH-CFX" firstAttribute="centerX" secondItem="zUi-5F-Em5" secondAttribute="centerX" id="k98-VA-bic"/>
+                            <constraint firstItem="otU-QF-gXb" firstAttribute="top" secondItem="nRe-n3-Pim" secondAttribute="bottom" constant="10" id="mh1-Md-ARN"/>
+                            <constraint firstItem="IV7-Cn-f79" firstAttribute="top" secondItem="jDk-MK-pa7" secondAttribute="bottom" constant="157" id="oeY-vZ-XUJ"/>
+                            <constraint firstItem="Kaw-pt-5Ss" firstAttribute="centerX" secondItem="zUi-5F-Em5" secondAttribute="centerX" id="ooI-mq-bhF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jDk-MK-pa7" secondAttribute="trailing" id="pB9-YC-sD4"/>
+                            <constraint firstItem="nRe-n3-Pim" firstAttribute="top" secondItem="TmS-E1-0lS" secondAttribute="bottom" constant="15" id="psx-jX-73c"/>
+                            <constraint firstItem="jDk-MK-pa7" firstAttribute="top" secondItem="XLE-KM-QwV" secondAttribute="bottom" constant="5" id="tqU-0e-8xp"/>
+                            <constraint firstItem="TmS-E1-0lS" firstAttribute="top" secondItem="jDk-MK-pa7" secondAttribute="bottom" constant="20" id="tzE-mX-p4y"/>
+                            <constraint firstItem="EiR-DH-CFX" firstAttribute="top" secondItem="ylR-M4-4e9" secondAttribute="bottom" constant="100" id="ve7-0n-8is"/>
+                            <constraint firstItem="jDk-MK-pa7" firstAttribute="top" secondItem="ylR-M4-4e9" secondAttribute="bottom" constant="475" id="z7Z-0z-vkw"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Yyi-YM-LU7"/>
+                                <exclude reference="k98-VA-bic"/>
+                                <exclude reference="ve7-0n-8is"/>
+                                <exclude reference="Mvl-5Q-9GQ"/>
+                                <exclude reference="RNf-bZ-alR"/>
+                                <exclude reference="c3h-Ta-13A"/>
+                                <exclude reference="g0n-qR-sNr"/>
+                                <exclude reference="b3H-Is-GDd"/>
+                                <exclude reference="pB9-YC-sD4"/>
+                                <exclude reference="z7Z-0z-vkw"/>
+                                <exclude reference="0Er-If-fYp"/>
+                                <exclude reference="hhf-8T-5q2"/>
+                                <exclude reference="psx-jX-73c"/>
+                                <exclude reference="mh1-Md-ARN"/>
+                                <exclude reference="ArC-pL-T2P"/>
+                                <exclude reference="Hgj-6X-jhi"/>
+                                <exclude reference="KC5-Ix-zdu"/>
+                                <exclude reference="k8N-w5-tL5"/>
+                                <exclude reference="oeY-vZ-XUJ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="address" destination="jDk-MK-pa7" id="YzD-pp-0ZS"/>
                         <outlet property="detail" destination="Kaw-pt-5Ss" id="jH1-lZ-czy"/>
                         <outlet property="genre" destination="2UD-15-jxY" id="wNL-cf-OAM"/>
-                        <outlet property="logo" destination="OuD-Ta-JgW" id="sfK-PO-khU"/>
+                        <outlet property="logo" destination="EiR-DH-CFX" id="6Dd-P1-mBZ"/>
                         <outlet property="open" destination="nRe-n3-Pim" id="ZRc-ac-Hug"/>
                         <outlet property="shopname" destination="DhI-Kw-bQv" id="tFB-If-iGH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RVd-qB-oVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2027.5" y="-139.5"/>
+            <point key="canvasLocation" x="2041.5" y="-139.5"/>
         </scene>
     </scenes>
 </document>
