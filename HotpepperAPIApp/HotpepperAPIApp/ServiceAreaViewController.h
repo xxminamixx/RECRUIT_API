@@ -7,6 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+<<<<<<< HEAD
+#import "ServiceAreaEntity.h"
+
+@interface ServiceAreaViewController : UIViewController
+@property (weak, nonatomic) NSMutableArray *areanameholder;
+=======
 
 @protocol tapCellDelegate <NSObject>
 
@@ -17,4 +23,5 @@
 @interface ServiceAreaViewController : UIViewController
 @property (weak, nonatomic) id<tapCellDelegate> tapdelegate;
 
+>>>>>>> homework
 @end

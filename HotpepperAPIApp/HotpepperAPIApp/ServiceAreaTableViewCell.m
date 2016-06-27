@@ -22,7 +22,10 @@
     // Configure the view for the selected state
 }
 
+<<<<<<< HEAD
+=======
 
 
 
+>>>>>>> homework
 @end
