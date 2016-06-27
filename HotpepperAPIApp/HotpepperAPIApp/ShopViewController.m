@@ -58,9 +58,9 @@ numberOfRowsInSection:(NSInteger)section
     ShopTableViewCell *shopcell = [_shopTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
     
     // ラベルに都道府県セット処理
-    ShopEntity *shopEnthity = recieve_shop[indexPath.row];
-    shopcell.shopName.text = shopEnthity.name;
-    shopcell.shopDescription.text = shopEnthity.detail;
+    ShopEntity *shopEntity = recieve_shop[indexPath.row];
+    shopcell.shopName.text = shopEntity.name;
+    shopcell.shopDescription.text = shopEntity.detail;
     return shopcell;
 }
 
@@ -73,7 +73,6 @@ numberOfRowsInSection:(NSInteger)section
 {
     NSLog(@"デリゲードメソッドが呼ばれました");
     recieve_shop = shop;
-    
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.shopTableView reloadData];
     });

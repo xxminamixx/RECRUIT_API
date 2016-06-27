@@ -63,12 +63,13 @@ ServiceAreaEntity *servicearea_entity;
     
 }
 
-/*
+
 - (void) imageRequest:(NSString *)url
 {
     NSURL *imageurl = [NSURL URLWithString:url];
+    [self sendRequest:imageurl];
 }
-*/
+
 
 // 都道府県のリクエストURL作成
 - (void)serviceAreaRequest
