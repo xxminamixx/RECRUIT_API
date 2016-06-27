@@ -10,6 +10,7 @@
 #import "HotpepperAPIFetcher.h"
 #import "ShopTableViewCell.h"
 #import "ShopEntity.h"
+#import "ShopDetailViewController.h"
 
 NSString * const shop_tableviewcell = @"ShopTableViewCell";
 NSMutableArray *recieve_shop;
@@ -69,6 +70,25 @@ numberOfRowsInSection:(NSInteger)section
     return 125;
 }
 
+// セルがタップされたときの処理
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //ここで送るメッセージはstoryboard名前の“Main.storyboard”
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    // 遷移先のViewControllerをStoryBoardをもとに作成
+    //ここで送るメッセージはsroryboard ID
+    ShopDetailViewController *shopDetailView = [storyboard instantiateViewControllerWithIdentifier:@"ShopDetail"];
+    
+    //次画面へ選択したEntityを渡す
+    ShopEntity *serveShopEnity = recieve_shop[indexPath.row];
+    shopDetailView.shopEntity = serveShopEnity;
+    
+    // 画面をPUSHで遷移させる
+    [self.navigationController pushViewController:shopDetailView animated:YES];
+}
+
+
 - (void)getShop:(NSMutableArray *)shop
 {
     NSLog(@"デリゲードメソッドが呼ばれました");
@@ -76,7 +96,6 @@ numberOfRowsInSection:(NSInteger)section
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.shopTableView reloadData];
     });
-
 }
 
 

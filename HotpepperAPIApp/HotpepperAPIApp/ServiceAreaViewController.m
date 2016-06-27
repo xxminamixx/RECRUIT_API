@@ -103,9 +103,6 @@ numberOfRowsInSection:(NSInteger)section
 // セルがタップされたときの処理
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ShopViewController *shopview_controller = [ShopViewController new];
-    
-    
     // 押したセルのラベルを取得
     ServiceAreaEntity *areaEntity = [ServiceAreaEntity new];
     areaEntity = receive_servicearea[indexPath.row];

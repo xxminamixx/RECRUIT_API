@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShopEntity.h"
 
 @interface ShopDetailViewController : UIViewController
-
+@property ShopEntity *shopEntity;
 @end

@@ -9,7 +9,12 @@
 #import "ShopDetailViewController.h"
 
 @interface ShopDetailViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *shopname;
+@property (weak, nonatomic) IBOutlet UIImageView *logo;
+@property (weak, nonatomic) IBOutlet UITextView *detail;
+@property (weak, nonatomic) IBOutlet UILabel *address;
+@property (weak, nonatomic) IBOutlet UILabel *open;
+@property (weak, nonatomic) IBOutlet UILabel *genre;
 @end
 
 @implementation ShopDetailViewController
