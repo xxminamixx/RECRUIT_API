@@ -12,7 +12,6 @@
 #import "HotpepperAPIFetcher.h"
 #import "ShopViewController.h"
 
-
 NSString * const servicearea_tableviewcell = @"ServiceAreaTableViewCell";
 NSMutableArray *receive_servicearea;
 //HotpepperAPIFetcher *areafetcher;
@@ -129,6 +128,7 @@ numberOfRowsInSection:(NSInteger)section
 {
     NSLog(@"デリゲードメソッドが呼ばれました");
     receive_servicearea = servicearea;
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.serviceAreaTableView reloadData];
     });

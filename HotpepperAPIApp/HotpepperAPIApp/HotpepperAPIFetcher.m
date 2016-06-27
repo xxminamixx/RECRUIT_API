@@ -8,31 +8,15 @@
 
 #import "HotpepperAPIFetcher.h"
 #import "ServiceAreaEntity.h"
-<<<<<<< HEAD
-#import "ServiceAreaViewController.h"
-
-// NSString * const APIKey = @"4554e737d0d5ce93";
-=======
 #import "ShopEntity.h"
 
 // NSString * const APIKey = @"4554e737d0d5ce93";
 
->>>>>>> homework
 // 警告を出さない書き方
 // const NSString *str = @"sample"　とすると警告
 NSString * const name = @"name";
 NSString * const code = @"code";
 NSString * const large_area = @"large_service_area";
-<<<<<<< HEAD
-NSString *savecode;
-NSString *savename;
-ServiceAreaEntity *servicearea_entity;
-
-
-@implementation HotpepperAPIFetcher
-
-
-=======
 NSString * const shop = @"shop";
 NSString * const logo = @"logo_image";
 NSString * const address = @"address";
@@ -88,14 +72,10 @@ ServiceAreaEntity *servicearea_entity;
 
 
 // 都道府県のリクエストURL作成
->>>>>>> homework
 - (void)serviceAreaRequest
 {
     //サービスエリアのURL
     NSURL *areaurl = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/service_area/v1/?key=4554e737d0d5ce93"];
-<<<<<<< HEAD
-    
-=======
     is_area_request = YES;
     [self sendRequest:areaurl];
 }
@@ -103,27 +83,12 @@ ServiceAreaEntity *servicearea_entity;
 
 - (void)sendRequest:(NSURL*)requesturl
 {
->>>>>>> homework
     //セッションの作成
     NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession* session = [NSURLSession sessionWithConfiguration:config];
     
     //データの送受信
     NSURLSessionDataTask* areatask =
-<<<<<<< HEAD
-    [session dataTaskWithURL:areaurl
-           completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-              
-               NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
-               parser.delegate = self;
-               [parser parse];
-               
-           }];
-    [areatask resume];
-}
-
-
-=======
     [session dataTaskWithURL:requesturl
            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
               
@@ -138,19 +103,10 @@ ServiceAreaEntity *servicearea_entity;
 
 
 
->>>>>>> homework
 // デリゲートメソッド(解析開始時)
 -(void) parserDidStartDocument:(NSXMLParser *)parser{
     
     NSLog(@"解析開始");
-<<<<<<< HEAD
-    // サービスエリア保存用のメモリ確保
-    _servicearea = [NSMutableArray array];
-    
-    // デフォルトでNOにしておく
-    _is_large_servicearea = NO;
-    
-=======
     if (is_area_request) {
         // サービスエリア保存用のメモリ確保
         _servicearea = [NSMutableArray array];
@@ -159,7 +115,6 @@ ServiceAreaEntity *servicearea_entity;
     if (is_shop_request) {
         _shop = [NSMutableArray array];
     }
->>>>>>> homework
 }
 
 
@@ -171,22 +126,6 @@ didStartElement:(NSString *)elementName
      attributes:(NSDictionary *)attributeDict{
     
     NSLog(@"要素の開始タグを読み込んだ:%@",elementName);
-<<<<<<< HEAD
-    // サービスエリアのタグを発見したらis_large_servicearea のフラグを立てる
-    if ([elementName isEqualToString:large_area]) {
-        _is_large_servicearea = YES;
-    }
-    
-    // ネームタグを見つけたらis_servicearea_code のフラグを立てる
-    if ([elementName isEqualToString:code]) {
-        _is_servicearea_name = YES;
-    }
-    
-    // コードタグを見つけたらis_sesrvicearea_name のフラグを立てる
-    if ([elementName isEqualToString:name]) {
-        _is_servicearea_name = YES;
-    }
-=======
     
     // 都道府県取得処理
     if (is_area_request) {
@@ -225,25 +164,12 @@ didStartElement:(NSString *)elementName
         }
     }
 
->>>>>>> homework
 }
 
 // デリゲートメソッド(タグ以外のテキストを読み込んだ時)
 - (void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
     
     NSLog(@"タグ以外のテキストを読み込んだ:%@", string);
-<<<<<<< HEAD
-    
-    // サービスエリアの中のコードタグだった場合一時的にsavecodeに格納
-    if (!_is_large_servicearea && _is_servicearea_name) {
-        savecode = string;
-    }
-    
-    // サービスエリアの中のネームタグだった場合一時的にsavenameに格納
-    if (!_is_large_servicearea && _is_servicearea_name) {
-        savename = string;
-    }
-=======
     if (is_area_request) {
         // サービスエリアの中のコードタグだった場合一時的にsavecodeに格納
         if (!is_large_servicearea && is_servicearea_code) {
@@ -269,7 +195,6 @@ didStartElement:(NSString *)elementName
         }
     }
     
->>>>>>> homework
 }
 
 // デリゲートメソッド(要素の終了タグを読み込んだ時)
@@ -277,42 +202,6 @@ didStartElement:(NSString *)elementName
     
     NSLog(@"要素の終了タグを読み込んだ:%@",elementName);
     
-<<<<<<< HEAD
-    // large_service_areaの終了タグを見つけたらis_large_serviceareaのフラグを下す
-    if ([elementName isEqualToString:large_area]) {
-        _is_large_servicearea = NO;
-        
-        // ServiceAreaEntityを生成
-        servicearea_entity = [ServiceAreaEntity new];
-        
-        [servicearea_entity setCode:savecode];
-        [servicearea_entity setName:savename];
-        
-        // 配列にcodeとnameの入ったEntityを格納
-        [_servicearea addObject: servicearea_entity];
-        
-        // デバッグ用
-        NSLog(@"コードは%@", servicearea_entity.code);
-        NSLog(@"ネームは%@", servicearea_entity.name);
-        
-        /*
-        ServiceAreaEntity *test = [ServiceAreaEntity new];
-        test = _servicearea[0];
-        NSLog(@"配列をエンティティに戻す%@", test.name);
-        */
-    }
-    
-    // codeの終了タグを見つけたらis_servicearea_codeのフラグを下す
-    if ([elementName isEqualToString:code]) {
-        _is_servicearea_name = NO;
-    }
-    
-    // nameの終了タグを見つけたらis_servicearea_nameのフラグを下す
-    if ([elementName isEqualToString:name]) {
-        _is_servicearea_name = NO;
-    }
-    
-=======
     if (is_area_request) {
         // large_service_areaの終了タグを見つけたらis_large_serviceareaのフラグを下す
         if ([elementName isEqualToString:large_area]) {
@@ -367,18 +256,11 @@ didStartElement:(NSString *)elementName
             [_shop addObject:shopEntity];
         }
     }
->>>>>>> homework
 }
 
 // デリゲートメソッド(解析終了時)
 - (void) parserDidEndDocument:(NSXMLParser *)parser{
     NSLog(@"解析終了");
-<<<<<<< HEAD
-    
-    // デリゲートメソッドの呼び出し
-    [self.delegate getServiceArea:_servicearea];
-
-=======
     if (is_area_request) {
         // デリゲートメソッドの呼び出し
         [self.areadelegate getServiceArea:_servicearea];
@@ -389,7 +271,6 @@ didStartElement:(NSString *)elementName
         [self.shopdelegate getShop:_shop];
         is_shop_request = NO;
     }
->>>>>>> homework
 }
 
 @end

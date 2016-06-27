@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-//
-=======
 
->>>>>>> homework
 //  HotpepperAPIAppUITests.m
 //  HotpepperAPIAppUITests
 //
