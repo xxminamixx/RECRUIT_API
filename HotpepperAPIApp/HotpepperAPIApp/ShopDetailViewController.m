@@ -7,6 +7,7 @@
 //
 
 #import "ShopDetailViewController.h"
+#import "FavoriteShopManager.h"
 
 @interface ShopDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *shopname;
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *address;
 @property (weak, nonatomic) IBOutlet UILabel *open;
 @property (weak, nonatomic) IBOutlet UILabel *genre;
+- (IBAction)favoriteAction:(id)sender;
 @end
 
 @implementation ShopDetailViewController
@@ -49,4 +51,9 @@
 }
 */
 
+- (IBAction)favoriteAction:(id)sender {
+    FavoriteShopManager *favoriteManager = [FavoriteShopManager new];
+    favoriteManager.shopEntity = _shopEntity;
+    
+}
 @end

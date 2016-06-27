@@ -10,11 +10,13 @@
 		E90158711D19124500DF358C /* ServiceAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90158701D19124500DF358C /* ServiceAreaViewController.m */; };
 		E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */; };
 		E90158761D1915CB00DF358C /* ServiceAreaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */; };
-		E901587C1D1936C000DF358C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E901587B1D1936C000DF358C /* libsqlite3.tbd */; };
 		E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */; };
 		E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */; };
 		E97747801D20CCD7002ABD77 /* ShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */; };
 		E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E97747821D2103BA002ABD77 /* FavoriteShopManager.m */; };
+		E97747991D211E4D002ABD77 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E97747971D211E4D002ABD77 /* Model.xcdatamodeld */; };
+		E97747AA1D212757002ABD77 /* Entity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E97747A71D212757002ABD77 /* Entity+CoreDataProperties.m */; };
+		E97747AB1D212757002ABD77 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = E97747A91D212757002ABD77 /* Entity.m */; };
 		E99DDF321D18E3E6008374AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF311D18E3E6008374AD /* main.m */; };
 		E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF341D18E3E6008374AD /* AppDelegate.m */; };
 		E99DDF381D18E3E6008374AD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF371D18E3E6008374AD /* HomeViewController.m */; };
@@ -44,7 +46,6 @@
 		E90158721D1915CB00DF358C /* ServiceAreaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAreaTableViewCell.h; sourceTree = "<group>"; };
 		E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaTableViewCell.m; sourceTree = "<group>"; };
 		E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceAreaTableViewCell.xib; sourceTree = "<group>"; };
-		E901587B1D1936C000DF358C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E901587D1D193C2400DF358C /* HotpepperAPIFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotpepperAPIFetcher.h; sourceTree = "<group>"; };
 		E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotpepperAPIFetcher.m; sourceTree = "<group>"; };
 		E956B9821D1A53A20028FA1B /* ServiceAreaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAreaEntity.h; sourceTree = "<group>"; };
@@ -53,7 +54,11 @@
 		E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopDetailViewController.m; sourceTree = "<group>"; };
 		E97747811D2103BA002ABD77 /* FavoriteShopManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteShopManager.h; sourceTree = "<group>"; };
 		E97747821D2103BA002ABD77 /* FavoriteShopManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteShopManager.m; sourceTree = "<group>"; };
-		E97747851D211025002ABD77 /* FavoriteShop.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = FavoriteShop.sqlite; sourceTree = "<group>"; };
+		E97747981D211E4D002ABD77 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E97747A61D212757002ABD77 /* Entity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Entity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E97747A71D212757002ABD77 /* Entity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Entity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E97747A81D212757002ABD77 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		E97747A91D212757002ABD77 /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
 		E99DDF2D1D18E3E6008374AD /* HotpepperAPIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotpepperAPIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99DDF311D18E3E6008374AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E99DDF331D18E3E6008374AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E901587C1D1936C000DF358C /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +102,10 @@
 		E956B9871D1A98050028FA1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E97747A61D212757002ABD77 /* Entity+CoreDataProperties.h */,
+				E97747A71D212757002ABD77 /* Entity+CoreDataProperties.m */,
+				E97747A81D212757002ABD77 /* Entity.h */,
+				E97747A91D212757002ABD77 /* Entity.m */,
 				E956B9821D1A53A20028FA1B /* ServiceAreaEntity.h */,
 				E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */,
 				E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */,
@@ -144,8 +152,7 @@
 		E956B98A1D1A9A680028FA1B /* Resourcese */ = {
 			isa = PBXGroup;
 			children = (
-				E97747851D211025002ABD77 /* FavoriteShop.sqlite */,
-				E901587B1D1936C000DF358C /* libsqlite3.tbd */,
+				E97747971D211E4D002ABD77 /* Model.xcdatamodeld */,
 			);
 			name = Resourcese;
 			sourceTree = "<group>";
@@ -303,17 +310,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E97747AB1D212757002ABD77 /* Entity.m in Sources */,
 				E99DDF381D18E3E6008374AD /* HomeViewController.m in Sources */,
 				E97747801D20CCD7002ABD77 /* ShopDetailViewController.m in Sources */,
 				E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */,
 				E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */,
 				E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */,
 				E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */,
+				E97747AA1D212757002ABD77 /* Entity+CoreDataProperties.m in Sources */,
 				E99DDF321D18E3E6008374AD /* main.m in Sources */,
 				E90158711D19124500DF358C /* ServiceAreaViewController.m in Sources */,
 				E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */,
 				E9D38E9E1D1D296100F8FA0D /* ShopViewController.m in Sources */,
 				E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */,
+				E97747991D211E4D002ABD77 /* Model.xcdatamodeld in Sources */,
 				E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +535,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E97747971D211E4D002ABD77 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E97747981D211E4D002ABD77 /* Model.xcdatamodel */,
+			);
+			currentVersion = E97747981D211E4D002ABD77 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E99DDF251D18E3E6008374AD /* Project object */;
 }

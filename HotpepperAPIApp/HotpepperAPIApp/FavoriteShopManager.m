@@ -7,7 +7,17 @@
 //
 
 #import "FavoriteShopManager.h"
+#import "Entity+CoreDataProperties.h"
 
 @implementation FavoriteShopManager
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+    
+    }
+    return self;
+}
 
 @end
