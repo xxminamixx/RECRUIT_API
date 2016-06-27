@@ -12,7 +12,9 @@
 @interface FavoriteShopManager : NSObject
 
 @property ShopEntity *shopEntity;
+/*
 @property (nonatomic, strong) NSEntityDescription *entityDescFavoShop;
 @property (nonatomic, strong) NSManagedObjectContext *moContest;
+ */
 
 @end
