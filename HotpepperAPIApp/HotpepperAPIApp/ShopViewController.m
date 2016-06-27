@@ -59,10 +59,8 @@ numberOfRowsInSection:(NSInteger)section
     
     // ラベルに都道府県セット処理
     ShopEntity *shopEnthity = recieve_shop[indexPath.row];
-    
-    
     shopcell.shopName.text = shopEnthity.name;
-
+    shopcell.shopDescription.text = shopEnthity.detail;
     return shopcell;
 }
 

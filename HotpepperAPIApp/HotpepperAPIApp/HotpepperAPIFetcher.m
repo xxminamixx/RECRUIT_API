@@ -27,6 +27,7 @@ NSString * const detail = @"shop_detail_memo";
 NSString *savecode;
 NSString *savename;
 NSString *savelogo;
+NSString *savedetail;
 NSData *logo_image;
 
 BOOL is_large_servicearea = NO;
@@ -36,6 +37,7 @@ BOOL is_servicearea_name = NO;
 BOOL is_shop = NO;
 BOOL is_shop_name = NO;
 BOOL is_logo = NO;
+BOOL is_detail = NO;
 
 BOOL is_area_request = NO;
 BOOL is_shop_request = NO;
@@ -155,7 +157,12 @@ didStartElement:(NSString *)elementName
         if ([elementName isEqualToString:logo]) {
             is_logo = YES;
         }
+        
+        if ([elementName isEqualToString:detail]) {
+            is_detail = YES;
+        }
     }
+
 }
 
 // デリゲートメソッド(タグ以外のテキストを読み込んだ時)
@@ -180,7 +187,10 @@ didStartElement:(NSString *)elementName
         
         if (is_logo) {
             savelogo = string;
-            
+        }
+        
+        if (is_detail) {
+            savedetail = string;
         }
     }
     
@@ -231,10 +241,16 @@ didStartElement:(NSString *)elementName
             is_logo = NO;
         }
         
+        if ([elementName isEqualToString:detail]) {
+            is_detail = NO;
+        }
+        
+        // shopタグの終わりを見つけた時にエンティティを配列に格納
         if ([elementName isEqualToString:shop]) {
             ShopEntity *shopEntity = [ShopEntity new];
             [shopEntity setName:savename];
             [shopEntity setLogo:savelogo];
+            [shopEntity setDetail:savedetail];
             
             [_shop addObject:shopEntity];
         }

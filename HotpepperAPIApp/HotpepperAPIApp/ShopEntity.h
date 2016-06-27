@@ -15,6 +15,6 @@
 @property (nonatomic) NSString *address;
 @property (nonatomic) NSString *genre;
 @property (nonatomic) NSString *food;
-@property (nonatomic) NSString *detaile;
+@property (nonatomic) NSString *detail;
 
 @end
