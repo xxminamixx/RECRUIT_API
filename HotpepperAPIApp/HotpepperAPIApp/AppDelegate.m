@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FavoriteShopManager.h"
 
 @interface AppDelegate ()
 

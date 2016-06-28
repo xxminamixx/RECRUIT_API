@@ -7,7 +7,7 @@
 //
 
 #import "FavoriteShopManager.h"
-#import "Entity.h"
+#import "FavoriteShopEntity.h"
 #import "AppDelegate.h"
 
 @implementation FavoriteShopManager
@@ -34,7 +34,7 @@
 {
     //　データベース格納処理
     // Eventエンティティの新規インスタンスを作成して設定する
-     Entity *favoriteEntity = (Entity *)[NSEntityDescription insertNewObjectForEntityForName:@"Entity" inManagedObjectContext:_managedObjectContext];
+     FavoriteShopEntity *favoriteEntity = (FavoriteShopEntity *)[NSEntityDescription insertNewObjectForEntityForName:@"FavoriteShopEntity" inManagedObjectContext:_managedObjectContext];
     
     // データベース格納処理
     [favoriteEntity setName:_shopEntity.name];

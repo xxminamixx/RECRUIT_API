@@ -11,12 +11,12 @@
 		E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */; };
 		E90158761D1915CB00DF358C /* ServiceAreaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */; };
 		E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */; };
+		E90A553D1D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E90A553A1D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.m */; };
+		E90A553E1D227D7200576C7C /* FavoriteShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E90A553C1D227D7200576C7C /* FavoriteShopEntity.m */; };
 		E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */; };
 		E97747801D20CCD7002ABD77 /* ShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */; };
 		E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E97747821D2103BA002ABD77 /* FavoriteShopManager.m */; };
 		E97747991D211E4D002ABD77 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E97747971D211E4D002ABD77 /* Model.xcdatamodeld */; };
-		E97747AA1D212757002ABD77 /* Entity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E97747A71D212757002ABD77 /* Entity+CoreDataProperties.m */; };
-		E97747AB1D212757002ABD77 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = E97747A91D212757002ABD77 /* Entity.m */; };
 		E99DDF321D18E3E6008374AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF311D18E3E6008374AD /* main.m */; };
 		E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF341D18E3E6008374AD /* AppDelegate.m */; };
 		E99DDF381D18E3E6008374AD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF371D18E3E6008374AD /* HomeViewController.m */; };
@@ -48,6 +48,10 @@
 		E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceAreaTableViewCell.xib; sourceTree = "<group>"; };
 		E901587D1D193C2400DF358C /* HotpepperAPIFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotpepperAPIFetcher.h; sourceTree = "<group>"; };
 		E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotpepperAPIFetcher.m; sourceTree = "<group>"; };
+		E90A55391D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FavoriteShopEntity+CoreDataProperties.h"; path = "../FavoriteShopEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E90A553A1D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FavoriteShopEntity+CoreDataProperties.m"; path = "../FavoriteShopEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E90A553B1D227D7200576C7C /* FavoriteShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteShopEntity.h; path = ../FavoriteShopEntity.h; sourceTree = "<group>"; };
+		E90A553C1D227D7200576C7C /* FavoriteShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteShopEntity.m; path = ../FavoriteShopEntity.m; sourceTree = "<group>"; };
 		E956B9821D1A53A20028FA1B /* ServiceAreaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAreaEntity.h; sourceTree = "<group>"; };
 		E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaEntity.m; sourceTree = "<group>"; };
 		E977477E1D20CCD7002ABD77 /* ShopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopDetailViewController.h; sourceTree = "<group>"; };
@@ -55,10 +59,6 @@
 		E97747811D2103BA002ABD77 /* FavoriteShopManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteShopManager.h; sourceTree = "<group>"; };
 		E97747821D2103BA002ABD77 /* FavoriteShopManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteShopManager.m; sourceTree = "<group>"; };
 		E97747981D211E4D002ABD77 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		E97747A61D212757002ABD77 /* Entity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Entity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		E97747A71D212757002ABD77 /* Entity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Entity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		E97747A81D212757002ABD77 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
-		E97747A91D212757002ABD77 /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
 		E99DDF2D1D18E3E6008374AD /* HotpepperAPIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotpepperAPIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99DDF311D18E3E6008374AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E99DDF331D18E3E6008374AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,10 +102,10 @@
 		E956B9871D1A98050028FA1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E97747A61D212757002ABD77 /* Entity+CoreDataProperties.h */,
-				E97747A71D212757002ABD77 /* Entity+CoreDataProperties.m */,
-				E97747A81D212757002ABD77 /* Entity.h */,
-				E97747A91D212757002ABD77 /* Entity.m */,
+				E90A55391D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.h */,
+				E90A553A1D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.m */,
+				E90A553B1D227D7200576C7C /* FavoriteShopEntity.h */,
+				E90A553C1D227D7200576C7C /* FavoriteShopEntity.m */,
 				E956B9821D1A53A20028FA1B /* ServiceAreaEntity.h */,
 				E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */,
 				E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */,
@@ -310,14 +310,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E97747AB1D212757002ABD77 /* Entity.m in Sources */,
 				E99DDF381D18E3E6008374AD /* HomeViewController.m in Sources */,
+				E90A553E1D227D7200576C7C /* FavoriteShopEntity.m in Sources */,
 				E97747801D20CCD7002ABD77 /* ShopDetailViewController.m in Sources */,
+				E90A553D1D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.m in Sources */,
 				E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */,
 				E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */,
 				E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */,
 				E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */,
-				E97747AA1D212757002ABD77 /* Entity+CoreDataProperties.m in Sources */,
 				E99DDF321D18E3E6008374AD /* main.m in Sources */,
 				E90158711D19124500DF358C /* ServiceAreaViewController.m in Sources */,
 				E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */,
