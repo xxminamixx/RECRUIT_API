@@ -52,8 +52,8 @@
 */
 
 - (IBAction)favoriteAction:(id)sender {
+    // 詳細表示しているお店のEntityをManagerに渡す
     FavoriteShopManager *favoriteManager = [FavoriteShopManager new];
-    favoriteManager.shopEntity = _shopEntity;
-    
+    [favoriteManager getFavoriteShop:_shopEntity];
 }
 @end

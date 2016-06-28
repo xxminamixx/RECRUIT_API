@@ -8,13 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "ShopEntity.h"
+#import <CoreData/CoreData.h>
 
 @interface FavoriteShopManager : NSObject
 
 @property ShopEntity *shopEntity;
-/*
-@property (nonatomic, strong) NSEntityDescription *entityDescFavoShop;
-@property (nonatomic, strong) NSManagedObjectContext *moContest;
- */
+
+- (void)getFavoriteShop:(ShopEntity *)shopEntity; // お気に入りのEntityを受け取るメソッド
+
+@property (nonatomic, retain) NSMutableArray *eventsArray;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @end
