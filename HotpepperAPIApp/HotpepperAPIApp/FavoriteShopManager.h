@@ -7,15 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ShopEntity.h"
 #import <CoreData/CoreData.h>
+#import "ShopEntity.h"
+#import "FavoriteShopEntity.h"
+
+@protocol FavoriteDelegate <NSObject>
+
+- (void)getFavorite:(NSMutableArray *)favoriteShop;
+
+@end
 
 @interface FavoriteShopManager : NSObject
 
 @property ShopEntity *shopEntity;
-
 - (void)getFavoriteShop:(ShopEntity *)shopEntity; // お気に入りのEntityを受け取るメソッド
 
+- (void)setFavorite:(NSManagedObjectContext *)favoriteObjectContext;
+@property (nonatomic, weak) id<FavoriteDelegate> favoriteDelegate;
 @property (nonatomic, strong) NSEntityDescription *entityDescModel;
 @property (nonatomic, strong) NSMutableArray *eventsArray;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;

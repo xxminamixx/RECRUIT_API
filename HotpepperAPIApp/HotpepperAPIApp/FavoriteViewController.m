@@ -7,8 +7,16 @@
 //
 
 #import "FavoriteViewController.h"
+#import "ShopTableViewCell.h"
+#import "ShopEntity.h"
+#import "ShopDetailViewController.h"
+#import "FavoriteShopManager.h"
+
+NSString * const shop_tableviewcell = @"ShopTableViewCell";
+NSMutableArray *recieve_shop;
 
 @interface FavoriteViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *favoriteTableView;
 
 @end
 
@@ -16,7 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    _favoriteTableView.delegate = self;
+    _favoriteTableView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +34,46 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger)tableView:(UITableView *)tableView
+numberOfRowsInSection:(NSInteger)section
+{
+    //セクションに含まれるセルの数を返す
+    return recieve_shop.count;
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ShopTableViewCell *shopcell = [_favoriteTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
+    
+    // ラベルに都道府県セット処理
+    ShopEntity *shopEntity = recieve_shop[indexPath.row];
+    shopcell.shopName.text = shopEntity.name;
+    shopcell.shopDescription.text = shopEntity.detail;
+    return shopcell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 125;
+}
+
+// セルがタップされたときの処理
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //ここで送るメッセージはstoryboard名前の“Main.storyboard”
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    // 遷移先のViewControllerをStoryBoardをもとに作成
+    //ここで送るメッセージはsroryboard ID
+    ShopDetailViewController *shopDetailView = [storyboard instantiateViewControllerWithIdentifier:@"ShopDetail"];
+    
+    //次画面へ選択したEntityを渡す
+    ShopEntity *serveShopEnity = recieve_shop[indexPath.row];
+    shopDetailView.shopEntity = serveShopEnity;
+    
+    // 画面をPUSHで遷移させる
+    [self.navigationController pushViewController:shopDetailView animated:YES];}
+
 
 @end

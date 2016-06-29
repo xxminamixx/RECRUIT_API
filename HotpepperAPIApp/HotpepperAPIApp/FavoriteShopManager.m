@@ -9,6 +9,9 @@
 #import "FavoriteShopManager.h"
 #import "FavoriteShopEntity.h"
 #import "AppDelegate.h"
+#import "ShopEntity.h"
+
+NSString * const favoriteEntity = @"FavoriteShopEntity";
 
 @implementation FavoriteShopManager
 
@@ -23,15 +26,18 @@
 
 - (void)getFavoriteShop:(ShopEntity *)shopEntity
 {
+    
     // コントローラーからお気に入りのお店Entity受け取り処理
     _shopEntity = shopEntity;
     
     //保存したプロパティを保存処理に引き渡す
     [self saveEntity: _shopEntity];
+     
 }
 
 - (void)saveEntity:(ShopEntity *)shopEntity
 {
+    
     //　データベース格納処理
     NSError *error = nil;
     NSURL *modelPath = [[NSBundle mainBundle] URLForResource: @"Model" withExtension:@"momd"];
@@ -53,7 +59,7 @@
     
     self.managedObjectContext =[[NSManagedObjectContext alloc] init];
     [self.managedObjectContext setPersistentStoreCoordinator: pStoreCondinator];
-    self.entityDescModel = [NSEntityDescription entityForName:@"FavoriteShopEntity" inManagedObjectContext:self.managedObjectContext];
+    self.entityDescModel = [NSEntityDescription entityForName:favoriteEntity inManagedObjectContext:self.managedObjectContext];
     
     
     // Eventエンティティの新規インスタンスを作成して設定する
@@ -74,8 +80,23 @@
     NSLog(@"%@", favoriteEntity.detail);
     NSLog(@"%@", favoriteEntity.address);
     NSLog(@"%@", favoriteEntity.open);
-    NSLog(@"%@", favoriteEntity.genre);    
+    NSLog(@"%@", favoriteEntity.genre);
+     
+
 }
+
+// デリゲートメソッドに配列を引き渡す
+- (void)setFavorite:(NSManagedObjectContext *)favoriteObjectContext
+{
+    /*
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:favoriteEntity];
+    NSError *error= nil;
+    NSMutableArray *favoriteShop = [favoriteObjectContext executeRequest:request error:&error];
+    [self.favoriteDelegate getFavoriteContext: favoriteShop];
+     */
+}
+
+
 
 
 @end
