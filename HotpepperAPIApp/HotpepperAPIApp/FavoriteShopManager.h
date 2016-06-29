@@ -16,7 +16,10 @@
 
 - (void)getFavoriteShop:(ShopEntity *)shopEntity; // お気に入りのEntityを受け取るメソッド
 
-@property (nonatomic, retain) NSMutableArray *eventsArray;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSEntityDescription *entityDescModel;
+@property (nonatomic, strong) NSMutableArray *eventsArray;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSMutableDictionary *currentRecord;
+@property (nonatomic, strong) NSMutableString *currentString;
 
 @end

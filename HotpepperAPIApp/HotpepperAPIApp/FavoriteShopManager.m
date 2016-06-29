@@ -33,9 +33,33 @@
 - (void)saveEntity:(ShopEntity *)shopEntity
 {
     //　データベース格納処理
-    // Eventエンティティの新規インスタンスを作成して設定する
-     FavoriteShopEntity *favoriteEntity = (FavoriteShopEntity *)[NSEntityDescription insertNewObjectForEntityForName:@"FavoriteShopEntity" inManagedObjectContext:_managedObjectContext];
+    NSError *error = nil;
+    NSURL *modelPath = [[NSBundle mainBundle] URLForResource: @"Model" withExtension:@"momd"];
+    NSURL *modelURL = [NSURL fileURLWithPath: [modelPath path]];
+    NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL: modelURL];
+    NSPersistentStoreCoordinator *pStoreCondinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: model];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSURL *storeURL = [fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
+    storeURL = [storeURL URLByAppendingPathComponent:@"Model.sqlite"];
+    NSPersistentStore *pStore = [pStoreCondinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                               configuration:nil
+                                                                         URL:storeURL
+                                                                     options:nil
+                                                                       error:&error];
     
+    if (pStore == nil) {
+        NSLog(@"Error Description: %@", [error userInfo]);
+    }
+    
+    self.managedObjectContext =[[NSManagedObjectContext alloc] init];
+    [self.managedObjectContext setPersistentStoreCoordinator: pStoreCondinator];
+    self.entityDescModel = [NSEntityDescription entityForName:@"FavoriteShopEntity" inManagedObjectContext:self.managedObjectContext];
+    
+    
+    // Eventエンティティの新規インスタンスを作成して設定する
+     FavoriteShopEntity *favoriteEntity = [[FavoriteShopEntity alloc] initWithEntity: self.entityDescModel
+                                                      insertIntoManagedObjectContext:self.managedObjectContext];
+   
     // データベース格納処理
     [favoriteEntity setName:_shopEntity.name];
     [favoriteEntity setLogo:_shopEntity.logo];
@@ -43,6 +67,14 @@
     [favoriteEntity setAddress:_shopEntity.address];
     [favoriteEntity setOpen:_shopEntity.open];
     [favoriteEntity setGenre:_shopEntity.genre];
+    
+    // デバッグ用
+    NSLog(@"%@", favoriteEntity.name);
+    NSLog(@"%@", favoriteEntity.logo);
+    NSLog(@"%@", favoriteEntity.detail);
+    NSLog(@"%@", favoriteEntity.address);
+    NSLog(@"%@", favoriteEntity.open);
+    NSLog(@"%@", favoriteEntity.genre);    
 }
 
 
