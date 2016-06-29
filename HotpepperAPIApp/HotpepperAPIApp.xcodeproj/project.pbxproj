@@ -13,6 +13,7 @@
 		E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */; };
 		E90A553D1D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E90A553A1D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.m */; };
 		E90A553E1D227D7200576C7C /* FavoriteShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E90A553C1D227D7200576C7C /* FavoriteShopEntity.m */; };
+		E9566C1A1D2363D200DE0556 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9566C191D2363D200DE0556 /* FavoriteViewController.m */; };
 		E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */; };
 		E97747801D20CCD7002ABD77 /* ShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */; };
 		E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E97747821D2103BA002ABD77 /* FavoriteShopManager.m */; };
@@ -52,6 +53,8 @@
 		E90A553A1D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FavoriteShopEntity+CoreDataProperties.m"; path = "../FavoriteShopEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
 		E90A553B1D227D7200576C7C /* FavoriteShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteShopEntity.h; path = ../FavoriteShopEntity.h; sourceTree = "<group>"; };
 		E90A553C1D227D7200576C7C /* FavoriteShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteShopEntity.m; path = ../FavoriteShopEntity.m; sourceTree = "<group>"; };
+		E9566C181D2363D200DE0556 /* FavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
+		E9566C191D2363D200DE0556 /* FavoriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
 		E956B9821D1A53A20028FA1B /* ServiceAreaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAreaEntity.h; sourceTree = "<group>"; };
 		E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaEntity.m; sourceTree = "<group>"; };
 		E977477E1D20CCD7002ABD77 /* ShopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopDetailViewController.h; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				E9D38E9D1D1D296100F8FA0D /* ShopViewController.m */,
 				E977477E1D20CCD7002ABD77 /* ShopDetailViewController.h */,
 				E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */,
+				E9566C181D2363D200DE0556 /* FavoriteViewController.h */,
+				E9566C191D2363D200DE0556 /* FavoriteViewController.m */,
 				E9A180AB1D1F628500D64FC4 /* ShopTableViewCell.h */,
 				E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */,
 				E90158721D1915CB00DF358C /* ServiceAreaTableViewCell.h */,
@@ -312,6 +317,7 @@
 			files = (
 				E99DDF381D18E3E6008374AD /* HomeViewController.m in Sources */,
 				E90A553E1D227D7200576C7C /* FavoriteShopEntity.m in Sources */,
+				E9566C1A1D2363D200DE0556 /* FavoriteViewController.m in Sources */,
 				E97747801D20CCD7002ABD77 /* ShopDetailViewController.m in Sources */,
 				E90A553D1D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.m in Sources */,
 				E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */,
