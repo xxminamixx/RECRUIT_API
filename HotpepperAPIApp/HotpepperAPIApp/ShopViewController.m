@@ -62,6 +62,7 @@ numberOfRowsInSection:(NSInteger)section
     ShopEntity *shopEntity = recieve_shop[indexPath.row];
     shopcell.shopName.text = shopEntity.name;
     shopcell.shopDescription.text = shopEntity.detail;
+    [shopcell setShopLogoWithURL:shopEntity.logo];
     return shopcell;
 }
 

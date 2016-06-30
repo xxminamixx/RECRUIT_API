@@ -7,6 +7,7 @@
 //
 
 #import "ShopTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation ShopTableViewCell
 
@@ -19,6 +20,10 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setShopLogoWithURL:(NSString*)url {
+    [self.shopLogo sd_setImageWithURL:[NSURL URLWithString:url]];
 }
 
 @end

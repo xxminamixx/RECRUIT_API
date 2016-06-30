@@ -15,28 +15,41 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="124.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtc-jX-9D6">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtc-jX-9D6">
                         <rect key="frame" x="8" y="0.0" width="304" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="wvP-lY-8GL"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iE3-31-CWd">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iE3-31-CWd">
                         <rect key="frame" x="0.0" y="25" width="160" height="99"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.03014565537" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="99" id="ZhF-L5-hKr"/>
+                            <constraint firstAttribute="width" constant="160" id="kXZ-KB-l0a"/>
+                        </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="テスト用のテキスト" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OgC-jb-oV7">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="テスト用のテキスト" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OgC-jb-oV7">
                         <rect key="frame" x="168" y="25" width="152" height="99"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASQ-Oh-rmt">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASQ-Oh-rmt">
                         <rect key="frame" x="282" y="0.0" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="CMR-c0-dWM"/>
+                            <constraint firstAttribute="width" constant="30" id="Li4-6h-9rw"/>
+                        </constraints>
                         <state key="normal" title="★"/>
                     </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="OgC-jb-oV7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="17" id="6gK-K6-9sP"/>
+                    <constraint firstAttribute="bottom" secondItem="OgC-jb-oV7" secondAttribute="bottom" constant="0.5" id="F8H-Zs-oQM"/>
                     <constraint firstItem="OgC-jb-oV7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="160" id="G98-fS-s2q"/>
                     <constraint firstItem="OgC-jb-oV7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="160" id="K17-gi-zfb"/>
                     <constraint firstAttribute="leadingMargin" secondItem="gtc-jX-9D6" secondAttribute="leading" id="MBw-Ad-en8"/>
@@ -44,23 +57,32 @@
                     <constraint firstAttribute="trailingMargin" secondItem="OgC-jb-oV7" secondAttribute="trailing" constant="-8" id="OSb-A2-SJ5"/>
                     <constraint firstItem="ASQ-Oh-rmt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="258" id="OXD-sp-udQ"/>
                     <constraint firstAttribute="bottomMargin" secondItem="gtc-jX-9D6" secondAttribute="bottom" constant="95.5" id="PBq-W7-tlb"/>
+                    <constraint firstItem="OgC-jb-oV7" firstAttribute="leading" secondItem="iE3-31-CWd" secondAttribute="trailing" constant="8" id="QVk-8Z-IQO"/>
                     <constraint firstAttribute="trailingMargin" secondItem="gtc-jX-9D6" secondAttribute="trailing" id="SIu-LR-oyq"/>
                     <constraint firstAttribute="trailingMargin" secondItem="iE3-31-CWd" secondAttribute="trailing" constant="152" id="SV9-5t-10G"/>
                     <constraint firstItem="ASQ-Oh-rmt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="274" id="Ud0-6Z-GJh"/>
+                    <constraint firstItem="ASQ-Oh-rmt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="UkN-se-Y1Q"/>
+                    <constraint firstAttribute="bottom" secondItem="iE3-31-CWd" secondAttribute="bottom" constant="0.5" id="X6m-A4-GjV"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ASQ-Oh-rmt" secondAttribute="trailing" id="hkb-uR-MUc"/>
                     <constraint firstItem="OgC-jb-oV7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="17" id="iF0-9T-ELL"/>
                     <constraint firstAttribute="leadingMargin" secondItem="gtc-jX-9D6" secondAttribute="leading" id="meY-p0-rjk"/>
+                    <constraint firstItem="iE3-31-CWd" firstAttribute="top" secondItem="gtc-jX-9D6" secondAttribute="bottom" constant="4" id="o5K-ws-MLL"/>
                     <constraint firstItem="iE3-31-CWd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="17" id="qzs-nX-4KH"/>
+                    <constraint firstItem="iE3-31-CWd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="we3-Oc-76k"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ASQ-Oh-rmt" secondAttribute="trailing" id="xw9-Ud-Anb"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="PBq-W7-tlb"/>
                         <exclude reference="meY-p0-rjk"/>
+                        <exclude reference="MEl-xO-ibl"/>
+                        <exclude reference="SV9-5t-10G"/>
                         <exclude reference="qzs-nX-4KH"/>
                         <exclude reference="6gK-K6-9sP"/>
+                        <exclude reference="G98-fS-s2q"/>
                         <exclude reference="K17-gi-zfb"/>
                         <exclude reference="OXD-sp-udQ"/>
+                        <exclude reference="Ud0-6Z-GJh"/>
                         <exclude reference="xw9-Ud-Anb"/>
                     </mask>
                 </variation>
