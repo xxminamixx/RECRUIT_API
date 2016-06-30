@@ -11,7 +11,7 @@
 #import "AppDelegate.h"
 #import "ShopEntity.h"
 
-NSString * const favoriteEntity = @"FavoriteShopEntity";
+NSString * const kFavoriteEntity = @"FavoriteShopEntity";
 
 @implementation FavoriteShopManager
 
@@ -35,9 +35,9 @@ NSString * const favoriteEntity = @"FavoriteShopEntity";
      
 }
 
-- (void)saveEntity:(ShopEntity *)shopEntity
+- (void)preparetionEnitty
 {
-    
+    /*
     //　データベース格納処理
     NSError *error = nil;
     NSURL *modelPath = [[NSBundle mainBundle] URLForResource: @"Model" withExtension:@"momd"];
@@ -60,11 +60,16 @@ NSString * const favoriteEntity = @"FavoriteShopEntity";
     self.managedObjectContext =[[NSManagedObjectContext alloc] init];
     [self.managedObjectContext setPersistentStoreCoordinator: pStoreCondinator];
     self.entityDescModel = [NSEntityDescription entityForName:favoriteEntity inManagedObjectContext:self.managedObjectContext];
-    
+     */
+}
+
+- (void)saveEntity:(ShopEntity *)shopEntity
+{
+    [self preparetionEnitty];
     
     // Eventエンティティの新規インスタンスを作成して設定する
-     FavoriteShopEntity *favoriteEntity = [[FavoriteShopEntity alloc] initWithEntity: self.entityDescModel
-                                                      insertIntoManagedObjectContext:self.managedObjectContext];
+    FavoriteShopEntity *favoriteEntity = (FavoriteShopEntity *)[NSEntityDescription insertNewObjectForEntityForName:kFavoriteEntity
+                                                                                inManagedObjectContext:self.managedObjectContext];
    
     // データベース格納処理
     [favoriteEntity setName:_shopEntity.name];
@@ -74,18 +79,15 @@ NSString * const favoriteEntity = @"FavoriteShopEntity";
     [favoriteEntity setOpen:_shopEntity.open];
     [favoriteEntity setGenre:_shopEntity.genre];
     
-    // setFavoriteにcontextを渡す
-    // tabberbottunを押したら呼ぶ
-    [self setFavorite:_managedObjectContext];
-
 }
 
 // デリゲートメソッドに配列を引き渡す
-- (void)setFavorite:(NSManagedObjectContext *)favoriteObjectContext
+- (void)setFavorite
 {
+    [self preparetionEnitty];
     
     //fetch設定を生成
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:favoriteEntity];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:kFavoriteEntity];
     
     //sort条件を設定
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
@@ -100,6 +102,7 @@ NSString * const favoriteEntity = @"FavoriteShopEntity";
     }
     
     [self.favoriteDelegate getFavorite: favoriteList];
+    
 }
 
 

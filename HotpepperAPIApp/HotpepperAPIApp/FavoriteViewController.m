@@ -11,11 +11,12 @@
 #import "ShopEntity.h"
 #import "ShopDetailViewController.h"
 #import "FavoriteShopManager.h"
+#import "TabBarController.h"
 
 NSString * const kShopTableViewCell = @"ShopTableViewCell";
-NSArray *shopList;
+NSMutableArray *shopList;
 
-@interface FavoriteViewController ()<FavoriteDelegate>
+@interface FavoriteViewController ()<FavoriteDelegate, tabBarControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *favoriteTableView;
 @property FavoriteShopManager *favoriteShopManager;
 @end
@@ -25,10 +26,33 @@ NSArray *shopList;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.favoriteShopManager.favoriteDelegate = self;
-    
     self.favoriteTableView.delegate = self;
     self.favoriteTableView.dataSource = self;
+    
+    shopList = [NSMutableArray array];
+    /*
+    //イベントのフェッチ
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"FavoriteShopEntity"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"name" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+    
+    NSError *error = nil;
+    NSMutableArray *mutableFetchResults = [[self.managedObjectContext
+                                            executeFetchRequest:request error:&error] mutableCopy];
+    
+    // 起動時eventArrayに保持していたデータを格納処理追加
+    shopList = mutableFetchResults;
+
+    // setFavoriteにcontextを渡す
+    // tabberbottunを押したら呼ぶ
+    // [self.favoriteShopManager setFavorite];
+    */
     
     //ViewControllerのViewにTableViewCellを登録
     UINib *shopNib = [UINib nibWithNibName:kShopTableViewCell bundle:nil];
@@ -93,5 +117,6 @@ numberOfRowsInSection:(NSInteger)section
     // 受け取った配列をプライペード配列に格納
     shopList = favoriteShop;
 }
+
 
 @end

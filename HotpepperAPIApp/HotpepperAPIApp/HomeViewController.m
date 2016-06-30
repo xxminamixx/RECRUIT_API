@@ -9,9 +9,10 @@
 #import "HomeViewController.h"
 #import "ServiceAreaViewController.h"
 #import "HotpepperAPIFetcher.h"
+#import "TabBarController.h"
 
 
-@interface ViewController ()
+@interface ViewController () <tabBarControllerDelegate>
 - (IBAction)serviceAreaSearchButton:(id)sender;
 - (IBAction)genreSearchButton:(id)sender;
 @property HotpepperAPIFetcher *areafetcher;
@@ -42,8 +43,14 @@
     [self.navigationController pushViewController:areaView animated:YES];
 }
 
+- (void) didSelect:(TabBarController *)tabBarController {
+    NSLog(@"tab 1");
+}
+
 - (IBAction)genreSearchButton:(id)sender {
     
 }
+
+
 
 @end

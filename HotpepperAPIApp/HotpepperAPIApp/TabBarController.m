@@ -7,9 +7,10 @@
 //
 
 #import "TabBarController.h"
+//#import "FavoriteViewController.h"
 
 @interface TabBarController ()
-
+//@property FavoriteViewController *favoriteViewController;
 @end
 
 @implementation TabBarController

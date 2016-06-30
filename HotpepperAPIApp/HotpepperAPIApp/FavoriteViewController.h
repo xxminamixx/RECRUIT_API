@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FavoriteViewController : UIViewController
-
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @end

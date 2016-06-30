@@ -22,7 +22,7 @@
 @property ShopEntity *shopEntity;
 - (void)getFavoriteShop:(ShopEntity *)shopEntity; // お気に入りのEntityを受け取るメソッド
 
-- (void)setFavorite:(NSManagedObjectContext *)favoriteObjectContext;
+- (void)setFavorite;
 @property (nonatomic, weak) id<FavoriteDelegate> favoriteDelegate;
 @property (nonatomic, strong) NSEntityDescription *entityDescModel;
 @property (nonatomic, strong) NSMutableArray *eventsArray;
