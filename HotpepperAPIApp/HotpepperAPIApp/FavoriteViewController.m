@@ -12,6 +12,7 @@
 #import "ShopDetailViewController.h"
 #import "FavoriteShopManager.h"
 #import "TabBarController.h"
+#import "AppDelegate.h"
 
 NSString * const kShopTableViewCell = @"ShopTableViewCell";
 NSMutableArray *shopList;
@@ -29,8 +30,21 @@ NSMutableArray *shopList;
     self.favoriteTableView.delegate = self;
     self.favoriteTableView.dataSource = self;
     
+    
+    //ViewControllerのViewにTableViewCellを登録
+    UINib *shopNib = [UINib nibWithNibName:kShopTableViewCell bundle:nil];
+    [self.favoriteTableView registerNib:shopNib forCellReuseIdentifier:kShopTableViewCell];
+    
+
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = appDelegate.managedObjectContext;
+    
     shopList = [NSMutableArray array];
-    /*
+    
     //イベントのフェッチ
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"FavoriteShopEntity"
@@ -48,17 +62,12 @@ NSMutableArray *shopList;
     
     // 起動時eventArrayに保持していたデータを格納処理追加
     shopList = mutableFetchResults;
-
+    
     // setFavoriteにcontextを渡す
     // tabberbottunを押したら呼ぶ
     // [self.favoriteShopManager setFavorite];
-    */
-    
-    //ViewControllerのViewにTableViewCellを登録
-    UINib *shopNib = [UINib nibWithNibName:kShopTableViewCell bundle:nil];
-    [self.favoriteTableView registerNib:shopNib forCellReuseIdentifier:kShopTableViewCell];
-    
 
+    [self.favoriteTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
