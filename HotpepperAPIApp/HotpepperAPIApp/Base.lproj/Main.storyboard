@@ -9,7 +9,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="vqF-PI-BhT">
             <objects>
-                <tabBarController id="3tI-X1-Ckg" sceneMemberID="viewController">
+                <tabBarController id="3tI-X1-Ckg" customClass="TabBarController" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="S2D-Ur-37V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

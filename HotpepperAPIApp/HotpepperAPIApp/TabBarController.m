@@ -16,12 +16,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     NSLog(@"タブバーが呼ばれました。");
+    self.delegate = self;
+    
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)tabBarController:(UITabBarController*)tabBarController didSelectViewController:(UIViewController*)viewController
+{
+    NSLog(@"タブバーが押されました。");
+    if ([viewController conformsToProtocol:@protocol(tabBarControllerDelegate)]) {
+        // 各UIViewControllerのデリゲートメソッドを呼ぶ
+        [(UIViewController<tabBarControllerDelegate>*)viewController didSelect:self];
+    }
 }
 
 /*
