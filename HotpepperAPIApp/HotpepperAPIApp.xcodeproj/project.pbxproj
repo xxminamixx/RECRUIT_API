@@ -198,10 +198,10 @@
 		E99DDF2F1D18E3E6008374AD /* HotpepperAPIApp */ = {
 			isa = PBXGroup;
 			children = (
-				E956B98A1D1A9A680028FA1B /* Resourcese */,
 				E956B9871D1A98050028FA1B /* Model */,
 				E956B9881D1A98270028FA1B /* View */,
 				E956B9891D1A984D0028FA1B /* Controller */,
+				E956B98A1D1A9A680028FA1B /* Resourcese */,
 				E99DDF3C1D18E3E6008374AD /* Assets.xcassets */,
 				E99DDF3E1D18E3E6008374AD /* LaunchScreen.storyboard */,
 				E99DDF411D18E3E6008374AD /* Info.plist */,

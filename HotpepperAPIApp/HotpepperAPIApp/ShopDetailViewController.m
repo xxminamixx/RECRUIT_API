@@ -8,6 +8,7 @@
 
 #import "ShopDetailViewController.h"
 #import "FavoriteShopManager.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ShopDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *shopname;
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *address;
 @property (weak, nonatomic) IBOutlet UILabel *open;
 @property (weak, nonatomic) IBOutlet UILabel *genre;
+@property (strong, nonatomic) IBOutlet UIView *detailView;
 - (IBAction)favoriteAction:(id)sender;
 @end
 
@@ -23,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setShopLogo: self.shopEntity.logo];
     
     _shopname.text = _shopEntity.name;
     _detail.text = _shopEntity.detail;
@@ -41,19 +45,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)favoriteAction:(id)sender {
     // 詳細表示しているお店のEntityをManagerに渡す
     FavoriteShopManager *favoriteManager = [FavoriteShopManager new];
     [favoriteManager getFavoriteShop:_shopEntity];
+}
+
+- (void)setShopLogo:(NSString*)url {
+    [self.logo sd_setImageWithURL:[NSURL URLWithString:url]];
+    [self.detailView setNeedsDisplay];
+    
 }
 @end
