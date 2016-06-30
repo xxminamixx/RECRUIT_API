@@ -26,7 +26,24 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
 
 - (void)alreadyFavorite:(NSMutableArray *)favoriteList
 {
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = appDelegate.managedObjectContext;
     
+    //イベントのフェッチ
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"FavoriteShopEntity"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"name" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+    
+    NSError *error = nil;
+    NSMutableArray *mutableFetchResults = [[self.managedObjectContext
+                                            executeFetchRequest:request error:&error] mutableCopy];
+
 }
 
 - (void)getFavoriteShop:(ShopEntity *)shopEntity
@@ -62,7 +79,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
         NSLog(@"Error Description: %@", [error userInfo]);
     }
     
-    self.managedObjectContext =[[NSManagedObjectContext alloc] init];
+    self.managedObjectContext =　[[NSManagedObjectContext alloc] init];
     [self.managedObjectContext setPersistentStoreCoordinator: pStoreCondinator];
     self.entityDescModel = [NSEntityDescription entityForName:favoriteEntity inManagedObjectContext:self.managedObjectContext];
      */

@@ -73,9 +73,10 @@
     FavoriteShopManager *favoriteManager = [FavoriteShopManager new];
     //[favoriteManager alreadyFavorite: mutableFetchResults];
 
+    [favoriteManager alreadyFavorite:self.shopEntity];
     
     // 詳細表示しているお店のEntityをManagerに渡す
-    [favoriteManager getFavoriteShop:_shopEntity];
+    [favoriteManager getFavoriteShop:self.shopEntity];
 }
 
 - (void)setShopLogo:(NSString*)url {
