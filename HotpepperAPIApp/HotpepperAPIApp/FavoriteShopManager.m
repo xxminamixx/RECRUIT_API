@@ -67,6 +67,9 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
 {
     [self preparetionEnitty];
     
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = appDelegate.managedObjectContext;
+    
     // Eventエンティティの新規インスタンスを作成して設定する
     FavoriteShopEntity *favoriteEntity = (FavoriteShopEntity *)[NSEntityDescription insertNewObjectForEntityForName:kFavoriteEntity
                                                                                 inManagedObjectContext:self.managedObjectContext];
