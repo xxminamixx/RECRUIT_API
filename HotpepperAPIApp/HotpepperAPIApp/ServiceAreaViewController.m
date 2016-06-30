@@ -10,7 +10,7 @@
 #import "ServiceAreaTableViewCell.h"
 #import "ServiceAreaEntity.h"
 #import "HotpepperAPIFetcher.h"
-#import "ShopViewController.h"
+#import "ShopListViewController.h"
 
 NSString * const servicearea_tableviewcell = @"ServiceAreaTableViewCell";
 NSMutableArray *receive_servicearea;
@@ -114,7 +114,7 @@ numberOfRowsInSection:(NSInteger)section
     
     // 遷移先のViewControllerをStoryBoardをもとに作成
     //ここで送るメッセージはsroryboard ID
-    ShopViewController *shopView = [storyboard instantiateViewControllerWithIdentifier:@"Shop"];
+    ShopListViewController *shopView = [storyboard instantiateViewControllerWithIdentifier:@"Shop"];
     
     //次画面へ選択したエリアコードを渡す
     shopView.areacode = areaEntity.code;

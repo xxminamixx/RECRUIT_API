@@ -29,7 +29,7 @@
 		E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */; };
 		E9A180AF1D1F628500D64FC4 /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */; };
 		E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */; };
-		E9D38E9E1D1D296100F8FA0D /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9D1D1D296100F8FA0D /* ShopViewController.m */; };
+		E9D38E9E1D1D296100F8FA0D /* ShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9D1D1D296100F8FA0D /* ShopListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +84,8 @@
 		E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
 		E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopEntity.h; sourceTree = "<group>"; };
 		E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopEntity.m; sourceTree = "<group>"; };
-		E9D38E9C1D1D296100F8FA0D /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopViewController.h; sourceTree = "<group>"; };
-		E9D38E9D1D1D296100F8FA0D /* ShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopViewController.m; sourceTree = "<group>"; };
+		E9D38E9C1D1D296100F8FA0D /* ShopListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopListViewController.h; sourceTree = "<group>"; };
+		E9D38E9D1D1D296100F8FA0D /* ShopListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +140,10 @@
 				E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */,
 				E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */,
 				E99DDF391D18E3E6008374AD /* Main.storyboard */,
+				E9A180AB1D1F628500D64FC4 /* ShopTableViewCell.h */,
+				E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */,
+				E90158721D1915CB00DF358C /* ServiceAreaTableViewCell.h */,
+				E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -153,16 +157,12 @@
 				E99DDF371D18E3E6008374AD /* HomeViewController.m */,
 				E901586F1D19124500DF358C /* ServiceAreaViewController.h */,
 				E90158701D19124500DF358C /* ServiceAreaViewController.m */,
-				E9D38E9C1D1D296100F8FA0D /* ShopViewController.h */,
-				E9D38E9D1D1D296100F8FA0D /* ShopViewController.m */,
+				E9D38E9C1D1D296100F8FA0D /* ShopListViewController.h */,
+				E9D38E9D1D1D296100F8FA0D /* ShopListViewController.m */,
 				E977477E1D20CCD7002ABD77 /* ShopDetailViewController.h */,
 				E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */,
 				E9566C181D2363D200DE0556 /* FavoriteViewController.h */,
 				E9566C191D2363D200DE0556 /* FavoriteViewController.m */,
-				E9A180AB1D1F628500D64FC4 /* ShopTableViewCell.h */,
-				E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */,
-				E90158721D1915CB00DF358C /* ServiceAreaTableViewCell.h */,
-				E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -402,7 +402,7 @@
 				E99DDF321D18E3E6008374AD /* main.m in Sources */,
 				E90158711D19124500DF358C /* ServiceAreaViewController.m in Sources */,
 				E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */,
-				E9D38E9E1D1D296100F8FA0D /* ShopViewController.m in Sources */,
+				E9D38E9E1D1D296100F8FA0D /* ShopListViewController.m in Sources */,
 				E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */,
 				E97747991D211E4D002ABD77 /* Model.xcdatamodeld in Sources */,
 				E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */,

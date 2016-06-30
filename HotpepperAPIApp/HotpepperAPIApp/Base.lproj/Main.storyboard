@@ -143,10 +143,10 @@
             </objects>
             <point key="canvasLocation" x="1540.5" y="-139.5"/>
         </scene>
-        <!--Shop View Controller-->
+        <!--Shop List View Controller-->
         <scene sceneID="6fB-4f-oxb">
             <objects>
-                <viewController storyboardIdentifier="Shop" id="ERu-mc-G3k" customClass="ShopViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Shop" id="ERu-mc-G3k" customClass="ShopListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tfY-Xw-etC"/>
                         <viewControllerLayoutGuide type="bottom" id="j04-UW-dz3"/>
@@ -165,7 +165,7 @@
                     <navigationItem key="navigationItem" id="76M-6V-zIL"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="shopTableView" destination="P8u-63-cBG" id="0Kf-Od-vyd"/>
+                        <outlet property="shopTableView" destination="P8u-63-cBG" id="Qz6-JR-Far"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLr-8p-nbp" userLabel="First Responder" sceneMemberID="firstResponder"/>

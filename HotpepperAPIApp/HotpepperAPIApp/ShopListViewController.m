@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Minami Kyohei. All rights reserved.
 //
 
-#import "ShopViewController.h"
+#import "ShopListViewController.h"
 #import "HotpepperAPIFetcher.h"
 #import "ShopTableViewCell.h"
 #import "ShopEntity.h"
@@ -15,13 +15,13 @@
 NSString * const shop_tableviewcell = @"ShopTableViewCell";
 NSMutableArray *recieve_shop;
 
-@interface ShopViewController () <shopDelegate>
+@interface ShopListViewController () <shopDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *shopTableView;
 @property HotpepperAPIFetcher *shopfetcher;
 
 @end
 
-@implementation ShopViewController
+@implementation ShopListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShopViewController : UIViewController
+@interface ShopListViewController : UIViewController
 
 @property NSString *areacode;
 
