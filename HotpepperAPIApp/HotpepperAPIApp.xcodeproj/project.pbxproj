@@ -16,6 +16,7 @@
 		E90A553E1D227D7200576C7C /* FavoriteShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E90A553C1D227D7200576C7C /* FavoriteShopEntity.m */; };
 		E9566C1A1D2363D200DE0556 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9566C191D2363D200DE0556 /* FavoriteViewController.m */; };
 		E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */; };
+		E96F698F1D24DAA700AAE896 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96F698E1D24DAA700AAE896 /* TabBarController.m */; };
 		E97747801D20CCD7002ABD77 /* ShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */; };
 		E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E97747821D2103BA002ABD77 /* FavoriteShopManager.m */; };
 		E97747991D211E4D002ABD77 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E97747971D211E4D002ABD77 /* Model.xcdatamodeld */; };
@@ -61,6 +62,8 @@
 		E9566C191D2363D200DE0556 /* FavoriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
 		E956B9821D1A53A20028FA1B /* ServiceAreaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAreaEntity.h; sourceTree = "<group>"; };
 		E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaEntity.m; sourceTree = "<group>"; };
+		E96F698D1D24DAA700AAE896 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		E96F698E1D24DAA700AAE896 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		E977477E1D20CCD7002ABD77 /* ShopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopDetailViewController.h; sourceTree = "<group>"; };
 		E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopDetailViewController.m; sourceTree = "<group>"; };
 		E97747811D2103BA002ABD77 /* FavoriteShopManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteShopManager.h; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 		E956B9891D1A984D0028FA1B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E96F698D1D24DAA700AAE896 /* TabBarController.h */,
+				E96F698E1D24DAA700AAE896 /* TabBarController.m */,
 				E99DDF331D18E3E6008374AD /* AppDelegate.h */,
 				E99DDF341D18E3E6008374AD /* AppDelegate.m */,
 				E99DDF361D18E3E6008374AD /* HomeViewController.h */,
@@ -404,6 +409,7 @@
 				E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */,
 				E9D38E9E1D1D296100F8FA0D /* ShopListViewController.m in Sources */,
 				E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */,
+				E96F698F1D24DAA700AAE896 /* TabBarController.m in Sources */,
 				E97747991D211E4D002ABD77 /* Model.xcdatamodeld in Sources */,
 				E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */,
 			);

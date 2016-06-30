@@ -13,7 +13,7 @@
 
 @protocol FavoriteDelegate <NSObject>
 
-- (void)getFavorite:(NSMutableArray *)favoriteShop;
+- (void)getFavorite:(NSArray *)favoriteShop;
 
 @end
 

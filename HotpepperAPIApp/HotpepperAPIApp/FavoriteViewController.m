@@ -13,11 +13,11 @@
 #import "FavoriteShopManager.h"
 
 NSString * const kShopTableViewCell = @"ShopTableViewCell";
-NSMutableArray *shopList;
+NSArray *shopList;
 
-@interface FavoriteViewController ()
+@interface FavoriteViewController ()<FavoriteDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *favoriteTableView;
-
+@property FavoriteShopManager *favoriteShopManager;
 @end
 
 @implementation FavoriteViewController
@@ -25,9 +25,10 @@ NSMutableArray *shopList;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _favoriteTableView.delegate = self;
-    _favoriteTableView.dataSource = self;
+    self.favoriteShopManager.favoriteDelegate = self;
     
+    self.favoriteTableView.delegate = self;
+    self.favoriteTableView.dataSource = self;
     
     //ViewControllerのViewにTableViewCellを登録
     UINib *shopNib = [UINib nibWithNibName:kShopTableViewCell bundle:nil];
@@ -82,5 +83,15 @@ numberOfRowsInSection:(NSInteger)section
     // 画面をPUSHで遷移させる
     [self.navigationController pushViewController:shopDetailView animated:YES];
  }
+
+
+// デリゲードメソッド
+- (void)getFavorite:(NSArray *)favoriteShop
+{
+    NSLog(@"お気に入りのデリゲードメソッドが呼ばれました");
+    
+    // 受け取った配列をプライペード配列に格納
+    shopList = favoriteShop;
+}
 
 @end

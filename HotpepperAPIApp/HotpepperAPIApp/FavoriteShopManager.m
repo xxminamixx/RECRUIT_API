@@ -74,26 +74,32 @@ NSString * const favoriteEntity = @"FavoriteShopEntity";
     [favoriteEntity setOpen:_shopEntity.open];
     [favoriteEntity setGenre:_shopEntity.genre];
     
-    // デバッグ用
-    NSLog(@"%@", favoriteEntity.name);
-    NSLog(@"%@", favoriteEntity.logo);
-    NSLog(@"%@", favoriteEntity.detail);
-    NSLog(@"%@", favoriteEntity.address);
-    NSLog(@"%@", favoriteEntity.open);
-    NSLog(@"%@", favoriteEntity.genre);
-     
+    // setFavoriteにcontextを渡す
+    // tabberbottunを押したら呼ぶ
+    [self setFavorite:_managedObjectContext];
 
 }
 
 // デリゲートメソッドに配列を引き渡す
 - (void)setFavorite:(NSManagedObjectContext *)favoriteObjectContext
 {
-    /*
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:favoriteEntity];
-    NSError *error= nil;
-    NSMutableArray *favoriteShop = [favoriteObjectContext executeRequest:request error:&error];
-    [self.favoriteDelegate getFavoriteContext: favoriteShop];
-     */
+    
+    //fetch設定を生成
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:favoriteEntity];
+    
+    //sort条件を設定
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    //fetch設定を元に、managedObjectContextからデータを取得
+    NSArray *favoriteList = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    
+    for (NSManagedObject *data in favoriteList) {
+        NSLog(@"%@", data);
+    }
+    
+    [self.favoriteDelegate getFavorite: favoriteList];
 }
 
 
