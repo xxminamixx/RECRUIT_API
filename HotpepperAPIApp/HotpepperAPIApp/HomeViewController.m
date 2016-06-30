@@ -12,7 +12,7 @@
 #import "TabBarController.h"
 
 
-@interface ViewController () <tabBarControllerDelegate>
+@interface ViewController ()
 - (IBAction)serviceAreaSearchButton:(id)sender;
 - (IBAction)genreSearchButton:(id)sender;
 @property HotpepperAPIFetcher *areafetcher;
@@ -41,10 +41,6 @@
     
     // 画面をPUSHで遷移させる
     [self.navigationController pushViewController:areaView animated:YES];
-}
-
-- (void) didSelect:(TabBarController *)tabBarController {
-    NSLog(@"tab 1");
 }
 
 - (IBAction)genreSearchButton:(id)sender {

@@ -12,7 +12,3 @@
 
 @interface TabBarController : UITabBarController<UITabBarControllerDelegate>
 @end
-
-@protocol tabBarControllerDelegate
-- (void) didSelect:(TabBarController *) tabBarController;
-@end

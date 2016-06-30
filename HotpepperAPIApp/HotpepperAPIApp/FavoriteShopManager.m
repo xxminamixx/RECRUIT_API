@@ -24,6 +24,11 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     return self;
 }
 
+- (void)alreadyFavorite:(NSMutableArray *)favoriteList
+{
+    
+}
+
 - (void)getFavoriteShop:(ShopEntity *)shopEntity
 {
     
@@ -81,6 +86,11 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     [favoriteEntity setAddress:_shopEntity.address];
     [favoriteEntity setOpen:_shopEntity.open];
     [favoriteEntity setGenre:_shopEntity.genre];
+    
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        // エラーを処理する。
+    }
     
 }
 

@@ -8,7 +8,9 @@
 
 #import "ShopDetailViewController.h"
 #import "FavoriteShopManager.h"
+#import "AppDelegate.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+
 
 @interface ShopDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *shopname;
@@ -46,9 +48,33 @@
 }
 
 
-- (IBAction)favoriteAction:(id)sender {
-    // 詳細表示しているお店のEntityをManagerに渡す
+- (IBAction)favoriteAction:(id)sender
+{
+    /*
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = appDelegate.managedObjectContext;
+    
+    //イベントのフェッチ
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"FavoriteShopEntity"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"name" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+    
+    NSError *error = nil;
+    NSMutableArray *mutableFetchResults = [[self.managedObjectContext
+                                            executeFetchRequest:request error:&error] mutableCopy];
+    */
+    // マネージャーに投げて既にお気に入りに登録されているかチェックする
     FavoriteShopManager *favoriteManager = [FavoriteShopManager new];
+    //[favoriteManager alreadyFavorite: mutableFetchResults];
+
+    
+    // 詳細表示しているお店のEntityをManagerに渡す
     [favoriteManager getFavoriteShop:_shopEntity];
 }
 

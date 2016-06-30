@@ -31,10 +31,6 @@
 -(void)tabBarController:(UITabBarController*)tabBarController didSelectViewController:(UIViewController*)viewController
 {
     NSLog(@"タブバーが押されました。");
-    if ([viewController conformsToProtocol:@protocol(tabBarControllerDelegate)]) {
-        // 各UIViewControllerのデリゲートメソッドを呼ぶ
-        [(UIViewController<tabBarControllerDelegate>*)viewController didSelect:self];
-    }
 }
 
 /*

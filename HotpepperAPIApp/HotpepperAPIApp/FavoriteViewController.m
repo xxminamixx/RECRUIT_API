@@ -17,7 +17,7 @@
 NSString * const kShopTableViewCell = @"ShopTableViewCell";
 NSMutableArray *shopList;
 
-@interface FavoriteViewController ()<FavoriteDelegate, tabBarControllerDelegate>
+@interface FavoriteViewController ()<FavoriteDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *favoriteTableView;
 @property FavoriteShopManager *favoriteShopManager;
 @end
@@ -40,6 +40,7 @@ NSMutableArray *shopList;
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.managedObjectContext;
     
