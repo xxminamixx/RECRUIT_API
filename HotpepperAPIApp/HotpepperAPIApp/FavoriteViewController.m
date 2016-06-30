@@ -15,7 +15,7 @@
 #import "AppDelegate.h"
 
 NSString * const kShopTableViewCell = @"ShopTableViewCell";
-NSMutableArray *shopList;
+NSArray *shopList;
 
 @interface FavoriteViewController ()<FavoriteDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *favoriteTableView;
