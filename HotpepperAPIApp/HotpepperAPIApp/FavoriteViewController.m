@@ -12,8 +12,8 @@
 #import "ShopDetailViewController.h"
 #import "FavoriteShopManager.h"
 
-NSString * const shop_tableviewcell = @"ShopTableViewCell";
-NSMutableArray *recieve_shop;
+NSString * const kShopTableViewCell = @"ShopTableViewCell";
+NSMutableArray *shopList;
 
 @interface FavoriteViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *favoriteTableView;
@@ -27,6 +27,13 @@ NSMutableArray *recieve_shop;
     
     _favoriteTableView.delegate = self;
     _favoriteTableView.dataSource = self;
+    
+    
+    //ViewControllerのViewにTableViewCellを登録
+    UINib *shopNib = [UINib nibWithNibName:kShopTableViewCell bundle:nil];
+    [self.favoriteTableView registerNib:shopNib forCellReuseIdentifier:kShopTableViewCell];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,15 +46,15 @@ NSMutableArray *recieve_shop;
 numberOfRowsInSection:(NSInteger)section
 {
     //セクションに含まれるセルの数を返す
-    return recieve_shop.count;
+    return shopList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ShopTableViewCell *shopcell = [_favoriteTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
+    ShopTableViewCell *shopcell = [_favoriteTableView dequeueReusableCellWithIdentifier:kShopTableViewCell];
     
     // ラベルに都道府県セット処理
-    ShopEntity *shopEntity = recieve_shop[indexPath.row];
+    ShopEntity *shopEntity = shopList[indexPath.row];
     shopcell.shopName.text = shopEntity.name;
     shopcell.shopDescription.text = shopEntity.detail;
     return shopcell;
@@ -69,11 +76,11 @@ numberOfRowsInSection:(NSInteger)section
     ShopDetailViewController *shopDetailView = [storyboard instantiateViewControllerWithIdentifier:@"ShopDetail"];
     
     //次画面へ選択したEntityを渡す
-    ShopEntity *serveShopEnity = recieve_shop[indexPath.row];
+    ShopEntity *serveShopEnity = shopList[indexPath.row];
     shopDetailView.shopEntity = serveShopEnity;
     
     // 画面をPUSHで遷移させる
-    [self.navigationController pushViewController:shopDetailView animated:YES];}
-
+    [self.navigationController pushViewController:shopDetailView animated:YES];
+ }
 
 @end
