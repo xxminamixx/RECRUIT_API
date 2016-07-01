@@ -66,26 +66,7 @@
 
 - (IBAction)favoriteAction:(id)sender
 {
-    /*
-    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    self.managedObjectContext = appDelegate.managedObjectContext;
-    
-    //イベントのフェッチ
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"FavoriteShopEntity"
-                                              inManagedObjectContext:self.managedObjectContext];
-    [request setEntity:entity];
-    
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
-                                        initWithKey:@"name" ascending:NO];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    [request setSortDescriptors:sortDescriptors];
-    
-    NSError *error = nil;
-    NSMutableArray *mutableFetchResults = [[self.managedObjectContext
-                                            executeFetchRequest:request error:&error] mutableCopy];
-    */
-    
+
     // マネージャーに投げて既にお気に入りに登録されているかチェックする
     FavoriteShopManager *favoriteManager = [FavoriteShopManager new];
     if ([favoriteManager isAlreadyFavorite:self.shopEntity]) {

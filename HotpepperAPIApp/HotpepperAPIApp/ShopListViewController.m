@@ -19,7 +19,8 @@ NSMutableArray *recieve_shop;
 @interface ShopListViewController () <shopDelegate, shopCellFavoriteDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *shopTableView;
 @property HotpepperAPIFetcher *shopfetcher;
-
+@property BOOL isFavorite; // お気に入り登録されているか判定
+@property double labelAlpha;
 @end
 
 @implementation ShopListViewController
@@ -84,6 +85,7 @@ numberOfRowsInSection:(NSInteger)section
      // ラベルに都道府県セット処理
     [shopcell setMyPropertyWithEntity:shopEntity];
     [shopcell setShopLogoWithURL:shopEntity.logo];
+    
     return shopcell;
 }
 
@@ -123,22 +125,23 @@ numberOfRowsInSection:(NSInteger)section
 - (void)favoriteCall:(ShopEntity *)shopEntity
 {
     NSLog(@"お気に入りがコールされました");
-    /*
+    
     // マネージャーに投げて既にお気に入りに登録されているかチェックする
     FavoriteShopManager *favoriteManager = [FavoriteShopManager new];
-    ShopEntity *shopEntity = recieve_shop[0];
     if ([favoriteManager isAlreadyFavorite:shopEntity]) {
         // お気に入り登録処理
         // 詳細表示しているお店のEntityをManagerに渡す
         [favoriteManager getFavoriteShop:shopEntity];
         
-        //お気に入りボタン透明度変更処理
-        favoriteButton.alpha = 1;
+        // お気に入りされた
+        [self.shopTableView reloadData];
+        
     } else {
-        //お気に入りボタン透明度変更処理
-        self.favoriteButton.alpha = 0.2;
+        // お気に入り登録がされず削除処理がされた
+        [self.shopTableView reloadData];
+
     }
-     */
+    
 
 }
 
