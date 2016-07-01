@@ -27,6 +27,12 @@
     [self.favoriteDelegate favoriteCall];
 }
 
+- (void)setMyPropertyWithEntity:(ShopEntity *)shopEntity
+{
+    self.shopName.text = shopEntity.name;
+    self.shopDescription.text = shopEntity.detail;
+}
+
 - (void)setShopLogoWithURL:(NSString*)url {
     [self.shopLogo sd_setImageWithURL:[NSURL URLWithString:url]];
 }

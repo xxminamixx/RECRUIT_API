@@ -82,8 +82,7 @@ numberOfRowsInSection:(NSInteger)section
     }
     
      // ラベルに都道府県セット処理
-    shopcell.shopName.text = shopEntity.name;
-    shopcell.shopDescription.text = shopEntity.detail;
+    [shopcell setMyPropertyWithEntity:shopEntity];
     [shopcell setShopLogoWithURL:shopEntity.logo];
     return shopcell;
 }

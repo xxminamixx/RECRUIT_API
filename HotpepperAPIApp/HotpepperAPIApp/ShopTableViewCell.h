@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShopEntity.h"
 
 @protocol shopCellFavoriteDelegate <NSObject>
 
@@ -21,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *shopLogo;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 - (IBAction)favoriteAction:(id)sender;
-
+- (void)setMyPropertyWithEntity:(ShopEntity *)shopEntity;
 - (void)setShopLogoWithURL:(NSString*)url;
 
 @end
