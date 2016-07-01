@@ -586,6 +586,7 @@
                         <outlet property="address" destination="jDk-MK-pa7" id="YzD-pp-0ZS"/>
                         <outlet property="detail" destination="Kaw-pt-5Ss" id="jH1-lZ-czy"/>
                         <outlet property="detailView" destination="zUi-5F-Em5" id="MRO-cT-BgU"/>
+                        <outlet property="favoriteButton" destination="8if-83-q4L" id="PP5-84-6F8"/>
                         <outlet property="genre" destination="2UD-15-jxY" id="wNL-cf-OAM"/>
                         <outlet property="logo" destination="EiR-DH-CFX" id="6Dd-P1-mBZ"/>
                         <outlet property="open" destination="nRe-n3-Pim" id="ZRc-ac-Hug"/>

@@ -46,8 +46,8 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     
     // フェッチした配列に同じものがあるか確認
     for (int i = 0; i < mutableFetchResults.count; i++) {
-        FavoriteShopEntity *favoriteShopEntity = mutableFetchResults[i];
-        if (favoriteShopEntity.name == shopEntity.name) {
+        ShopEntity *favoriteShopEntity = mutableFetchResults[i];
+        if ([favoriteShopEntity.name isEqualToString:shopEntity.name]) {
 
             NSManagedObject *eventToDelete = [mutableFetchResults objectAtIndex:i];
             [self.managedObjectContext deleteObject:eventToDelete];

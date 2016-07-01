@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *open;
 @property (weak, nonatomic) IBOutlet UILabel *genre;
 @property (strong, nonatomic) IBOutlet UIView *detailView;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 - (IBAction)favoriteAction:(id)sender;
 @end
 
@@ -76,6 +77,12 @@
         // お気に入り登録処理
         // 詳細表示しているお店のEntityをManagerに渡す
         [favoriteManager getFavoriteShop:self.shopEntity];
+       
+        //お気に入りボタン透明度変更処理
+        self.favoriteButton.alpha = 0.5;
+    } else {
+        //お気に入りボタン透明度変更処理
+        self.favoriteButton.alpha = 1;
     }
     
     
