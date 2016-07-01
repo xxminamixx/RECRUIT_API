@@ -79,7 +79,7 @@
         [favoriteManager getFavoriteShop:self.shopEntity];
        
         //お気に入りボタン透明度変更処理
-        self.favoriteButton.alpha = 0.5;
+        self.favoriteButton.alpha = 0.2;
     } else {
         //お気に入りボタン透明度変更処理
         self.favoriteButton.alpha = 1;
