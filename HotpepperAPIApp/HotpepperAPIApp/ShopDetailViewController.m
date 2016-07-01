@@ -40,6 +40,21 @@
     _open.text = _shopEntity.open;
     _genre.text = _shopEntity.genre;
     
+    FavoriteShopManager *favoriteShopManager = [FavoriteShopManager new];
+    self.favoriteButton.alpha = 0.2;
+    
+    // お気に入り情報をフェッチ
+    NSMutableArray *mutableFetchResults = [favoriteShopManager fetchEntityList];
+    
+    for (int i = 0; i < mutableFetchResults.count; i++) {
+        ShopEntity *fetchShopEntity = mutableFetchResults[i];
+        
+        // フェッチしたEntityと表示しているセルのEntityの名前が同じならお気に入りボタンステータス変更
+        if ([fetchShopEntity.name isEqualToString: self.shopEntity.name]) {
+            self.favoriteButton.alpha = 1;
+        }
+    }
+
     
 }
 
@@ -79,10 +94,10 @@
         [favoriteManager getFavoriteShop:self.shopEntity];
        
         //お気に入りボタン透明度変更処理
-        self.favoriteButton.alpha = 0.2;
+        self.favoriteButton.alpha = 1;
     } else {
         //お気に入りボタン透明度変更処理
-        self.favoriteButton.alpha = 1;
+        self.favoriteButton.alpha = 0.2;
     }
     
     

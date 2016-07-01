@@ -63,8 +63,10 @@ numberOfRowsInSection:(NSInteger)section
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ShopTableViewCell *shopcell = [_shopTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
-    FavoriteShopManager *favoriteShopManager = [FavoriteShopManager new];
     ShopEntity *shopEntity = recieve_shop[indexPath.row];
+    FavoriteShopManager *favoriteShopManager = [FavoriteShopManager new];
+
+    shopcell.favoriteButton.alpha = 0.2;
     
     // お気に入り情報をフェッチ
     NSMutableArray *mutableFetchResults = [favoriteShopManager fetchEntityList];
@@ -74,7 +76,7 @@ numberOfRowsInSection:(NSInteger)section
         
         // フェッチしたEntityと表示しているセルのEntityの名前が同じならお気に入りボタンステータス変更
         if ([fetchShopEntity.name isEqualToString: shopEntity.name]) {
-            shopcell.favoriteButton.alpha = 0.2;
+            shopcell.favoriteButton.alpha = 1;
         }
 
     }
