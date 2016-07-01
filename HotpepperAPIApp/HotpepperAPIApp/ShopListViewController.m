@@ -120,7 +120,7 @@ numberOfRowsInSection:(NSInteger)section
     });
 }
 
-- (void)favoriteCall
+- (void)favoriteCall:(ShopEntity *)shopEntity
 {
     NSLog(@"お気に入りがコールされました");
     /*

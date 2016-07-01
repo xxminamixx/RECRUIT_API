@@ -11,7 +11,7 @@
 
 @protocol shopCellFavoriteDelegate <NSObject>
 
-- (void) favoriteCall;
+- (void) favoriteCall:(ShopEntity *)shopEntity;
 
 @end
 
@@ -19,6 +19,10 @@
 @property (weak, nonatomic) id<shopCellFavoriteDelegate> favoriteDelegate;
 @property (weak, nonatomic) IBOutlet UILabel *shopName;
 @property (weak, nonatomic) IBOutlet UITextView *shopDescription;
+@property (weak, nonatomic) NSString *logo;
+@property (weak, nonatomic) NSString *address;
+@property (weak, nonatomic) NSString *genre;
+@property (weak, nonatomic) NSString *open;
 @property (weak, nonatomic) IBOutlet UIImageView *shopLogo;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 - (IBAction)favoriteAction:(id)sender;
