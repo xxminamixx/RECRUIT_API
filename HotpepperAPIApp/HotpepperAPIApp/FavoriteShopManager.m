@@ -24,7 +24,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     return self;
 }
 
-- (void)alreadyFavorite:(NSMutableArray *)favoriteList
+- (BOOL)isAlreadyFavorite:(ShopEntity *)shopEntity
 {
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.managedObjectContext;
@@ -43,7 +43,29 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     NSError *error = nil;
     NSMutableArray *mutableFetchResults = [[self.managedObjectContext
                                             executeFetchRequest:request error:&error] mutableCopy];
+    
+    // フェッチした配列に同じものがあるか確認
+    for (int i = 0; i < mutableFetchResults.count; i++) {
+        FavoriteShopEntity *favoriteShopEntity = mutableFetchResults[i];
+        if (favoriteShopEntity.name == shopEntity.name) {
 
+            NSManagedObject *eventToDelete = [mutableFetchResults objectAtIndex:i];
+            [self.managedObjectContext deleteObject:eventToDelete];
+            
+            // 配列とTable Viewを更新する。
+            [mutableFetchResults removeObjectAtIndex:i];
+            
+            // 変更をコミットする。
+            NSError *error = nil;
+            if (![self.managedObjectContext save:&error]) {
+                // エラーを処理する。
+            }
+            return NO; // 同じ名前がある
+            
+        }
+    }
+    
+    return YES; //同じ名前がない
 }
 
 - (void)getFavoriteShop:(ShopEntity *)shopEntity

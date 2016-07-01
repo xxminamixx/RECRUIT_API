@@ -69,14 +69,16 @@
     NSMutableArray *mutableFetchResults = [[self.managedObjectContext
                                             executeFetchRequest:request error:&error] mutableCopy];
     */
+    
     // マネージャーに投げて既にお気に入りに登録されているかチェックする
     FavoriteShopManager *favoriteManager = [FavoriteShopManager new];
-    //[favoriteManager alreadyFavorite: mutableFetchResults];
-
-    [favoriteManager alreadyFavorite:self.shopEntity];
+    if ([favoriteManager isAlreadyFavorite:self.shopEntity]) {
+        // お気に入り登録処理
+        // 詳細表示しているお店のEntityをManagerに渡す
+        [favoriteManager getFavoriteShop:self.shopEntity];
+    }
     
-    // 詳細表示しているお店のEntityをManagerに渡す
-    [favoriteManager getFavoriteShop:self.shopEntity];
+    
 }
 
 - (void)setShopLogo:(NSString*)url {
