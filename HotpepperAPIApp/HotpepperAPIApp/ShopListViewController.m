@@ -16,7 +16,7 @@
 NSString * const shop_tableviewcell = @"ShopTableViewCell";
 NSMutableArray *recieve_shop;
 
-@interface ShopListViewController () <shopDelegate>
+@interface ShopListViewController () <shopDelegate, shopCellFavoriteDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *shopTableView;
 @property HotpepperAPIFetcher *shopfetcher;
 
@@ -65,7 +65,7 @@ numberOfRowsInSection:(NSInteger)section
     ShopTableViewCell *shopcell = [_shopTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
     ShopEntity *shopEntity = recieve_shop[indexPath.row];
     FavoriteShopManager *favoriteShopManager = [FavoriteShopManager new];
-
+    shopcell.favoriteDelegate = self;
     shopcell.favoriteButton.alpha = 0.2;
     
     // お気に入り情報をフェッチ
@@ -119,6 +119,28 @@ numberOfRowsInSection:(NSInteger)section
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.shopTableView reloadData];
     });
+}
+
+- (void)favoriteCall
+{
+    NSLog(@"お気に入りがコールされました");
+    /*
+    // マネージャーに投げて既にお気に入りに登録されているかチェックする
+    FavoriteShopManager *favoriteManager = [FavoriteShopManager new];
+    ShopEntity *shopEntity = recieve_shop[0];
+    if ([favoriteManager isAlreadyFavorite:shopEntity]) {
+        // お気に入り登録処理
+        // 詳細表示しているお店のEntityをManagerに渡す
+        [favoriteManager getFavoriteShop:shopEntity];
+        
+        //お気に入りボタン透明度変更処理
+        favoriteButton.alpha = 1;
+    } else {
+        //お気に入りボタン透明度変更処理
+        self.favoriteButton.alpha = 0.2;
+    }
+     */
+
 }
 
 

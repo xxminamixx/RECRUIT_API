@@ -23,6 +23,8 @@
 }
 
 - (IBAction)favoriteAction:(id)sender {
+    NSLog(@"お気に入りボタンがおされました");
+    [self.favoriteDelegate favoriteCall];
 }
 
 - (void)setShopLogoWithURL:(NSString*)url {
