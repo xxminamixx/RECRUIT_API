@@ -7,8 +7,10 @@
 //
 
 #import "ConfigViewController.h"
+#import "ConfirmViewController.h"
 
 @interface ConfigViewController ()
+- (IBAction)deleteAction:(id)sender;
 
 @end
 
@@ -34,4 +36,18 @@
 }
 */
 
+- (IBAction)deleteAction:(id)sender {
+    // ストーリーボードを指定する
+    //ここで送るメッセージはstoryboard名前の“Main.storyboard”
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    // 遷移先のViewControllerをStoryBoardをもとに作成
+    //ここで送るメッセージはsroryboard ID
+    ConfirmViewController *confirmViewController = [storyboard instantiateViewControllerWithIdentifier:@"Confirm"];
+    
+    confirmViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+    // UINavigationControllerに向けてモーダルで画面遷移
+    [self presentViewController:confirmViewController animated:NO completion:nil];
+}
 @end

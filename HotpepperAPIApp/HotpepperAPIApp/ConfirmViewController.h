@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ConfirmViewController : UIViewController
-
+- (void)showConfirmView;
 @end

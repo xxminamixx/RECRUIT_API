@@ -95,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="1015.5" y="640.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Config View Controller-->
         <scene sceneID="MXp-T7-LJQ">
             <objects>
-                <viewController id="2nV-bT-Lvt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Config" id="2nV-bT-Lvt" customClass="ConfigViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jS6-n0-0AH"/>
                         <viewControllerLayoutGuide type="bottom" id="e1X-rp-8Zo"/>
@@ -107,18 +107,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfX-Z3-2cH">
-                                <rect key="frame" x="147" y="187" width="80" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.37061512095404348" blue="0.37611232557004992" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="UG7-D8-OHz"/>
-                                    <constraint firstAttribute="width" constant="80" id="cNx-gE-y2l"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="削除">
-                                    <color key="titleColor" red="0.97780994740000005" green="0.97646244230000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="すべてのお気に入りを削除します" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcF-Gh-YOl">
                                 <rect key="frame" x="60" y="147" width="255" height="21"/>
                                 <constraints>
@@ -134,6 +122,21 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfX-Z3-2cH">
+                                <rect key="frame" x="147" y="187" width="80" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.37061512095404348" blue="0.37611232557004992" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UG7-D8-OHz"/>
+                                    <constraint firstAttribute="width" constant="80" id="cNx-gE-y2l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="削除">
+                                    <color key="titleColor" red="0.97780994740000005" green="0.97646244230000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteAction:" destination="2nV-bT-Lvt" eventType="touchUpInside" id="29m-9m-BbL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -158,10 +161,10 @@
             </objects>
             <point key="canvasLocation" x="1015.5" y="1513.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Confirm View Controller-->
         <scene sceneID="HYF-7o-7yR">
             <objects>
-                <viewController id="Rxw-Je-dri" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Confirm" id="Rxw-Je-dri" customClass="ConfirmViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eJe-Fn-D0e"/>
                         <viewControllerLayoutGuide type="bottom" id="OOb-7Q-6VJ"/>
@@ -181,6 +184,9 @@
                                 <state key="normal" title="削除">
                                     <color key="titleColor" red="0.97780994740000005" green="0.97646244230000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteComitAction:" destination="Rxw-Je-dri" eventType="touchUpInside" id="iml-jV-vkU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OK-3j-hrt">
                                 <rect key="frame" x="218" y="273" width="80" height="30"/>
@@ -193,6 +199,9 @@
                                 <state key="normal" title="取り消し">
                                     <color key="titleColor" red="0.97780994740000005" green="0.97646244230000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelAction:" destination="Rxw-Je-dri" eventType="touchUpInside" id="ZhB-hu-3hx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="削除したお気に入りは元には戻りません" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc2-yu-ysK">
                                 <rect key="frame" x="79" y="216" width="216" height="15"/>

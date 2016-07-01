@@ -9,6 +9,8 @@
 #import "ConfirmViewController.h"
 
 @interface ConfirmViewController ()
+- (IBAction)cancelAction:(id)sender;
+- (IBAction)deleteComitAction:(id)sender;
 
 @end
 
@@ -34,4 +36,18 @@
 }
 */
 
+/*
+-(void)showConfirmView{
+    ConfirmViewController *confirmViewController = [ConfirmViewController new];
+    [self presentViewController:confirmViewController animated:YES completion:nil];
+}
+ */
+
+- (IBAction)cancelAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+
+- (IBAction)deleteComitAction:(id)sender {
+}
 @end
