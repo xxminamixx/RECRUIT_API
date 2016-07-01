@@ -15,9 +15,9 @@
 #import "AppDelegate.h"
 
 NSString * const kShopTableViewCell = @"ShopTableViewCell";
-NSArray *shopList;
+NSMutableArray *shopList;
 
-@interface FavoriteViewController ()<FavoriteDelegate>
+@interface FavoriteViewController ()<FavoriteDelegate, shopCellFavoriteDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *favoriteTableView;
 @property FavoriteShopManager *favoriteShopManager;
 @end
@@ -29,7 +29,6 @@ NSArray *shopList;
     
     self.favoriteTableView.delegate = self;
     self.favoriteTableView.dataSource = self;
-    
     
     //ViewControllerのViewにTableViewCellを登録
     UINib *shopNib = [UINib nibWithNibName:kShopTableViewCell bundle:nil];
@@ -87,11 +86,12 @@ numberOfRowsInSection:(NSInteger)section
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ShopTableViewCell *shopcell = [_favoriteTableView dequeueReusableCellWithIdentifier:kShopTableViewCell];
+    shopcell.favoriteDelegate = self;
     
     // ラベルに都道府県セット処理
     ShopEntity *shopEntity = shopList[indexPath.row];
-    shopcell.shopName.text = shopEntity.name;
-    shopcell.shopDescription.text = shopEntity.detail;
+    [shopcell setMyPropertyWithEntity:shopEntity];
+    
     return shopcell;
 }
 
@@ -120,12 +120,32 @@ numberOfRowsInSection:(NSInteger)section
 
 
 // デリゲードメソッド
-- (void)getFavorite:(NSArray *)favoriteShop
+- (void)getFavorite:(NSMutableArray *)favoriteShop
 {
     NSLog(@"お気に入りのデリゲードメソッドが呼ばれました");
     
     // 受け取った配列をプライペード配列に格納
     shopList = favoriteShop;
+}
+
+- (void)favoriteCall:(ShopEntity *)shopEntity
+{
+    NSLog(@"お気に入りがコールされました");
+    
+    // マネージャーに投げて既にお気に入りに登録されているかチェックする
+    FavoriteShopManager *favoriteManager = [FavoriteShopManager new];
+    if ([favoriteManager isAlreadyFavorite:shopEntity]) {
+        // お気に入り登録処理
+        // 詳細表示しているお店のEntityをManagerに渡す
+        [favoriteManager getFavoriteShop:shopEntity];
+        
+        // お気に入りされた
+        [self.favoriteTableView reloadData];
+        
+    } else {
+        // お気に入り登録がされず削除処理がされた
+        [self.favoriteTableView reloadData];
+    }
 }
 
 

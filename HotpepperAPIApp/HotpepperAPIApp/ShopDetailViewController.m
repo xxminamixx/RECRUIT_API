@@ -34,9 +34,6 @@
     _shopname.text = _shopEntity.name;
     _detail.text = _shopEntity.detail;
     _address.text = _shopEntity.address;
-    [_address setNumberOfLines:0];
-    _address.frame = CGRectMake(0, 0, 200, 0);
-    [_address sizeToFit];
     _open.text = _shopEntity.open;
     _genre.text = _shopEntity.genre;
     

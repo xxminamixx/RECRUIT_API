@@ -10,6 +10,7 @@
 #import "FavoriteShopEntity.h"
 #import "AppDelegate.h"
 #import "ShopEntity.h"
+#import "FavoriteViewController.h"
 
 NSString * const kFavoriteEntity = @"FavoriteShopEntity";
 
@@ -68,7 +69,6 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
                 // エラーを処理する。
             }
             return NO; // 同じ名前がある
-            
         }
     }
     
@@ -154,7 +154,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     //fetch設定を元に、managedObjectContextからデータを取得
-    NSArray *favoriteList = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    NSMutableArray *favoriteList = (NSMutableArray *)[self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     
     for (NSManagedObject *data in favoriteList) {
         NSLog(@"%@", data);

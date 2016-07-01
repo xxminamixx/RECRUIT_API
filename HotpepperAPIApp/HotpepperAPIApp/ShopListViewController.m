@@ -141,8 +141,6 @@ numberOfRowsInSection:(NSInteger)section
         [self.shopTableView reloadData];
 
     }
-    
-
 }
 
 
