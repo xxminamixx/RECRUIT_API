@@ -22,8 +22,13 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)favoriteAction:(id)sender {
+}
+
 - (void)setShopLogoWithURL:(NSString*)url {
     [self.shopLogo sd_setImageWithURL:[NSURL URLWithString:url]];
 }
+
+
 
 @end

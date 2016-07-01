@@ -11,6 +11,7 @@
 #import "ShopTableViewCell.h"
 #import "ShopEntity.h"
 #import "ShopDetailViewController.h"
+#import "FavoriteShopManager.h"
 
 NSString * const shop_tableviewcell = @"ShopTableViewCell";
 NSMutableArray *recieve_shop;
@@ -42,6 +43,11 @@ NSMutableArray *recieve_shop;
     [self.shopTableView registerNib:shopNib forCellReuseIdentifier:shop_tableviewcell];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.shopTableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -57,9 +63,23 @@ numberOfRowsInSection:(NSInteger)section
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ShopTableViewCell *shopcell = [_shopTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
-    
-    // ラベルに都道府県セット処理
+    FavoriteShopManager *favoriteShopManager = [FavoriteShopManager new];
     ShopEntity *shopEntity = recieve_shop[indexPath.row];
+    
+    // お気に入り情報をフェッチ
+    NSMutableArray *mutableFetchResults = [favoriteShopManager fetchEntityList];
+    
+    for (int i = 0; i < mutableFetchResults.count; i++) {
+        ShopEntity *fetchShopEntity = mutableFetchResults[i];
+        
+        // フェッチしたEntityと表示しているセルのEntityの名前が同じならお気に入りボタンステータス変更
+        if ([fetchShopEntity.name isEqualToString: shopEntity.name]) {
+            shopcell.favoriteButton.alpha = 0.2;
+        }
+
+    }
+    
+     // ラベルに都道府県セット処理
     shopcell.shopName.text = shopEntity.name;
     shopcell.shopDescription.text = shopEntity.detail;
     [shopcell setShopLogoWithURL:shopEntity.logo];

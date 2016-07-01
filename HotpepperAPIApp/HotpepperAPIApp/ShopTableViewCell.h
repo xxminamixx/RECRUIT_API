@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *shopName;
 @property (weak, nonatomic) IBOutlet UITextView *shopDescription;
 @property (weak, nonatomic) IBOutlet UIImageView *shopLogo;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
+- (IBAction)favoriteAction:(id)sender;
 
 - (void)setShopLogoWithURL:(NSString*)url;
 

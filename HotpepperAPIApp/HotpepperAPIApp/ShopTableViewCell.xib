@@ -87,6 +87,9 @@
                         <state key="normal" title="★">
                             <color key="titleColor" red="1" green="0.74292657634397541" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="favoriteAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="J4S-7u-UHh"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -179,6 +182,7 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="favoriteButton" destination="ASQ-Oh-rmt" id="kv9-cC-sYz"/>
                 <outlet property="shopDescription" destination="OgC-jb-oV7" id="29f-Gd-zTY"/>
                 <outlet property="shopLogo" destination="iE3-31-CWd" id="ITV-K8-jAJ"/>
                 <outlet property="shopName" destination="gtc-jX-9D6" id="6ug-jI-SyO"/>
