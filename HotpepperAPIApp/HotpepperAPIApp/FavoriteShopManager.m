@@ -25,6 +25,22 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     return self;
 }
 
+// 
+- (BOOL)addedShopToFavorite:(NSString *)shopName
+{
+    NSMutableArray *mutableFetchResults = [self fetchEntityList];
+    
+    for (int i = 0; i < mutableFetchResults.count; i++) {
+        ShopEntity *fetchShopEntity = mutableFetchResults[i];
+        
+        // フェッチしたEntityと表示しているセルのEntityの名前が同じならお気に入りボタンステータス変更
+        if ([fetchShopEntity.name isEqualToString: shopName]) {
+            return YES; //　一致
+        }
+    }
+    return NO;
+}
+
 - (void)preparetionEnitty
 {
     

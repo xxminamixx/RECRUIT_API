@@ -20,5 +20,6 @@
 @dynamic logo;
 @dynamic name;
 @dynamic open;
+@dynamic shopId;
 
 @end

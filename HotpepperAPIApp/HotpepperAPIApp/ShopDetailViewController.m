@@ -10,6 +10,7 @@
 #import "FavoriteShopManager.h"
 #import "AppDelegate.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 
 
 @interface ShopDetailViewController ()
@@ -40,6 +41,7 @@
     FavoriteShopManager *favoriteShopManager = [FavoriteShopManager new];
     self.favoriteButton.alpha = 0.2;
     
+    /*
     // お気に入り情報をフェッチ
     NSMutableArray *mutableFetchResults = [favoriteShopManager fetchEntityList];
     
@@ -50,6 +52,11 @@
         if ([fetchShopEntity.name isEqualToString: self.shopEntity.name]) {
             self.favoriteButton.alpha = 1;
         }
+    }
+     */
+    
+    if ([favoriteShopManager addedShopToFavorite:_shopEntity.name]) {
+        self.favoriteButton.alpha = 1;
     }
 }
 
@@ -77,6 +84,13 @@
     }
 }
 
+/*
+- (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
+{
+    [self sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
+}
+*/
+ 
 - (void)setShopLogo:(NSString*)url {
     [self.logo sd_setImageWithURL:[NSURL URLWithString:url]];
     [self.detailView setNeedsDisplay];

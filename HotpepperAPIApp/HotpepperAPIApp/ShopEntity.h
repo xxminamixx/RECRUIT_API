@@ -17,5 +17,6 @@
 @property (nonatomic, strong) NSString *genre;
 @property (nonatomic, strong) NSString *open;
 @property (nonatomic, strong) NSString *detail;
+@property (nonatomic, strong) NSString *shopId;
 
 @end

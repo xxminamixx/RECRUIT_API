@@ -69,6 +69,7 @@ numberOfRowsInSection:(NSInteger)section
     shopcell.favoriteDelegate = self;
     shopcell.favoriteButton.alpha = 0.2;
     
+    /*
     // お気に入り情報をフェッチ
     NSMutableArray *mutableFetchResults = [favoriteShopManager fetchEntityList];
     
@@ -79,6 +80,11 @@ numberOfRowsInSection:(NSInteger)section
         if ([fetchShopEntity.name isEqualToString: shopEntity.name]) {
             shopcell.favoriteButton.alpha = 1;
         }
+    }
+    */
+     
+    if ([favoriteShopManager addedShopToFavorite:shopEntity.name]) {
+        shopcell.favoriteButton.alpha = 1;
     }
     
     //　UITextViewのタッチ無効処理

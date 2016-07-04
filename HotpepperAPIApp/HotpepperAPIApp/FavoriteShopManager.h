@@ -26,6 +26,7 @@
 - (void)setFavorite;
 - (BOOL)isAlreadyFavorite:(ShopEntity *)shopEnitty;
 - (NSMutableArray *)fetchEntityList;
+- (BOOL)addedShopToFavorite:(NSString *)shopName;
 @property (nonatomic, weak) id<FavoriteDelegate> favoriteDelegate;
 @property (nonatomic, strong) NSEntityDescription *entityDescModel;
 @property (nonatomic, strong) NSMutableArray *eventsArray;
