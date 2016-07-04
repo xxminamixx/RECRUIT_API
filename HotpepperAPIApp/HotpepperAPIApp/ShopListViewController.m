@@ -27,6 +27,7 @@ NSMutableArray *recieve_shop;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.navigationItem.title = @"検索結果一覧";
     
     _shopfetcher = [HotpepperAPIFetcher new];
     _shopfetcher.shopdelegate = self;

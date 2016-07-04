@@ -26,6 +26,7 @@ NSMutableArray *shopList;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"お気に入り";
     
     self.favoriteTableView.delegate = self;
     self.favoriteTableView.dataSource = self;

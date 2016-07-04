@@ -30,6 +30,7 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.navigationItem.title = @"サービスエリア検索";
 
     // 都道府県リクエストを送る
     // フェッチャクラスのメソッドが呼ばれる前にcellの処理が終わってしまう

@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+     self.navigationItem.title = _shopEntity.name;
     [self setShopLogo: self.shopEntity.logo];
     
     _shopname.text = _shopEntity.name;
