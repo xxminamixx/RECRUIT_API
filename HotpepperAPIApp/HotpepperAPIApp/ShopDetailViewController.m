@@ -75,13 +75,10 @@
         //お気に入りボタン透明度変更処理
         self.favoriteButton.alpha = 0.2;
     }
-    
-    
 }
 
 - (void)setShopLogo:(NSString*)url {
     [self.logo sd_setImageWithURL:[NSURL URLWithString:url]];
     [self.detailView setNeedsDisplay];
-    
 }
 @end

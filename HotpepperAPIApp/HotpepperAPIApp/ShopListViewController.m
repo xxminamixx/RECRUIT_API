@@ -36,7 +36,6 @@ NSMutableArray *recieve_shop;
     _shopTableView.delegate = self;
     _shopTableView.dataSource = self;
 
-    
     //　メモリ確保
     recieve_shop = [NSMutableArray array];
     
@@ -80,7 +79,6 @@ numberOfRowsInSection:(NSInteger)section
         if ([fetchShopEntity.name isEqualToString: shopEntity.name]) {
             shopcell.favoriteButton.alpha = 1;
         }
-
     }
     
     //　UITextViewのタッチ無効処理
@@ -144,7 +142,6 @@ numberOfRowsInSection:(NSInteger)section
     } else {
         // お気に入り登録がされず削除処理がされた
         [self.shopTableView reloadData];
-
     }
 }
 
