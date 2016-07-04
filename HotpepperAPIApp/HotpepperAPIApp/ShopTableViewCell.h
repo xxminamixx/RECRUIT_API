@@ -16,9 +16,9 @@
 @end
 
 @interface ShopTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *detail;
 @property (weak, nonatomic) id<shopCellFavoriteDelegate> favoriteDelegate;
 @property (weak, nonatomic) IBOutlet UILabel *shopName;
-@property (weak, nonatomic) IBOutlet UITextView *shopDescription;
 @property (weak, nonatomic) NSString *logo;
 @property (weak, nonatomic) NSString *address;
 @property (weak, nonatomic) NSString *genre;

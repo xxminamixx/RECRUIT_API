@@ -69,20 +69,7 @@ numberOfRowsInSection:(NSInteger)section
     shopcell.favoriteDelegate = self;
     shopcell.favoriteButton.alpha = 0.2;
     
-    /*
-    // お気に入り情報をフェッチ
-    NSMutableArray *mutableFetchResults = [favoriteShopManager fetchEntityList];
     
-    for (int i = 0; i < mutableFetchResults.count; i++) {
-        ShopEntity *fetchShopEntity = mutableFetchResults[i];
-        
-        // フェッチしたEntityと表示しているセルのEntityの名前が同じならお気に入りボタンステータス変更
-        if ([fetchShopEntity.name isEqualToString: shopEntity.name]) {
-            shopcell.favoriteButton.alpha = 1;
-        }
-    }
-    */
-     
     if ([favoriteShopManager addedShopToFavorite:shopEntity.name]) {
         shopcell.favoriteButton.alpha = 1;
     }
@@ -91,6 +78,11 @@ numberOfRowsInSection:(NSInteger)section
     [shopcell setMyPropertyWithEntity:shopEntity];
     [shopcell setShopLogoWithURL:shopEntity.logo];
     
+    /*
+    shopcell.detail.numberOfLines = 0; // 行数無制限
+    shopcell.detail.lineBreakMode = NSLineBreakByWordWrapping; // 単語の途中で改行されないようにする
+    [shopcell.detail sizeToFit]; // 自動的に適切な高さにする
+     */
     return shopcell;
 }
 

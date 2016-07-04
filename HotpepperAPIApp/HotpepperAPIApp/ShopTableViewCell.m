@@ -26,7 +26,7 @@
     NSLog(@"お気に入りボタンがおされました");
     ShopEntity *shopEntity = [ShopEntity new];
     shopEntity.name = self.shopName.text;
-    shopEntity.detail = self.shopDescription.text;
+    shopEntity.detail = self.detail.text;
     shopEntity.logo = self.logo;
     shopEntity.address = self.address;
     
@@ -36,7 +36,7 @@
 - (void)setMyPropertyWithEntity:(ShopEntity *)shopEntity
 {
     self.shopName.text = shopEntity.name;
-    self.shopDescription.text = shopEntity.detail;
+    self.detail.text = shopEntity.detail;
     self.logo = shopEntity.logo;
     self.address = shopEntity.address;
     self.open = shopEntity.open;
