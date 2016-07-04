@@ -20,6 +20,14 @@
      NSLog(@"タブバーが呼ばれました。");
     self.delegate = self;
     
+    UITabBarItem *homeItem = [self.tabBar.items objectAtIndex:0];
+    UITabBarItem *favoItem = [self.tabBar.items objectAtIndex:1];
+    UITabBarItem *configItem = [self.tabBar.items objectAtIndex:2];
+    
+    homeItem.title = @"home";
+    favoItem.title = @"favorite";
+    configItem.title = @"config";
+    
     // Do any additional setup after loading the view.
 }
 

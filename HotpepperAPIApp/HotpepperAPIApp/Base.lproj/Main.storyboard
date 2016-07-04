@@ -18,8 +18,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="TYO-8S-6ME" kind="relationship" relationship="viewControllers" id="Eqb-gT-bKl"/>
-                        <segue destination="TZn-yj-pE3" kind="relationship" relationship="viewControllers" id="01A-u1-2gI"/>
-                        <segue destination="QHo-2r-gvC" kind="relationship" relationship="viewControllers" id="3vJ-WV-vTK"/>
+                        <segue destination="QHo-2r-gvC" kind="relationship" relationship="viewControllers" id="Uy2-cH-EQ6"/>
+                        <segue destination="TZn-yj-pE3" kind="relationship" relationship="viewControllers" id="X31-bT-tK2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGk-0U-R7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
