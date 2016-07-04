@@ -87,10 +87,6 @@ numberOfRowsInSection:(NSInteger)section
         shopcell.favoriteButton.alpha = 1;
     }
     
-    //　UITextViewのタッチ無効処理
-    UITextView *textView = (UITextView *)[shopcell viewWithTag:1];
-    [textView setUserInteractionEnabled:NO];
-    
      // ラベルに都道府県セット処理
     [shopcell setMyPropertyWithEntity:shopEntity];
     [shopcell setShopLogoWithURL:shopEntity.logo];
