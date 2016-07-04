@@ -10,11 +10,11 @@
 
 @interface ShopEntity : NSObject
 
-@property (nonatomic) NSString *name;
-@property (nonatomic) NSString *logo;
-@property (nonatomic) NSString *address;
-@property (nonatomic) NSString *genre;
-@property (nonatomic) NSString *open;
-@property (nonatomic) NSString *detail;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *logo;
+@property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSString *genre;
+@property (nonatomic, strong) NSString *open;
+@property (nonatomic, strong) NSString *detail;
 
 @end
