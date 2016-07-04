@@ -22,6 +22,7 @@
 @property ShopEntity *shopEntity;
 - (void)getFavoriteShop:(ShopEntity *)shopEntity; // お気に入りのEntityを受け取るメソッド
 
+- (void)allDeleteFavorite;
 - (void)setFavorite;
 - (BOOL)isAlreadyFavorite:(ShopEntity *)shopEnitty;
 - (NSMutableArray *)fetchEntityList;

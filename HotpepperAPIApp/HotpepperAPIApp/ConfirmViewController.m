@@ -7,11 +7,12 @@
 //
 
 #import "ConfirmViewController.h"
+#import "FavoriteShopManager.h"
+#import "FavoriteViewController.h"
 
 @interface ConfirmViewController ()
 - (IBAction)cancelAction:(id)sender;
 - (IBAction)deleteComitAction:(id)sender;
-
 @end
 
 @implementation ConfirmViewController
@@ -49,5 +50,20 @@
 }
 
 - (IBAction)deleteComitAction:(id)sender {
+    FavoriteShopManager *favoriteShopManager = [FavoriteShopManager new];
+    [favoriteShopManager allDeleteFavorite];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    /*
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    // 遷移先のViewControllerをStoryBoardをもとに作成
+    //ここで送るメッセージはsroryboard ID
+    FavoriteViewController *favoritelView = [storyboard instantiateViewControllerWithIdentifier:@"FavoriteShop"];
+    
+    // 画面をPUSHで遷移させる
+    [self.navigationController pushViewController:favoritelView animated:YES];
+    */
+
 }
 @end

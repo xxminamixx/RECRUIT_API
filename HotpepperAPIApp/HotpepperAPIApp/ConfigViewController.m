@@ -45,9 +45,16 @@
     //ここで送るメッセージはsroryboard ID
     ConfirmViewController *confirmViewController = [storyboard instantiateViewControllerWithIdentifier:@"Confirm"];
     
+    /*
+    // 画面をPUSHで遷移させる
+    [self.navigationController pushViewController:confirmViewController animated:YES];
+    */
+    
+    
     confirmViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     
     // UINavigationControllerに向けてモーダルで画面遷移
     [self presentViewController:confirmViewController animated:NO completion:nil];
+     
 }
 @end

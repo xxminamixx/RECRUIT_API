@@ -25,6 +25,35 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     return self;
 }
 
+- (void)preparetionEnitty
+{
+    
+    //　データベース格納処理
+    NSError *error = nil;
+    NSURL *modelPath = [[NSBundle mainBundle] URLForResource: @"Model" withExtension:@"momd"];
+    NSURL *modelURL = [NSURL fileURLWithPath: [modelPath path]];
+    NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL: modelURL];
+    NSPersistentStoreCoordinator *pStoreCondinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: model];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSURL *storeURL = [fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
+    storeURL = [storeURL URLByAppendingPathComponent:@"Model.sqlite"];
+    NSPersistentStore *pStore = [pStoreCondinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                               configuration:nil
+                                                                         URL:storeURL
+                                                                     options:nil
+                                                                       error:&error];
+    
+    if (pStore == nil) {
+        NSLog(@"Error Description: %@", [error userInfo]);
+    }
+    
+    self.managedObjectContext = [[NSManagedObjectContext alloc] init];
+    [self.managedObjectContext setPersistentStoreCoordinator: pStoreCondinator];
+    self.entityDescModel = [NSEntityDescription entityForName:kFavoriteEntity inManagedObjectContext:self.managedObjectContext];
+    
+}
+
+
 - (NSMutableArray *)fetchEntityList
 {
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
@@ -48,19 +77,37 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
 
 }
 
+// お気に入り全削除メソッド
+- (void)allDeleteFavorite
+{
+    NSMutableArray *mutableFetchResults = [self fetchEntityList];
+    NSInteger fetchResultsLength = mutableFetchResults.count;
+    for (int i = 0; i < fetchResultsLength; i++) {
+        NSManagedObject *eventToDelete = [mutableFetchResults objectAtIndex:0];
+        [self.managedObjectContext deleteObject:eventToDelete];
+       
+        [mutableFetchResults removeObjectAtIndex:0];
+       
+        // 変更をコミットする。
+        NSError *error = nil;
+        if (![self.managedObjectContext save:&error]) {
+            // エラーを処理する。
+        }
+    }
+}
+
 - (BOOL)isAlreadyFavorite:(ShopEntity *)shopEntity
 {
     NSMutableArray *mutableFetchResult = [self fetchEntityList];
-    
+    NSInteger fetchResultsLength = mutableFetchResult.count;
     // フェッチした配列に同じものがあるか確認
-    for (int i = 0; i < mutableFetchResult.count; i++) {
+    for (int i = 0; i < fetchResultsLength; i++) {
         ShopEntity *favoriteShopEntity = mutableFetchResult[i];
         if ([favoriteShopEntity.name isEqualToString:shopEntity.name]) {
 
             NSManagedObject *eventToDelete = [mutableFetchResult objectAtIndex:i];
             [self.managedObjectContext deleteObject:eventToDelete];
             
-            // 配列とTable Viewを更新する。
             [mutableFetchResult removeObjectAtIndex:i];
             
             // 変更をコミットする。
@@ -86,37 +133,10 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
      
 }
 
-- (void)preparetionEnitty
-{
-    /*
-    //　データベース格納処理
-    NSError *error = nil;
-    NSURL *modelPath = [[NSBundle mainBundle] URLForResource: @"Model" withExtension:@"momd"];
-    NSURL *modelURL = [NSURL fileURLWithPath: [modelPath path]];
-    NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL: modelURL];
-    NSPersistentStoreCoordinator *pStoreCondinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: model];
-    NSFileManager *fm = [NSFileManager defaultManager];
-    NSURL *storeURL = [fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
-    storeURL = [storeURL URLByAppendingPathComponent:@"Model.sqlite"];
-    NSPersistentStore *pStore = [pStoreCondinator addPersistentStoreWithType:NSSQLiteStoreType
-                                                               configuration:nil
-                                                                         URL:storeURL
-                                                                     options:nil
-                                                                       error:&error];
-    
-    if (pStore == nil) {
-        NSLog(@"Error Description: %@", [error userInfo]);
-    }
-    
-    self.managedObjectContext =　[[NSManagedObjectContext alloc] init];
-    [self.managedObjectContext setPersistentStoreCoordinator: pStoreCondinator];
-    self.entityDescModel = [NSEntityDescription entityForName:favoriteEntity inManagedObjectContext:self.managedObjectContext];
-     */
-}
 
 - (void)saveEntity:(ShopEntity *)shopEntity
 {
-    [self preparetionEnitty];
+   [self preparetionEnitty];
     
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.managedObjectContext;
