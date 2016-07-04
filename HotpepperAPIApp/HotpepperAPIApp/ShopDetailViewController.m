@@ -51,7 +51,7 @@
             self.favoriteButton.alpha = 1;
         }
     }
-    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

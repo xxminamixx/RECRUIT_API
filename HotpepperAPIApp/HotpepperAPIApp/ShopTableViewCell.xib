@@ -59,7 +59,7 @@
                             </mask>
                         </variation>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="テスト用のテキスト" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OgC-jb-oV7">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" scrollEnabled="NO" delaysContentTouches="NO" editable="NO" text="テスト用のテキスト" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OgC-jb-oV7">
                         <rect key="frame" x="117" y="38" width="195" height="72"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

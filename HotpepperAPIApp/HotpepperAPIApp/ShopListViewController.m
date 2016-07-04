@@ -83,6 +83,10 @@ numberOfRowsInSection:(NSInteger)section
 
     }
     
+    //　UITextViewのタッチ無効処理
+    UITextView *textView = (UITextView *)[shopcell viewWithTag:1];
+    [textView setUserInteractionEnabled:NO];
+    
      // ラベルに都道府県セット処理
     [shopcell setMyPropertyWithEntity:shopEntity];
     [shopcell setShopLogoWithURL:shopEntity.logo];
