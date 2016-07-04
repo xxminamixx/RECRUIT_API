@@ -7,7 +7,17 @@
 //
 
 #import "TabBarController.h"
-//#import "FavoriteViewController.h"
+#import "FavoriteViewController.h"
+#import "ConfigViewController.h"
+#import "HomeViewController.h"
+
+NSString * const homeImageStr = @"home.png";
+NSString * const homeImageFilledStr = @"homeFilled.png";
+NSString * const favoImageStr = @"star.png";
+NSString * const favoImageFilledStr = @"starFilled.png";
+NSString * const configImageStr = @"config.png";
+NSString * const configImageFilledStr = @"configFilled.png";
+
 
 @interface TabBarController ()
 //@property FavoriteViewController *favoriteViewController;
@@ -28,7 +38,16 @@
     favoItem.title = @"favorite";
     configItem.title = @"config";
     
-    // Do any additional setup after loading the view.
+    
+    homeItem.image = [[UIImage imageNamed:homeImageStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    homeItem.selectedImage = [[UIImage imageNamed:homeImageFilledStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    favoItem.image = [[UIImage imageNamed:favoImageStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    favoItem.selectedImage = [[UIImage imageNamed:favoImageFilledStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    configItem.image = [[UIImage imageNamed:configImageStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    configItem.selectedImage = [[UIImage imageNamed:configImageFilledStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
 }
 
 - (void)didReceiveMemoryWarning {
