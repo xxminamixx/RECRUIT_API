@@ -471,27 +471,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kaw-pt-5Ss">
-                                <rect key="frame" x="20" y="350" width="82" height="88"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="335" id="09h-AF-XV3"/>
-                                    <constraint firstAttribute="height" constant="99" id="PRn-yX-kL6"/>
-                                </constraints>
-                                <string key="text">お店の説明が
-ここに
-入ります。
-お店の説明
-が</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="09h-AF-XV3"/>
-                                        <exclude reference="PRn-yX-kL6"/>
-                                    </mask>
-                                </variation>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アクセス：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLE-KM-QwV">
                                 <rect key="frame" x="20" y="461" width="60" height="15"/>
                                 <constraints>
@@ -528,6 +507,27 @@
                                     <action selector="favoriteAction:" destination="dHX-cg-WBk" eventType="touchUpInside" id="bue-Yf-elA"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kaw-pt-5Ss">
+                                <rect key="frame" x="16" y="283" width="335" height="88"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="09h-AF-XV3"/>
+                                    <constraint firstAttribute="height" constant="99" id="PRn-yX-kL6"/>
+                                </constraints>
+                                <string key="text">お店の説明が
+ここに
+入ります。
+お店の説明
+が</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="09h-AF-XV3"/>
+                                        <exclude reference="PRn-yX-kL6"/>
+                                    </mask>
+                                </variation>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -551,6 +551,7 @@
                             <constraint firstItem="TmS-E1-0lS" firstAttribute="top" secondItem="jDk-MK-pa7" secondAttribute="bottom" constant="13" id="6n0-Y6-Zy0"/>
                             <constraint firstItem="TmS-E1-0lS" firstAttribute="leading" secondItem="zUi-5F-Em5" secondAttribute="leadingMargin" constant="10" id="73X-QD-Oge"/>
                             <constraint firstItem="TmS-E1-0lS" firstAttribute="leading" secondItem="zUi-5F-Em5" secondAttribute="leadingMargin" id="7Uj-bD-aBn"/>
+                            <constraint firstItem="Kaw-pt-5Ss" firstAttribute="leading" secondItem="EiR-DH-CFX" secondAttribute="leading" id="7Y2-ua-w47"/>
                             <constraint firstItem="8if-83-q4L" firstAttribute="leading" secondItem="EiR-DH-CFX" secondAttribute="trailing" constant="17" id="7lo-7r-vlb"/>
                             <constraint firstItem="DhI-Kw-bQv" firstAttribute="leading" secondItem="nRe-n3-Pim" secondAttribute="leading" id="8I6-NP-BdP"/>
                             <constraint firstItem="Kaw-pt-5Ss" firstAttribute="top" secondItem="EiR-DH-CFX" secondAttribute="bottom" constant="23" id="8h8-6O-w99"/>
@@ -601,7 +602,9 @@
                             <constraint firstAttribute="leadingMargin" secondItem="XLE-KM-QwV" secondAttribute="leading" id="RNf-bZ-alR"/>
                             <constraint firstItem="8if-83-q4L" firstAttribute="top" secondItem="ylR-M4-4e9" secondAttribute="bottom" constant="105" id="RY3-Xw-dHo"/>
                             <constraint firstItem="8if-83-q4L" firstAttribute="top" secondItem="DhI-Kw-bQv" secondAttribute="bottom" constant="8" symbolic="YES" id="Rko-6W-cN7"/>
+                            <constraint firstItem="Kaw-pt-5Ss" firstAttribute="top" secondItem="EiR-DH-CFX" secondAttribute="bottom" constant="26" id="ScM-R3-RNw"/>
                             <constraint firstItem="EiR-DH-CFX" firstAttribute="trailing" secondItem="zUi-5F-Em5" secondAttribute="trailingMargin" id="T0Y-2M-6Jp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kaw-pt-5Ss" secondAttribute="trailing" constant="8" id="VLa-Ht-9KP"/>
                             <constraint firstItem="IV7-Cn-f79" firstAttribute="top" secondItem="2UD-15-jxY" secondAttribute="bottom" constant="10" id="VZj-mb-tJQ"/>
                             <constraint firstItem="EiR-DH-CFX" firstAttribute="top" secondItem="8if-83-q4L" secondAttribute="bottom" constant="8" id="Wjs-AF-CQW"/>
                             <constraint firstItem="EiR-DH-CFX" firstAttribute="top" secondItem="8if-83-q4L" secondAttribute="bottom" constant="8" symbolic="YES" id="Wwc-8q-5vP"/>
@@ -768,6 +771,7 @@
                                 <exclude reference="8h8-6O-w99"/>
                                 <exclude reference="CeJ-f0-3jh"/>
                                 <exclude reference="DWK-Cz-OJR"/>
+                                <exclude reference="JQs-qt-HL6"/>
                                 <exclude reference="Xb9-mj-KK4"/>
                                 <exclude reference="d66-Bg-UKz"/>
                                 <exclude reference="dw3-wT-3FI"/>
@@ -791,6 +795,8 @@
                                 <exclude reference="Zwy-qf-Xlz"/>
                                 <exclude reference="c3h-Ta-13A"/>
                                 <exclude reference="g0n-qR-sNr"/>
+                                <exclude reference="pVN-1b-lPb"/>
+                                <exclude reference="yFZ-AP-nD2"/>
                                 <exclude reference="Mfz-tL-38M"/>
                                 <exclude reference="Mw2-wV-RXh"/>
                                 <exclude reference="Xpi-3A-LBm"/>

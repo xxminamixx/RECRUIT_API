@@ -10,8 +10,6 @@
 #import "FavoriteShopManager.h"
 #import "AppDelegate.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "UIImageView+WebCache.h"
-
 
 @interface ShopDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *shopname;
@@ -27,11 +25,20 @@
 
 @implementation ShopDetailViewController
 
+
+- (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
+{
+    [self.logo sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.navigationItem.title = _shopEntity.name;
-    [self setShopLogo: self.shopEntity.largeLogo];
-    
+    /*
+    void(^ImageReload)();
+    [self sd_setImageWithURL: self.shopEntity.largeLogo: ImageReload];
+    */
     _shopname.text = _shopEntity.name;
     _detail.text = _shopEntity.detail;
     _address.text = _shopEntity.address;
@@ -83,16 +90,11 @@
         self.favoriteButton.alpha = 0.2;
     }
 }
-
-/*
-- (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
-{
-    [self sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
-}
-*/
  
 - (void)setShopLogo:(NSString*)url {
     [self.logo sd_setImageWithURL:[NSURL URLWithString:url]];
     [self.detailView setNeedsDisplay];
 }
+
+
 @end

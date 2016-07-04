@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ShopEntity.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @protocol shopCellFavoriteDelegate <NSObject>
 
@@ -28,6 +29,6 @@
 - (IBAction)favoriteAction:(id)sender;
 - (void)setMyPropertyWithEntity:(ShopEntity *)shopEntity;
 - (void)setShopLogoWithURL:(NSString*)url;
-
+- (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock;
 @end
 

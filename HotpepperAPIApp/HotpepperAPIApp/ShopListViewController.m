@@ -74,15 +74,16 @@ numberOfRowsInSection:(NSInteger)section
         shopcell.favoriteButton.alpha = 1;
     }
     
-     // ラベルに都道府県セット処理
+    // URLをNSURLに変換
+    NSURL *url = [NSURL URLWithString:shopEntity.logo];
+    
     [shopcell setMyPropertyWithEntity:shopEntity];
     [shopcell setShopLogoWithURL:shopEntity.logo];
-    
-    /*
-    shopcell.detail.numberOfLines = 0; // 行数無制限
-    shopcell.detail.lineBreakMode = NSLineBreakByWordWrapping; // 単語の途中で改行されないようにする
-    [shopcell.detail sizeToFit]; // 自動的に適切な高さにする
-     */
+    [shopcell sd_setImageWithURL:url
+                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                           [self.view setNeedsLayout];
+                           [self.view layoutIfNeeded];
+                       }];
     return shopcell;
 }
 

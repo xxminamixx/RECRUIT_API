@@ -8,6 +8,8 @@
 
 #import "ShopTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
+#import "UIImageView+WebCache.h"
 
 @implementation ShopTableViewCell
 
@@ -47,6 +49,11 @@
     [self.shopLogo sd_setImageWithURL:[NSURL URLWithString:url]];
 }
 
+- (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
+{
+    [self.shopLogo sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
+    
+}
 
 
 @end
