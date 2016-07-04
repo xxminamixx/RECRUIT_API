@@ -26,12 +26,6 @@
 @implementation ShopDetailViewController
 
 
-- (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
-{
-    [self.logo sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
-    
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.navigationItem.title = _shopEntity.name;
@@ -65,6 +59,14 @@
     if ([favoriteShopManager addedShopToFavorite:_shopEntity.name]) {
         self.favoriteButton.alpha = 1;
     }
+    
+    NSURL *url = [NSURL URLWithString:self.shopEntity.logo];
+
+    [self sd_setImageWithURL:url
+                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                           [self.view setNeedsLayout];
+                           [self.view layoutIfNeeded];
+                       }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,6 +96,12 @@
 - (void)setShopLogo:(NSString*)url {
     [self.logo sd_setImageWithURL:[NSURL URLWithString:url]];
     [self.detailView setNeedsDisplay];
+}
+
+- (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
+{
+    [self.logo sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
+    
 }
 
 
