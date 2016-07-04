@@ -31,6 +31,8 @@ NSMutableArray *shopList;
     self.favoriteTableView.delegate = self;
     self.favoriteTableView.dataSource = self;
     
+    
+    
     //ViewControllerのViewにTableViewCellを登録
     UINib *shopNib = [UINib nibWithNibName:kShopTableViewCell bundle:nil];
     [self.favoriteTableView registerNib:shopNib forCellReuseIdentifier:kShopTableViewCell];
@@ -92,6 +94,7 @@ numberOfRowsInSection:(NSInteger)section
     // ラベルに都道府県セット処理
     ShopEntity *shopEntity = shopList[indexPath.row];
     [shopcell setMyPropertyWithEntity:shopEntity];
+    [shopcell setShopLogoWithURL:shopEntity.logo];
     
     return shopcell;
 }

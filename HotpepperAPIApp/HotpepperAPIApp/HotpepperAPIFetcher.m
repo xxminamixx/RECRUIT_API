@@ -301,6 +301,10 @@ didStartElement:(NSString *)elementName
             is_genre = NO;
         }
         
+        if ([elementName isEqualToString:shopopen]) {
+            is_open = NO;
+        }
+        
         if ([elementName isEqualToString:largeLogo]) {
             is_largeLogo = NO;
         }
