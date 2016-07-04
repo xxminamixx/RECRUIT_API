@@ -12,14 +12,14 @@
 		E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */; };
 		E90158761D1915CB00DF358C /* ServiceAreaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */; };
 		E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */; };
-		E90A553D1D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E90A553A1D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.m */; };
-		E90A553E1D227D7200576C7C /* FavoriteShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E90A553C1D227D7200576C7C /* FavoriteShopEntity.m */; };
 		E93391AD1D2A0A5E000F4A0F /* config.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A71D2A0A5E000F4A0F /* config.png */; };
 		E93391AE1D2A0A5E000F4A0F /* configFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A81D2A0A5E000F4A0F /* configFilled.png */; };
 		E93391AF1D2A0A5E000F4A0F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A91D2A0A5E000F4A0F /* home.png */; };
 		E93391B01D2A0A5E000F4A0F /* homeFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391AA1D2A0A5E000F4A0F /* homeFilled.png */; };
 		E93391B11D2A0A5E000F4A0F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391AB1D2A0A5E000F4A0F /* star.png */; };
 		E93391B21D2A0A5E000F4A0F /* starFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391AC1D2A0A5E000F4A0F /* starFilled.png */; };
+		E93391BD1D2A2E0C000F4A0F /* FavoriteShopEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E93391BA1D2A2E0C000F4A0F /* FavoriteShopEntity+CoreDataProperties.m */; };
+		E93391BE1D2A2E0C000F4A0F /* FavoriteShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E93391BC1D2A2E0C000F4A0F /* FavoriteShopEntity.m */; };
 		E9566C1A1D2363D200DE0556 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9566C191D2363D200DE0556 /* FavoriteViewController.m */; };
 		E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */; };
 		E969F5111D26670F000DDD34 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E969F5101D26670F000DDD34 /* ConfigViewController.m */; };
@@ -62,19 +62,18 @@
 		E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceAreaTableViewCell.xib; sourceTree = "<group>"; };
 		E901587D1D193C2400DF358C /* HotpepperAPIFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotpepperAPIFetcher.h; sourceTree = "<group>"; };
 		E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotpepperAPIFetcher.m; sourceTree = "<group>"; };
-		E90A55391D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FavoriteShopEntity+CoreDataProperties.h"; path = "../FavoriteShopEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		E90A553A1D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FavoriteShopEntity+CoreDataProperties.m"; path = "../FavoriteShopEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		E90A553B1D227D7200576C7C /* FavoriteShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteShopEntity.h; path = ../FavoriteShopEntity.h; sourceTree = "<group>"; };
-		E90A553C1D227D7200576C7C /* FavoriteShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteShopEntity.m; path = ../FavoriteShopEntity.m; sourceTree = "<group>"; };
 		E93391A71D2A0A5E000F4A0F /* config.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = config.png; sourceTree = "<group>"; };
 		E93391A81D2A0A5E000F4A0F /* configFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = configFilled.png; sourceTree = "<group>"; };
 		E93391A91D2A0A5E000F4A0F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		E93391AA1D2A0A5E000F4A0F /* homeFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeFilled.png; sourceTree = "<group>"; };
 		E93391AB1D2A0A5E000F4A0F /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		E93391AC1D2A0A5E000F4A0F /* starFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starFilled.png; sourceTree = "<group>"; };
+		E93391B91D2A2E0C000F4A0F /* FavoriteShopEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FavoriteShopEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E93391BA1D2A2E0C000F4A0F /* FavoriteShopEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FavoriteShopEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E93391BB1D2A2E0C000F4A0F /* FavoriteShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteShopEntity.h; sourceTree = "<group>"; };
+		E93391BC1D2A2E0C000F4A0F /* FavoriteShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteShopEntity.m; sourceTree = "<group>"; };
 		E9566C181D2363D200DE0556 /* FavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
 		E9566C191D2363D200DE0556 /* FavoriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
-		E956B9821D1A53A20028FA1B /* ServiceAreaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAreaEntity.h; sourceTree = "<group>"; };
 		E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaEntity.m; sourceTree = "<group>"; };
 		E969F50F1D26670F000DDD34 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		E969F5101D26670F000DDD34 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
@@ -152,11 +151,10 @@
 		E956B9871D1A98050028FA1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E90A55391D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.h */,
-				E90A553A1D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.m */,
-				E90A553B1D227D7200576C7C /* FavoriteShopEntity.h */,
-				E90A553C1D227D7200576C7C /* FavoriteShopEntity.m */,
-				E956B9821D1A53A20028FA1B /* ServiceAreaEntity.h */,
+				E93391B91D2A2E0C000F4A0F /* FavoriteShopEntity+CoreDataProperties.h */,
+				E93391BA1D2A2E0C000F4A0F /* FavoriteShopEntity+CoreDataProperties.m */,
+				E93391BB1D2A2E0C000F4A0F /* FavoriteShopEntity.h */,
+				E93391BC1D2A2E0C000F4A0F /* FavoriteShopEntity.m */,
 				E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */,
 				E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */,
 				E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */,
@@ -438,10 +436,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E99DDF381D18E3E6008374AD /* HomeViewController.m in Sources */,
-				E90A553E1D227D7200576C7C /* FavoriteShopEntity.m in Sources */,
 				E9566C1A1D2363D200DE0556 /* FavoriteViewController.m in Sources */,
 				E97747801D20CCD7002ABD77 /* ShopDetailViewController.m in Sources */,
-				E90A553D1D227D7200576C7C /* FavoriteShopEntity+CoreDataProperties.m in Sources */,
 				E969F5141D26672A000DDD34 /* ConfirmViewController.m in Sources */,
 				E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */,
 				E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */,
@@ -449,11 +445,13 @@
 				E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */,
 				E99DDF321D18E3E6008374AD /* main.m in Sources */,
 				E969F5111D26670F000DDD34 /* ConfigViewController.m in Sources */,
+				E93391BD1D2A2E0C000F4A0F /* FavoriteShopEntity+CoreDataProperties.m in Sources */,
 				E90158711D19124500DF358C /* ServiceAreaViewController.m in Sources */,
 				E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */,
 				E9D38E9E1D1D296100F8FA0D /* ShopListViewController.m in Sources */,
 				E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */,
 				E96F698F1D24DAA700AAE896 /* TabBarController.m in Sources */,
+				E93391BE1D2A2E0C000F4A0F /* FavoriteShopEntity.m in Sources */,
 				E97747991D211E4D002ABD77 /* Model.xcdatamodeld in Sources */,
 				E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */,
 			);

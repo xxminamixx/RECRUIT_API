@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.navigationItem.title = _shopEntity.name;
-    [self setShopLogo: self.shopEntity.logo];
+    [self setShopLogo: self.shopEntity.largeLogo];
     
     _shopname.text = _shopEntity.name;
     _detail.text = _shopEntity.detail;
@@ -51,9 +51,7 @@
             self.favoriteButton.alpha = 1;
         }
     }
-
-    
-}
+    }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

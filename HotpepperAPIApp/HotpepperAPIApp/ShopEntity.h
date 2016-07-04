@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *logo;
+@property (nonatomic, strong) NSString *largeLogo;
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSString *genre;
 @property (nonatomic, strong) NSString *open;

@@ -23,6 +23,7 @@ NSString * const address = @"address";
 NSString * const genre = @"genre";
 NSString * const shopopen = @"open";
 NSString * const detail = @"shop_detail_memo";
+NSString * const largeLogo = @"l";
 
 NSString *savecode;
 NSString *savename;
@@ -31,6 +32,7 @@ NSString *savedetail;
 NSString *saveopen;
 NSString *savegenre;
 NSString *saveaddress;
+NSString *saveLargeLogo; //大きい画像URL保存
 NSData *logo_image;
 
 BOOL is_large_servicearea = NO;
@@ -44,6 +46,7 @@ BOOL is_detail = NO;
 BOOL is_open = NO;
 BOOL is_genre = NO;
 BOOL is_address = NO;
+BOOL is_largeLogo = NO;
 
 BOOL is_area_request = NO;
 BOOL is_shop_request = NO;
@@ -181,6 +184,10 @@ didStartElement:(NSString *)elementName
         if ([elementName isEqualToString:genre]) {
             is_genre = YES;
         }
+        
+        if ([elementName isEqualToString:largeLogo]) {
+            is_largeLogo = YES;
+        }
     }
 
 }
@@ -224,6 +231,10 @@ didStartElement:(NSString *)elementName
         
         if (is_genre) {
             savegenre = string;
+        }
+        
+        if (is_largeLogo) {
+            saveLargeLogo = string;
         }
     }
     
@@ -289,6 +300,10 @@ didStartElement:(NSString *)elementName
         if ([elementName isEqualToString:genre]) {
             is_genre = NO;
         }
+        
+        if ([elementName isEqualToString:largeLogo]) {
+            is_largeLogo = NO;
+        }
             
         // shopタグの終わりを見つけた時にエンティティを配列に格納
         if ([elementName isEqualToString:shop]) {
@@ -299,6 +314,7 @@ didStartElement:(NSString *)elementName
             [shopEntity setGenre:savegenre];
             [shopEntity setAddress:saveaddress];
             [shopEntity setOpen:saveopen];
+            [shopEntity setLargeLogo:saveLargeLogo];
             
             [_shop addObject:shopEntity];
         }
