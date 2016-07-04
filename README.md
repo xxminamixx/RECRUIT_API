@@ -64,9 +64,9 @@
   
 NavigationControllerのItem設定  
   
-- [ ] 各画面のタイトルを設定  
-- [ ] TabBarのItem名設定  
-- [ ] TabBarのアイコン設定  
+- [x] 各画面のタイトルを設定  
+- [x] TabBarのItem名設定  
+- [x] TabBarのアイコン設定  
   
 ##6月30日  
 ジャンル選択画面作成  
