@@ -14,7 +14,7 @@
 
 @end
 
-@interface ServiceAreaViewController : UIViewController
+@interface ServiceAreaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) id<tapCellDelegate> tapdelegate;
 
 @end

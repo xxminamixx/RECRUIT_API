@@ -15,7 +15,6 @@
 
 NSString * const shop_tableviewcell = @"ShopTableViewCell";
 NSMutableArray *recieve_shop;
-BOOL isCellLoad;
 
 @interface ShopListViewController () <shopDelegate, shopCellFavoriteDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *shopTableView;
@@ -31,7 +30,6 @@ BOOL isCellLoad;
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.navigationItem.title = @"検索結果一覧";
-    isCellLoad =YES;
     
     _shopfetcher = [HotpepperAPIFetcher new];
     _shopfetcher.shopdelegate = self;
