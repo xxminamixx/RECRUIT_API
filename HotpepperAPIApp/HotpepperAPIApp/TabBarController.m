@@ -17,6 +17,8 @@ NSString * const favoImageStr = @"star.png";
 NSString * const favoImageFilledStr = @"starFilled.png";
 NSString * const configImageStr = @"config.png";
 NSString * const configImageFilledStr = @"configFilled.png";
+NSString * const listImageStr = @"List.png";
+NSString * const listFailledImageStr = @"ListFilled.png";
 
 
 @interface TabBarController ()
@@ -33,10 +35,12 @@ NSString * const configImageFilledStr = @"configFilled.png";
     UITabBarItem *homeItem = [self.tabBar.items objectAtIndex:0];
     UITabBarItem *favoItem = [self.tabBar.items objectAtIndex:1];
     UITabBarItem *configItem = [self.tabBar.items objectAtIndex:2];
+    UITabBarItem *listItem = [self.tabBar.items objectAtIndex:3];
     
     homeItem.title = @"home";
     favoItem.title = @"favorite";
     configItem.title = @"config";
+    listItem.title = @"line";
     
     
     homeItem.image = [[UIImage imageNamed:homeImageStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -48,6 +52,8 @@ NSString * const configImageFilledStr = @"configFilled.png";
     configItem.image = [[UIImage imageNamed:configImageStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     configItem.selectedImage = [[UIImage imageNamed:configImageFilledStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 
+    listItem.image = [[UIImage imageNamed:listImageStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    listItem.selectedImage = [[UIImage imageNamed:listFailledImageStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
 - (void)didReceiveMemoryWarning {
