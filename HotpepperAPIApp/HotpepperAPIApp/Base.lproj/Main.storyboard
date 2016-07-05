@@ -375,7 +375,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HotpepperAPIApp version 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWH-kS-QHh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HotpepperAPIApp version 1.0.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWH-kS-QHh">
                                 <rect key="frame" x="16" y="122" width="182" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4Eh-zu-8xs"/>
@@ -413,9 +413,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="前回からのアップデートや修正点を表示" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faZ-Xo-Ptk">
-                                <rect key="frame" x="20" y="323" width="306" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016 / 7 / 5 lineタブのアイコンを設定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faZ-Xo-Ptk">
+                                <rect key="frame" x="20" y="323" width="207.5" height="15"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="219" id="OQQ-G2-7SH"/>
                                     <constraint firstAttribute="height" constant="21" id="jeg-ms-iI9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -423,6 +424,7 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="OQQ-G2-7SH"/>
                                         <exclude reference="jeg-ms-iI9"/>
                                     </mask>
                                 </variation>
@@ -430,30 +432,46 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="faZ-Xo-Ptk" firstAttribute="centerY" secondItem="574-xj-XkI" secondAttribute="centerY" id="48C-Ku-dPY"/>
+                            <constraint firstItem="faZ-Xo-Ptk" firstAttribute="leading" secondItem="apj-2L-kZn" secondAttribute="leading" id="5Kh-3j-E0B"/>
                             <constraint firstItem="MNG-p1-9xi" firstAttribute="top" secondItem="faZ-Xo-Ptk" secondAttribute="bottom" constant="323" id="5PE-iy-gNG"/>
                             <constraint firstItem="HWH-kS-QHh" firstAttribute="leading" secondItem="lb9-9M-CU7" secondAttribute="leading" id="BV6-ba-thB"/>
                             <constraint firstItem="lb9-9M-CU7" firstAttribute="leading" secondItem="574-xj-XkI" secondAttribute="leadingMargin" id="Ftg-Dt-mTv"/>
                             <constraint firstItem="Gnv-Lf-kpF" firstAttribute="leading" secondItem="apj-2L-kZn" secondAttribute="leading" id="H2D-02-zdx"/>
+                            <constraint firstItem="apj-2L-kZn" firstAttribute="top" secondItem="2KG-md-Sfi" secondAttribute="bottom" constant="62" id="JMA-Bc-20K"/>
                             <constraint firstItem="Gnv-Lf-kpF" firstAttribute="leading" secondItem="574-xj-XkI" secondAttribute="leadingMargin" constant="4" id="Jbb-kC-GVM"/>
                             <constraint firstItem="faZ-Xo-Ptk" firstAttribute="centerY" secondItem="574-xj-XkI" secondAttribute="centerY" id="LoS-WG-OrN"/>
                             <constraint firstItem="lb9-9M-CU7" firstAttribute="top" secondItem="Gxe-D8-uAl" secondAttribute="bottom" constant="73" id="Mq6-H8-I9A"/>
                             <constraint firstItem="Gnv-Lf-kpF" firstAttribute="top" secondItem="HWH-kS-QHh" secondAttribute="bottom" constant="46" id="NQM-pt-75O"/>
                             <constraint firstAttribute="trailingMargin" secondItem="faZ-Xo-Ptk" secondAttribute="trailing" constant="33" id="RUz-h7-Er3"/>
+                            <constraint firstItem="MNG-p1-9xi" firstAttribute="top" secondItem="faZ-Xo-Ptk" secondAttribute="bottom" constant="323" id="YKT-Qv-ErR"/>
                             <constraint firstItem="HWH-kS-QHh" firstAttribute="top" secondItem="lb9-9M-CU7" secondAttribute="bottom" constant="8" id="Ye7-aB-NqA"/>
                             <constraint firstItem="faZ-Xo-Ptk" firstAttribute="top" secondItem="apj-2L-kZn" secondAttribute="bottom" constant="7" id="a3j-qz-ebK"/>
                             <constraint firstItem="2KG-md-Sfi" firstAttribute="top" secondItem="Gnv-Lf-kpF" secondAttribute="bottom" constant="8" symbolic="YES" id="cYU-aR-2Yd"/>
+                            <constraint firstItem="apj-2L-kZn" firstAttribute="leading" secondItem="faZ-Xo-Ptk" secondAttribute="leading" id="ecq-WR-9OW"/>
                             <constraint firstItem="MNG-p1-9xi" firstAttribute="top" secondItem="faZ-Xo-Ptk" secondAttribute="bottom" constant="309" id="gK3-JZ-PqA"/>
                             <constraint firstItem="faZ-Xo-Ptk" firstAttribute="leading" secondItem="apj-2L-kZn" secondAttribute="leading" id="hON-bd-JQE"/>
                             <constraint firstItem="faZ-Xo-Ptk" firstAttribute="top" secondItem="apj-2L-kZn" secondAttribute="bottom" constant="21" id="ieK-Ad-1Ue"/>
+                            <constraint firstItem="faZ-Xo-Ptk" firstAttribute="top" secondItem="apj-2L-kZn" secondAttribute="bottom" constant="7" id="jNi-dD-ZoN"/>
                             <constraint firstItem="Gnv-Lf-kpF" firstAttribute="leading" secondItem="faZ-Xo-Ptk" secondAttribute="leading" id="nwl-pf-hHX"/>
                             <constraint firstItem="Gnv-Lf-kpF" firstAttribute="leading" secondItem="2KG-md-Sfi" secondAttribute="leading" id="qhb-qd-xel"/>
+                            <constraint firstItem="faZ-Xo-Ptk" firstAttribute="top" secondItem="apj-2L-kZn" secondAttribute="bottom" constant="7" id="sC8-GI-b5P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="faZ-Xo-Ptk" secondAttribute="trailing" constant="33" id="sca-f5-7fz"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="nwl-pf-hHX"/>
+                                <exclude reference="48C-Ku-dPY"/>
+                                <exclude reference="5Kh-3j-E0B"/>
+                                <exclude reference="LoS-WG-OrN"/>
+                                <exclude reference="RUz-h7-Er3"/>
+                                <exclude reference="a3j-qz-ebK"/>
+                                <exclude reference="hON-bd-JQE"/>
                                 <exclude reference="ieK-Ad-1Ue"/>
+                                <exclude reference="sC8-GI-b5P"/>
                                 <exclude reference="sca-f5-7fz"/>
+                                <exclude reference="5PE-iy-gNG"/>
+                                <exclude reference="YKT-Qv-ErR"/>
                                 <exclude reference="gK3-JZ-PqA"/>
                             </mask>
                         </variation>

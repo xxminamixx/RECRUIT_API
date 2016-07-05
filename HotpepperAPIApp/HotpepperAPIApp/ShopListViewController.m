@@ -15,12 +15,15 @@
 
 NSString * const shop_tableviewcell = @"ShopTableViewCell";
 NSMutableArray *recieve_shop;
+BOOL isCellLoad;
 
 @interface ShopListViewController () <shopDelegate, shopCellFavoriteDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *shopTableView;
 @property HotpepperAPIFetcher *shopfetcher;
 @property BOOL isFavorite; // お気に入り登録されているか判定
 @property double labelAlpha;
+@property NSDate *beforeCellTime;
+@property NSDate *afterCellTime;
 @end
 
 @implementation ShopListViewController
@@ -28,6 +31,7 @@ NSMutableArray *recieve_shop;
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.navigationItem.title = @"検索結果一覧";
+    isCellLoad =YES;
     
     _shopfetcher = [HotpepperAPIFetcher new];
     _shopfetcher.shopdelegate = self;
@@ -69,6 +73,7 @@ numberOfRowsInSection:(NSInteger)section
 
 
 // TODO: セルの最後まで読み込まないとブロック内が実行されない
+// TODO: セルの再利用で画面に収まるcellが表示されたらこのメソッドが待機状態になる
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ShopTableViewCell *shopcell = [_shopTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
@@ -93,11 +98,16 @@ numberOfRowsInSection:(NSInteger)section
                            [self.shopTableView setNeedsLayout];
                            [self.shopTableView layoutIfNeeded];
                        }];
-    
-    
-    if (shopcell ) {
-        
+    //　処理時間計算
+    if (indexPath.row % 2 == 0) {
+        self.afterCellTime = [NSDate date];
+        // 開始時間と終了時間の差を表示
+        NSTimeInterval interval = [self.afterCellTime timeIntervalSinceDate:self.beforeCellTime];
+        NSLog(@"処理時間 = %.3f秒",interval);
+    } else {
+        self.beforeCellTime = [NSDate date];
     }
+    
     return shopcell;
 }
 
@@ -156,6 +166,20 @@ numberOfRowsInSection:(NSInteger)section
         // お気に入り登録がされず削除処理がされた
         [self.shopTableView reloadData];
     }
+}
+
+
+// 日付をミリ秒までの表示にして文字列で返すメソッド
+- (NSString*)getDateString:(NSDate*)date
+{
+    // 日付フォーマットオブジェクトの生成
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    // フォーマットを指定の日付フォーマットに設定
+    [dateFormatter setDateFormat:@"yyyy/MM/dd HH:mm:ss.SSS"];
+    // 日付の文字列を生成
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    
+    return dateString;
 }
 
 @end
