@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchNumberViewController : UIViewController
+@interface SearchNumberViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @end
