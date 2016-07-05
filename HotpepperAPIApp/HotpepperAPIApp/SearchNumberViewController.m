@@ -28,6 +28,7 @@ NSString * const searchNumber = @"SearchNumberSettingKEY";
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UIPickerView Datasource
 // 行の数を設定
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView*)pickerView
 {
@@ -45,24 +46,21 @@ NSString * const searchNumber = @"SearchNumberSettingKEY";
     return [NSString stringWithFormat:@"%ld", (row + 1) * 10];
 }
 
+
+#pragma mark - UIPickerView Delegate
 // 選択されたピッカービューを取得
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    
-    
-    
     // 0列目の選択している行番号を取得
     NSInteger selectedRow = ([pickerView selectedRowInComponent:0] + 1) * 10;
     NSNumber *castRow = [NSNumber numberWithInteger:selectedRow];
     
-    /*
+    // 選択した件数を永続化
     NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *savingNumber = [NSMutableDictionary dictionary];
-    [savingNumber setObject:castRow forKey:searchNumber];
-    */
+    [searchNumbserSetting setObject:castRow forKey:@"SearchNumberSettingKEY"];
+    [searchNumbserSetting synchronize];
     
     NSLog(@"%@", castRow);
 }
-
 
 @end

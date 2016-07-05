@@ -26,6 +26,8 @@ NSString * const detail = @"shop_detail_memo";
 NSString * const largeLogo = @"l";
 NSString * const shopId = @"id";
 
+//NSString * const searchNumber = @"SearchNumberSettingKEY";
+
 NSString *savecode;
 NSString *savename;
 NSString *savelogo;
@@ -68,6 +70,12 @@ ServiceAreaEntity *servicearea_entity;
     //　タップされたエリアコードを追加
     [url appendString:areacode];
     
+    [url appendString:@"&count="];
+    // 表示件数の取得
+    NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
+    NSString *sSerchNumber = [[searchNumbserSetting objectForKey:@"SearchNumberSettingKEY"] stringValue];
+    [url appendString: sSerchNumber];
+     
     //　NSURLにセット
     NSURL *shopurl = [NSURL URLWithString:url];
     is_shop_request = YES;
