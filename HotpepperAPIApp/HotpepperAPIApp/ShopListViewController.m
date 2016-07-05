@@ -57,6 +57,9 @@ NSMutableArray *recieve_shop;
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - UITableViewDataSource 
+
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section
 {
@@ -103,6 +106,8 @@ numberOfRowsInSection:(NSInteger)section
     return 125;
 }
 
+
+#pragma mark - UITableViewDelegate
 // セルがタップされたときの処理
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -121,6 +126,8 @@ numberOfRowsInSection:(NSInteger)section
     [self.navigationController pushViewController:shopDetailView animated:YES];
 }
 
+
+#pragma mark - fetch shopEntity
 
 - (void)getShop:(NSMutableArray *)shop
 {
