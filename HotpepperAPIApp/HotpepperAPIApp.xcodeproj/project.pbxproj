@@ -18,6 +18,7 @@
 		E93391B01D2A0A5E000F4A0F /* homeFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391AA1D2A0A5E000F4A0F /* homeFilled.png */; };
 		E93391B11D2A0A5E000F4A0F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391AB1D2A0A5E000F4A0F /* star.png */; };
 		E93391B21D2A0A5E000F4A0F /* starFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391AC1D2A0A5E000F4A0F /* starFilled.png */; };
+		E9357AAE1D2B585900F5C548 /* SearchNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9357AAD1D2B585900F5C548 /* SearchNumberViewController.m */; };
 		E947BAC61D2A4CE600862C74 /* FavoriteShopEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E947BAC31D2A4CE600862C74 /* FavoriteShopEntity+CoreDataProperties.m */; };
 		E947BAC71D2A4CE600862C74 /* FavoriteShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E947BAC51D2A4CE600862C74 /* FavoriteShopEntity.m */; };
 		E9566C1A1D2363D200DE0556 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9566C191D2363D200DE0556 /* FavoriteViewController.m */; };
@@ -68,6 +69,8 @@
 		E93391AA1D2A0A5E000F4A0F /* homeFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeFilled.png; sourceTree = "<group>"; };
 		E93391AB1D2A0A5E000F4A0F /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		E93391AC1D2A0A5E000F4A0F /* starFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starFilled.png; sourceTree = "<group>"; };
+		E9357AAC1D2B585900F5C548 /* SearchNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchNumberViewController.h; sourceTree = "<group>"; };
+		E9357AAD1D2B585900F5C548 /* SearchNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchNumberViewController.m; sourceTree = "<group>"; };
 		E947BAC21D2A4CE600862C74 /* FavoriteShopEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FavoriteShopEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
 		E947BAC31D2A4CE600862C74 /* FavoriteShopEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FavoriteShopEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
 		E947BAC41D2A4CE600862C74 /* FavoriteShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteShopEntity.h; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 		E956B9891D1A984D0028FA1B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E9357AAC1D2B585900F5C548 /* SearchNumberViewController.h */,
+				E9357AAD1D2B585900F5C548 /* SearchNumberViewController.m */,
 				E96F698D1D24DAA700AAE896 /* TabBarController.h */,
 				E96F698E1D24DAA700AAE896 /* TabBarController.m */,
 				E99DDF331D18E3E6008374AD /* AppDelegate.h */,
@@ -452,6 +457,7 @@
 				E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */,
 				E96F698F1D24DAA700AAE896 /* TabBarController.m in Sources */,
 				E947BAC71D2A4CE600862C74 /* FavoriteShopEntity.m in Sources */,
+				E9357AAE1D2B585900F5C548 /* SearchNumberViewController.m in Sources */,
 				E97747991D211E4D002ABD77 /* Model.xcdatamodeld in Sources */,
 				E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */,
 			);
