@@ -180,6 +180,9 @@
                                 <state key="normal" title="確認">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="versionAction:" destination="2nV-bT-Lvt" eventType="touchUpInside" id="Ox7-kc-X89"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -268,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHi-Kw-qE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015.5" y="2360.5"/>
+            <point key="canvasLocation" x="1031.5" y="3104.5"/>
         </scene>
         <!--Confirm View Controller-->
         <scene sceneID="HYF-7o-7yR">
@@ -358,7 +361,108 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucf-Dl-Z95" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745.5" y="1513.5"/>
+            <point key="canvasLocation" x="1801.5" y="1513.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WwS-MC-yYY">
+            <objects>
+                <viewController storyboardIdentifier="Version" id="CiT-VO-cG5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gxe-D8-uAl"/>
+                        <viewControllerLayoutGuide type="bottom" id="MNG-p1-9xi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="574-xj-XkI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HotpepperAPIApp version 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWH-kS-QHh">
+                                <rect key="frame" x="16" y="122" width="182" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4Eh-zu-8xs"/>
+                                    <constraint firstAttribute="width" constant="182" id="O0O-Z8-Vnd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アプリの情報" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lb9-9M-CU7">
+                                <rect key="frame" x="16" y="93" width="102" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fWy-S2-xqt"/>
+                                    <constraint firstAttribute="width" constant="102" id="tgP-xs-lrN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更新日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnv-Lf-kpF">
+                                <rect key="frame" x="20" y="189" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016 / 7 / 5 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KG-md-Sfi">
+                                <rect key="frame" x="20" y="218" width="68" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更新情報" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apj-2L-kZn">
+                                <rect key="frame" x="20" y="295" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="前回からのアップデートや修正点を表示" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faZ-Xo-Ptk">
+                                <rect key="frame" x="20" y="323" width="306" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="jeg-ms-iI9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jeg-ms-iI9"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MNG-p1-9xi" firstAttribute="top" secondItem="faZ-Xo-Ptk" secondAttribute="bottom" constant="323" id="5PE-iy-gNG"/>
+                            <constraint firstItem="HWH-kS-QHh" firstAttribute="leading" secondItem="lb9-9M-CU7" secondAttribute="leading" id="BV6-ba-thB"/>
+                            <constraint firstItem="lb9-9M-CU7" firstAttribute="leading" secondItem="574-xj-XkI" secondAttribute="leadingMargin" id="Ftg-Dt-mTv"/>
+                            <constraint firstItem="Gnv-Lf-kpF" firstAttribute="leading" secondItem="apj-2L-kZn" secondAttribute="leading" id="H2D-02-zdx"/>
+                            <constraint firstItem="Gnv-Lf-kpF" firstAttribute="leading" secondItem="574-xj-XkI" secondAttribute="leadingMargin" constant="4" id="Jbb-kC-GVM"/>
+                            <constraint firstItem="faZ-Xo-Ptk" firstAttribute="centerY" secondItem="574-xj-XkI" secondAttribute="centerY" id="LoS-WG-OrN"/>
+                            <constraint firstItem="lb9-9M-CU7" firstAttribute="top" secondItem="Gxe-D8-uAl" secondAttribute="bottom" constant="73" id="Mq6-H8-I9A"/>
+                            <constraint firstItem="Gnv-Lf-kpF" firstAttribute="top" secondItem="HWH-kS-QHh" secondAttribute="bottom" constant="46" id="NQM-pt-75O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="faZ-Xo-Ptk" secondAttribute="trailing" constant="33" id="RUz-h7-Er3"/>
+                            <constraint firstItem="HWH-kS-QHh" firstAttribute="top" secondItem="lb9-9M-CU7" secondAttribute="bottom" constant="8" id="Ye7-aB-NqA"/>
+                            <constraint firstItem="faZ-Xo-Ptk" firstAttribute="top" secondItem="apj-2L-kZn" secondAttribute="bottom" constant="7" id="a3j-qz-ebK"/>
+                            <constraint firstItem="2KG-md-Sfi" firstAttribute="top" secondItem="Gnv-Lf-kpF" secondAttribute="bottom" constant="8" symbolic="YES" id="cYU-aR-2Yd"/>
+                            <constraint firstItem="MNG-p1-9xi" firstAttribute="top" secondItem="faZ-Xo-Ptk" secondAttribute="bottom" constant="309" id="gK3-JZ-PqA"/>
+                            <constraint firstItem="faZ-Xo-Ptk" firstAttribute="leading" secondItem="apj-2L-kZn" secondAttribute="leading" id="hON-bd-JQE"/>
+                            <constraint firstItem="faZ-Xo-Ptk" firstAttribute="top" secondItem="apj-2L-kZn" secondAttribute="bottom" constant="21" id="ieK-Ad-1Ue"/>
+                            <constraint firstItem="Gnv-Lf-kpF" firstAttribute="leading" secondItem="faZ-Xo-Ptk" secondAttribute="leading" id="nwl-pf-hHX"/>
+                            <constraint firstItem="Gnv-Lf-kpF" firstAttribute="leading" secondItem="2KG-md-Sfi" secondAttribute="leading" id="qhb-qd-xel"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="faZ-Xo-Ptk" secondAttribute="trailing" constant="33" id="sca-f5-7fz"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="nwl-pf-hHX"/>
+                                <exclude reference="ieK-Ad-1Ue"/>
+                                <exclude reference="sca-f5-7fz"/>
+                                <exclude reference="gK3-JZ-PqA"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TBZ-el-fC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1801.5" y="2409.5"/>
         </scene>
         <!--Service Area View Controller-->
         <scene sceneID="ZAH-i2-GFO">
@@ -1027,7 +1131,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wA5-7D-l67" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="184.5" y="2360.5"/>
+            <point key="canvasLocation" x="184.5" y="3104.5"/>
         </scene>
     </scenes>
 </document>
