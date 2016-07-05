@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -128,23 +130,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="すべてのお気に入りを削除します" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcF-Gh-YOl">
-                                <rect key="frame" x="60" y="147" width="255" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="すべてのお気に入りを削除します     --------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcF-Gh-YOl">
+                                <rect key="frame" x="15" y="111" width="243" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="CoZ-eR-rBK"/>
                                     <constraint firstAttribute="height" constant="21" id="Ltn-36-l2d"/>
+                                    <constraint firstAttribute="height" constant="21" id="SB0-AC-KS0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="CoZ-eR-rBK"/>
+                                        <exclude reference="Ltn-36-l2d"/>
                                     </mask>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfX-Z3-2cH">
-                                <rect key="frame" x="147" y="187" width="80" height="30"/>
+                                <rect key="frame" x="275" y="111" width="80" height="25"/>
                                 <color key="backgroundColor" red="1" green="0.37061512095404348" blue="0.37611232557004992" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="UG7-D8-OHz"/>
@@ -154,24 +158,74 @@
                                 <state key="normal" title="削除">
                                     <color key="titleColor" red="0.97780994740000005" green="0.97646244230000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="UG7-D8-OHz"/>
+                                        <exclude reference="cNx-gE-y2l"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="deleteAction:" destination="2nV-bT-Lvt" eventType="touchUpInside" id="29m-9m-BbL"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="バージョンの確認       ----------------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZS-ie-F8N">
+                                <rect key="frame" x="15" y="169" width="245" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdc-Gl-uTx">
+                                <rect key="frame" x="275" y="165" width="80" height="25"/>
+                                <color key="backgroundColor" red="0.34015695233042903" green="0.74498895202020199" blue="0.43606958369562332" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="確認">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="UfX-Z3-2cH" firstAttribute="leading" secondItem="xdc-Gl-uTx" secondAttribute="leading" id="1zt-l5-dGL"/>
                             <constraint firstItem="dcF-Gh-YOl" firstAttribute="centerX" secondItem="Aug-1g-PxJ" secondAttribute="centerX" id="2Mj-LZ-i9w"/>
+                            <constraint firstItem="UfX-Z3-2cH" firstAttribute="firstBaseline" secondItem="dcF-Gh-YOl" secondAttribute="baseline" id="2YT-7r-3Qt"/>
+                            <constraint firstItem="dcF-Gh-YOl" firstAttribute="leading" secondItem="Aug-1g-PxJ" secondAttribute="leadingMargin" constant="-1" id="2fw-oY-wrA"/>
                             <constraint firstItem="dcF-Gh-YOl" firstAttribute="top" secondItem="jS6-n0-0AH" secondAttribute="bottom" constant="83" id="478-7l-Dtx"/>
+                            <constraint firstItem="dcF-Gh-YOl" firstAttribute="top" secondItem="UfX-Z3-2cH" secondAttribute="top" id="ADF-ag-rjC"/>
                             <constraint firstItem="dcF-Gh-YOl" firstAttribute="leading" secondItem="Aug-1g-PxJ" secondAttribute="leadingMargin" constant="40" id="ATx-1i-eBk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dcF-Gh-YOl" secondAttribute="trailing" constant="40" id="BIb-ub-nR2"/>
+                            <constraint firstItem="UfX-Z3-2cH" firstAttribute="top" secondItem="dcF-Gh-YOl" secondAttribute="top" id="Jas-gV-ldt"/>
+                            <constraint firstItem="xdc-Gl-uTx" firstAttribute="top" secondItem="UfX-Z3-2cH" secondAttribute="bottom" constant="29" id="M9t-NS-i91"/>
+                            <constraint firstItem="xdc-Gl-uTx" firstAttribute="top" secondItem="UfX-Z3-2cH" secondAttribute="bottom" constant="29" id="N6G-ex-eDT"/>
+                            <constraint firstItem="xdc-Gl-uTx" firstAttribute="leading" secondItem="UfX-Z3-2cH" secondAttribute="leading" id="OOO-0E-ihc"/>
                             <constraint firstItem="dcF-Gh-YOl" firstAttribute="centerX" secondItem="UfX-Z3-2cH" secondAttribute="centerX" id="Qef-lD-x5b"/>
+                            <constraint firstItem="dcF-Gh-YOl" firstAttribute="top" secondItem="jS6-n0-0AH" secondAttribute="bottom" constant="47" id="SSm-8u-Vyo"/>
+                            <constraint firstItem="xdc-Gl-uTx" firstAttribute="trailing" secondItem="UfX-Z3-2cH" secondAttribute="trailing" id="XGe-dr-Irz"/>
+                            <constraint firstItem="UfX-Z3-2cH" firstAttribute="trailing" secondItem="xdc-Gl-uTx" secondAttribute="trailing" id="Z4b-zp-hg1"/>
+                            <constraint firstItem="dcF-Gh-YOl" firstAttribute="leading" secondItem="2ZS-ie-F8N" secondAttribute="leading" id="Zle-HF-Wth"/>
+                            <constraint firstItem="dcF-Gh-YOl" firstAttribute="baseline" secondItem="UfX-Z3-2cH" secondAttribute="firstBaseline" id="Zv7-LM-LPL"/>
                             <constraint firstItem="UfX-Z3-2cH" firstAttribute="top" secondItem="dcF-Gh-YOl" secondAttribute="bottom" constant="19" id="dA3-jj-pKg"/>
+                            <constraint firstItem="UfX-Z3-2cH" firstAttribute="baseline" secondItem="dcF-Gh-YOl" secondAttribute="baseline" id="eIO-UU-0n4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UfX-Z3-2cH" secondAttribute="trailing" constant="4" id="hLg-NH-aii"/>
+                            <constraint firstItem="2ZS-ie-F8N" firstAttribute="top" secondItem="dcF-Gh-YOl" secondAttribute="bottom" constant="37" id="hrH-Jg-cJA"/>
+                            <constraint firstItem="UfX-Z3-2cH" firstAttribute="leading" secondItem="dcF-Gh-YOl" secondAttribute="trailing" constant="17" id="lKN-NF-sSh"/>
+                            <constraint firstItem="e1X-rp-8Zo" firstAttribute="top" secondItem="xdc-Gl-uTx" secondAttribute="bottom" constant="428" id="qBw-Kn-hUM"/>
+                            <constraint firstItem="UfX-Z3-2cH" firstAttribute="leading" secondItem="dcF-Gh-YOl" secondAttribute="trailing" constant="17" id="sIq-P7-UE3"/>
+                            <constraint firstItem="dcF-Gh-YOl" firstAttribute="baseline" secondItem="UfX-Z3-2cH" secondAttribute="baseline" id="x6A-KB-y46"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="2Mj-LZ-i9w"/>
+                                <exclude reference="478-7l-Dtx"/>
+                                <exclude reference="ADF-ag-rjC"/>
                                 <exclude reference="ATx-1i-eBk"/>
                                 <exclude reference="BIb-ub-nR2"/>
+                                <exclude reference="Qef-lD-x5b"/>
+                                <exclude reference="Zv7-LM-LPL"/>
+                                <exclude reference="x6A-KB-y46"/>
+                                <exclude reference="1zt-l5-dGL"/>
+                                <exclude reference="Z4b-zp-hg1"/>
+                                <exclude reference="dA3-jj-pKg"/>
+                                <exclude reference="sIq-P7-UE3"/>
+                                <exclude reference="M9t-NS-i91"/>
                             </mask>
                         </variation>
                     </view>
