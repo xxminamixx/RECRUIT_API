@@ -2,18 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:HotpepperAPIApp/FavoriteShopEntity+CoreDataProperties.h">
-   </FileRef>
-   <FileRef
-      location = "group:HotpepperAPIApp/FavoriteShopEntity+CoreDataProperties.m">
-   </FileRef>
-   <FileRef
-      location = "group:HotpepperAPIApp/FavoriteShopEntity.h">
-   </FileRef>
-   <FileRef
-      location = "group:HotpepperAPIApp/FavoriteShopEntity.m">
-   </FileRef>
-   <FileRef
       location = "group:HotpepperAPIApp.xcodeproj">
    </FileRef>
    <FileRef

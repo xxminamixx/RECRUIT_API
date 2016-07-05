@@ -44,10 +44,13 @@ NSMutableArray *recieve_shop;
     [self.shopTableView registerNib:shopNib forCellReuseIdentifier:shop_tableviewcell];
 }
 
+/*
 - (void)viewDidAppear:(BOOL)animated
 {
     [self.shopTableView reloadData];
+    [super viewDidAppear:animated];
 }
+*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -61,6 +64,8 @@ numberOfRowsInSection:(NSInteger)section
     return recieve_shop.count;
 }
 
+
+// TODO: セルの最後まで読み込まないとブロック内が実行されない
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ShopTableViewCell *shopcell = [_shopTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
@@ -74,16 +79,22 @@ numberOfRowsInSection:(NSInteger)section
         shopcell.favoriteButton.alpha = 1;
     }
     
+    [shopcell setMyPropertyWithEntity:shopEntity];
+    //[shopcell setShopLogoWithURL:shopEntity.logo];
+    
     // URLをNSURLに変換
     NSURL *url = [NSURL URLWithString:shopEntity.logo];
-    
-    [shopcell setMyPropertyWithEntity:shopEntity];
-    [shopcell setShopLogoWithURL:shopEntity.logo];
+
     [shopcell sd_setImageWithURL:url
                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                           [self.view setNeedsLayout];
-                           [self.view layoutIfNeeded];
+                           [self.shopTableView setNeedsLayout];
+                           [self.shopTableView layoutIfNeeded];
                        }];
+    
+    
+    if (shopcell ) {
+        
+    }
     return shopcell;
 }
 
@@ -139,7 +150,5 @@ numberOfRowsInSection:(NSInteger)section
         [self.shopTableView reloadData];
     }
 }
-
-
 
 @end

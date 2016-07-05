@@ -52,7 +52,6 @@
 - (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
 {
     [self.shopLogo sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
-    
 }
 
 
