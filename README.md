@@ -1,7 +1,7 @@
 # 7月6日  
-- [ ] 単体テスト項目作成  
-- [ ] TableViewをAutoLayoutで調整   
-- [ ] 単体テスト  
+- [x] 単体テスト項目作成  
+- [x] TableViewをAutoLayoutで調整   
+- [x] 単体テスト  
 - [ ] バグ修正  
   
 # 7月7日 
