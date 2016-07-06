@@ -71,6 +71,7 @@ ServiceAreaEntity *servicearea_entity;
     [url appendString:areacode];
     
     [url appendString:@"&count="];
+    
     // 表示件数の取得
     NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
     NSString *sSerchNumber = [[searchNumbserSetting objectForKey:@"SearchNumberSettingKEY"] stringValue];

@@ -31,13 +31,16 @@ NSMutableArray *shopList;
     self.favoriteTableView.delegate = self;
     self.favoriteTableView.dataSource = self;
     
-    
-    
     //ViewControllerのViewにTableViewCellを登録
     UINib *shopNib = [UINib nibWithNibName:kShopTableViewCell bundle:nil];
     [self.favoriteTableView registerNib:shopNib forCellReuseIdentifier:kShopTableViewCell];
     
 
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.favoriteTableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -142,11 +145,14 @@ numberOfRowsInSection:(NSInteger)section
         // お気に入り登録処理
         // 詳細表示しているお店のEntityをManagerに渡す
         [favoriteManager getFavoriteShop:shopEntity];
-        
+
         // お気に入りされた
         [self.favoriteTableView reloadData];
         
     } else {
+        // 更新されたお気に入り情報を取得
+        shopList = [favoriteManager fetchEntityList];
+
         // お気に入り登録がされず削除処理がされた
         [self.favoriteTableView reloadData];
     }
