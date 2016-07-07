@@ -57,6 +57,10 @@ BOOL is_area_request = NO;
 BOOL is_shop_request = NO;
 ServiceAreaEntity *servicearea_entity;
 
+NSURLSessionConfiguration *config;
+NSURLSession *session;
+
+
 @implementation HotpepperAPIFetcher
 
 //　都道府県選択画面からお店のリクエストURL作成
@@ -102,8 +106,8 @@ ServiceAreaEntity *servicearea_entity;
 - (void)sendRequest:(NSURL*)requesturl
 {
     //セッションの作成
-    NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession* session = [NSURLSession sessionWithConfiguration:config];
+    config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    session = [NSURLSession sessionWithConfiguration:config];
     
     //データの送受信
     NSURLSessionDataTask* areatask =
@@ -112,12 +116,13 @@ ServiceAreaEntity *servicearea_entity;
               
                    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
                    parser.delegate = self;
+               
                    [parser parse];
                
            }];
     [areatask resume];
-
 }
+
 
 
 
@@ -350,6 +355,10 @@ didStartElement:(NSString *)elementName
 // デリゲートメソッド(解析終了時)
 - (void) parserDidEndDocument:(NSXMLParser *)parser{
     NSLog(@"解析終了");
+    
+    // NSURLSessionを終了
+    [session invalidateAndCancel];
+    
     if (is_area_request) {
         // デリゲートメソッドの呼び出し
         [self.areadelegate getServiceArea:_servicearea];
@@ -370,7 +379,6 @@ didStartElement:(NSString *)elementName
     int searchNum = ([[searchNumbserSetting objectForKey:@"SearchNumberSettingKEY"] intValue] + 1) * 10;
     NSString *sSearchNum = [NSString stringWithFormat:@"%d", searchNum];
     return  sSearchNum;
-    
 }
 
 @end
