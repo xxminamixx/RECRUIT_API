@@ -8,6 +8,7 @@
 
 #import "ConfigViewController.h"
 #import "ConfirmViewController.h"
+#import "FavoriteShopManager.h"
 
 @interface ConfigViewController ()
 - (IBAction)deleteAction:(id)sender;
@@ -27,19 +28,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Version Confirmation
+- (IBAction)versionAction:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ConfirmViewController *confirmViewController = [storyboard instantiateViewControllerWithIdentifier:@"Version"];
+    [self.navigationController pushViewController:confirmViewController animated:YES];
 }
-*/
 
+# pragma mark - Favorite Delete
 - (IBAction)deleteAction:(id)sender {
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"UIAlertControllerStyle.Alert" message:@"iOS8" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"お気に入りを削除" message:@"本当にお気に入りを全て削除しますか？" preferredStyle:UIAlertControllerStyleAlert];
     
     // addActionした順に左から右にボタンが配置されます
     [alertController addAction:[UIAlertAction actionWithTitle:@"はい" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -53,27 +52,18 @@
     
     [self presentViewController:alertController animated:YES completion:nil];
     
-   
-    /*
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ConfirmViewController *confirmViewController = [storyboard instantiateViewControllerWithIdentifier:@"Confirm"];
-    
-    
-    // 画面をPUSHで遷移させる
-    //[self.navigationController pushViewController:confirmViewController animated:YES];
-    
-    
-    confirmViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentViewController:confirmViewController animated:NO completion:nil];
-    */
 }
 
-- (IBAction)versionAction:(id)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ConfirmViewController *confirmViewController = [storyboard instantiateViewControllerWithIdentifier:@"Version"];
-    [self.navigationController pushViewController:confirmViewController animated:YES];
+- (void)cancelButtonPushed
+{
+    // キャンセル処理
 }
 
-- (void)cancelButtonPushed {}
-- (void)otherButtonPushed {}
+- (void)otherButtonPushed
+{
+    //　削除確定処理
+    FavoriteShopManager *favoriteShopManager = [FavoriteShopManager new];
+    [favoriteShopManager allDeleteFavorite];
+
+}
 @end
