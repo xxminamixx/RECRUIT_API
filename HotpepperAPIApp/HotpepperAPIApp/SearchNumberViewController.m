@@ -25,7 +25,7 @@ NSString * const searchNumber = @"SearchNumberSettingKEY";
 
     //Pickerの初期値設定
     NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
-    int searchNumIndex = ([[searchNumbserSetting objectForKey:@"SearchNumberSettingKEY"] intValue] / 10) - 1;
+    int searchNumIndex = ([[searchNumbserSetting objectForKey:searchNumber] intValue] / 10) - 1;
     [self.searchNumberPicker selectRow:searchNumIndex  inComponent:0 animated:YES];
 
 }
@@ -58,16 +58,18 @@ NSString * const searchNumber = @"SearchNumberSettingKEY";
 // 選択されたピッカービューを取得
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    // 0列目の選択している行番号を取得
-    NSInteger selectedRow = ([pickerView selectedRowInComponent:0] + 1) * 10;
-    NSNumber *castRow = [NSNumber numberWithInteger:selectedRow];
+    // rowをNSInterからNSNumberに変換
+    //永続化するため
+    NSNumber *castRow = [NSNumber numberWithInteger:row];
     
     // 選択した件数を永続化
     NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
-    [searchNumbserSetting setObject:castRow forKey:@"SearchNumberSettingKEY"];
+    [searchNumbserSetting setObject:castRow forKey:searchNumber];
     [searchNumbserSetting synchronize];
     
     NSLog(@"%@", castRow);
 }
+
+
 
 @end

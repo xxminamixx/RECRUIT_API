@@ -72,10 +72,7 @@ ServiceAreaEntity *servicearea_entity;
     
     [url appendString:@"&count="];
     
-    // 表示件数の取得
-    NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
-    NSString *sSerchNumber = [[searchNumbserSetting objectForKey:@"SearchNumberSettingKEY"] stringValue];
-    [url appendString: sSerchNumber];
+    [url appendString: self.searchNumberCast];
      
     //　NSURLにセット
     NSURL *shopurl = [NSURL URLWithString:url];
@@ -363,6 +360,17 @@ didStartElement:(NSString *)elementName
         [self.shopdelegate getShop:_shop];
         is_shop_request = NO;
     }
+}
+
+// 永続化した表示件数を取得し検索用に変換する
+- (NSString *)searchNumberCast
+{
+    // 表示件数の取得
+    NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
+    int searchNum = ([[searchNumbserSetting objectForKey:@"SearchNumberSettingKEY"] intValue] + 1) * 10;
+    NSString *sSearchNum = [NSString stringWithFormat:@"%d", searchNum];
+    return  sSearchNum;
+    
 }
 
 @end
