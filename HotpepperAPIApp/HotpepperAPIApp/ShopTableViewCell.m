@@ -15,6 +15,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
     // Initialization code
 }
 
@@ -53,6 +54,8 @@
 {
     [self.shopLogo sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
 }
+
+
 
 
 @end
