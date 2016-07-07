@@ -21,7 +21,6 @@ NSMutableArray *shopList;
 @interface FavoriteViewController ()<FavoriteDelegate, shopCellFavoriteDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *favoriteTableView;
 @property FavoriteShopManager *favoriteShopManager;
-@property UIImage* sampleImage;
 @end
 
 @implementation FavoriteViewController

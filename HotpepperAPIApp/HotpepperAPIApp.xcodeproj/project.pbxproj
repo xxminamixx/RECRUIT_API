@@ -40,7 +40,7 @@
 		E99DDF4B1D18E3E7008374AD /* HotpepperAPIAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF4A1D18E3E7008374AD /* HotpepperAPIAppUITests.m */; };
 		E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */; };
 		E9A180AF1D1F628500D64FC4 /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */; };
-		E9BAE6081D2E1AFD00EB0245 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = E9BAE6071D2E1AFD00EB0245 /* sample.png */; };
+		E9BAE60A1D2E1FFF00EB0245 /* loadImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E9BAE6091D2E1FFF00EB0245 /* loadImage.png */; };
 		E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */; };
 		E9D38E9E1D1D296100F8FA0D /* ShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9D1D1D296100F8FA0D /* ShopListViewController.m */; };
 /* End PBXBuildFile section */
@@ -110,7 +110,7 @@
 		E9A180AB1D1F628500D64FC4 /* ShopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopTableViewCell.h; sourceTree = "<group>"; };
 		E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTableViewCell.m; sourceTree = "<group>"; };
 		E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
-		E9BAE6071D2E1AFD00EB0245 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample.png; path = ../../../../Desktop/sample.png; sourceTree = "<group>"; };
+		E9BAE6091D2E1FFF00EB0245 /* loadImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadImage.png; sourceTree = "<group>"; };
 		E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopEntity.h; sourceTree = "<group>"; };
 		E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopEntity.m; sourceTree = "<group>"; };
 		E9D38E9C1D1D296100F8FA0D /* ShopListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopListViewController.h; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		E933918E1D2A00DA000F4A0F /* image */ = {
 			isa = PBXGroup;
 			children = (
-				E9BAE6071D2E1AFD00EB0245 /* sample.png */,
+				E9BAE6091D2E1FFF00EB0245 /* loadImage.png */,
 				E9357AAF1D2B91CC00F5C548 /* List.png */,
 				E9357AB01D2B91CC00F5C548 /* ListFilled.png */,
 				E93391A71D2A0A5E000F4A0F /* config.png */,
@@ -376,9 +376,9 @@
 				E93391B01D2A0A5E000F4A0F /* homeFilled.png in Resources */,
 				E93391B11D2A0A5E000F4A0F /* star.png in Resources */,
 				E93391AE1D2A0A5E000F4A0F /* configFilled.png in Resources */,
+				E9BAE60A1D2E1FFF00EB0245 /* loadImage.png in Resources */,
 				E9357AB21D2B91CC00F5C548 /* ListFilled.png in Resources */,
 				E9357AB11D2B91CC00F5C548 /* List.png in Resources */,
-				E9BAE6081D2E1AFD00EB0245 /* sample.png in Resources */,
 				E99DDF401D18E3E6008374AD /* LaunchScreen.storyboard in Resources */,
 				E99DDF3D1D18E3E6008374AD /* Assets.xcassets in Resources */,
 				E90158761D1915CB00DF358C /* ServiceAreaTableViewCell.xib in Resources */,

@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *genre;
 @property (strong, nonatomic) IBOutlet UIView *detailView;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
-@property UIImage* sampleImage;
+@property UIImage* loadImage;
 - (IBAction)favoriteAction:(id)sender;
 @end
 
@@ -30,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = _shopEntity.name;
-    self.sampleImage = [UIImage imageNamed:@"sample.png"];
+    self.loadImage = [UIImage imageNamed:@"loadImage.png"];
     /*
     void(^ImageReload)();
     [self sd_setImageWithURL: self.shopEntity.largeLogo: ImageReload];
@@ -99,13 +99,13 @@
  
 - (void)setShopLogo:(NSString*)url
 {
-    [self.logo sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:self.sampleImage];
+    [self.logo sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:self.loadImage];
     [self.detailView setNeedsDisplay];
 }
 
 - (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
 {
-    [self.logo sd_setImageWithURL:url placeholderImage:self.sampleImage options:0 progress:nil completed:completedBlock];
+    [self.logo sd_setImageWithURL:url placeholderImage:self.loadImage options:0 progress:nil completed:completedBlock];
 }
 
 
