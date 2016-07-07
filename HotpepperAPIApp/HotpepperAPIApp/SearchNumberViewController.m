@@ -22,11 +22,11 @@ NSString * const searchNumber = @"SearchNumberSettingKEY";
     self.searchNumberPicker.delegate = self;
     self.searchNumberPicker.dataSource = self;
     self.navigationItem.title = @"検索件数設定";
-    
-    // 表示件数の取得
+
     //Pickerの初期値設定
     NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
-    [self.searchNumberPicker selectRow: [[searchNumbserSetting objectForKey:@"SearchNumberSettingKEY"] intValue] inComponent:0 animated:YES];
+    int searchNumIndex = ([[searchNumbserSetting objectForKey:@"SearchNumberSettingKEY"] intValue] / 10) - 1;
+    [self.searchNumberPicker selectRow:searchNumIndex  inComponent:0 animated:YES];
 
 }
 
