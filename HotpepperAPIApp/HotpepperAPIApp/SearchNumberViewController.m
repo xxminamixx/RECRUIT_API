@@ -25,7 +25,7 @@ NSString * const searchNumber = @"SearchNumberSettingKEY";
 
     //Pickerの初期値設定
     NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
-    int searchNumIndex = ([[searchNumbserSetting objectForKey:searchNumber] intValue] / 10) - 1;
+    int searchNumIndex = [[searchNumbserSetting objectForKey:searchNumber] intValue];
     [self.searchNumberPicker selectRow:searchNumIndex  inComponent:0 animated:YES];
 
 }

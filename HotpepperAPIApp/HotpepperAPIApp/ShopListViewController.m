@@ -46,13 +46,10 @@ NSMutableArray *recieve_shop;
     [self.shopTableView registerNib:shopNib forCellReuseIdentifier:shop_tableviewcell];
 }
 
-/*
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [self.shopTableView reloadData];
-    [super viewDidAppear:animated];
 }
-*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -136,7 +133,6 @@ numberOfRowsInSection:(NSInteger)section
 
 
 #pragma mark - fetch shopEntity
-
 - (void)getShop:(NSMutableArray *)shop
 {
     NSLog(@"デリゲードメソッドが呼ばれました");

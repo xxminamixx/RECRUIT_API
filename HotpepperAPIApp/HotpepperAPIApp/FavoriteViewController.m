@@ -40,41 +40,12 @@ NSMutableArray *shopList;
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    FavoriteShopManager *favoriteShopManager = [FavoriteShopManager new];
+    shopList = [favoriteShopManager fetchEntityList];
     [self.favoriteTableView reloadData];
+    
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    
-    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    self.managedObjectContext = appDelegate.managedObjectContext;
-    
-    shopList = [NSMutableArray array];
-    
-    //イベントのフェッチ
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"FavoriteShopEntity"
-                                              inManagedObjectContext:self.managedObjectContext];
-    [request setEntity:entity];
-    
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
-                                        initWithKey:@"name" ascending:NO];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    [request setSortDescriptors:sortDescriptors];
-    
-    NSError *error = nil;
-    NSMutableArray *mutableFetchResults = [[self.managedObjectContext
-                                            executeFetchRequest:request error:&error] mutableCopy];
-    
-    // 起動時eventArrayに保持していたデータを格納処理追加
-    shopList = mutableFetchResults;
-    
-    // setFavoriteにcontextを渡す
-    // tabberbottunを押したら呼ぶ
-    // [self.favoriteShopManager setFavorite];
-
-    [self.favoriteTableView reloadData];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
