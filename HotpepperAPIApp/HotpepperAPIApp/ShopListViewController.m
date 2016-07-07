@@ -88,20 +88,7 @@ numberOfRowsInSection:(NSInteger)section
     // URLをNSURLに変換
     NSURL *url = [NSURL URLWithString:shopEntity.logo];
 
-    [shopcell sd_setImageWithURL:url
-                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                           [self.shopTableView setNeedsLayout];
-                           [self.shopTableView layoutIfNeeded];
-                       }];
-    //　処理時間計算
-    if (indexPath.row % 2 == 0) {
-        self.afterCellTime = [NSDate date];
-        // 開始時間と終了時間の差を表示
-        NSTimeInterval interval = [self.afterCellTime timeIntervalSinceDate:self.beforeCellTime];
-        NSLog(@"処理時間 = %.3f秒",interval);
-    } else {
-        self.beforeCellTime = [NSDate date];
-    }
+    [shopcell imageRefresh:url];
     
     return shopcell;
 }
@@ -162,18 +149,5 @@ numberOfRowsInSection:(NSInteger)section
     }
 }
 
-
-// 日付をミリ秒までの表示にして文字列で返すメソッド
-- (NSString*)getDateString:(NSDate*)date
-{
-    // 日付フォーマットオブジェクトの生成
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    // フォーマットを指定の日付フォーマットに設定
-    [dateFormatter setDateFormat:@"yyyy/MM/dd HH:mm:ss.SSS"];
-    // 日付の文字列を生成
-    NSString *dateString = [dateFormatter stringFromDate:date];
-    
-    return dateString;
-}
 
 @end

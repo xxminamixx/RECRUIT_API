@@ -55,6 +55,15 @@
     [self.shopLogo sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
 }
 
+- (void)imageRefresh:(NSURL *)url
+{
+    [self sd_setImageWithURL:url
+                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                           [self setNeedsLayout];
+                           [self layoutIfNeeded];
+                       }];
+
+}
 
 
 
