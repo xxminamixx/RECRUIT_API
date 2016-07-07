@@ -41,6 +41,7 @@
 		E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */; };
 		E9A180AF1D1F628500D64FC4 /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */; };
 		E9BAE60A1D2E1FFF00EB0245 /* loadImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E9BAE6091D2E1FFF00EB0245 /* loadImage.png */; };
+		E9BAE60D1D2E3CB100EB0245 /* VersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BAE60C1D2E3CB100EB0245 /* VersionViewController.m */; };
 		E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */; };
 		E9D38E9E1D1D296100F8FA0D /* ShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9D1D1D296100F8FA0D /* ShopListViewController.m */; };
 /* End PBXBuildFile section */
@@ -111,6 +112,8 @@
 		E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTableViewCell.m; sourceTree = "<group>"; };
 		E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
 		E9BAE6091D2E1FFF00EB0245 /* loadImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadImage.png; sourceTree = "<group>"; };
+		E9BAE60B1D2E3CB100EB0245 /* VersionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionViewController.h; sourceTree = "<group>"; };
+		E9BAE60C1D2E3CB100EB0245 /* VersionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionViewController.m; sourceTree = "<group>"; };
 		E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopEntity.h; sourceTree = "<group>"; };
 		E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopEntity.m; sourceTree = "<group>"; };
 		E9D38E9C1D1D296100F8FA0D /* ShopListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopListViewController.h; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 				E969F5131D26672A000DDD34 /* ConfirmViewController.m */,
 				E9566C181D2363D200DE0556 /* FavoriteViewController.h */,
 				E9566C191D2363D200DE0556 /* FavoriteViewController.m */,
+				E9BAE60B1D2E3CB100EB0245 /* VersionViewController.h */,
+				E9BAE60C1D2E3CB100EB0245 /* VersionViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -459,6 +464,7 @@
 				E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */,
 				E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */,
 				E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */,
+				E9BAE60D1D2E3CB100EB0245 /* VersionViewController.m in Sources */,
 				E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */,
 				E99DDF321D18E3E6008374AD /* main.m in Sources */,
 				E969F5111D26670F000DDD34 /* ConfigViewController.m in Sources */,
