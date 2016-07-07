@@ -14,12 +14,14 @@
 #import "TabBarController.h"
 #import "AppDelegate.h"
 
+
 NSString * const kShopTableViewCell = @"ShopTableViewCell";
 NSMutableArray *shopList;
 
 @interface FavoriteViewController ()<FavoriteDelegate, shopCellFavoriteDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *favoriteTableView;
 @property FavoriteShopManager *favoriteShopManager;
+@property UIImage* sampleImage;
 @end
 
 @implementation FavoriteViewController
@@ -68,7 +70,11 @@ numberOfRowsInSection:(NSInteger)section
     // ラベルに都道府県セット処理
     ShopEntity *shopEntity = shopList[indexPath.row];
     [shopcell setMyPropertyWithEntity:shopEntity];
-    [shopcell setShopLogoWithURL:shopEntity.logo];
+    //[shopcell setShopLogoWithURL:shopEntity.logo];
+    
+    // URLをNSURLに変換
+    NSURL *url = [NSURL URLWithString:shopEntity.logo];
+    [shopcell imageRefresh:url];
     
     return shopcell;
 }

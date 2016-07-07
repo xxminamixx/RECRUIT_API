@@ -26,6 +26,8 @@
 @property (weak, nonatomic) NSString *open;
 @property (weak, nonatomic) IBOutlet UIImageView *shopLogo;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
+@property UIImage *sampleImage;
+
 - (IBAction)favoriteAction:(id)sender;
 - (void)setMyPropertyWithEntity:(ShopEntity *)shopEntity;
 - (void)setShopLogoWithURL:(NSString*)url;

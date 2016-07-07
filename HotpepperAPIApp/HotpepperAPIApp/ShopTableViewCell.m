@@ -11,11 +11,12 @@
 #import "UIImageView+WebCache.h"
 #import "UIImageView+WebCache.h"
 
+
 @implementation ShopTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
+    self.sampleImage =[UIImage imageNamed:@"sample.png"];
     // Initialization code
 }
 
@@ -52,7 +53,7 @@
 
 - (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
 {
-    [self.shopLogo sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
+    [self.shopLogo sd_setImageWithURL:url placeholderImage:self.sampleImage options:0 progress:nil completed:completedBlock];
 }
 
 - (void)imageRefresh:(NSURL *)url

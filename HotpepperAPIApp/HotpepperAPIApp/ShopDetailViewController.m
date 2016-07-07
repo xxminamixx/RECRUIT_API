@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *genre;
 @property (strong, nonatomic) IBOutlet UIView *detailView;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
+@property UIImage* sampleImage;
 - (IBAction)favoriteAction:(id)sender;
 @end
 
@@ -28,7 +29,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.navigationItem.title = _shopEntity.name;
+    self.navigationItem.title = _shopEntity.name;
+    self.sampleImage = [UIImage imageNamed:@"sample.png"];
     /*
     void(^ImageReload)();
     [self sd_setImageWithURL: self.shopEntity.largeLogo: ImageReload];
@@ -60,13 +62,16 @@
         self.favoriteButton.alpha = 1;
     }
     
-    NSURL *url = [NSURL URLWithString:self.shopEntity.logo];
+    NSURL *url = [NSURL URLWithString:self.shopEntity.largeLogo];
+    //[self setShopLogo:self.shopEntity.largeLogo];
 
+    
     [self sd_setImageWithURL:url
                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                           [self.view setNeedsLayout];
-                           [self.view layoutIfNeeded];
+                           [self.detailView setNeedsLayout];
+                           [self.detailView layoutIfNeeded];
                        }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,7 +82,6 @@
 
 - (IBAction)favoriteAction:(id)sender
 {
-
     // マネージャーに投げて既にお気に入りに登録されているかチェックする
     FavoriteShopManager *favoriteManager = [FavoriteShopManager new];
     if ([favoriteManager isAlreadyFavorite:self.shopEntity]) {
@@ -93,15 +97,15 @@
     }
 }
  
-- (void)setShopLogo:(NSString*)url {
-    [self.logo sd_setImageWithURL:[NSURL URLWithString:url]];
+- (void)setShopLogo:(NSString*)url
+{
+    [self.logo sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:self.sampleImage];
     [self.detailView setNeedsDisplay];
 }
 
 - (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
 {
-    [self.logo sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
-    
+    [self.logo sd_setImageWithURL:url placeholderImage:self.sampleImage options:0 progress:nil completed:completedBlock];
 }
 
 

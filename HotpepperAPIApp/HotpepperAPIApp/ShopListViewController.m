@@ -87,7 +87,6 @@ numberOfRowsInSection:(NSInteger)section
     
     // URLをNSURLに変換
     NSURL *url = [NSURL URLWithString:shopEntity.logo];
-
     [shopcell imageRefresh:url];
     
     return shopcell;
