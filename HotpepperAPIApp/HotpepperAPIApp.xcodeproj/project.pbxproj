@@ -25,6 +25,7 @@
 		E947BAC71D2A4CE600862C74 /* FavoriteShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E947BAC51D2A4CE600862C74 /* FavoriteShopEntity.m */; };
 		E9566C1A1D2363D200DE0556 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9566C191D2363D200DE0556 /* FavoriteViewController.m */; };
 		E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */; };
+		E967FA0E1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E967FA0D1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m */; };
 		E969F5111D26670F000DDD34 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E969F5101D26670F000DDD34 /* ConfigViewController.m */; };
 		E969F5141D26672A000DDD34 /* ConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E969F5131D26672A000DDD34 /* ConfirmViewController.m */; };
 		E96F698F1D24DAA700AAE896 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96F698E1D24DAA700AAE896 /* TabBarController.m */; };
@@ -44,7 +45,7 @@
 		E9BAE60D1D2E3CB100EB0245 /* VersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BAE60C1D2E3CB100EB0245 /* VersionViewController.m */; };
 		E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */; };
 		E9D38E9E1D1D296100F8FA0D /* ShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9D1D1D296100F8FA0D /* ShopListViewController.m */; };
-		E9DE6F521D2F486D009D6F7B /* KissMXLHotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DE6F511D2F486D009D6F7B /* KissMXLHotpepperAPIFetcher.m */; };
+		E9D3B1CF1D2F68A500E81918 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D3B1CE1D2F68A500E81918 /* libxml2.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		E9566C181D2363D200DE0556 /* FavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
 		E9566C191D2363D200DE0556 /* FavoriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
 		E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaEntity.m; sourceTree = "<group>"; };
+		E967FA0C1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KissXMLHotpepperAPIFetcher.h; sourceTree = "<group>"; };
+		E967FA0D1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KissXMLHotpepperAPIFetcher.m; sourceTree = "<group>"; };
 		E969F50F1D26670F000DDD34 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		E969F5101D26670F000DDD34 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
 		E969F5121D266729000DDD34 /* ConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmViewController.h; sourceTree = "<group>"; };
@@ -119,8 +122,7 @@
 		E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopEntity.m; sourceTree = "<group>"; };
 		E9D38E9C1D1D296100F8FA0D /* ShopListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopListViewController.h; sourceTree = "<group>"; };
 		E9D38E9D1D1D296100F8FA0D /* ShopListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopListViewController.m; sourceTree = "<group>"; };
-		E9DE6F501D2F486D009D6F7B /* KissMXLHotpepperAPIFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KissMXLHotpepperAPIFetcher.h; sourceTree = "<group>"; };
-		E9DE6F511D2F486D009D6F7B /* KissMXLHotpepperAPIFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KissMXLHotpepperAPIFetcher.m; sourceTree = "<group>"; };
+		E9D3B1CE1D2F68A500E81918 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D3B1CF1D2F68A500E81918 /* libxml2.tbd in Frameworks */,
 				4F4FD581CB34C3884B8681BC /* libPods-HotpepperAPIApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +148,7 @@
 		57268253ED666B9E49B979ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9D3B1CE1D2F68A500E81918 /* libxml2.tbd */,
 				96ECCF3DF37F5A69166B8974 /* libPods-HotpepperAPIApp.a */,
 			);
 			name = Frameworks;
@@ -176,8 +180,8 @@
 				E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */,
 				E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */,
 				E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */,
-				E9DE6F501D2F486D009D6F7B /* KissMXLHotpepperAPIFetcher.h */,
-				E9DE6F511D2F486D009D6F7B /* KissMXLHotpepperAPIFetcher.m */,
+				E967FA0C1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.h */,
+				E967FA0D1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m */,
 				E901587D1D193C2400DF358C /* HotpepperAPIFetcher.h */,
 				E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */,
 				E97747811D2103BA002ABD77 /* FavoriteShopManager.h */,
@@ -468,7 +472,6 @@
 				E969F5141D26672A000DDD34 /* ConfirmViewController.m in Sources */,
 				E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */,
 				E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */,
-				E9DE6F521D2F486D009D6F7B /* KissMXLHotpepperAPIFetcher.m in Sources */,
 				E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */,
 				E9BAE60D1D2E3CB100EB0245 /* VersionViewController.m in Sources */,
 				E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */,
@@ -481,6 +484,7 @@
 				E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */,
 				E96F698F1D24DAA700AAE896 /* TabBarController.m in Sources */,
 				E947BAC71D2A4CE600862C74 /* FavoriteShopEntity.m in Sources */,
+				E967FA0E1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m in Sources */,
 				E9357AAE1D2B585900F5C548 /* SearchNumberViewController.m in Sources */,
 				E97747991D211E4D002ABD77 /* Model.xcdatamodeld in Sources */,
 				E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */,
@@ -614,6 +618,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/KissXML\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+				);
 				INFOPLIST_FILE = HotpepperAPIApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -631,6 +642,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/KissXML\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+				);
 				INFOPLIST_FILE = HotpepperAPIApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -1,15 +1,14 @@
 //
-//  KissMXLHotpepperAPIFetcher.m
-//  HotpepperAPIApp
+//  KissXMLHotpepperAPIFetcher.m
+//  
 //
 //  Created by Minami Kyohei on 2016/07/08.
-//  Copyright © 2016年 Minami Kyohei. All rights reserved.
+//
 //
 
-#import "KissMXLHotpepperAPIFetcher.h"
+#import "KissXMLHotpepperAPIFetcher.h"
 
-@implementation KissMXLHotpepperAPIFetcher
-
+@implementation KissXMLHotpepperAPIFetcher
 - (void)perseTest
 {
     NSMutableArray *mxlList = [self getXml];
@@ -61,5 +60,4 @@
     //取得データを返す
     return aryRet;
 }
-
 @end

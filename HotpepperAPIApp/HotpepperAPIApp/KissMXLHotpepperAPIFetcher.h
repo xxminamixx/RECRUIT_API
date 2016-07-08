@@ -10,5 +10,5 @@
 #import "DDXMLDocument.h"
 
 @interface KissMXLHotpepperAPIFetcher : NSObject
-
+- (void)perseTest;
 @end

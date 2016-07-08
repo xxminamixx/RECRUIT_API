@@ -10,6 +10,7 @@
 #import "ServiceAreaViewController.h"
 #import "HotpepperAPIFetcher.h"
 #import "TabBarController.h"
+#import "KissXMLHotpepperAPIFetcher.h"
 
 
 @interface ViewController ()
@@ -23,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"ホーム";
+    KissXMLHotpepperAPIFetcher *fetcher = [KissXMLHotpepperAPIFetcher new];
+    [fetcher perseTest];
 }
 
 - (void)didReceiveMemoryWarning {
