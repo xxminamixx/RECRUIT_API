@@ -44,6 +44,7 @@
 		E9BAE60D1D2E3CB100EB0245 /* VersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BAE60C1D2E3CB100EB0245 /* VersionViewController.m */; };
 		E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */; };
 		E9D38E9E1D1D296100F8FA0D /* ShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9D1D1D296100F8FA0D /* ShopListViewController.m */; };
+		E9DE6F521D2F486D009D6F7B /* KissMXLHotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DE6F511D2F486D009D6F7B /* KissMXLHotpepperAPIFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,8 @@
 		E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopEntity.m; sourceTree = "<group>"; };
 		E9D38E9C1D1D296100F8FA0D /* ShopListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopListViewController.h; sourceTree = "<group>"; };
 		E9D38E9D1D1D296100F8FA0D /* ShopListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopListViewController.m; sourceTree = "<group>"; };
+		E9DE6F501D2F486D009D6F7B /* KissMXLHotpepperAPIFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KissMXLHotpepperAPIFetcher.h; sourceTree = "<group>"; };
+		E9DE6F511D2F486D009D6F7B /* KissMXLHotpepperAPIFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KissMXLHotpepperAPIFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,8 @@
 				E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */,
 				E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */,
 				E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */,
+				E9DE6F501D2F486D009D6F7B /* KissMXLHotpepperAPIFetcher.h */,
+				E9DE6F511D2F486D009D6F7B /* KissMXLHotpepperAPIFetcher.m */,
 				E901587D1D193C2400DF358C /* HotpepperAPIFetcher.h */,
 				E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */,
 				E97747811D2103BA002ABD77 /* FavoriteShopManager.h */,
@@ -463,6 +468,7 @@
 				E969F5141D26672A000DDD34 /* ConfirmViewController.m in Sources */,
 				E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */,
 				E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */,
+				E9DE6F521D2F486D009D6F7B /* KissMXLHotpepperAPIFetcher.m in Sources */,
 				E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */,
 				E9BAE60D1D2E3CB100EB0245 /* VersionViewController.m in Sources */,
 				E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */,
