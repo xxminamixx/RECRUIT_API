@@ -9,18 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface ServiceAreaEntity : NSObject
-{
-    
-}
 
 @property (nonatomic) NSString *code;
 @property (nonatomic) NSString *name;
-
-/*
-+ (NSArray *)getAreaName;
-+ (NSArray *)getAreaCode;
-+ (void)setAreaCode:(NSString *)areacodestr;
-+ (void)setAreaName:(NSString *)areanamestr;
-*/
  
 @end

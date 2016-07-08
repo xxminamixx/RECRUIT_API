@@ -8,69 +8,112 @@
 
 #import "KissXMLHotpepperAPIFetcher.h"
 #import "DDXMLElement+Dictionary.h"
+#import "ShopEntity.h"
+#import "ServiceAreaEntity.h"
 
 @implementation KissXMLHotpepperAPIFetcher
-- (void)perseTest
+
+
+// 都道府県のリクエストURL作成
+- (void)serviceAreaRequest
 {
-    NSMutableArray *mxlList = [self getXml];
-   // NSLog(@"%@",[mxlList objectAtIndex:0] objectAtIndex:0);
+    //サービスエリアのURL
+    NSURL *areaUrl = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/service_area/v1/?key=4554e737d0d5ce93"];
+    
+    // delegateメソッドに配列を渡す
+    [self.serviceAreaDelegate getServiceArea:[self getServiceArea:areaUrl]];
+}
+
+//　都道府県選択画面からお店のリクエストURL作成
+- (void)shopRequest:(NSString *)areacode
+{
+    NSMutableString *url = [NSMutableString string];
+    
+    //　shop検索の雛形
+    [url setString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=4554e737d0d5ce93&service_area="];
+    
+    //　タップされたエリアコードを追加
+    [url appendString:areacode];
+    
+    [url appendString:@"&count="];
+    
+    [url appendString: self.searchNumberCast];
+    
+    //　NSURLにセット
+    NSURL *shopurl = [NSURL URLWithString:url];
+    [self getShopEntity:shopurl];
     
 }
 
-- (NSMutableArray *)getXml{
-    
+
+// お店の情報が入った配列を返す
+- (NSMutableArray *)getShopEntity:(NSURL *)url
+{
     //xmlファイルの場所の設定
-    NSURL *urlString=[NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=4554e737d0d5ce93&service_area=SA11"];
-    NSData *data=[NSData dataWithContentsOfURL:urlString];
+    NSData *data=[NSData dataWithContentsOfURL:url];
     
     //返すデータの配列を作成・初期化
-    NSMutableArray *aryRet=[[NSMutableArray alloc]initWithCapacity:0];
+    NSMutableArray *shopEntityList=[NSMutableArray new];
     
     //xmlファイルを取得
-    DDXMLDocument *doc=
-    [[DDXMLDocument alloc]initWithData:data options:0 error:nil];
+    DDXMLDocument *doc = [[DDXMLDocument alloc]initWithData:data options:0 error:nil];
     
     //要素を抜き出す時のルートパスの設定
     NSDictionary *xml = [[doc rootElement] convertDictionary];
     
     //お店10件を格納
-    NSArray *shopList = [xml valueForKeyPath:@"results.shop"];
+    NSDictionary *shopDict = [xml valueForKeyPath:@"results.shop"];
+    ShopEntity *shopEntity = [ShopEntity new];
     
-    for (NSArray *elements in shopList) {
-        for (NSArray *items in elements ) {
-            NSLog(@"%@", items);
-        }
+    
+    for (NSDictionary *elements in shopDict) {
+        [shopEntity setShopId: [elements objectForKey:@"id"]];
+        [shopEntity setName: [elements objectForKey:@"name"]];
+        [shopEntity setDetail: [elements objectForKey:@"shop_detail_memo"]];
+        [shopEntity setLogo: [elements objectForKey:@"logo_image"]];
+        [shopEntity setOpen: [elements objectForKey:@"open"]];
+        [shopEntity setAddress: [elements objectForKey:@"address"]];
+        [shopEntity setGenre: [elements valueForKeyPath:@"genre.name"]];
+        [shopEntity setCuopon: [elements valueForKeyPath:@"coupon_urls.mobile"]];
+        [shopEntity setLargeLogo: [elements valueForKeyPath:@"photo.mobile.l"]];
+        
+        // お店のデータが格納されたEntityを配列に格納
+        [shopEntityList addObject: shopEntity];
     }
     
-    /*
-    //高速列挙
-    for (DDXMLElement *item in items) {
-        
-        //ルートパス以下の要素名を指定
-        NSArray *titleArray=[item nodesForXPath:@"id" error:nil];
-        NSArray *linkArray=[item nodesForXPath:@"name" error:nil];
-        NSArray *dateArray=[item nodesForXPath:@"detail" error:nil];
-        
-        
-        //バッファ用配列
-        NSMutableArray *tmpAry=[[NSMutableArray alloc]initWithCapacity:0];
-        
-        //ルートパス以下の要素を得る、配列型で来るのでNSString型に変換
-        [tmpAry addObject:[[titleArray objectAtIndex:0]stringValue]];
-        [tmpAry addObject:[[linkArray objectAtIndex:0]stringValue]];
-        [tmpAry addObject:[[dateArray objectAtIndex:0]stringValue]];
-        
-         
-        //戻す配列に格納、バッファ用配列は格納後リリース
-        [aryRet addObject:tmpAry];
-        //[tmpAry release];
+        return shopEntityList;
+}
+
+
+- (NSMutableArray *)getServiceArea:(NSURL *)url
+{
+    //xmlファイルの場所の設定
+    NSData *data=[NSData dataWithContentsOfURL:url];
+    NSMutableArray *serviceAreaList = [NSMutableArray array];
+    
+    //xmlファイルを取得
+    DDXMLDocument *doc = [[DDXMLDocument alloc]initWithData:data options:0 error:nil];
+    
+    //要素を抜き出す時のルートパスの設定
+    NSDictionary *xml = [[doc rootElement] convertDictionary];
+    NSDictionary *serviceAreaDict = [xml valueForKeyPath:@"results.service_area"];
+    
+    for (NSDictionary *dic in serviceAreaDict) {
+        ServiceAreaEntity *serviceAreaEntity = [ServiceAreaEntity new];
+        [serviceAreaEntity setName: [dic valueForKey:@"name"]];
+        [serviceAreaEntity setCode: [dic valueForKey:@"code"]];
+        [serviceAreaList addObject: serviceAreaEntity];
     }
-     */
-    
-    //xmlファイルをリリース
-    //[doc release];
-    
-    //取得データを返す
-    return aryRet;
+    return serviceAreaList;
+}
+
+// 永続化した表示件数を取得し検索用に変換する
+- (NSString *)searchNumberCast
+{
+    // 表示件数の取得
+    NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
+    int searchNum = ([[searchNumbserSetting objectForKey:@"SearchNumberSettingKEY"] intValue] + 1) * 10;
+    NSString *sSearchNum = [NSString stringWithFormat:@"%d", searchNum];
+    return  sSearchNum;
 }
 @end

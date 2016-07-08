@@ -95,6 +95,7 @@
 		E969F5131D26672A000DDD34 /* ConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmViewController.m; sourceTree = "<group>"; };
 		E96CC2B91D2F84DC0067BAD9 /* DDXMLElement+Dictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDXMLElement+Dictionary.h"; sourceTree = "<group>"; };
 		E96CC2BA1D2F84DC0067BAD9 /* DDXMLElement+Dictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDXMLElement+Dictionary.m"; sourceTree = "<group>"; };
+		E96CC2BC1D2F9F2F0067BAD9 /* ServiceAreaEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceAreaEntity.h; sourceTree = "<group>"; };
 		E96F698D1D24DAA700AAE896 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		E96F698E1D24DAA700AAE896 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		E977477E1D20CCD7002ABD77 /* ShopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopDetailViewController.h; sourceTree = "<group>"; };
@@ -180,6 +181,7 @@
 				E947BAC31D2A4CE600862C74 /* FavoriteShopEntity+CoreDataProperties.m */,
 				E947BAC41D2A4CE600862C74 /* FavoriteShopEntity.h */,
 				E947BAC51D2A4CE600862C74 /* FavoriteShopEntity.m */,
+				E96CC2BC1D2F9F2F0067BAD9 /* ServiceAreaEntity.h */,
 				E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */,
 				E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */,
 				E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */,

@@ -9,8 +9,9 @@
 #import "ServiceAreaViewController.h"
 #import "ServiceAreaTableViewCell.h"
 #import "ServiceAreaEntity.h"
-#import "HotpepperAPIFetcher.h"
+//#import "HotpepperAPIFetcher.h"
 #import "ShopListViewController.h"
+#import "KissXMLHotpepperAPIFetcher.h"
 
 NSString * const servicearea_tableviewcell = @"ServiceAreaTableViewCell";
 NSMutableArray *receive_servicearea;
@@ -18,7 +19,8 @@ NSMutableArray *receive_servicearea;
 
 @interface ServiceAreaViewController () <serviceAreaDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *serviceAreaTableView;
-@property HotpepperAPIFetcher *areafetcher;
+//@property HotpepperAPIFetcher *areafetcher;
+//@property KissXMLHotpepperAPIFetcher *serviceAreaFetcher;
 @end
 
 @implementation ServiceAreaViewController
@@ -31,17 +33,11 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.navigationItem.title = @"サービスエリア検索";
-
-    // 都道府県リクエストを送る
-    // フェッチャクラスのメソッドが呼ばれる前にcellの処理が終わってしまう
-    HotpepperAPIFetcher *areafetcher = [HotpepperAPIFetcher new];
     
     // HotpepperAPIに自身のポインタをセット
-    areafetcher.areadelegate = self;
-    [areafetcher serviceAreaRequest];
-    
-    // フェッチャーから都道府県配列を受け取る
-    // receive_servicearea = [areafetcher servicearea];
+    KissXMLHotpepperAPIFetcher *serviceAreaFetcher = [KissXMLHotpepperAPIFetcher new];
+    serviceAreaFetcher.serviceAreaDelegate = self;
+    [serviceAreaFetcher serviceAreaRequest];
     
     _serviceAreaTableView.delegate = self;
     _serviceAreaTableView.dataSource = self;
