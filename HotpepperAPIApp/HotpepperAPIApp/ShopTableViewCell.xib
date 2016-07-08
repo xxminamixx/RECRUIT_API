@@ -35,8 +35,8 @@
                             </mask>
                         </variation>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASQ-Oh-rmt">
-                        <rect key="frame" x="282" y="8" width="30" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASQ-Oh-rmt">
+                        <rect key="frame" x="282" y="0.0" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="CMR-c0-dWM"/>
                             <constraint firstAttribute="width" constant="30" id="Li4-6h-9rw"/>
@@ -49,12 +49,6 @@
                             <action selector="favoriteAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="J4S-7u-UHh"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="564-el-dCh">
-                        <rect key="frame" x="112" y="38" width="200" height="72"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iE3-31-CWd">
                         <rect key="frame" x="8" y="38" width="91" height="72"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -79,6 +73,15 @@
                             </mask>
                         </variation>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="564-el-dCh">
+                        <rect key="frame" x="112" y="38" width="200" height="72"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="72" id="rXP-Sx-tsb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="iE3-31-CWd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="8og-CR-ujL"/>
@@ -97,13 +100,16 @@
                     <constraint firstItem="gtc-jX-9D6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="bxB-Fo-XBn"/>
                     <constraint firstItem="gtc-jX-9D6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="cmI-e2-r7D"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ASQ-Oh-rmt" secondAttribute="trailing" id="hkb-uR-MUc"/>
+                    <constraint firstItem="564-el-dCh" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="jiW-HR-lKb"/>
                     <constraint firstItem="iE3-31-CWd" firstAttribute="leading" secondItem="gtc-jX-9D6" secondAttribute="leading" id="k0I-KK-NCr"/>
                     <constraint firstAttribute="leadingMargin" secondItem="gtc-jX-9D6" secondAttribute="leading" id="meY-p0-rjk"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="564-el-dCh" secondAttribute="bottom" constant="6.5" id="mpb-i1-AW8"/>
                     <constraint firstItem="iE3-31-CWd" firstAttribute="top" secondItem="gtc-jX-9D6" secondAttribute="bottom" constant="4" id="o5K-ws-MLL"/>
                     <constraint firstItem="iE3-31-CWd" firstAttribute="leading" secondItem="gtc-jX-9D6" secondAttribute="leading" id="pfc-CO-ae2"/>
                     <constraint firstItem="gtc-jX-9D6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="q5s-uY-b1x"/>
                     <constraint firstAttribute="bottomMargin" secondItem="iE3-31-CWd" secondAttribute="bottom" constant="7" id="qz6-dJ-33O"/>
                     <constraint firstItem="iE3-31-CWd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="17" id="qzs-nX-4KH"/>
+                    <constraint firstItem="564-el-dCh" firstAttribute="leading" secondItem="iE3-31-CWd" secondAttribute="trailing" constant="13" id="rWB-0V-nfH"/>
                     <constraint firstItem="gtc-jX-9D6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="vt4-76-NSB"/>
                     <constraint firstItem="iE3-31-CWd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="we3-Oc-76k"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ASQ-Oh-rmt" secondAttribute="trailing" id="xw9-Ud-Anb"/>
