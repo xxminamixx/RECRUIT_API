@@ -7,12 +7,13 @@
 //
 
 #import "KissXMLHotpepperAPIFetcher.h"
+#import "DDXMLElement+Dictionary.h"
 
 @implementation KissXMLHotpepperAPIFetcher
 - (void)perseTest
 {
     NSMutableArray *mxlList = [self getXml];
-   // NSLog(@"%@",[[mxlList objectAtIndex:0] objectAtIndex:0]);
+   // NSLog(@"%@",[mxlList objectAtIndex:0] objectAtIndex:0);
     
 }
 
@@ -30,10 +31,13 @@
     [[DDXMLDocument alloc]initWithData:data options:0 error:nil];
     
     //要素を抜き出す時のルートパスの設定
-    //DDXMLElement *root=[doc rootElement];
-    NSArray *items=[doc nodesForXPath:@"/results/shop" error:nil];
+    NSDictionary *xml = [[doc rootElement] convertDictionary];
     
-    //高速列挙を使用してfor文を回す
+    //お店10件を格納
+    NSArray *array = [xml valueForKeyPath:@"results.shop"];
+    
+    /*
+    //高速列挙
     for (DDXMLElement *item in items) {
         
         //ルートパス以下の要素名を指定
@@ -55,6 +59,7 @@
         [aryRet addObject:tmpAry];
         //[tmpAry release];
     }
+     */
     
     //xmlファイルをリリース
     //[doc release];

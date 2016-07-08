@@ -28,6 +28,7 @@
 		E967FA0E1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E967FA0D1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m */; };
 		E969F5111D26670F000DDD34 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E969F5101D26670F000DDD34 /* ConfigViewController.m */; };
 		E969F5141D26672A000DDD34 /* ConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E969F5131D26672A000DDD34 /* ConfirmViewController.m */; };
+		E96CC2BB1D2F84DC0067BAD9 /* DDXMLElement+Dictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = E96CC2BA1D2F84DC0067BAD9 /* DDXMLElement+Dictionary.m */; };
 		E96F698F1D24DAA700AAE896 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96F698E1D24DAA700AAE896 /* TabBarController.m */; };
 		E97747801D20CCD7002ABD77 /* ShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */; };
 		E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E97747821D2103BA002ABD77 /* FavoriteShopManager.m */; };
@@ -92,6 +93,8 @@
 		E969F5101D26670F000DDD34 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
 		E969F5121D266729000DDD34 /* ConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmViewController.h; sourceTree = "<group>"; };
 		E969F5131D26672A000DDD34 /* ConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmViewController.m; sourceTree = "<group>"; };
+		E96CC2B91D2F84DC0067BAD9 /* DDXMLElement+Dictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDXMLElement+Dictionary.h"; sourceTree = "<group>"; };
+		E96CC2BA1D2F84DC0067BAD9 /* DDXMLElement+Dictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDXMLElement+Dictionary.m"; sourceTree = "<group>"; };
 		E96F698D1D24DAA700AAE896 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		E96F698E1D24DAA700AAE896 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		E977477E1D20CCD7002ABD77 /* ShopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopDetailViewController.h; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */,
 				E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */,
 				E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */,
+				E96CC2B91D2F84DC0067BAD9 /* DDXMLElement+Dictionary.h */,
+				E96CC2BA1D2F84DC0067BAD9 /* DDXMLElement+Dictionary.m */,
 				E967FA0C1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.h */,
 				E967FA0D1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m */,
 				E901587D1D193C2400DF358C /* HotpepperAPIFetcher.h */,
@@ -486,6 +491,7 @@
 				E947BAC71D2A4CE600862C74 /* FavoriteShopEntity.m in Sources */,
 				E967FA0E1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m in Sources */,
 				E9357AAE1D2B585900F5C548 /* SearchNumberViewController.m in Sources */,
+				E96CC2BB1D2F84DC0067BAD9 /* DDXMLElement+Dictionary.m in Sources */,
 				E97747991D211E4D002ABD77 /* Model.xcdatamodeld in Sources */,
 				E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */,
 			);
