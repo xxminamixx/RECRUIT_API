@@ -12,7 +12,7 @@
 - (void)perseTest
 {
     NSMutableArray *mxlList = [self getXml];
-    NSLog(@"%@",[[mxlList objectAtIndex:0] objectAtIndex:0]);
+   // NSLog(@"%@",[[mxlList objectAtIndex:0] objectAtIndex:0]);
     
 }
 
@@ -30,8 +30,8 @@
     [[DDXMLDocument alloc]initWithData:data options:0 error:nil];
     
     //要素を抜き出す時のルートパスの設定
-    DDXMLElement *root=[doc rootElement];
-    NSArray *items=[root nodesForXPath:@"/result/shop" error:nil];
+    //DDXMLElement *root=[doc rootElement];
+    NSArray *items=[doc nodesForXPath:@"/results/shop" error:nil];
     
     //高速列挙を使用してfor文を回す
     for (DDXMLElement *item in items) {
@@ -41,6 +41,7 @@
         NSArray *linkArray=[item nodesForXPath:@"name" error:nil];
         NSArray *dateArray=[item nodesForXPath:@"detail" error:nil];
         
+        
         //バッファ用配列
         NSMutableArray *tmpAry=[[NSMutableArray alloc]initWithCapacity:0];
         
@@ -49,6 +50,7 @@
         [tmpAry addObject:[[linkArray objectAtIndex:0]stringValue]];
         [tmpAry addObject:[[dateArray objectAtIndex:0]stringValue]];
         
+         
         //戻す配列に格納、バッファ用配列は格納後リリース
         [aryRet addObject:tmpAry];
         //[tmpAry release];
