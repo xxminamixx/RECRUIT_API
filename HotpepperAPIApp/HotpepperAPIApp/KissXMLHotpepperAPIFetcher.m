@@ -34,7 +34,13 @@
     NSDictionary *xml = [[doc rootElement] convertDictionary];
     
     //お店10件を格納
-    NSArray *array = [xml valueForKeyPath:@"results.shop"];
+    NSArray *shopList = [xml valueForKeyPath:@"results.shop"];
+    
+    for (NSArray *elements in shopList) {
+        for (NSArray *items in elements ) {
+            NSLog(@"%@", items);
+        }
+    }
     
     /*
     //高速列挙
