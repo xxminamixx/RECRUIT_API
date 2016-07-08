@@ -85,33 +85,13 @@
                         <constraints>
                             <constraint firstItem="ldy-aO-O6b" firstAttribute="centerX" secondItem="WgK-tI-e8A" secondAttribute="centerX" id="1FV-lZ-3GA"/>
                             <constraint firstItem="TGY-IW-VQ7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1Ld-7F-b6d"/>
-                            <constraint firstItem="ldy-aO-O6b" firstAttribute="top" secondItem="TGY-IW-VQ7" secondAttribute="bottom" constant="24" id="2Nm-bO-E7P"/>
-                            <constraint firstItem="TGY-IW-VQ7" firstAttribute="top" secondItem="WgK-tI-e8A" secondAttribute="bottom" constant="30" id="8ci-nx-JNt"/>
                             <constraint firstItem="ldy-aO-O6b" firstAttribute="trailing" secondItem="TGY-IW-VQ7" secondAttribute="trailing" id="Bse-GG-BVL"/>
-                            <constraint firstItem="ldy-aO-O6b" firstAttribute="leading" secondItem="TGY-IW-VQ7" secondAttribute="leading" id="FqW-C0-mai"/>
                             <constraint firstItem="TGY-IW-VQ7" firstAttribute="top" secondItem="WgK-tI-e8A" secondAttribute="bottom" constant="32" id="L0G-nU-W45"/>
                             <constraint firstItem="ldy-aO-O6b" firstAttribute="top" secondItem="TGY-IW-VQ7" secondAttribute="bottom" constant="24" id="NhF-q7-0zJ"/>
-                            <constraint firstItem="ldy-aO-O6b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W3c-wY-Iko"/>
-                            <constraint firstItem="ldy-aO-O6b" firstAttribute="centerX" secondItem="WgK-tI-e8A" secondAttribute="centerX" id="Zg8-Uv-GSp"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ldy-aO-O6b" secondAttribute="bottom" constant="323" id="bZy-5B-acO"/>
                             <constraint firstItem="ldy-aO-O6b" firstAttribute="leading" secondItem="TGY-IW-VQ7" secondAttribute="leading" id="dwS-Ey-Kn2"/>
                             <constraint firstItem="ldy-aO-O6b" firstAttribute="leading" secondItem="TGY-IW-VQ7" secondAttribute="leading" id="gpY-oR-0AH"/>
                             <constraint firstItem="TGY-IW-VQ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lyc-nD-YzS"/>
-                            <constraint firstItem="TGY-IW-VQ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nQm-Nb-RqM"/>
-                            <constraint firstItem="ldy-aO-O6b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="74" id="r6l-Gr-1ZP"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="8ci-nx-JNt"/>
-                                <exclude reference="nQm-Nb-RqM"/>
-                                <exclude reference="2Nm-bO-E7P"/>
-                                <exclude reference="FqW-C0-mai"/>
-                                <exclude reference="W3c-wY-Iko"/>
-                                <exclude reference="Zg8-Uv-GSp"/>
-                                <exclude reference="r6l-Gr-1ZP"/>
-                                <exclude reference="bZy-5B-acO"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="9hA-oC-ke2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -172,48 +152,22 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="3D8-bW-ceY"/>
                                     <constraint firstAttribute="width" constant="184" id="7xy-e0-f5e"/>
-                                    <constraint firstAttribute="width" constant="255" id="CoZ-eR-rBK"/>
-                                    <constraint firstAttribute="height" constant="21" id="Ltn-36-l2d"/>
-                                    <constraint firstAttribute="height" constant="21" id="RVg-BC-Zyt"/>
-                                    <constraint firstAttribute="height" constant="21" id="SB0-AC-KS0"/>
-                                    <constraint firstAttribute="width" constant="184" id="V9E-IO-eoX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="CoZ-eR-rBK"/>
-                                        <exclude reference="Ltn-36-l2d"/>
-                                        <exclude reference="RVg-BC-Zyt"/>
-                                        <exclude reference="SB0-AC-KS0"/>
-                                        <exclude reference="V9E-IO-eoX"/>
-                                    </mask>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfX-Z3-2cH">
                                 <rect key="frame" x="279" y="111" width="80" height="25"/>
                                 <color key="backgroundColor" red="1" green="0.37061512095404348" blue="0.37611232557004992" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="8hv-1g-bWn"/>
-                                    <constraint firstAttribute="width" constant="80" id="Qt4-kq-sGZ"/>
-                                    <constraint firstAttribute="height" constant="30" id="UG7-D8-OHz"/>
                                     <constraint firstAttribute="height" constant="25" id="cMg-Vf-3lr"/>
-                                    <constraint firstAttribute="width" constant="80" id="cNx-gE-y2l"/>
-                                    <constraint firstAttribute="height" constant="25" id="raO-8Z-r8T"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="削除">
                                     <color key="titleColor" red="0.97780994740000005" green="0.97646244230000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Qt4-kq-sGZ"/>
-                                        <exclude reference="UG7-D8-OHz"/>
-                                        <exclude reference="cNx-gE-y2l"/>
-                                        <exclude reference="raO-8Z-r8T"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <action selector="deleteAction:" destination="2nV-bT-Lvt" eventType="touchUpInside" id="29m-9m-BbL"/>
                                 </connections>
@@ -233,23 +187,11 @@
                                 <color key="backgroundColor" red="0.34015695233042903" green="0.74498895202020199" blue="0.43606958369562332" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Lc0-Ve-Bgz"/>
-                                    <constraint firstAttribute="height" constant="25" id="Rmx-Tg-GiV"/>
                                     <constraint firstAttribute="width" constant="80" id="WRA-0b-6wI"/>
-                                    <constraint firstAttribute="height" constant="25" id="ZBG-TY-Mjm"/>
-                                    <constraint firstAttribute="width" constant="80" id="uvA-wl-37i"/>
-                                    <constraint firstAttribute="width" constant="80" id="xzh-Bv-3ic"/>
                                 </constraints>
                                 <state key="normal" title="確認">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Rmx-Tg-GiV"/>
-                                        <exclude reference="ZBG-TY-Mjm"/>
-                                        <exclude reference="uvA-wl-37i"/>
-                                        <exclude reference="xzh-Bv-3ic"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <action selector="versionAction:" destination="2nV-bT-Lvt" eventType="touchUpInside" id="Ox7-kc-X89"/>
                                 </connections>
@@ -373,32 +315,16 @@
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBi-FF-2VN">
                                 <rect key="frame" x="19" y="226" width="336" height="216"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="JtQ-oo-VHu"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="JtQ-oo-VHu"/>
-                                    </mask>
-                                </variation>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="検索の表示件数を設定します" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n56-Fe-K8T">
                                 <rect key="frame" x="77" y="167" width="221" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ORZ-ar-84i"/>
                                     <constraint firstAttribute="width" constant="221" id="Y51-yc-bG0"/>
-                                    <constraint firstAttribute="width" constant="221" id="fjz-7A-u5d"/>
-                                    <constraint firstAttribute="height" constant="21" id="zSc-ge-XIp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="fjz-7A-u5d"/>
-                                        <exclude reference="zSc-ge-XIp"/>
-                                    </mask>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -467,6 +393,21 @@
                                     <action selector="deleteComitAction:" destination="Rxw-Je-dri" eventType="touchUpInside" id="iml-jV-vkU"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="削除したお気に入りは元には戻りません" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc2-yu-ysK">
+                                <rect key="frame" x="79" y="216" width="216" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本当にお気に入りを全て削除しますか？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGr-wO-vb6">
+                                <rect key="frame" x="34" y="192" width="306" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Qsr-un-KAS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OK-3j-hrt">
                                 <rect key="frame" x="218" y="273" width="80" height="30"/>
                                 <color key="backgroundColor" red="0.37355843701345981" green="0.59903846701051355" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -482,27 +423,6 @@
                                     <action selector="cancelAction:" destination="Rxw-Je-dri" eventType="touchUpInside" id="ZhB-hu-3hx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="削除したお気に入りは元には戻りません" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc2-yu-ysK">
-                                <rect key="frame" x="79" y="216" width="216" height="15"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本当にお気に入りを全て削除しますか？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGr-wO-vb6">
-                                <rect key="frame" x="34" y="192" width="306" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="306" id="3vV-Qv-Ojr"/>
-                                    <constraint firstAttribute="height" constant="21" id="Qsr-un-KAS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="3vV-Qv-Ojr"/>
-                                    </mask>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -748,199 +668,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EiR-DH-CFX">
-                                <rect key="frame" x="8" y="89" width="170" height="170"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="168" id="09t-pq-BMQ"/>
-                                    <constraint firstAttribute="width" constant="182" id="4n1-Ek-18K"/>
-                                    <constraint firstAttribute="width" constant="335" id="5U4-qW-vUC"/>
-                                    <constraint firstAttribute="width" constant="335" id="5gJ-sT-ygJ"/>
-                                    <constraint firstAttribute="height" constant="168" id="5i0-YI-R01"/>
-                                    <constraint firstAttribute="height" constant="144" id="6FM-si-Quv"/>
-                                    <constraint firstAttribute="width" constant="182" id="CW8-fD-DDi"/>
-                                    <constraint firstAttribute="height" constant="167" id="Cts-Xo-fDB"/>
-                                    <constraint firstAttribute="height" constant="144" id="EQ1-jv-pMW"/>
-                                    <constraint firstAttribute="width" constant="335" id="JTL-WS-fmO"/>
-                                    <constraint firstAttribute="width" constant="182" id="Ndi-j2-pUc"/>
-                                    <constraint firstAttribute="height" constant="167" id="UX6-rq-ZNM"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="167" id="Vls-vK-fHx"/>
-                                    <constraint firstAttribute="width" constant="170" id="Vy4-7c-CZN"/>
-                                    <constraint firstAttribute="width" constant="335" id="XZV-s7-URX"/>
-                                    <constraint firstAttribute="height" constant="167" id="ZLR-4k-LBF"/>
-                                    <constraint firstAttribute="height" constant="167" id="bGy-UP-xKv"/>
-                                    <constraint firstAttribute="width" constant="335" id="eCY-1n-A8k"/>
-                                    <constraint firstAttribute="width" constant="168" id="pAV-ol-RYK"/>
-                                    <constraint firstAttribute="height" constant="144" id="pRq-X7-oh2"/>
-                                    <constraint firstAttribute="height" constant="170" id="q4C-ff-xN6"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="167" id="u7M-Uj-OC0"/>
-                                    <constraint firstAttribute="height" constant="167" id="ubV-QO-iS9"/>
-                                    <constraint firstAttribute="height" constant="167" id="wjX-A6-eNS"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="09t-pq-BMQ"/>
-                                        <exclude reference="4n1-Ek-18K"/>
-                                        <exclude reference="5U4-qW-vUC"/>
-                                        <exclude reference="5gJ-sT-ygJ"/>
-                                        <exclude reference="5i0-YI-R01"/>
-                                        <exclude reference="6FM-si-Quv"/>
-                                        <exclude reference="CW8-fD-DDi"/>
-                                        <exclude reference="Cts-Xo-fDB"/>
-                                        <exclude reference="EQ1-jv-pMW"/>
-                                        <exclude reference="JTL-WS-fmO"/>
-                                        <exclude reference="Ndi-j2-pUc"/>
-                                        <exclude reference="UX6-rq-ZNM"/>
-                                        <exclude reference="Vls-vK-fHx"/>
-                                        <exclude reference="XZV-s7-URX"/>
-                                        <exclude reference="ZLR-4k-LBF"/>
-                                        <exclude reference="bGy-UP-xKv"/>
-                                        <exclude reference="eCY-1n-A8k"/>
-                                        <exclude reference="pAV-ol-RYK"/>
-                                        <exclude reference="pRq-X7-oh2"/>
-                                        <exclude reference="u7M-Uj-OC0"/>
-                                        <exclude reference="ubV-QO-iS9"/>
-                                        <exclude reference="wjX-A6-eNS"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="営業時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmS-E1-0lS">
                                 <rect key="frame" x="33" y="346" width="48" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="1d4-HX-1d4"/>
-                                    <constraint firstAttribute="width" constant="60" id="2ZM-RH-9Ua"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="4mV-XZ-AYl"/>
-                                    <constraint firstAttribute="height" constant="15" id="SYT-Yp-ZKa"/>
                                     <constraint firstAttribute="width" constant="48" id="U7G-u5-2pQ"/>
-                                    <constraint firstAttribute="width" constant="60" id="abu-k5-fIH"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="scC-I3-TBY"/>
-                                    <constraint firstAttribute="height" constant="15" id="woc-qA-7MS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="2ZM-RH-9Ua"/>
-                                        <exclude reference="4mV-XZ-AYl"/>
-                                        <exclude reference="SYT-Yp-ZKa"/>
-                                        <exclude reference="abu-k5-fIH"/>
-                                        <exclude reference="scC-I3-TBY"/>
-                                        <exclude reference="woc-qA-7MS"/>
-                                    </mask>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="住所がここに入ります住所がここに入ります住所が" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDk-MK-pa7">
                                 <rect key="frame" x="95" y="286" width="260" height="15"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="Nab-Ae-4kc"/>
-                                    <constraint firstAttribute="width" constant="276" id="mxu-u9-NfH"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Nab-Ae-4kc"/>
-                                        <exclude reference="mxu-u9-NfH"/>
-                                    </mask>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ジャンル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otU-QF-gXb">
                                 <rect key="frame" x="33" y="403" width="48" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="Fuh-Yn-LFX"/>
                                     <constraint firstAttribute="height" constant="15" id="Pm6-V4-oxL"/>
-                                    <constraint firstAttribute="height" constant="15" id="ebj-PB-6So"/>
-                                    <constraint firstAttribute="width" constant="60" id="wCq-Ao-gr5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="ebj-PB-6So"/>
-                                        <exclude reference="wCq-Ao-gr5"/>
-                                    </mask>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ジャンルがここに入りますジャンルがここに入ります" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UD-15-jxY">
                                 <rect key="frame" x="99" y="403" width="256" height="15"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="7Fj-bg-Sqe"/>
-                                    <constraint firstAttribute="height" constant="15" id="jpT-Lz-CfV"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="7Fj-bg-Sqe"/>
-                                        <exclude reference="jpT-Lz-CfV"/>
-                                    </mask>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お店の名前がここに入ります" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhI-Kw-bQv">
                                 <rect key="frame" x="12" y="52" width="319" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="313" id="Cnc-DL-sgf"/>
-                                    <constraint firstAttribute="height" constant="21" id="UMe-sY-xI3"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Cnc-DL-sgf"/>
-                                        <exclude reference="UMe-sY-xI3"/>
-                                    </mask>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="営業時間がここに入ります営業時間がここに入ります" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRe-n3-Pim">
                                 <rect key="frame" x="99" y="346" width="256" height="15"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="D6c-7w-pdA"/>
-                                    <constraint firstAttribute="height" constant="15" id="zih-64-ipf"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="D6c-7w-pdA"/>
-                                        <exclude reference="zih-64-ipf"/>
-                                    </mask>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アクセス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLE-KM-QwV">
                                 <rect key="frame" x="29" y="287" width="48" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="JFe-Fb-XW7"/>
-                                    <constraint firstAttribute="height" constant="15" id="Q2l-YX-VJR"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="TTQ-sP-kfH"/>
-                                    <constraint firstAttribute="width" constant="60" id="f34-xS-bPq"/>
                                     <constraint firstAttribute="height" constant="15" id="p4b-V8-jW3"/>
                                     <constraint firstAttribute="width" constant="48" id="x9d-lb-Hk1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="JFe-Fb-XW7"/>
-                                        <exclude reference="Q2l-YX-VJR"/>
-                                        <exclude reference="TTQ-sP-kfH"/>
-                                        <exclude reference="f34-xS-bPq"/>
-                                    </mask>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8if-83-q4L">
                                 <rect key="frame" x="339" y="46" width="30" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="0Pp-Bc-Wms"/>
-                                    <constraint firstAttribute="width" constant="30" id="5DN-fI-INR"/>
-                                    <constraint firstAttribute="height" constant="30" id="NRA-V8-eVj"/>
-                                    <constraint firstAttribute="height" constant="30" id="OXe-YB-9yx"/>
                                     <constraint firstAttribute="height" constant="42" id="XlA-zq-Yoe"/>
                                     <constraint firstAttribute="width" constant="30" id="eFQ-pU-a4j"/>
                                 </constraints>
@@ -948,14 +732,6 @@
                                 <state key="normal" title="★">
                                     <color key="titleColor" red="1" green="0.74292657634397541" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="0Pp-Bc-Wms"/>
-                                        <exclude reference="5DN-fI-INR"/>
-                                        <exclude reference="NRA-V8-eVj"/>
-                                        <exclude reference="OXe-YB-9yx"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <action selector="favoriteAction:" destination="dHX-cg-WBk" eventType="touchUpInside" id="bue-Yf-elA"/>
                                 </connections>
@@ -994,30 +770,16 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="0WN-GZ-mjO"/>
                                     <constraint firstAttribute="width" constant="9" id="9CO-s3-LKS"/>
-                                    <constraint firstAttribute="width" constant="9" id="Ttc-sz-dxx"/>
-                                    <constraint firstAttribute="height" constant="21" id="i63-OX-Ic9"/>
-                                    <constraint firstAttribute="width" constant="9" id="iEa-u4-uBj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Ttc-sz-dxx"/>
-                                        <exclude reference="i63-OX-Ic9"/>
-                                        <exclude reference="iEa-u4-uBj"/>
-                                    </mask>
-                                </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kaw-pt-5Ss">
                                 <rect key="frame" x="196" y="89" width="167" height="170"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="335" id="09h-AF-XV3"/>
-                                    <constraint firstAttribute="height" constant="99" id="PRn-yX-kL6"/>
-                                    <constraint firstAttribute="height" constant="88" id="qau-5W-pIw"/>
                                     <constraint firstAttribute="height" constant="170" id="s9z-uf-Ajo"/>
-                                    <constraint firstAttribute="width" constant="159" id="ttt-jV-gzM"/>
                                 </constraints>
                                 <string key="text">お店の説明が
 ここに
@@ -1025,15 +787,15 @@
 </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="09h-AF-XV3"/>
-                                        <exclude reference="PRn-yX-kL6"/>
-                                        <exclude reference="qau-5W-pIw"/>
-                                        <exclude reference="ttt-jV-gzM"/>
-                                    </mask>
-                                </variation>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EiR-DH-CFX">
+                                <rect key="frame" x="8" y="89" width="170" height="170"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="Vy4-7c-CZN"/>
+                                    <constraint firstAttribute="height" constant="170" id="q4C-ff-xN6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
