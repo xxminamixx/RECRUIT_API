@@ -41,7 +41,7 @@
     
     //　NSURLにセット
     NSURL *shopurl = [NSURL URLWithString:url];
-    [self getShopEntity:shopurl];
+    [self.shopDelegate getShop:[self getShopEntity:shopurl]];
     
 }
 
@@ -63,10 +63,9 @@
     
     //お店10件を格納
     NSDictionary *shopDict = [xml valueForKeyPath:@"results.shop"];
-    ShopEntity *shopEntity = [ShopEntity new];
-    
     
     for (NSDictionary *elements in shopDict) {
+        ShopEntity *shopEntity = [ShopEntity new];
         [shopEntity setShopId: [elements objectForKey:@"id"]];
         [shopEntity setName: [elements objectForKey:@"name"]];
         [shopEntity setDetail: [elements objectForKey:@"shop_detail_memo"]];

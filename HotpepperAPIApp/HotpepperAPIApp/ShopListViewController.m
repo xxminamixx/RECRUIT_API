@@ -7,18 +7,20 @@
 //
 
 #import "ShopListViewController.h"
-#import "HotpepperAPIFetcher.h"
+//#import "HotpepperAPIFetcher.h"
 #import "ShopTableViewCell.h"
 #import "ShopEntity.h"
 #import "ShopDetailViewController.h"
 #import "FavoriteShopManager.h"
+#import "KissXMLHotpepperAPIFetcher.h"
 
 NSString * const shop_tableviewcell = @"ShopTableViewCell";
 NSMutableArray *recieve_shop;
 
 @interface ShopListViewController () <shopDelegate, shopCellFavoriteDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *shopTableView;
-@property HotpepperAPIFetcher *shopfetcher;
+//@property HotpepperAPIFetcher *shopfetcher;
+@property KissXMLHotpepperAPIFetcher *shopFetcher;
 @property BOOL isFavorite; // お気に入り登録されているか判定
 @property double labelAlpha;
 @property NSDate *beforeCellTime;
@@ -31,9 +33,9 @@ NSMutableArray *recieve_shop;
     [super viewDidLoad];
      self.navigationItem.title = @"検索結果一覧";
     
-    _shopfetcher = [HotpepperAPIFetcher new];
-    _shopfetcher.shopdelegate = self;
-    [_shopfetcher shopRequest:_areacode];
+    self.shopFetcher = [KissXMLHotpepperAPIFetcher new];
+    self.shopFetcher.shopDelegate = self;
+    [self.shopFetcher shopRequest:self.areacode];
     
     _shopTableView.delegate = self;
     _shopTableView.dataSource = self;

@@ -13,9 +13,13 @@
 - (void)getServiceArea:(NSMutableArray *)servicearea; // コントローラーに配列を渡す
 @end
 
+@protocol shopDelegate <NSObject>
+- (void)getShop:(NSMutableArray *)shop;
+@end
 
 @interface KissXMLHotpepperAPIFetcher : NSObject
-@property (nonatomic,weak) id<serviceAreaDelegate> serviceAreaDelegate;
+@property (nonatomic, weak) id<serviceAreaDelegate> serviceAreaDelegate;
+@property (nonatomic, weak) id<shopDelegate> shopDelegate;
 - (void)serviceAreaRequest;
 - (void)shopRequest:(NSString *)areacode;
 @end
