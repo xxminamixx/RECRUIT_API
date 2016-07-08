@@ -1,12 +1,17 @@
 PODS:
+  - KissXML (5.1.1):
+    - KissXML/Core (= 5.1.1)
+  - KissXML/Core (5.1.1)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
 
 DEPENDENCIES:
+  - KissXML
   - SDWebImage
 
 SPEC CHECKSUMS:
+  KissXML: 399becf3fd59b126ff35749acf3ad2b4c5d13c40
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
 COCOAPODS: 0.39.0

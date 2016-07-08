@@ -5,6 +5,7 @@
 
 target 'HotpepperAPIApp' do
   pod 'SDWebImage'
+  pod 'KissXML'
 end
 
 target 'HotpepperAPIAppUITests' do
