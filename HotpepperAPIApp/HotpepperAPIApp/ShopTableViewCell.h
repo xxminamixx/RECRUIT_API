@@ -23,6 +23,7 @@
 @property (weak, nonatomic) id<couponDelegate> couponDeleate;
 
 @property (weak, nonatomic) NSString *logo;
+@property (weak, nonatomic) NSString *largeLogo;
 @property (weak, nonatomic) NSString *address;
 @property (weak, nonatomic) NSString *genre;
 @property (weak, nonatomic) NSString *open;

@@ -16,11 +16,11 @@
 
 
 NSString * const kShopTableViewCell = @"ShopTableViewCell";
-NSMutableArray *shopList;
 
 @interface FavoriteViewController ()<FavoriteDelegate, shopCellFavoriteDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *favoriteTableView;
 @property FavoriteShopManager *favoriteShopManager;
+@property NSMutableArray *shopList;
 @end
 
 @implementation FavoriteViewController
@@ -28,6 +28,7 @@ NSMutableArray *shopList;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"お気に入り";
+    self.favoriteShopManager.favoriteDelegate = self;
     
     self.favoriteTableView.delegate = self;
     self.favoriteTableView.dataSource = self;
@@ -36,13 +37,12 @@ NSMutableArray *shopList;
     UINib *shopNib = [UINib nibWithNibName:kShopTableViewCell bundle:nil];
     [self.favoriteTableView registerNib:shopNib forCellReuseIdentifier:kShopTableViewCell];
     
-
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    FavoriteShopManager *favoriteShopManager = [FavoriteShopManager new];
-    shopList = [favoriteShopManager fetchEntityList];
+    self.favoriteShopManager = [FavoriteShopManager new];
+   self.shopList = [self.favoriteShopManager fetchEntityList];
     [self.favoriteTableView reloadData];
     
 }
@@ -58,7 +58,7 @@ NSMutableArray *shopList;
 numberOfRowsInSection:(NSInteger)section
 {
     //セクションに含まれるセルの数を返す
-    return shopList.count;
+    return self.shopList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,9 +67,8 @@ numberOfRowsInSection:(NSInteger)section
     shopcell.favoriteDelegate = self;
     
     // ラベルに都道府県セット処理
-    ShopEntity *shopEntity = shopList[indexPath.row];
+    ShopEntity *shopEntity = self.shopList[indexPath.row];
     [shopcell setMyPropertyWithEntity:shopEntity];
-    //[shopcell setShopLogoWithURL:shopEntity.logo];
     
     // URLをNSURLに変換
     NSURL *url = [NSURL URLWithString:shopEntity.logo];
@@ -80,7 +79,11 @@ numberOfRowsInSection:(NSInteger)section
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 125;
+    ShopEntity *shopEntity = self.shopList[indexPath.row];
+    ShopTableViewCell *shopcell = [self.favoriteTableView dequeueReusableCellWithIdentifier:kShopTableViewCell];
+    [shopcell setMyPropertyWithEntity:shopEntity];
+    int couponHeight = [shopcell couponHeightChanger];
+    return 125 + couponHeight;
 }
 
 // セルがタップされたときの処理
@@ -94,12 +97,12 @@ numberOfRowsInSection:(NSInteger)section
     ShopDetailViewController *shopDetailView = [storyboard instantiateViewControllerWithIdentifier:@"ShopDetail"];
     
     //次画面へ選択したEntityを渡す
-    ShopEntity *serveShopEnity = shopList[indexPath.row];
+    ShopEntity *serveShopEnity = self.shopList[indexPath.row];
     shopDetailView.shopEntity = serveShopEnity;
     
     // 画面をPUSHで遷移させる
     [self.navigationController pushViewController:shopDetailView animated:YES];
- }
+}
 
 
 // デリゲードメソッド
@@ -108,12 +111,12 @@ numberOfRowsInSection:(NSInteger)section
     NSLog(@"お気に入りのデリゲードメソッドが呼ばれました");
     
     // 受け取った配列をプライペード配列に格納
-    shopList = favoriteShop;
+    self.shopList = favoriteShop;
 }
 
 - (void)favoriteCall:(ShopEntity *)shopEntity
 {
-    NSLog(@"お気に入りがコールされました");
+    NSLog(@"お気に入り");
     
     // マネージャーに投げて既にお気に入りに登録されているかチェックする
     FavoriteShopManager *favoriteManager = [FavoriteShopManager new];
@@ -127,7 +130,7 @@ numberOfRowsInSection:(NSInteger)section
         
     } else {
         // 更新されたお気に入り情報を取得
-        shopList = [favoriteManager fetchEntityList];
+        self.shopList = [favoriteManager fetchEntityList];
 
         // お気に入り登録がされず削除処理がされた
         [self.favoriteTableView reloadData];

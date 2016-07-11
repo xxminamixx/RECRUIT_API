@@ -2,7 +2,7 @@
 //  FavoriteShopEntity.h
 //  
 //
-//  Created by Minami Kyohei on 2016/07/04.
+//  Created by Minami Kyohei on 2016/07/11.
 //
 //
 

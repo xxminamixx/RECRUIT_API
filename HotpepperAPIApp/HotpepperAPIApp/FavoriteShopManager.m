@@ -145,7 +145,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     _shopEntity = shopEntity;
     
     //保存したプロパティを保存処理に引き渡す
-    [self saveEntity: _shopEntity];
+    [self saveEntity: self.shopEntity];
      
 }
 
@@ -162,12 +162,13 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
                                                                                 inManagedObjectContext:self.managedObjectContext];
    
     // データベース格納処理
-    [favoriteEntity setName:_shopEntity.name];
-    [favoriteEntity setLogo:_shopEntity.logo];
-    [favoriteEntity setDetail:_shopEntity.detail];
-    [favoriteEntity setAddress:_shopEntity.address];
-    [favoriteEntity setOpen:_shopEntity.open];
-    [favoriteEntity setGenre:_shopEntity.genre];
+    [favoriteEntity setName: self.shopEntity.name];
+    [favoriteEntity setLogo: self.shopEntity.logo];
+    [favoriteEntity setDetail: self.shopEntity.detail];
+    [favoriteEntity setAddress: self.shopEntity.address];
+    [favoriteEntity setOpen: self.shopEntity.open];
+    [favoriteEntity setGenre: self.shopEntity.genre];
+    [favoriteEntity setCoupon: self.shopEntity.coupon];
     
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
@@ -191,11 +192,6 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     
     //fetch設定を元に、managedObjectContextからデータを取得
     NSMutableArray *favoriteList = (NSMutableArray *)[self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
-    
-    for (NSManagedObject *data in favoriteList) {
-        NSLog(@"%@", data);
-    }
-    
     [self.favoriteDelegate getFavorite: favoriteList];
     
 }

@@ -2,7 +2,7 @@
 //  FavoriteShopEntity+CoreDataProperties.m
 //  
 //
-//  Created by Minami Kyohei on 2016/07/04.
+//  Created by Minami Kyohei on 2016/07/11.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -21,5 +21,6 @@
 @dynamic name;
 @dynamic open;
 @dynamic shopId;
+@dynamic coupon;
 
 @end

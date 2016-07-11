@@ -22,8 +22,8 @@
 		E9357AB11D2B91CC00F5C548 /* List.png in Resources */ = {isa = PBXBuildFile; fileRef = E9357AAF1D2B91CC00F5C548 /* List.png */; };
 		E9357AB21D2B91CC00F5C548 /* ListFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = E9357AB01D2B91CC00F5C548 /* ListFilled.png */; };
 		E938CB311D3322C400B7C983 /* CuponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E938CB301D3322C400B7C983 /* CuponViewController.m */; };
-		E947BAC61D2A4CE600862C74 /* FavoriteShopEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E947BAC31D2A4CE600862C74 /* FavoriteShopEntity+CoreDataProperties.m */; };
-		E947BAC71D2A4CE600862C74 /* FavoriteShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E947BAC51D2A4CE600862C74 /* FavoriteShopEntity.m */; };
+		E938CB361D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E938CB331D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.m */; };
+		E938CB371D33562900B7C983 /* FavoriteShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E938CB351D33562900B7C983 /* FavoriteShopEntity.m */; };
 		E9566C1A1D2363D200DE0556 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9566C191D2363D200DE0556 /* FavoriteViewController.m */; };
 		E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */; };
 		E967FA0E1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E967FA0D1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m */; };
@@ -83,10 +83,10 @@
 		E9357AB01D2B91CC00F5C548 /* ListFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListFilled.png; sourceTree = "<group>"; };
 		E938CB2F1D3322C400B7C983 /* CuponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CuponViewController.h; sourceTree = "<group>"; };
 		E938CB301D3322C400B7C983 /* CuponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CuponViewController.m; sourceTree = "<group>"; };
-		E947BAC21D2A4CE600862C74 /* FavoriteShopEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FavoriteShopEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		E947BAC31D2A4CE600862C74 /* FavoriteShopEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FavoriteShopEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		E947BAC41D2A4CE600862C74 /* FavoriteShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteShopEntity.h; sourceTree = "<group>"; };
-		E947BAC51D2A4CE600862C74 /* FavoriteShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteShopEntity.m; sourceTree = "<group>"; };
+		E938CB321D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FavoriteShopEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E938CB331D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FavoriteShopEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E938CB341D33562900B7C983 /* FavoriteShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteShopEntity.h; sourceTree = "<group>"; };
+		E938CB351D33562900B7C983 /* FavoriteShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteShopEntity.m; sourceTree = "<group>"; };
 		E9566C181D2363D200DE0556 /* FavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
 		E9566C191D2363D200DE0556 /* FavoriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
 		E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaEntity.m; sourceTree = "<group>"; };
@@ -180,10 +180,10 @@
 		E956B9871D1A98050028FA1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E947BAC21D2A4CE600862C74 /* FavoriteShopEntity+CoreDataProperties.h */,
-				E947BAC31D2A4CE600862C74 /* FavoriteShopEntity+CoreDataProperties.m */,
-				E947BAC41D2A4CE600862C74 /* FavoriteShopEntity.h */,
-				E947BAC51D2A4CE600862C74 /* FavoriteShopEntity.m */,
+				E938CB321D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.h */,
+				E938CB331D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.m */,
+				E938CB341D33562900B7C983 /* FavoriteShopEntity.h */,
+				E938CB351D33562900B7C983 /* FavoriteShopEntity.m */,
 				E96CC2BC1D2F9F2F0067BAD9 /* ServiceAreaEntity.h */,
 				E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */,
 				E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */,
@@ -486,21 +486,21 @@
 				E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */,
 				E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */,
 				E9BAE60D1D2E3CB100EB0245 /* VersionViewController.m in Sources */,
+				E938CB361D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.m in Sources */,
 				E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */,
 				E99DDF321D18E3E6008374AD /* main.m in Sources */,
 				E969F5111D26670F000DDD34 /* ConfigViewController.m in Sources */,
-				E947BAC61D2A4CE600862C74 /* FavoriteShopEntity+CoreDataProperties.m in Sources */,
 				E90158711D19124500DF358C /* ServiceAreaViewController.m in Sources */,
 				E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */,
 				E9D38E9E1D1D296100F8FA0D /* ShopListViewController.m in Sources */,
 				E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */,
 				E96F698F1D24DAA700AAE896 /* TabBarController.m in Sources */,
-				E947BAC71D2A4CE600862C74 /* FavoriteShopEntity.m in Sources */,
 				E967FA0E1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m in Sources */,
 				E9357AAE1D2B585900F5C548 /* SearchNumberViewController.m in Sources */,
 				E938CB311D3322C400B7C983 /* CuponViewController.m in Sources */,
 				E96CC2BB1D2F84DC0067BAD9 /* DDXMLElement+Dictionary.m in Sources */,
 				E97747991D211E4D002ABD77 /* Model.xcdatamodeld in Sources */,
+				E938CB371D33562900B7C983 /* FavoriteShopEntity.m in Sources */,
 				E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

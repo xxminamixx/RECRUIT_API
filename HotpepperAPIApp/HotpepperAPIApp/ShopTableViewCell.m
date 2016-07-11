@@ -33,6 +33,9 @@
     shopEntity.detail = self.detail.text;
     shopEntity.logo = self.logo;
     shopEntity.address = self.address;
+    shopEntity.coupon = self.coupon;
+    shopEntity.open = self.open;
+    shopEntity.genre = self.genre;
     
     [self.favoriteDelegate favoriteCall:shopEntity];
 }
@@ -46,6 +49,7 @@
     self.shopName.text = shopEntity.name;
     self.detail.text = shopEntity.detail;
     self.logo = shopEntity.logo;
+    self.largeLogo = shopEntity.largeLogo;
     self.address = shopEntity.address;
     self.open = shopEntity.open;
     self.genre = shopEntity.genre;
