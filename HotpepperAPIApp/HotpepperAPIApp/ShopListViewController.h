@@ -11,5 +11,5 @@
 @interface ShopListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property NSString *areacode;
-
+@property NSString *searchShopName;
 @end

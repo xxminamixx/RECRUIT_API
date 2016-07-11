@@ -9,8 +9,14 @@
 #import "HomeViewController.h"
 #import "ServiceAreaViewController.h"
 #import "TabBarController.h"
+#import "KissXMLHotpepperAPIFetcher.h"
+#import "ShopListViewController.h"
 
 @interface ViewController ()
+
+
+- (IBAction)searchAdmitButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *searchField;
 - (IBAction)serviceAreaSearchButton:(id)sender;
 - (IBAction)genreSearchButton:(id)sender;
 @end
@@ -26,6 +32,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (IBAction)serviceAreaSearchButton:(id)sender {
     // ストーリーボードを指定する
@@ -46,4 +53,16 @@
 
 
 
+
+- (IBAction)searchAdmitButton:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ShopListViewController *shopView = [storyboard instantiateViewControllerWithIdentifier:@"Shop"];
+    
+    //次画面へ選択したエリアコードを渡す
+    shopView.searchShopName = self.searchField.text;
+    
+    // 画面をPUSHで遷移させる
+    [self.navigationController pushViewController:shopView animated:YES];
+
+}
 @end

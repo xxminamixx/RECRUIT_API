@@ -35,7 +35,14 @@ NSMutableArray *recieve_shop;
     
     self.shopFetcher = [KissXMLHotpepperAPIFetcher new];
     self.shopFetcher.shopDelegate = self;
-    [self.shopFetcher shopRequest:self.areacode];
+    
+    if (self.areacode != nil) {
+        [self.shopFetcher shopRequest:self.areacode];
+    }
+    
+    if (self.searchShopName != nil) {
+        [self.shopFetcher shopRequestWithName:self.searchShopName];
+    }
     
     _shopTableView.delegate = self;
     _shopTableView.dataSource = self;

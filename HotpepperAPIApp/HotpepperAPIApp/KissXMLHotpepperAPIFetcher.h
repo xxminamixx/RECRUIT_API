@@ -22,4 +22,5 @@
 @property (nonatomic, weak) id<shopDelegate> shopDelegate;
 - (void)serviceAreaRequest;
 - (void)shopRequest:(NSString *)areacode;
+- (void)shopRequestWithName:(NSString *)name;
 @end
