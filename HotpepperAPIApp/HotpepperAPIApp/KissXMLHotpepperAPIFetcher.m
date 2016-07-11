@@ -23,6 +23,8 @@
     NSMutableString *nameStr = [NSMutableString string];
     [nameStr setString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=4554e737d0d5ce93&name="];
     [nameStr appendString:name];
+    [nameStr appendString:@"&count="];
+    [nameStr appendString: self.searchNumberCast];
     NSURL *nameURL = [NSURL URLWithString:[nameStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     [self.shopDelegate getShop:[self getShopEntity:nameURL]];
 }
@@ -48,9 +50,7 @@
     
     //　タップされたエリアコードを追加
     [url appendString:areacode];
-    
     [url appendString:@"&count="];
-    
     [url appendString: self.searchNumberCast];
     
     //　NSURLにセット

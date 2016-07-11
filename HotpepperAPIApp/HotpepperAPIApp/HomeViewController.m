@@ -12,7 +12,7 @@
 #import "KissXMLHotpepperAPIFetcher.h"
 #import "ShopListViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITextFieldDelegate>
 
 - (IBAction)searchAdmitButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"ホーム";
+    [self.searchField setDelegate:self];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,6 +61,12 @@
     // 画面をPUSHで遷移させる
     [self.navigationController pushViewController:shopView animated:YES];
 
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end
