@@ -9,8 +9,13 @@
 #import "ConfigViewController.h"
 #import "ConfirmViewController.h"
 #import "FavoriteShopManager.h"
+#import "SearchNumberViewController.h"
 
 @interface ConfigViewController ()
+@property SearchNumberViewController *searchNumberViewController;
+@property (strong, nonatomic) IBOutlet UIView *configView;
+@property ConfigViewController *configViewController;
+- (IBAction)searchNumberAction:(id)sender;
 - (IBAction)deleteAction:(id)sender;
 - (IBAction)versionAction:(id)sender;
 @end
@@ -20,6 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"設定";
+    
+    self.searchNumberViewController = [SearchNumberViewController new];
+    [self addChildViewController:self.searchNumberViewController];
+    [self.searchNumberViewController didMoveToParentViewController:self];
     // Do any additional setup after loading the view.
 }
 
@@ -35,9 +44,29 @@
     [self.navigationController pushViewController:confirmViewController animated:YES];
 }
 
+
+#pragma mark - Serch Number Changer
+- (IBAction)searchNumberAction:(id)sender
+{
+    NSLog(@"一覧画面表示件数を変更します");
+    /*
+    self.searchNumberViewController.pickerView.frame = CGRectMake(0, 0, 100, 100);
+    [self.configViewController.configView addSubview:self.searchNumberViewController.pickerView];
+     */
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    // 遷移先のViewControllerをStoryBoardをもとに作成
+    //ここで送るメッセージはsroryboard ID
+     SearchNumberViewController *searchNumberViewController = [storyboard instantiateViewControllerWithIdentifier:@"SearchNumber"];
+    
+    // 画面をPUSHで遷移させる
+    [self.navigationController pushViewController:searchNumberViewController animated:YES];
+}
+
+
 # pragma mark - Favorite Delete
 - (IBAction)deleteAction:(id)sender {
-    
+
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"お気に入りを削除" message:@"本当にお気に入りを全て削除しますか？" preferredStyle:UIAlertControllerStyleAlert];
     
     // addActionした順に左から右にボタンが配置されます
