@@ -8,13 +8,11 @@
 
 #import "HomeViewController.h"
 #import "ServiceAreaViewController.h"
-#import "HotpepperAPIFetcher.h"
 #import "TabBarController.h"
 
 @interface ViewController ()
 - (IBAction)serviceAreaSearchButton:(id)sender;
 - (IBAction)genreSearchButton:(id)sender;
-@property HotpepperAPIFetcher *areafetcher;
 @end
 
 @implementation ViewController

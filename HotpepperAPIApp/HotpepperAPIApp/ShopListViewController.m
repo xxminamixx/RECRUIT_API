@@ -101,11 +101,7 @@ numberOfRowsInSection:(NSInteger)section
 // セルがタップされたときの処理
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //ここで送るメッセージはstoryboard名前の“Main.storyboard”
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    // 遷移先のViewControllerをStoryBoardをもとに作成
-    //ここで送るメッセージはsroryboard ID
     ShopDetailViewController *shopDetailView = [storyboard instantiateViewControllerWithIdentifier:@"ShopDetail"];
     
     //次画面へ選択したEntityを渡す

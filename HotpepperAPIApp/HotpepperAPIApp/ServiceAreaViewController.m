@@ -9,18 +9,14 @@
 #import "ServiceAreaViewController.h"
 #import "ServiceAreaTableViewCell.h"
 #import "ServiceAreaEntity.h"
-//#import "HotpepperAPIFetcher.h"
 #import "ShopListViewController.h"
 #import "KissXMLHotpepperAPIFetcher.h"
 
 NSString * const servicearea_tableviewcell = @"ServiceAreaTableViewCell";
 NSMutableArray *receive_servicearea;
-//HotpepperAPIFetcher *areafetcher;
 
 @interface ServiceAreaViewController () <serviceAreaDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *serviceAreaTableView;
-//@property HotpepperAPIFetcher *areafetcher;
-//@property KissXMLHotpepperAPIFetcher *serviceAreaFetcher;
 @end
 
 @implementation ServiceAreaViewController
@@ -77,16 +73,10 @@ numberOfRowsInSection:(NSInteger)section
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // セルの内容を返す
-    // ServiceAreaTableViewCell *areacell = [tableView dequeueReusableCellWithIdentifier:servicearea_tableviewcell forIndexPath:indexPath];
-    //修正
-     ServiceAreaTableViewCell *areacell = [_serviceAreaTableView dequeueReusableCellWithIdentifier:servicearea_tableviewcell];
+    ServiceAreaTableViewCell *areacell = [_serviceAreaTableView dequeueReusableCellWithIdentifier:servicearea_tableviewcell];
     
     // ラベルに都道府県セット処理
     ServiceAreaEntity *areaEnthity = receive_servicearea[indexPath.row];
-  
-    //areacell.textLabel.text = areaenthity.name;
-    //修正　outletされたラベルにセットしていなかった。
     areacell.areaname_label.text = areaEnthity.name;
     
     return areacell;
