@@ -11,6 +11,10 @@
 #import "ShopEntity.h"
 #import "ServiceAreaEntity.h"
 
+@interface KissXMLHotpepperAPIFetcher()
+//@property NSMutableString *nameStr;
+@end
+
 @implementation KissXMLHotpepperAPIFetcher
 
 //　店舗名検索
@@ -19,7 +23,7 @@
     NSMutableString *nameStr = [NSMutableString string];
     [nameStr setString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=4554e737d0d5ce93&name="];
     [nameStr appendString:name];
-    NSURL *nameURL = [NSURL URLWithString:nameStr];
+    NSURL *nameURL = [NSURL URLWithString:[nameStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     [self.shopDelegate getShop:[self getShopEntity:nameURL]];
 }
 

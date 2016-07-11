@@ -14,7 +14,6 @@
 
 @interface ViewController ()
 
-
 - (IBAction)searchAdmitButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
 - (IBAction)serviceAreaSearchButton:(id)sender;
@@ -33,7 +32,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 - (IBAction)serviceAreaSearchButton:(id)sender {
     // ストーリーボードを指定する
     //ここで送るメッセージはstoryboard名前の“Main.storyboard”
@@ -51,9 +49,6 @@
     
 }
 
-
-
-
 - (IBAction)searchAdmitButton:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ShopListViewController *shopView = [storyboard instantiateViewControllerWithIdentifier:@"Shop"];
@@ -65,4 +60,5 @@
     [self.navigationController pushViewController:shopView animated:YES];
 
 }
+
 @end
