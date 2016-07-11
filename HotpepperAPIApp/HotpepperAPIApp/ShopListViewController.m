@@ -40,9 +40,6 @@ NSMutableArray *recieve_shop;
     _shopTableView.delegate = self;
     _shopTableView.dataSource = self;
 
-    //　メモリ確保
-    recieve_shop = [NSMutableArray array];
-    
     //ViewControllerのViewにTableViewCellを登録
     UINib *shopNib = [UINib nibWithNibName:shop_tableviewcell bundle:nil];
     [self.shopTableView registerNib:shopNib forCellReuseIdentifier:shop_tableviewcell];
