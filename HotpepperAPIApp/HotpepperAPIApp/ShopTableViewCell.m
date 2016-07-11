@@ -37,6 +37,10 @@
     [self.favoriteDelegate favoriteCall:shopEntity];
 }
 
+- (IBAction)couponAction:(id)sender {
+    [self.couponDeleate couponRequest: self.coupon];
+}
+
 - (void)setMyPropertyWithEntity:(ShopEntity *)shopEntity
 {
     self.shopName.text = shopEntity.name;

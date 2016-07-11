@@ -10,18 +10,19 @@
 #import <WebKit/WebKit.h>
 
 @interface CuponViewController () <WKNavigationDelegate>
+@property (strong, nonatomic) IBOutlet UIView *couponViewController;
 @property (strong, nonatomic) WKWebView *webView;
 @end
 
 @implementation CuponViewController
 
-- (void)loadView {
-    [super viewDidLoad];
-    
+- (void)loadView
+{
     [super loadView];
     
     // WKWebView インスタンスの生成
     self.webView = [WKWebView new];
+    
     
     // Auto Layout の設定
     // 画面いっぱいに WKWebView を表示するようにする
@@ -42,6 +43,8 @@
                                                             multiplier:1.0
                                                               constant:0]
                                 ]];
+     
+     
     
     // デリゲートにこのビューコントローラを設定する
     self.webView.navigationDelegate = self;
@@ -50,7 +53,7 @@
     self.webView.allowsBackForwardNavigationGestures = YES;
     
     // WKWebView インスタンスを画面に配置する
-    [self.view insertSubview:self.webView atIndex:0];
+    [self.couponViewController insertSubview:self.webView atIndex:0];
     
 }
 
@@ -58,15 +61,17 @@
 {
     [super viewDidLoad];
     
+    /*
     // WKWebView インスタンスのプロパティの変更を監視する
     [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
     [self.webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
     [self.webView addObserver:self forKeyPath:@"loading" options:NSKeyValueObservingOptionNew context:nil];
     [self.webView addObserver:self forKeyPath:@"canGoBack" options:NSKeyValueObservingOptionNew context:nil];
     [self.webView addObserver:self forKeyPath:@"canGoForward" options:NSKeyValueObservingOptionNew context:nil];
+    */
     
     // 初回画面表示時にIntialURLで指定した Web ページを読み込む
-    NSURL *url = [NSURL URLWithString: self.cuponStr];
+    NSURL *url = [NSURL URLWithString: self.couponStr];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
 }

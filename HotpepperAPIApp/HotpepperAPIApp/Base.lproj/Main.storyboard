@@ -1307,5 +1307,27 @@
             </objects>
             <point key="canvasLocation" x="184.5" y="3104.5"/>
         </scene>
+        <!--Cupon View Controller-->
+        <scene sceneID="lzg-WP-Ldm">
+            <objects>
+                <viewController storyboardIdentifier="Coupon" id="Suj-lX-HRW" customClass="CuponViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mki-oU-5bC"/>
+                        <viewControllerLayoutGuide type="bottom" id="YOY-LS-OfX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iZj-Zl-qpA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="couponViewController" destination="iZj-Zl-qpA" id="iBb-z2-eYh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nA5-Co-TzW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184.5" y="3973.5"/>
+        </scene>
     </scenes>
 </document>

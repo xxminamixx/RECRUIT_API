@@ -58,13 +58,17 @@
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ch-vm-bTg">
                         <rect key="frame" x="8" y="131" width="304" height="30"/>
-                        <color key="backgroundColor" red="0.60540112754317266" green="0.85367345328282829" blue="0.45907099952335245" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.52318169093868427" green="0.74127998737373735" blue="0.39477289722302344" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="cwn-Ia-mcn"/>
                         </constraints>
-                        <state key="normal" title="Button">
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <state key="normal" title="クーポン情報">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="couponAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cbR-zM-8gM"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASQ-Oh-rmt">
                         <rect key="frame" x="282" y="0.0" width="30" height="30"/>

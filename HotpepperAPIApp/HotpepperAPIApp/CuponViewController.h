@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CuponViewController : UIViewController 
-@property NSString *cuponStr;
+@property NSString *couponStr;
 @end

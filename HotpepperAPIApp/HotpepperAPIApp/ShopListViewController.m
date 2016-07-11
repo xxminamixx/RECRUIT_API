@@ -12,14 +12,14 @@
 #import "ShopDetailViewController.h"
 #import "FavoriteShopManager.h"
 #import "KissXMLHotpepperAPIFetcher.h"
+#import "CuponViewController.h"
 
 NSString * const shop_tableviewcell = @"ShopTableViewCell";
 NSString * const nullCupon = @"http://hpr.jp/S/S511.jsp?SP=J000981130&uid=NULLGWDOCOMO&vos=hpp336";
 NSMutableArray *recieve_shop;
 
-@interface ShopListViewController () <shopDelegate, shopCellFavoriteDelegate>
+@interface ShopListViewController () <shopDelegate, shopCellFavoriteDelegate, couponDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *shopTableView;
-//@property HotpepperAPIFetcher *shopfetcher;
 @property KissXMLHotpepperAPIFetcher *shopFetcher;
 @property BOOL isFavorite; // お気に入り登録されているか判定
 @property double labelAlpha;
@@ -74,6 +74,7 @@ numberOfRowsInSection:(NSInteger)section
     ShopEntity *shopEntity = recieve_shop[indexPath.row];
     FavoriteShopManager *favoriteShopManager = [FavoriteShopManager new];
     shopcell.favoriteDelegate = self;
+    shopcell.couponDeleate = self;
     shopcell.favoriteButton.alpha = 0.2;
     
     if (shopEntity.coupon != nil) {
@@ -148,6 +149,14 @@ numberOfRowsInSection:(NSInteger)section
         // お気に入り登録がされず削除処理がされた
         [self.shopTableView reloadData];
     }
+}
+
+-(void) couponRequest:(NSString *)cuponStr
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CuponViewController *couponViewController = [storyboard instantiateViewControllerWithIdentifier:@"Coupon"];
+    couponViewController.couponStr = cuponStr;
+    [self.navigationController pushViewController:couponViewController animated:YES];
 }
 
 
