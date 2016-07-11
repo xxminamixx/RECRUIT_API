@@ -24,14 +24,18 @@
 @property (weak, nonatomic) NSString *address;
 @property (weak, nonatomic) NSString *genre;
 @property (weak, nonatomic) NSString *open;
+@property (weak, nonatomic) NSString *coupon;
 @property (weak, nonatomic) IBOutlet UIImageView *shopLogo;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *couponHeight;
 @property UIImage *loadImage;
+@property (weak, nonatomic) IBOutlet UIButton *couponButton;
 
 - (IBAction)favoriteAction:(id)sender;
 - (void)setMyPropertyWithEntity:(ShopEntity *)shopEntity;
 - (void)setShopLogoWithURL:(NSString*)url;
 - (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock;
 - (void)imageRefresh:(NSURL *)url;
+- (int)couponHeightChanger;
 @end
 

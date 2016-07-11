@@ -7,7 +7,6 @@
 //
 
 #import "ShopListViewController.h"
-//#import "HotpepperAPIFetcher.h"
 #import "ShopTableViewCell.h"
 #import "ShopEntity.h"
 #import "ShopDetailViewController.h"
@@ -15,6 +14,7 @@
 #import "KissXMLHotpepperAPIFetcher.h"
 
 NSString * const shop_tableviewcell = @"ShopTableViewCell";
+NSString * const nullCupon = @"http://hpr.jp/S/S511.jsp?SP=J000981130&uid=NULLGWDOCOMO&vos=hpp336";
 NSMutableArray *recieve_shop;
 
 @interface ShopListViewController () <shopDelegate, shopCellFavoriteDelegate>
@@ -76,6 +76,9 @@ numberOfRowsInSection:(NSInteger)section
     shopcell.favoriteDelegate = self;
     shopcell.favoriteButton.alpha = 0.2;
     
+    if (shopEntity.coupon != nil) {
+        
+    }
     
     if ([favoriteShopManager addedShopToFavorite:shopEntity.name]) {
         shopcell.favoriteButton.alpha = 1;
@@ -93,7 +96,11 @@ numberOfRowsInSection:(NSInteger)section
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 125;
+    ShopEntity *shopEntity = recieve_shop[indexPath.row];
+     ShopTableViewCell *shopcell = [_shopTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
+    [shopcell setMyPropertyWithEntity:shopEntity];
+    int couponHeight = [shopcell couponHeightChanger];
+    return 125 + couponHeight;
 }
 
 

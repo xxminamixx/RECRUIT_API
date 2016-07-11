@@ -45,6 +45,21 @@
     self.address = shopEntity.address;
     self.open = shopEntity.open;
     self.genre = shopEntity.genre;
+    self.coupon = shopEntity.coupon;
+}
+
+- (int) couponHeightChanger
+{
+    // cuoponボタンの高さを変える
+    if (self.coupon != nil) {
+        self.couponButton.hidden = false;
+        self.couponHeight.constant = 30;
+        return 50;
+    } else {
+        self.couponButton.hidden = true;
+        self.couponHeight.constant = 0;
+        return 0;
+    }
 }
 
 - (void)setShopLogoWithURL:(NSString*)url {

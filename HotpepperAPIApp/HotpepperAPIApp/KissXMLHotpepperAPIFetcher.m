@@ -45,7 +45,6 @@
     
 }
 
-
 // お店の情報が入った配列を返す
 - (NSMutableArray *)getShopEntity:(NSURL *)url
 {
@@ -73,7 +72,8 @@
         [shopEntity setOpen: [elements objectForKey:@"open"]];
         [shopEntity setAddress: [elements objectForKey:@"address"]];
         [shopEntity setGenre: [elements valueForKeyPath:@"genre.name"]];
-        [shopEntity setCuopon: [elements valueForKeyPath:@"coupon_urls.mobile"]];
+        // mobile未対応の店が多いためpcサイトを取得
+        [shopEntity setCoupon: [elements valueForKeyPath:@"coupon_urls.pc"]];
         [shopEntity setLargeLogo: [elements valueForKeyPath:@"photo.mobile.l"]];
         
         // お店のデータが格納されたEntityを配列に格納
