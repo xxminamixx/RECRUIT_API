@@ -28,4 +28,5 @@
 - (void)serviceAreaRequest;
 - (void)shopRequest:(NSString *)areacode;
 - (void)shopRequestWithName:(NSString *)name;
+- (void)genreRequest;
 @end

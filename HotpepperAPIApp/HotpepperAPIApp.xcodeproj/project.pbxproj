@@ -14,6 +14,8 @@
 		E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */; };
 		E92891D31D34752B0021E201 /* ShopGenreEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E92891D21D34752B0021E201 /* ShopGenreEntity.m */; };
 		E92891D61D3479920021E201 /* ShopGenreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E92891D51D3479920021E201 /* ShopGenreViewController.m */; };
+		E92891DA1D3485FD0021E201 /* ShopGenreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E92891D81D3485FD0021E201 /* ShopGenreTableViewCell.m */; };
+		E92891DB1D3485FD0021E201 /* ShopGenreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92891D91D3485FD0021E201 /* ShopGenreTableViewCell.xib */; };
 		E93391AD1D2A0A5E000F4A0F /* config.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A71D2A0A5E000F4A0F /* config.png */; };
 		E93391AE1D2A0A5E000F4A0F /* configFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A81D2A0A5E000F4A0F /* configFilled.png */; };
 		E93391AF1D2A0A5E000F4A0F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A91D2A0A5E000F4A0F /* home.png */; };
@@ -77,6 +79,9 @@
 		E92891D21D34752B0021E201 /* ShopGenreEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopGenreEntity.m; sourceTree = "<group>"; };
 		E92891D41D3479920021E201 /* ShopGenreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopGenreViewController.h; sourceTree = "<group>"; };
 		E92891D51D3479920021E201 /* ShopGenreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopGenreViewController.m; sourceTree = "<group>"; };
+		E92891D71D3485FD0021E201 /* ShopGenreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopGenreTableViewCell.h; sourceTree = "<group>"; };
+		E92891D81D3485FD0021E201 /* ShopGenreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopGenreTableViewCell.m; sourceTree = "<group>"; };
+		E92891D91D3485FD0021E201 /* ShopGenreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopGenreTableViewCell.xib; sourceTree = "<group>"; };
 		E93391A71D2A0A5E000F4A0F /* config.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = config.png; sourceTree = "<group>"; };
 		E93391A81D2A0A5E000F4A0F /* configFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = configFilled.png; sourceTree = "<group>"; };
 		E93391A91D2A0A5E000F4A0F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
@@ -211,13 +216,16 @@
 		E956B9881D1A98270028FA1B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */,
-				E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */,
 				E99DDF391D18E3E6008374AD /* Main.storyboard */,
 				E9A180AB1D1F628500D64FC4 /* ShopTableViewCell.h */,
 				E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */,
+				E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */,
 				E90158721D1915CB00DF358C /* ServiceAreaTableViewCell.h */,
 				E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */,
+				E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */,
+				E92891D71D3485FD0021E201 /* ShopGenreTableViewCell.h */,
+				E92891D81D3485FD0021E201 /* ShopGenreTableViewCell.m */,
+				E92891D91D3485FD0021E201 /* ShopGenreTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -412,6 +420,7 @@
 				E93391B01D2A0A5E000F4A0F /* homeFilled.png in Resources */,
 				E93391B11D2A0A5E000F4A0F /* star.png in Resources */,
 				E93391AE1D2A0A5E000F4A0F /* configFilled.png in Resources */,
+				E92891DB1D3485FD0021E201 /* ShopGenreTableViewCell.xib in Resources */,
 				E9BAE60A1D2E1FFF00EB0245 /* loadImage.png in Resources */,
 				E9357AB21D2B91CC00F5C548 /* ListFilled.png in Resources */,
 				E9357AB11D2B91CC00F5C548 /* List.png in Resources */,
@@ -494,6 +503,7 @@
 				E969F5141D26672A000DDD34 /* ConfirmViewController.m in Sources */,
 				E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */,
 				E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */,
+				E92891DA1D3485FD0021E201 /* ShopGenreTableViewCell.m in Sources */,
 				E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */,
 				E9BAE60D1D2E3CB100EB0245 /* VersionViewController.m in Sources */,
 				E938CB361D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.m in Sources */,
