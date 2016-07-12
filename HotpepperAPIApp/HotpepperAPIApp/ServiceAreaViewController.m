@@ -35,29 +35,14 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
     serviceAreaFetcher.serviceAreaDelegate = self;
     [serviceAreaFetcher serviceAreaRequest];
     
-    _serviceAreaTableView.delegate = self;
-    _serviceAreaTableView.dataSource = self;
+    self.serviceAreaTableView.delegate = self;
+    self.serviceAreaTableView.dataSource = self;
 
     //ViewControllerのViewにTableViewCellを登録
     UINib *serviceAreaNib = [UINib nibWithNibName:servicearea_tableviewcell bundle:nil];
     [self.serviceAreaTableView registerNib:serviceAreaNib forCellReuseIdentifier:servicearea_tableviewcell];
     
 }
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [self.serviceAreaTableView reloadData];
-    [super viewWillAppear:animated];
-}
-*/
-
-/*
--(void)viewDidAppear:(BOOL)animated
-{
-    [self.serviceAreaTableView reloadData];
-    [super viewDidAppear:animated];
-}
-*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
