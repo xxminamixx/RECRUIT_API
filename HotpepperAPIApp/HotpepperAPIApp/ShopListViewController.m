@@ -45,7 +45,7 @@ NSMutableArray *recieve_shop;
     }
     
     if (self.genreCode != nil) {
-        // フェッチャーにgenreCodeを送ってリクエスト処理
+        [self.shopFetcher shopRequestWithGenrecode:self.genreCode];
     }
     
     _shopTableView.delegate = self;

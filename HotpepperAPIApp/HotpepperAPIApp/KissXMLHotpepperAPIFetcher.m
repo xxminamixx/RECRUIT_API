@@ -41,7 +41,7 @@
 }
 
 //　都道府県選択画面からお店のリクエストURL作成
-- (void)shopRequestWithAreacode:(NSString *)areacode
+- (void)shopRequestWithAreacode:(NSString *)areaCode
 {
     NSMutableString *url = [NSMutableString string];
     
@@ -49,16 +49,32 @@
     [url setString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=4554e737d0d5ce93&service_area="];
     
     //　タップされたエリアコードを追加
-    [url appendString:areacode];
+    [url appendString:areaCode];
     [url appendString:@"&count="];
     [url appendString: self.searchNumberCast];
     
     //　NSURLにセット
-    NSURL *shopurl = [NSURL URLWithString:url];
-    [self.shopDelegate getShop:[self getShopEntity:shopurl]];
+    NSURL *shopURL = [NSURL URLWithString:url];
+    [self.shopDelegate getShop:[self getShopEntity:shopURL]];
 }
 
 // ジャンルコードからお店のリクエストURLを作成
+- (void)shopRequestWithGenrecode:(NSString *)genreCode
+{
+    NSMutableString *url = [NSMutableString string];
+    
+    //　shop検索の雛形
+    [url setString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=4554e737d0d5ce93&genre="];
+    
+    //　タップされたジャンルコードを追加
+    [url appendString:genreCode];
+    [url appendString:@"&count="];
+    [url appendString: self.searchNumberCast];
+    
+    //　NSURLにセット
+    NSURL *shopURL = [NSURL URLWithString:url];
+    [self.shopDelegate getShop:[self getShopEntity:shopURL]];
+}
 
 // ジャンル取得
 - (void)genreRequest
