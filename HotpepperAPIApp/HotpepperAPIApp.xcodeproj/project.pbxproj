@@ -12,6 +12,7 @@
 		E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */; };
 		E90158761D1915CB00DF358C /* ServiceAreaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */; };
 		E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */; };
+		E92891D31D34752B0021E201 /* ShopGenreEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E92891D21D34752B0021E201 /* ShopGenreEntity.m */; };
 		E93391AD1D2A0A5E000F4A0F /* config.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A71D2A0A5E000F4A0F /* config.png */; };
 		E93391AE1D2A0A5E000F4A0F /* configFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A81D2A0A5E000F4A0F /* configFilled.png */; };
 		E93391AF1D2A0A5E000F4A0F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A91D2A0A5E000F4A0F /* home.png */; };
@@ -71,6 +72,8 @@
 		E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceAreaTableViewCell.xib; sourceTree = "<group>"; };
 		E901587D1D193C2400DF358C /* HotpepperAPIFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotpepperAPIFetcher.h; sourceTree = "<group>"; };
 		E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotpepperAPIFetcher.m; sourceTree = "<group>"; };
+		E92891D11D34752B0021E201 /* ShopGenreEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopGenreEntity.h; sourceTree = "<group>"; };
+		E92891D21D34752B0021E201 /* ShopGenreEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopGenreEntity.m; sourceTree = "<group>"; };
 		E93391A71D2A0A5E000F4A0F /* config.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = config.png; sourceTree = "<group>"; };
 		E93391A81D2A0A5E000F4A0F /* configFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = configFilled.png; sourceTree = "<group>"; };
 		E93391A91D2A0A5E000F4A0F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */,
 				E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */,
 				E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */,
+				E92891D11D34752B0021E201 /* ShopGenreEntity.h */,
+				E92891D21D34752B0021E201 /* ShopGenreEntity.m */,
 				E96CC2B91D2F84DC0067BAD9 /* DDXMLElement+Dictionary.h */,
 				E96CC2BA1D2F84DC0067BAD9 /* DDXMLElement+Dictionary.m */,
 				E967FA0C1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.h */,
@@ -488,6 +493,7 @@
 				E9BAE60D1D2E3CB100EB0245 /* VersionViewController.m in Sources */,
 				E938CB361D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.m in Sources */,
 				E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */,
+				E92891D31D34752B0021E201 /* ShopGenreEntity.m in Sources */,
 				E99DDF321D18E3E6008374AD /* main.m in Sources */,
 				E969F5111D26670F000DDD34 /* ConfigViewController.m in Sources */,
 				E90158711D19124500DF358C /* ServiceAreaViewController.m in Sources */,
