@@ -13,10 +13,11 @@
 #import "KissXMLHotpepperAPIFetcher.h"
 
 NSString * const servicearea_tableviewcell = @"ServiceAreaTableViewCell";
-NSMutableArray *receive_servicearea;
+
 
 @interface ServiceAreaViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *serviceAreaTableView;
+@property NSMutableArray *serviceAreaList;
 @end
 
 @implementation ServiceAreaViewController
@@ -29,8 +30,8 @@ NSMutableArray *receive_servicearea;
     KissXMLHotpepperAPIFetcher *serviceAreaFetcher = [KissXMLHotpepperAPIFetcher new];
     
     // 自身の配列に格納するBlocks
-    getServiceArea getServiceArea = ^(NSMutableArray *array){
-        receive_servicearea = array;
+    getServiceArea getServiceArea = ^(NSMutableArray *serviceAreaList){
+        self.serviceAreaList = serviceAreaList;
     };
     
     [serviceAreaFetcher serviceAreaRequest:getServiceArea];
@@ -52,7 +53,7 @@ NSMutableArray *receive_servicearea;
 numberOfRowsInSection:(NSInteger)section
 {
     //セクションに含まれるセルの数を返す
-    return receive_servicearea.count;
+    return self.serviceAreaList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -60,7 +61,7 @@ numberOfRowsInSection:(NSInteger)section
     ServiceAreaTableViewCell *areacell = [_serviceAreaTableView dequeueReusableCellWithIdentifier:servicearea_tableviewcell];
     
     // ラベルに都道府県セット処理
-    ServiceAreaEntity *areaEnthity = receive_servicearea[indexPath.row];
+    ServiceAreaEntity *areaEnthity = self.serviceAreaList[indexPath.row];
     areacell.areaname_label.text = areaEnthity.name;
     
     return areacell;
@@ -76,7 +77,7 @@ numberOfRowsInSection:(NSInteger)section
 {
     // 押したセルのラベルを取得
     ServiceAreaEntity *areaEntity = [ServiceAreaEntity new];
-    areaEntity = receive_servicearea[indexPath.row];
+    areaEntity = self.serviceAreaList[indexPath.row];
     NSLog(@"%@", areaEntity.code);
     
     // ストーリーボードを指定する
