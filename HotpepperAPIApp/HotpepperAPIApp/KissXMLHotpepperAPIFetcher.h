@@ -32,6 +32,6 @@
 - (void)serviceAreaRequest:(getServiceArea)serviceAreaList;
 - (void)shopRequestWithAreacode:(NSString *)areaCode: (getShopList)shopList;
 - (void)shopRequestWithGenrecode:(NSString *)genreCode: (getShopList)shopList;
-- (void)shopRequestWithShopName:(NSString *)name;
+- (void)shopRequestWithShopName:(NSString *)name: (getShopList)shopList;
 - (void)genreRequest:(getShopListOfGenre)shopList;
 @end

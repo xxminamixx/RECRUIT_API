@@ -45,7 +45,7 @@ NSMutableArray *recieve_shop;
     }
     
     if (self.searchShopName != nil) {
-        [self.shopFetcher shopRequestWithShopName:self.searchShopName];
+        [self.shopFetcher shopRequestWithShopName:self.searchShopName:getShopList];
     }
     
     if (self.genreCode != nil) {

@@ -19,7 +19,7 @@
 @implementation KissXMLHotpepperAPIFetcher
 
 //　店舗名検索
-- (void)shopRequestWithShopName:(NSString *)name
+- (void)shopRequestWithShopName:(NSString *)name:(getShopList)shopList
 {
     NSMutableString *nameStr = [NSMutableString string];
     [nameStr setString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=4554e737d0d5ce93&name="];
@@ -27,7 +27,7 @@
     [nameStr appendString:@"&count="];
     [nameStr appendString: self.searchNumberCast];
     NSURL *nameURL = [NSURL URLWithString:[nameStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    //[self.shopDelegate getShop:[self getShopEntity:nameURL]];
+    shopList([self getShopEntity:nameURL]);
 }
 
 
