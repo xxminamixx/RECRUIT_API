@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "DDXMLDocument.h"
+#import "ServiceAreaViewController.h"
 
 @protocol serviceAreaDelegate <NSObject>
-- (void)getServiceArea:(NSMutableArray *)servicearea; // コントローラーに配列を渡す
+//- (void)getServiceArea:(NSMutableArray *)servicearea; // コントローラーに配列を渡す
 @end
 
 @protocol shopDelegate <NSObject>
@@ -25,7 +26,7 @@
 @property (nonatomic, weak) id<serviceAreaDelegate> serviceAreaDelegate;
 @property (nonatomic, weak) id<shopDelegate> shopDelegate;
 @property (nonatomic, weak) id<shopGenreDelegate> genreDelegate;
-- (void)serviceAreaRequest;
+- (void)serviceAreaRequest:(getServiceArea)serviceAreaList;
 - (void)shopRequestWithAreacode:(NSString *)areaCode;
 - (void)shopRequestWithGenrecode:(NSString *)genreCode;
 - (void)shopRequestWithShopName:(NSString *)name;

@@ -12,19 +12,16 @@
 #import "ShopListViewController.h"
 #import "KissXMLHotpepperAPIFetcher.h"
 
+
+
 NSString * const servicearea_tableviewcell = @"ServiceAreaTableViewCell";
 NSMutableArray *receive_servicearea;
 
-@interface ServiceAreaViewController () <serviceAreaDelegate>
+@interface ServiceAreaViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *serviceAreaTableView;
 @end
 
 @implementation ServiceAreaViewController
-
-void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
-{
-    
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,8 +29,13 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
     
     // HotpepperAPIに自身のポインタをセット
     KissXMLHotpepperAPIFetcher *serviceAreaFetcher = [KissXMLHotpepperAPIFetcher new];
-    serviceAreaFetcher.serviceAreaDelegate = self;
-    [serviceAreaFetcher serviceAreaRequest];
+    
+    // 自身の配列に格納するBlocks
+    getServiceArea getServiceArea = ^(NSMutableArray *array){
+        receive_servicearea = array;
+    };
+    
+    [serviceAreaFetcher serviceAreaRequest:getServiceArea];
     
     self.serviceAreaTableView.delegate = self;
     self.serviceAreaTableView.dataSource = self;
@@ -46,7 +48,6 @@ void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block)
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(NSInteger)tableView:(UITableView *)tableView
@@ -95,6 +96,7 @@ numberOfRowsInSection:(NSInteger)section
     [self.navigationController pushViewController:shopView animated:YES];
 }
 
+/*
 // デリゲードメソッド
 - (void) getServiceArea:(NSMutableArray *)servicearea
 {
@@ -106,5 +108,6 @@ numberOfRowsInSection:(NSInteger)section
     });
 
 }
+ */
 
 @end

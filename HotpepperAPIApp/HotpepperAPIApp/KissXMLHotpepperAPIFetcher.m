@@ -11,6 +11,7 @@
 #import "ShopEntity.h"
 #import "ServiceAreaEntity.h"
 #import "ShopGenreEntity.h"
+#import "ServiceAreaViewController.h"
 
 @interface KissXMLHotpepperAPIFetcher()
 @end
@@ -31,13 +32,16 @@
 
 
 // 都道府県のリクエストURL作成
-- (void)serviceAreaRequest
+- (void)serviceAreaRequest:(getServiceArea)serviceAreaList
 {
     // サービスエリアのURL
     NSURL *areaURL = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/service_area/v1/?key=4554e737d0d5ce93"];
     
     // delegateメソッドに配列を渡す
-    [self.serviceAreaDelegate getServiceArea:[self getServiceArea:areaURL]];
+    // [self.serviceAreaDelegate getServiceArea:[self getServiceArea:areaURL]];
+    // ServiceAreaViewController *serviceAreaController = [ServiceAreaViewController new];
+    // [serviceAreaController serviceAreaList:[self getServiceArea:areaURL]];
+    serviceAreaList([self getServiceArea:areaURL]);
 }
 
 //　都道府県選択画面からお店のリクエストURL作成
