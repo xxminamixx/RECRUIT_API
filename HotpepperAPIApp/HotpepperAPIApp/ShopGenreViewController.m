@@ -12,7 +12,7 @@
 #import "ShopGenreEntity.h"
 #import "ShopGenreTableViewCell.h"
 
-NSString * const shopGenreCell = @"ShopGenreCell";
+NSString * const shopGenreCell = @"ShopGenreTableViewCell";
 
 @interface ShopGenreViewController()<UITableViewDelegate,UITableViewDataSource,shopGenreDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *genreTableView;
