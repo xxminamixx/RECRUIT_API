@@ -20,6 +20,14 @@ NSString * const logo = @"logo_image";
 NSString * const opening = @"open";
 NSString * const address = @"address";
 
+NSString * const shopPath = @"results.shop";
+NSString * const genrePath = @"results.genre";
+NSString * const genreNamePath = @"genre.name";
+NSString * const couponPCPath = @"coupon_urls.pc";
+NSString * const largeLogoPath = @"photo.mobile.l";
+
+NSString * const serviceAreaPath = @"results.service_area";
+
 NSString * const genreCode = @"code";
 NSString * const genreName = @"name";
 
@@ -112,7 +120,7 @@ NSString * const genreName = @"name";
     NSDictionary *xml = [[doc rootElement] convertDictionary];
     
     //お店10件を格納
-    NSDictionary *shopDict = [xml valueForKeyPath:@"results.shop"];
+    NSDictionary *shopDict = [xml valueForKeyPath:shopPath];
     
     for (NSDictionary *elements in shopDict) {
         ShopEntity *shopEntity = [ShopEntity new];
@@ -122,10 +130,10 @@ NSString * const genreName = @"name";
         [shopEntity setLogo: [elements objectForKey: logo]];
         [shopEntity setOpen: [elements objectForKey: opening]];
         [shopEntity setAddress: [elements objectForKey: address]];
-        [shopEntity setGenre: [elements valueForKeyPath:@"genre.name"]];
+        [shopEntity setGenre: [elements valueForKeyPath:genreNamePath]];
         // mobile未対応の店が多いためpcサイトを取得
-        [shopEntity setCoupon: [elements valueForKeyPath:@"coupon_urls.pc"]];
-        [shopEntity setLargeLogo: [elements valueForKeyPath:@"photo.mobile.l"]];
+        [shopEntity setCoupon: [elements valueForKeyPath: couponPCPath]];
+        [shopEntity setLargeLogo: [elements valueForKeyPath: largeLogoPath]];
         
         // お店のデータが格納されたEntityを配列に格納
         [shopEntityList addObject: shopEntity];
@@ -146,7 +154,7 @@ NSString * const genreName = @"name";
     
     //要素を抜き出す時のルートパスの設定
     NSDictionary *xml = [[doc rootElement] convertDictionary];
-    NSDictionary *serviceAreaDict = [xml valueForKeyPath:@"results.service_area"];
+    NSDictionary *serviceAreaDict = [xml valueForKeyPath:serviceAreaPath];
     
     for (NSDictionary *dic in serviceAreaDict) {
         ServiceAreaEntity *serviceAreaEntity = [ServiceAreaEntity new];
@@ -169,7 +177,7 @@ NSString * const genreName = @"name";
     
     //要素を抜き出す時のルートパスの設定
     NSDictionary *xml = [[doc rootElement] convertDictionary];
-    NSDictionary *shopGenreDict = [xml valueForKeyPath:@"results.genre"];
+    NSDictionary *shopGenreDict = [xml valueForKeyPath:genrePath];
     
     for (NSDictionary *dic in shopGenreDict) {
         ShopGenreEntity *shopGenreEntity = [ShopGenreEntity new];
