@@ -15,7 +15,7 @@
 
 NSString * const shopGenreCell = @"ShopGenreTableViewCell";
 
-@interface ShopGenreViewController()<UITableViewDelegate,UITableViewDataSource,shopGenreDelegate>
+@interface ShopGenreViewController()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *genreTableView;
 @property NSMutableArray *genreList;
 @end
@@ -26,7 +26,6 @@ NSString * const shopGenreCell = @"ShopGenreTableViewCell";
     [super viewDidLoad];
     self.navigationItem.title = @"ジャンル一覧";
     KissXMLHotpepperAPIFetcher *fetcher = [KissXMLHotpepperAPIFetcher new];
-    fetcher.genreDelegate = self;
     self.genreTableView.delegate = self;
     self.genreTableView.dataSource = self;
     
@@ -83,15 +82,5 @@ numberOfRowsInSection:(NSInteger)section
     
 }
 
-
-- (void)getGenre:(NSMutableArray *)genreList;
-{
-    // 自身のプロパティにフェッチしたジャンルEntity配列を格納
-    self.genreList = genreList;
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.genreTableView reloadData];
-    });
-}
 
 @end

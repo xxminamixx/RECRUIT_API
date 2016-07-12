@@ -17,7 +17,7 @@
 
 NSString * const kShopTableViewCell = @"ShopTableViewCell";
 
-@interface FavoriteViewController ()<FavoriteDelegate, shopCellFavoriteDelegate, couponDelegate>
+@interface FavoriteViewController ()<shopCellFavoriteDelegate, couponDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *favoriteTableView;
 @property FavoriteShopManager *favoriteShopManager;
 @property NSMutableArray *shopList;
@@ -28,8 +28,6 @@ NSString * const kShopTableViewCell = @"ShopTableViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"お気に入り";
-    self.favoriteShopManager.favoriteDelegate = self;
-    
     self.favoriteTableView.delegate = self;
     self.favoriteTableView.dataSource = self;
     
@@ -42,7 +40,12 @@ NSString * const kShopTableViewCell = @"ShopTableViewCell";
 - (void)viewWillAppear:(BOOL)animated
 {
     self.favoriteShopManager = [FavoriteShopManager new];
-   self.shopList = [self.favoriteShopManager fetchEntityList];
+    
+    getFavoriteShopList favoriteList = ^(NSMutableArray *shopList){
+        self.shopList = shopList;
+    };
+    
+    [self.favoriteShopManager setFavorite:favoriteList];
     [self.favoriteTableView reloadData];
     
 }
@@ -103,16 +106,6 @@ numberOfRowsInSection:(NSInteger)section
     [self.navigationController pushViewController:shopDetailView animated:YES];
 }
 
-
-// デリゲードメソッド
-- (void)getFavorite:(NSMutableArray *)favoriteShop
-{
-    NSLog(@"お気に入りのデリゲードメソッドが呼ばれました");
-    
-    // 受け取った配列をプライペード配列に格納
-    self.shopList = favoriteShop;
-}
-
 - (void)favoriteCall:(ShopEntity *)shopEntity
 {
     NSLog(@"お気に入り");
@@ -129,8 +122,12 @@ numberOfRowsInSection:(NSInteger)section
         
     } else {
         // 更新されたお気に入り情報を取得
-        self.shopList = [favoriteManager fetchEntityList];
-
+        getFavoriteShopList favoriteList = ^(NSMutableArray *shopList){
+            self.shopList = shopList;
+        };
+        
+        [self.favoriteShopManager setFavorite:favoriteList];
+        
         // お気に入り登録がされず削除処理がされた
         [self.favoriteTableView reloadData];
     }

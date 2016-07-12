@@ -94,18 +94,4 @@ numberOfRowsInSection:(NSInteger)section
     [self.navigationController pushViewController:shopView animated:YES];
 }
 
-/*
-// デリゲードメソッド
-- (void) getServiceArea:(NSMutableArray *)servicearea
-{
-    NSLog(@"デリゲードメソッドが呼ばれました");
-    receive_servicearea = servicearea;
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.serviceAreaTableView reloadData];
-    });
-
-}
- */
-
 @end

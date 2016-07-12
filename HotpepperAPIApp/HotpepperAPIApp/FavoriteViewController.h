@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^getFavoriteShopList)(NSMutableArray *array);
+
 @interface FavoriteViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;

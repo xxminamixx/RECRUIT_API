@@ -93,6 +93,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
 
 }
 
+
 // お気に入り全削除メソッド
 - (void)allDeleteFavorite
 {
@@ -178,7 +179,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
 }
 
 // デリゲートメソッドに配列を引き渡す
-- (void)setFavorite
+- (void)setFavorite:(getFavoriteShopList)shopList
 {
     [self preparetionEnitty];
     
@@ -194,6 +195,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     NSMutableArray *favoriteList = (NSMutableArray *)[self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     [self.favoriteDelegate getFavorite: favoriteList];
     
+    shopList(favoriteList);
 }
 
 

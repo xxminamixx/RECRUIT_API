@@ -59,7 +59,6 @@
     
     //　NSURLにセット
     NSURL *shopURL = [NSURL URLWithString:url];
-    //[self.shopDelegate getShop:[self getShopEntity:shopURL]];
     shopList([self getShopEntity:shopURL]);
 }
 
@@ -78,7 +77,6 @@
     
     //　NSURLにセット
     NSURL *shopURL = [NSURL URLWithString:url];
-    //[self.shopDelegate getShop:[self getShopEntity:shopURL]];
     shopList([self getShopEntity:shopURL]);
 }
 

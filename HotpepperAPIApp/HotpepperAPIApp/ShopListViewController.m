@@ -18,7 +18,7 @@ NSString * const shop_tableviewcell = @"ShopTableViewCell";
 NSString * const nullCupon = @"http://hpr.jp/S/S511.jsp?SP=J000981130&uid=NULLGWDOCOMO&vos=hpp336";
 NSMutableArray *recieve_shop;
 
-@interface ShopListViewController () <shopDelegate, shopCellFavoriteDelegate, couponDelegate>
+@interface ShopListViewController () <shopCellFavoriteDelegate, couponDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *shopTableView;
 @property KissXMLHotpepperAPIFetcher *shopFetcher;
 @property BOOL isFavorite; // お気に入り登録されているか判定
@@ -34,7 +34,6 @@ NSMutableArray *recieve_shop;
      self.navigationItem.title = @"検索結果一覧";
     
     self.shopFetcher = [KissXMLHotpepperAPIFetcher new];
-    self.shopFetcher.shopDelegate = self;
     
     // お店受け取りBlocks
     getShopList getShopList = ^(NSMutableArray *shopList){
@@ -138,16 +137,6 @@ numberOfRowsInSection:(NSInteger)section
     [self.navigationController pushViewController:shopDetailView animated:YES];
 }
 
-
-#pragma mark - fetch shopEntity
-- (void)getShop:(NSMutableArray *)shop
-{
-    NSLog(@"デリゲードメソッドが呼ばれました");
-    recieve_shop = shop;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.shopTableView reloadData];
-    });
-}
 
 - (void)favoriteCall:(ShopEntity *)shopEntity
 {
