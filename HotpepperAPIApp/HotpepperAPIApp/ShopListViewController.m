@@ -37,11 +37,11 @@ NSMutableArray *recieve_shop;
     self.shopFetcher.shopDelegate = self;
     
     if (self.areacode != nil) {
-        [self.shopFetcher shopRequest:self.areacode];
+        [self.shopFetcher shopRequestWithAreacode:self.areacode];
     }
     
     if (self.searchShopName != nil) {
-        [self.shopFetcher shopRequestWithName:self.searchShopName];
+        [self.shopFetcher shopRequestWithShopName:self.searchShopName];
     }
     
     if (self.genreCode != nil) {

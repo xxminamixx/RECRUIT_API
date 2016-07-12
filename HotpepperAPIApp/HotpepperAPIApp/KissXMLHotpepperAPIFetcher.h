@@ -26,7 +26,7 @@
 @property (nonatomic, weak) id<shopDelegate> shopDelegate;
 @property (nonatomic, weak) id<shopGenreDelegate> genreDelegate;
 - (void)serviceAreaRequest;
-- (void)shopRequest:(NSString *)areacode;
-- (void)shopRequestWithName:(NSString *)name;
+- (void)shopRequestWithAreacode:(NSString *)areacode;
+- (void)shopRequestWithShopName:(NSString *)name;
 - (void)genreRequest;
 @end

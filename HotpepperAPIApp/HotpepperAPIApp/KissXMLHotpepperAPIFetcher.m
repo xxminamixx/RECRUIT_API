@@ -18,7 +18,7 @@
 @implementation KissXMLHotpepperAPIFetcher
 
 //　店舗名検索
-- (void)shopRequestWithName:(NSString *)name
+- (void)shopRequestWithShopName:(NSString *)name
 {
     NSMutableString *nameStr = [NSMutableString string];
     [nameStr setString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=4554e737d0d5ce93&name="];
@@ -33,7 +33,7 @@
 // 都道府県のリクエストURL作成
 - (void)serviceAreaRequest
 {
-    //サービスエリアのURL
+    // サービスエリアのURL
     NSURL *areaURL = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/service_area/v1/?key=4554e737d0d5ce93"];
     
     // delegateメソッドに配列を渡す
@@ -41,7 +41,7 @@
 }
 
 //　都道府県選択画面からお店のリクエストURL作成
-- (void)shopRequest:(NSString *)areacode
+- (void)shopRequestWithAreacode:(NSString *)areacode
 {
     NSMutableString *url = [NSMutableString string];
     
@@ -56,8 +56,9 @@
     //　NSURLにセット
     NSURL *shopurl = [NSURL URLWithString:url];
     [self.shopDelegate getShop:[self getShopEntity:shopurl]];
-    
 }
+
+// ジャンルコードからお店のリクエストURLを作成
 
 // ジャンル取得
 - (void)genreRequest
