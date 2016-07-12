@@ -78,6 +78,7 @@
 		E92891D71D3485FD0021E201 /* ShopGenreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopGenreTableViewCell.h; sourceTree = "<group>"; };
 		E92891D81D3485FD0021E201 /* ShopGenreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopGenreTableViewCell.m; sourceTree = "<group>"; };
 		E92891D91D3485FD0021E201 /* ShopGenreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopGenreTableViewCell.xib; sourceTree = "<group>"; };
+		E92891DC1D34D6F70021E201 /* FavoriteShopManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteShopManager.h; sourceTree = "<group>"; };
 		E93391A71D2A0A5E000F4A0F /* config.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = config.png; sourceTree = "<group>"; };
 		E93391A81D2A0A5E000F4A0F /* configFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = configFilled.png; sourceTree = "<group>"; };
 		E93391A91D2A0A5E000F4A0F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 				E96CC2BA1D2F84DC0067BAD9 /* DDXMLElement+Dictionary.m */,
 				E967FA0C1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.h */,
 				E967FA0D1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m */,
+				E92891DC1D34D6F70021E201 /* FavoriteShopManager.h */,
 				E97747821D2103BA002ABD77 /* FavoriteShopManager.m */,
 			);
 			name = Model;

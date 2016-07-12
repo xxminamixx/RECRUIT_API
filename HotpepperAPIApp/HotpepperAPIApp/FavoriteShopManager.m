@@ -41,7 +41,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     return NO;
 }
 
-- (void)preparetionEnitty
+- (void)preparetionEntity
 {
     
     //　データベース格納処理
@@ -141,18 +141,16 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
 
 - (void)getFavoriteShop:(ShopEntity *)shopEntity
 {
-    
     // コントローラーからお気に入りのお店Entity受け取り処理
-    _shopEntity = shopEntity;
+    self.shopEntity = shopEntity;
     
     //保存したプロパティを保存処理に引き渡す
     [self saveEntity: self.shopEntity];
-     
 }
 
 - (void)saveEntity:(ShopEntity *)shopEntity
 {
-   [self preparetionEnitty];
+   [self preparetionEntity];
     
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.managedObjectContext;
@@ -169,6 +167,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     [favoriteEntity setOpen: self.shopEntity.open];
     [favoriteEntity setGenre: self.shopEntity.genre];
     [favoriteEntity setCoupon: self.shopEntity.coupon];
+    [favoriteEntity setLargeLogo: self.shopEntity.largeLogo];
     
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
@@ -180,7 +179,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
 // デリゲートメソッドに配列を引き渡す
 - (void)setFavorite:(getFavoriteShopList)shopList
 {
-    [self preparetionEnitty];
+    [self preparetionEntity];
     
     //fetch設定を生成
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:kFavoriteEntity];

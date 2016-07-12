@@ -32,6 +32,7 @@
     shopEntity.coupon = self.coupon;
     shopEntity.open = self.open;
     shopEntity.genre = self.genre;
+    shopEntity.largeLogo = self.largeLogo;
     
     [self.favoriteDelegate favoriteCall:shopEntity];
 }

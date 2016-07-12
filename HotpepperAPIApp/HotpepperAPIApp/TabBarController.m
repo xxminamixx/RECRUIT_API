@@ -31,6 +31,16 @@ NSString * const listFailledImageStr = @"ListFilled.png";
      NSLog(@"タブバーが呼ばれました。");
     self.delegate = self;
     
+    UIColor *tabBarColor = [UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255.0 alpha:1.0];
+    [[UITabBar appearance] setBarTintColor: tabBarColor];
+    
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f];
+    NSDictionary *selectedAttributes = @{NSFontAttributeName : font,
+                                         NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:selectedAttributes
+                                             forState:UIControlStateSelected];
+    
     UITabBarItem *homeItem = [self.tabBar.items objectAtIndex:0];
     UITabBarItem *favoItem = [self.tabBar.items objectAtIndex:1];
     UITabBarItem *configItem = [self.tabBar.items objectAtIndex:2];
