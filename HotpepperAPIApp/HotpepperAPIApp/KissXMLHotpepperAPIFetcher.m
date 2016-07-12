@@ -13,6 +13,16 @@
 #import "ShopGenreEntity.h"
 #import "ServiceAreaViewController.h"
 
+NSString * const shopId = @"id";
+NSString * const shopName = @"name";
+NSString * const detail = @"shop_detail_memo";
+NSString * const logo = @"logo_image";
+NSString * const opening = @"open";
+NSString * const address = @"address";
+
+NSString * const genreCode = @"code";
+NSString * const genreName = @"name";
+
 @interface KissXMLHotpepperAPIFetcher()
 @end
 
@@ -106,12 +116,12 @@
     
     for (NSDictionary *elements in shopDict) {
         ShopEntity *shopEntity = [ShopEntity new];
-        [shopEntity setShopId: [elements objectForKey:@"id"]];
-        [shopEntity setName: [elements objectForKey:@"name"]];
-        [shopEntity setDetail: [elements objectForKey:@"shop_detail_memo"]];
-        [shopEntity setLogo: [elements objectForKey:@"logo_image"]];
-        [shopEntity setOpen: [elements objectForKey:@"open"]];
-        [shopEntity setAddress: [elements objectForKey:@"address"]];
+        [shopEntity setShopId: [elements objectForKey: shopId]];
+        [shopEntity setName: [elements objectForKey: shopName]];
+        [shopEntity setDetail: [elements objectForKey: detail]];
+        [shopEntity setLogo: [elements objectForKey: logo]];
+        [shopEntity setOpen: [elements objectForKey: opening]];
+        [shopEntity setAddress: [elements objectForKey: address]];
         [shopEntity setGenre: [elements valueForKeyPath:@"genre.name"]];
         // mobile未対応の店が多いためpcサイトを取得
         [shopEntity setCoupon: [elements valueForKeyPath:@"coupon_urls.pc"]];
@@ -140,8 +150,8 @@
     
     for (NSDictionary *dic in serviceAreaDict) {
         ServiceAreaEntity *serviceAreaEntity = [ServiceAreaEntity new];
-        [serviceAreaEntity setName: [dic valueForKey:@"name"]];
-        [serviceAreaEntity setCode: [dic valueForKey:@"code"]];
+        [serviceAreaEntity setName: [dic valueForKey:genreName]];
+        [serviceAreaEntity setCode: [dic valueForKey:genreCode]];
         [serviceAreaList addObject: serviceAreaEntity];
     }
     return serviceAreaList;
@@ -163,8 +173,8 @@
     
     for (NSDictionary *dic in shopGenreDict) {
         ShopGenreEntity *shopGenreEntity = [ShopGenreEntity new];
-        [shopGenreEntity setGenreCode: [dic valueForKey:@"code"]];
-        [shopGenreEntity setGenreName: [dic valueForKey:@"name"]];
+        [shopGenreEntity setGenreCode: [dic valueForKey:genreCode]];
+        [shopGenreEntity setGenreName: [dic valueForKey:genreName]];
         [shopGenreList addObject: shopGenreEntity];
     }
     return shopGenreList;
