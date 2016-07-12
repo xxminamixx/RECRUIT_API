@@ -13,6 +13,11 @@
 #import "ShopListViewController.h"
 #import "ShopGenreViewController.h"
 
+NSString * const mainStoryboard = @"Main";
+NSString * const serviceAreaIDOfStoryboard = @"ServiceArea";
+NSString * const genreIDOfStoryboard = @"ShopGenre";
+NSString * const shopListIDOfStoryboard  = @"Shop";
+
 @interface ViewController ()<UITextFieldDelegate>
 
 - (IBAction)searchAdmitButton:(id)sender;
@@ -41,19 +46,19 @@
 - (IBAction)serviceAreaSearchButton:(id)sender {
     // ストーリーボードを指定する
     //ここで送るメッセージはstoryboard名前の“Main.storyboard”
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStoryboard bundle:nil];
     
     // 遷移先のViewControllerをStoryBoardをもとに作成
     //ここで送るメッセージはsroryboard ID
-    ServiceAreaViewController *areaView = [storyboard instantiateViewControllerWithIdentifier:@"ServiceArea"];
+    ServiceAreaViewController *areaView = [storyboard instantiateViewControllerWithIdentifier:serviceAreaIDOfStoryboard];
     
     // 画面をPUSHで遷移させる
     [self.navigationController pushViewController:areaView animated:YES];
 }
 
 - (IBAction)genreSearchButton:(id)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ShopGenreViewController *genreView = [storyboard instantiateViewControllerWithIdentifier:@"ShopGenre"];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStoryboard bundle:nil];
+    ShopGenreViewController *genreView = [storyboard instantiateViewControllerWithIdentifier:genreIDOfStoryboard];
     
     // 画面をPUSHで遷移させる
     [self.navigationController pushViewController:genreView animated:YES];
@@ -61,8 +66,8 @@
 }
 
 - (IBAction)searchAdmitButton:(id)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ShopListViewController *shopView = [storyboard instantiateViewControllerWithIdentifier:@"Shop"];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStoryboard bundle:nil];
+    ShopListViewController *shopView = [storyboard instantiateViewControllerWithIdentifier:shopListIDOfStoryboard];
     
     //次画面へ選択したエリアコードを渡す
     shopView.searchShopName = self.searchField.text;
