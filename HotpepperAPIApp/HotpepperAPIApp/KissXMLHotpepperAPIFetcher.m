@@ -10,9 +10,9 @@
 #import "DDXMLElement+Dictionary.h"
 #import "ShopEntity.h"
 #import "ServiceAreaEntity.h"
+#import "ShopGenreEntity.h"
 
 @interface KissXMLHotpepperAPIFetcher()
-//@property NSMutableString *nameStr;
 @end
 
 @implementation KissXMLHotpepperAPIFetcher
@@ -57,6 +57,13 @@
     NSURL *shopurl = [NSURL URLWithString:url];
     [self.shopDelegate getShop:[self getShopEntity:shopurl]];
     
+}
+
+// ジャンル取得
+- (void)genreRequest
+{
+    NSURL *genreURL = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/genre/v1/?key=4554e737d0d5ce93"];
+    [self.genreDelegate getGenre:[self getShopGenre:genreURL]];
 }
 
 // お店の情報が入った配列を返す
@@ -118,6 +125,29 @@
         [serviceAreaList addObject: serviceAreaEntity];
     }
     return serviceAreaList;
+}
+
+// ジャンルEntityの配列を返す
+- (NSMutableArray *)getShopGenre:(NSURL *)url
+{
+    //xmlファイルの場所の設定
+    NSData *data=[NSData dataWithContentsOfURL:url];
+    NSMutableArray *shopGenreList = [NSMutableArray array];
+    
+    //xmlファイルを取得
+    DDXMLDocument *doc = [[DDXMLDocument alloc]initWithData:data options:0 error:nil];
+    
+    //要素を抜き出す時のルートパスの設定
+    NSDictionary *xml = [[doc rootElement] convertDictionary];
+    NSDictionary *shopGenreDict = [xml valueForKeyPath:@"results.genre"];
+    
+    for (NSDictionary *dic in shopGenreDict) {
+        ShopGenreEntity *shopGenreEntity = [ShopGenreEntity new];
+        [shopGenreEntity setGenreCode: [dic valueForKey:@"code"]];
+        [shopGenreEntity setGenreName: [dic valueForKey:@"name"]];
+        [shopGenreList addObject: shopGenreEntity];
+    }
+    return shopGenreList;
 }
 
 // 永続化した表示件数を取得し検索用に変換する

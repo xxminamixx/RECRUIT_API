@@ -17,9 +17,14 @@
 - (void)getShop:(NSMutableArray *)shop;
 @end
 
+@protocol shopGenreDelegate <NSObject>
+- (void)getGenre:(NSMutableArray *)genreList;
+@end
+
 @interface KissXMLHotpepperAPIFetcher : NSObject
 @property (nonatomic, weak) id<serviceAreaDelegate> serviceAreaDelegate;
 @property (nonatomic, weak) id<shopDelegate> shopDelegate;
+@property (nonatomic, weak) id<shopGenreDelegate> genreDelegate;
 - (void)serviceAreaRequest;
 - (void)shopRequest:(NSString *)areacode;
 - (void)shopRequestWithName:(NSString *)name;
