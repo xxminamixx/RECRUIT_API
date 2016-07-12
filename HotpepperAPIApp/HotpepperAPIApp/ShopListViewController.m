@@ -162,11 +162,11 @@ numberOfRowsInSection:(NSInteger)section
     }
 }
 
--(void) couponRequest:(NSString *)cuponStr
+-(void) couponRequest:(NSString *)couponStr
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     CuponViewController *couponViewController = [storyboard instantiateViewControllerWithIdentifier:@"Coupon"];
-    couponViewController.couponStr = cuponStr;
+    couponViewController.couponStr = couponStr;
     [self.navigationController pushViewController:couponViewController animated:YES];
 }
 

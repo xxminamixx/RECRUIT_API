@@ -13,11 +13,12 @@
 #import "FavoriteShopManager.h"
 #import "TabBarController.h"
 #import "AppDelegate.h"
+#import "CuponViewController.h"
 
 
 NSString * const kShopTableViewCell = @"ShopTableViewCell";
 
-@interface FavoriteViewController ()<FavoriteDelegate, shopCellFavoriteDelegate>
+@interface FavoriteViewController ()<FavoriteDelegate, shopCellFavoriteDelegate, couponDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *favoriteTableView;
 @property FavoriteShopManager *favoriteShopManager;
 @property NSMutableArray *shopList;
@@ -65,6 +66,7 @@ numberOfRowsInSection:(NSInteger)section
 {
     ShopTableViewCell *shopcell = [_favoriteTableView dequeueReusableCellWithIdentifier:kShopTableViewCell];
     shopcell.favoriteDelegate = self;
+    shopcell.couponDeleate = self;
     
     // ラベルに都道府県セット処理
     ShopEntity *shopEntity = self.shopList[indexPath.row];
@@ -137,5 +139,12 @@ numberOfRowsInSection:(NSInteger)section
     }
 }
 
+- (void) couponRequest:(NSString *)couponStr
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CuponViewController *couponViewController = [storyboard instantiateViewControllerWithIdentifier:@"Coupon"];
+    couponViewController.couponStr = couponStr;
+    [self.navigationController pushViewController:couponViewController animated:YES];
+}
 
 @end
