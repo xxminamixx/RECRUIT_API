@@ -30,8 +30,8 @@
 @property (nonatomic, weak) id<shopDelegate> shopDelegate;
 @property (nonatomic, weak) id<shopGenreDelegate> genreDelegate;
 - (void)serviceAreaRequest:(getServiceArea)serviceAreaList;
-- (void)shopRequestWithAreacode:(NSString *)areaCode: (getShopList)shopList;
-- (void)shopRequestWithGenrecode:(NSString *)genreCode: (getShopList)shopList;
-- (void)shopRequestWithShopName:(NSString *)name: (getShopList)shopList;
+- (void)shopRequestWithAreacode:(NSString *)areaCode getShopList:(getShopList)shopList;
+- (void)shopRequestWithGenrecode:(NSString *)genreCode getShopList:(getShopList)shopList;
+- (void)shopRequestWithShopName:(NSString *)name getShopList:(getShopList)shopList;
 - (void)genreRequest:(getShopListOfGenre)shopList;
 @end

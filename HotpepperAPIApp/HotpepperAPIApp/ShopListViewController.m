@@ -41,15 +41,15 @@ NSMutableArray *recieve_shop;
     };
     
     if (self.areacode != nil) {
-        [self.shopFetcher shopRequestWithAreacode:self.areacode:getShopList];
+        [self.shopFetcher shopRequestWithAreacode:self.areacode getShopList:getShopList];
     }
     
     if (self.searchShopName != nil) {
-        [self.shopFetcher shopRequestWithShopName:self.searchShopName:getShopList];
+        [self.shopFetcher shopRequestWithShopName:self.searchShopName getShopList:getShopList];
     }
     
     if (self.genreCode != nil) {
-        [self.shopFetcher shopRequestWithGenrecode:self.genreCode:getShopList];
+        [self.shopFetcher shopRequestWithGenrecode:self.genreCode getShopList:getShopList];
     }
     
     _shopTableView.delegate = self;
