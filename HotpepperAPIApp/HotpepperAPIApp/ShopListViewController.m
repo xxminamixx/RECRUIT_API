@@ -44,6 +44,10 @@ NSMutableArray *recieve_shop;
         [self.shopFetcher shopRequestWithName:self.searchShopName];
     }
     
+    if (self.genreCode != nil) {
+        // フェッチャーにgenreCodeを送ってリクエスト処理
+    }
+    
     _shopTableView.delegate = self;
     _shopTableView.dataSource = self;
 

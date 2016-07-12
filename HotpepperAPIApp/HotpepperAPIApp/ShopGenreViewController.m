@@ -11,6 +11,7 @@
 #import "ServiceAreaTableViewCell.h"
 #import "ShopGenreEntity.h"
 #import "ShopGenreTableViewCell.h"
+#import "ShopListViewController.h"
 
 NSString * const shopGenreCell = @"ShopGenreTableViewCell";
 
@@ -60,6 +61,31 @@ numberOfRowsInSection:(NSInteger)section
 {
     return 70;
 }
+
+// セルがタップされたときの処理
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    // 押したセルのラベルを取得
+    ShopGenreEntity *shopGenreEntity = [ShopGenreEntity new];
+    shopGenreEntity = self.genreList[indexPath.row];
+    
+    // ストーリーボードを指定する
+    //ここで送るメッセージはstoryboard名前の“Main.storyboard”
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    // 遷移先のViewControllerをStoryBoardをもとに作成
+    //ここで送るメッセージはsroryboard ID
+    ShopListViewController *shopView = [storyboard instantiateViewControllerWithIdentifier:@"Shop"];
+    
+    //次画面へ選択したエリアコードを渡す
+    shopView.genreCode = shopGenreEntity.genreCode;
+    
+    // 画面をPUSHで遷移させる
+    [self.navigationController pushViewController:shopView animated:YES];
+    
+}
+
 
 - (void)getGenre:(NSMutableArray *)genreList;
 {

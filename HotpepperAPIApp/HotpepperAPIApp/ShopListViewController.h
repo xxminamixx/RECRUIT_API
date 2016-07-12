@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ShopListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-
 @property NSString *areacode;
+@property NSString *genreCode;
 @property NSString *searchShopName;
 @end
