@@ -7,9 +7,9 @@
 //
 
 #import "ConfigViewController.h"
-#import "ConfirmViewController.h"
 #import "FavoriteShopManager.h"
 #import "SearchNumberViewController.h"
+#import "VersionViewController.h"
 
 @interface ConfigViewController ()
 @property SearchNumberViewController *searchNumberViewController;
@@ -40,8 +40,8 @@
 #pragma mark - Version Confirmation
 - (IBAction)versionAction:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ConfirmViewController *confirmViewController = [storyboard instantiateViewControllerWithIdentifier:@"Version"];
-    [self.navigationController pushViewController:confirmViewController animated:YES];
+    VersionViewController *versionViewController = [storyboard instantiateViewControllerWithIdentifier:@"Version"];
+    [self.navigationController pushViewController:versionViewController animated:YES];
 }
 
 

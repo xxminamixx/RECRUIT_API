@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.version.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    self.navigationItem.title = @"バージョン確認";
 }
 
 - (void)didReceiveMemoryWarning {
