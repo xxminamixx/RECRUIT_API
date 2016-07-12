@@ -88,7 +88,7 @@ NavigationControllerのItem設定
 - [x] 単体テスト項目作成  
 - [x] TableViewをAutoLayoutで調整   
 - [x] 単体テスト  
-- [ ] バグ修正  
+- [x] バグ修正  
   
 ## 7月7日 
 - [x] 削除確定画面をUIAlertControllerで実装  
@@ -106,7 +106,7 @@ NavigationControllerのItem設定
 - [ ] セルの高さをクーポンがあったら可変にする  
   
 ## 7月12日  
-- [ ] フェッチャー読み込み後の動作をDelegateではなくBlocksで実装   
+- [x] フェッチャー読み込み後の動作をDelegateではなくBlocksで実装   
 - [x] API通信のリクエスト作成 
 - [x] リクエストの送信
 - [x] レスポンスを受け取る  
