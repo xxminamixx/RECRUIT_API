@@ -29,7 +29,13 @@ NSString * const shopGenreCell = @"ShopGenreTableViewCell";
     fetcher.genreDelegate = self;
     self.genreTableView.delegate = self;
     self.genreTableView.dataSource = self;
-    [fetcher genreRequest];
+    
+    // お店受け取りBlocks
+    getShopListOfGenre getShopList = ^(NSMutableArray *shopList){
+        self.genreList = shopList;
+    };
+    
+    [fetcher genreRequest:getShopList];
     
     UINib *shopGenreNib = [UINib nibWithNibName:shopGenreCell bundle:nil];
     [self.genreTableView registerNib:shopGenreNib forCellReuseIdentifier:shopGenreCell];

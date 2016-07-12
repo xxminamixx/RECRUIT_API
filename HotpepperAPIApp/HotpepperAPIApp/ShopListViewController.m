@@ -36,8 +36,13 @@ NSMutableArray *recieve_shop;
     self.shopFetcher = [KissXMLHotpepperAPIFetcher new];
     self.shopFetcher.shopDelegate = self;
     
+    // お店受け取りBlocks
+    getShopList getShopList = ^(NSMutableArray *shopList){
+        recieve_shop = shopList;
+    };
+    
     if (self.areacode != nil) {
-        [self.shopFetcher shopRequestWithAreacode:self.areacode];
+        [self.shopFetcher shopRequestWithAreacode:self.areacode:getShopList];
     }
     
     if (self.searchShopName != nil) {
@@ -45,11 +50,13 @@ NSMutableArray *recieve_shop;
     }
     
     if (self.genreCode != nil) {
-        [self.shopFetcher shopRequestWithGenrecode:self.genreCode];
+        [self.shopFetcher shopRequestWithGenrecode:self.genreCode:getShopList];
     }
     
     _shopTableView.delegate = self;
     _shopTableView.dataSource = self;
+    
+    
 
     //ViewControllerのViewにTableViewCellを登録
     UINib *shopNib = [UINib nibWithNibName:shop_tableviewcell bundle:nil];

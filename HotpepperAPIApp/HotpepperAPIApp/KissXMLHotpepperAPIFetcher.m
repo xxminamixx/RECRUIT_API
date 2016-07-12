@@ -27,7 +27,7 @@
     [nameStr appendString:@"&count="];
     [nameStr appendString: self.searchNumberCast];
     NSURL *nameURL = [NSURL URLWithString:[nameStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    [self.shopDelegate getShop:[self getShopEntity:nameURL]];
+    //[self.shopDelegate getShop:[self getShopEntity:nameURL]];
 }
 
 
@@ -45,7 +45,7 @@
 }
 
 //　都道府県選択画面からお店のリクエストURL作成
-- (void)shopRequestWithAreacode:(NSString *)areaCode
+- (void)shopRequestWithAreacode:(NSString *)areaCode:(getShopList)shopList
 {
     NSMutableString *url = [NSMutableString string];
     
@@ -59,11 +59,12 @@
     
     //　NSURLにセット
     NSURL *shopURL = [NSURL URLWithString:url];
-    [self.shopDelegate getShop:[self getShopEntity:shopURL]];
+    //[self.shopDelegate getShop:[self getShopEntity:shopURL]];
+    shopList([self getShopEntity:shopURL]);
 }
 
 // ジャンルコードからお店のリクエストURLを作成
-- (void)shopRequestWithGenrecode:(NSString *)genreCode
+- (void)shopRequestWithGenrecode:(NSString *)genreCode:(getShopList)shopList
 {
     NSMutableString *url = [NSMutableString string];
     
@@ -77,14 +78,17 @@
     
     //　NSURLにセット
     NSURL *shopURL = [NSURL URLWithString:url];
-    [self.shopDelegate getShop:[self getShopEntity:shopURL]];
+    //[self.shopDelegate getShop:[self getShopEntity:shopURL]];
+    shopList([self getShopEntity:shopURL]);
 }
 
 // ジャンル取得
-- (void)genreRequest
+- (void)genreRequest:(getShopListOfGenre)shopList
 {
     NSURL *genreURL = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/genre/v1/?key=4554e737d0d5ce93"];
-    [self.genreDelegate getGenre:[self getShopGenre:genreURL]];
+    //[self.genreDelegate getGenre:[self getShopGenre:genreURL]];
+    shopList([self getShopGenre:genreURL]);
+    
 }
 
 // お店の情報が入った配列を返す

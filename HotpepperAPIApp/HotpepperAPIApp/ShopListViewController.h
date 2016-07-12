@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^getShopList)(NSMutableArray *array);
+
 @interface ShopListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property NSString *areacode;
 @property NSString *genreCode;

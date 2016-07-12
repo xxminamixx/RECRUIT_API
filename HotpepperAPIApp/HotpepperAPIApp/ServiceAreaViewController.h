@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 typedef  void(^getServiceArea)(NSMutableArray *array);
-@interface ServiceAreaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@interface ServiceAreaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @end

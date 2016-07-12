@@ -12,8 +12,6 @@
 #import "ShopListViewController.h"
 #import "KissXMLHotpepperAPIFetcher.h"
 
-
-
 NSString * const servicearea_tableviewcell = @"ServiceAreaTableViewCell";
 NSMutableArray *receive_servicearea;
 
