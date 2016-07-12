@@ -11,19 +11,15 @@
 #import "UIImageView+WebCache.h"
 #import "UIImageView+WebCache.h"
 
-
 @implementation ShopTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.loadImage =[UIImage imageNamed:@"loadImage.png"];
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (IBAction)favoriteAction:(id)sender {
@@ -88,7 +84,5 @@
                        }];
 
 }
-
-
 
 @end

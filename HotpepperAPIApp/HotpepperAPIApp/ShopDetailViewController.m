@@ -31,10 +31,7 @@
     [super viewDidLoad];
     self.navigationItem.title = _shopEntity.name;
     self.loadImage = [UIImage imageNamed:@"loadImage.png"];
-    /*
-    void(^ImageReload)();
-    [self sd_setImageWithURL: self.shopEntity.largeLogo: ImageReload];
-    */
+    
     _shopname.text = _shopEntity.name;
     _detail.text = _shopEntity.detail;
     _address.text = _shopEntity.address;

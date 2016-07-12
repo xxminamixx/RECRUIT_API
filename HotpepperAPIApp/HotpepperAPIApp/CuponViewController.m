@@ -61,15 +61,6 @@
 {
     [super viewDidLoad];
     
-    /*
-    // WKWebView インスタンスのプロパティの変更を監視する
-    [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
-    [self.webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
-    [self.webView addObserver:self forKeyPath:@"loading" options:NSKeyValueObservingOptionNew context:nil];
-    [self.webView addObserver:self forKeyPath:@"canGoBack" options:NSKeyValueObservingOptionNew context:nil];
-    [self.webView addObserver:self forKeyPath:@"canGoForward" options:NSKeyValueObservingOptionNew context:nil];
-    */
-    
     // 初回画面表示時にIntialURLで指定した Web ページを読み込む
     NSURL *url = [NSURL URLWithString: self.couponStr];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

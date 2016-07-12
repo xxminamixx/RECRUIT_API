@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ServiceAreaTableViewCell : UITableViewCell
-
 @property (weak, nonatomic) IBOutlet UILabel *areaname_label;
-
 @end

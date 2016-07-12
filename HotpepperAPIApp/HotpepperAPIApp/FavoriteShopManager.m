@@ -150,7 +150,6 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
      
 }
 
-
 - (void)saveEntity:(ShopEntity *)shopEntity
 {
    [self preparetionEnitty];
