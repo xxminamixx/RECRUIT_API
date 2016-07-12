@@ -49,9 +49,7 @@
     }
     
     NSURL *url = [NSURL URLWithString:self.shopEntity.largeLogo];
-    //[self setShopLogo:self.shopEntity.largeLogo];
 
-    
     [self sd_setImageWithURL:url
                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                            [self.detailView setNeedsLayout];
@@ -62,7 +60,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

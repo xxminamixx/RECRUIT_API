@@ -15,7 +15,6 @@
 #import "AppDelegate.h"
 #import "CuponViewController.h"
 
-
 NSString * const kShopTableViewCell = @"ShopTableViewCell";
 
 @interface FavoriteViewController ()<FavoriteDelegate, shopCellFavoriteDelegate, couponDelegate>
@@ -48,10 +47,8 @@ NSString * const kShopTableViewCell = @"ShopTableViewCell";
     
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
