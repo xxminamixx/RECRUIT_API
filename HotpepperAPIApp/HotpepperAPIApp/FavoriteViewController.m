@@ -28,6 +28,11 @@ NSString * const kShopTableViewCell = @"ShopTableViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"お気に入り";
+    UIColor *navitationBarColor = [UIColor colorWithRed:60/255.0 green:179/255.0 blue:113/255.0 alpha:1.0];
+    self.navigationController.navigationBar.barTintColor = navitationBarColor;
+    self.navigationController.navigationBar.titleTextAttributes= @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
     self.favoriteTableView.delegate = self;
     self.favoriteTableView.dataSource = self;
     
