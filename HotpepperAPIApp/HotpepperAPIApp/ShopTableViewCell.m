@@ -11,11 +11,13 @@
 #import "UIImageView+WebCache.h"
 #import "UIImageView+WebCache.h"
 
+NSString * const loadImage = @"loadImage.png";
+
 @implementation ShopTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.loadImage =[UIImage imageNamed:@"loadImage.png"];
+    self.loadImage =[UIImage imageNamed: loadImage];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

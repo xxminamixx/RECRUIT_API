@@ -11,6 +11,8 @@
 #import "AppDelegate.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
+NSString * const loadingImage = @"loadImage.png";
+
 @interface ShopDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *shopname;
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
@@ -30,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = _shopEntity.name;
-    self.loadImage = [UIImage imageNamed:@"loadImage.png"];
+    self.loadImage = [UIImage imageNamed: loadingImage];
     
     _shopname.text = _shopEntity.name;
     _detail.text = _shopEntity.detail;
