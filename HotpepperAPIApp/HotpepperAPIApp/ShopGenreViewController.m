@@ -12,6 +12,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"ジャンル一覧";
 }
 
 - (void)didReceiveMemoryWarning {

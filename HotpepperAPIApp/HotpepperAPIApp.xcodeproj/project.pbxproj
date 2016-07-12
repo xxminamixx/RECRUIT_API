@@ -13,6 +13,7 @@
 		E90158761D1915CB00DF358C /* ServiceAreaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */; };
 		E901587F1D193C2400DF358C /* HotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */; };
 		E92891D31D34752B0021E201 /* ShopGenreEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E92891D21D34752B0021E201 /* ShopGenreEntity.m */; };
+		E92891D61D3479920021E201 /* ShopGenreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E92891D51D3479920021E201 /* ShopGenreViewController.m */; };
 		E93391AD1D2A0A5E000F4A0F /* config.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A71D2A0A5E000F4A0F /* config.png */; };
 		E93391AE1D2A0A5E000F4A0F /* configFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A81D2A0A5E000F4A0F /* configFilled.png */; };
 		E93391AF1D2A0A5E000F4A0F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A91D2A0A5E000F4A0F /* home.png */; };
@@ -74,6 +75,8 @@
 		E901587E1D193C2400DF358C /* HotpepperAPIFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotpepperAPIFetcher.m; sourceTree = "<group>"; };
 		E92891D11D34752B0021E201 /* ShopGenreEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopGenreEntity.h; sourceTree = "<group>"; };
 		E92891D21D34752B0021E201 /* ShopGenreEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopGenreEntity.m; sourceTree = "<group>"; };
+		E92891D41D3479920021E201 /* ShopGenreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopGenreViewController.h; sourceTree = "<group>"; };
+		E92891D51D3479920021E201 /* ShopGenreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopGenreViewController.m; sourceTree = "<group>"; };
 		E93391A71D2A0A5E000F4A0F /* config.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = config.png; sourceTree = "<group>"; };
 		E93391A81D2A0A5E000F4A0F /* configFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = configFilled.png; sourceTree = "<group>"; };
 		E93391A91D2A0A5E000F4A0F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
@@ -246,6 +249,8 @@
 				E9BAE60C1D2E3CB100EB0245 /* VersionViewController.m */,
 				E938CB2F1D3322C400B7C983 /* CuponViewController.h */,
 				E938CB301D3322C400B7C983 /* CuponViewController.m */,
+				E92891D41D3479920021E201 /* ShopGenreViewController.h */,
+				E92891D51D3479920021E201 /* ShopGenreViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -501,6 +506,7 @@
 				E9D38E9E1D1D296100F8FA0D /* ShopListViewController.m in Sources */,
 				E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */,
 				E96F698F1D24DAA700AAE896 /* TabBarController.m in Sources */,
+				E92891D61D3479920021E201 /* ShopGenreViewController.m in Sources */,
 				E967FA0E1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m in Sources */,
 				E9357AAE1D2B585900F5C548 /* SearchNumberViewController.m in Sources */,
 				E938CB311D3322C400B7C983 /* CuponViewController.m in Sources */,

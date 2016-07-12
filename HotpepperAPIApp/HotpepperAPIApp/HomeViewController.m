@@ -11,6 +11,7 @@
 #import "TabBarController.h"
 #import "KissXMLHotpepperAPIFetcher.h"
 #import "ShopListViewController.h"
+#import "ShopGenreViewController.h"
 
 @interface ViewController ()<UITextFieldDelegate>
 
@@ -48,7 +49,12 @@
 }
 
 - (IBAction)genreSearchButton:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ShopGenreViewController *genreView = [storyboard instantiateViewControllerWithIdentifier:@"ShopGenre"];
     
+    // 画面をPUSHで遷移させる
+    [self.navigationController pushViewController:genreView animated:YES];
+
 }
 
 - (IBAction)searchAdmitButton:(id)sender {
