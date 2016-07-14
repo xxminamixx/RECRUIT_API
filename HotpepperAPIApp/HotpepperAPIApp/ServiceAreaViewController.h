@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef  void(^getServiceArea)(NSMutableArray *serviceAreaList);
+
 
 @interface ServiceAreaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @end

@@ -12,12 +12,16 @@
 #import "VersionViewController.h"
 
 @interface ConfigViewController ()
-@property SearchNumberViewController *searchNumberViewController;
+
 @property (strong, nonatomic) IBOutlet UIView *configView;
+
+@property SearchNumberViewController *searchNumberViewController;
 @property ConfigViewController *configViewController;
+
 - (IBAction)searchNumberAction:(id)sender;
 - (IBAction)deleteAction:(id)sender;
 - (IBAction)versionAction:(id)sender;
+
 @end
 
 @implementation ConfigViewController

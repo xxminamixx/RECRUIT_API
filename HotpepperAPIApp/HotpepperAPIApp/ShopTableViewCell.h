@@ -19,6 +19,14 @@
 @end
 
 @interface ShopTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *detail;
+@property (weak, nonatomic) IBOutlet UILabel *shopName;
+@property (weak, nonatomic) IBOutlet UIImageView *shopLogo;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *couponHeight;
+@property (weak, nonatomic) IBOutlet UIButton *couponButton;
+
 @property (weak, nonatomic) id<shopCellFavoriteDelegate> favoriteDelegate;
 @property (weak, nonatomic) id<couponDelegate> couponDeleate;
 
@@ -29,20 +37,19 @@
 @property (weak, nonatomic) NSString *open;
 @property (weak, nonatomic) NSString *coupon;
 
-@property (weak, nonatomic) IBOutlet UILabel *detail;
-@property (weak, nonatomic) IBOutlet UILabel *shopName;
-@property (weak, nonatomic) IBOutlet UIImageView *shopLogo;
-@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *couponHeight;
-@property (weak, nonatomic) IBOutlet UIButton *couponButton;
+//headファイルではなく実装ファイルへ
 @property UIImage *loadImage;
 
+// favoriteButtonTappedなど
 - (IBAction)favoriteAction:(id)sender;
 - (IBAction)couponAction:(id)sender;
+
 - (void)setMyPropertyWithEntity:(ShopEntity *)shopEntity;
 - (void)setShopLogoWithURL:(NSString*)url;
 - (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock;
 - (void)imageRefresh:(NSURL *)url;
+// NSIntegerにする int使わない
 - (int)couponHeightChanger;
+
 @end
 

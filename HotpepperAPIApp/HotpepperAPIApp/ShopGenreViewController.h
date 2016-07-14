@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^getShopListOfGenre)(NSMutableArray *array);
-
 @interface ShopGenreViewController : UIViewController
 
 @end

@@ -8,30 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "DDXMLDocument.h"
-#import "ServiceAreaViewController.h"
-#import "ShopListViewController.h"
-#import "ShopGenreViewController.h"
 
-@protocol serviceAreaDelegate <NSObject>
-//- (void)getServiceArea:(NSMutableArray *)servicearea; // コントローラーに配列を渡す
-@end
-
-@protocol shopDelegate <NSObject>
-//- (void)getShop:(NSMutableArray *)shop;
-@end
-
-@protocol shopGenreDelegate <NSObject>
-- (void)getGenre:(NSMutableArray *)genreList;
-@end
-
+typedef void(^getServiceArea)(NSMutableArray *serviceAreaList);
+typedef void(^getShopList)(NSMutableArray *array);
+typedef void(^getShopListOfGenre)(NSMutableArray *array);
 
 @interface KissXMLHotpepperAPIFetcher : NSObject
-@property (nonatomic, weak) id<serviceAreaDelegate> serviceAreaDelegate;
-@property (nonatomic, weak) id<shopDelegate> shopDelegate;
-@property (nonatomic, weak) id<shopGenreDelegate> genreDelegate;
+
 - (void)serviceAreaRequest:(getServiceArea)serviceAreaList;
 - (void)shopRequestWithAreacode:(NSString *)areaCode getShopList:(getShopList)shopList;
 - (void)shopRequestWithGenrecode:(NSString *)genreCode getShopList:(getShopList)shopList;
 - (void)shopRequestWithShopName:(NSString *)name getShopList:(getShopList)shopList;
 - (void)genreRequest:(getShopListOfGenre)shopList;
+
 @end

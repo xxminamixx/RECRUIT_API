@@ -9,6 +9,7 @@
 #import "VersionViewController.h"
 
 @interface VersionViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *version;
 
 @end

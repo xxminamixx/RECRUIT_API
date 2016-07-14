@@ -14,6 +14,7 @@
 NSString * const loadingImage = @"loadImage.png";
 
 @interface ShopDetailViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *shopname;
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
 @property (weak, nonatomic) IBOutlet UITextView *detail;
@@ -34,6 +35,7 @@ NSString * const loadingImage = @"loadImage.png";
     self.navigationItem.title = _shopEntity.name;
     self.loadImage = [UIImage imageNamed: loadingImage];
     
+    // selfに変更
     _shopname.text = _shopEntity.name;
     _detail.text = _shopEntity.detail;
     _address.text = _shopEntity.address;
@@ -61,7 +63,7 @@ NSString * const loadingImage = @"loadImage.png";
     [super didReceiveMemoryWarning];
 }
 
-
+// favoriteButtonTapped
 - (IBAction)favoriteAction:(id)sender
 {
     // マネージャーに投げて既にお気に入りに登録されているかチェックする
@@ -78,7 +80,17 @@ NSString * const loadingImage = @"loadImage.png";
         self.favoriteButton.alpha = 0.2;
     }
 }
- 
+
+- (void)setFavoriteBurronStatus:(BOOL)status
+{
+    if (status) {
+        self.favoriteButton.alpha = 1;
+    } else {
+        //お気に入りボタン透明度変更処理
+        self.favoriteButton.alpha = 0.2;
+    }
+}
+
 - (void)setShopLogo:(NSString*)url
 {
     [self.logo sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:self.loadImage];

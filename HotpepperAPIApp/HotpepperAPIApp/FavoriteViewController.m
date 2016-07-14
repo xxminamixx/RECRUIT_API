@@ -51,8 +51,9 @@ NSString * const kShopTableViewCell = @"ShopTableViewCell";
     };
     
     [self.favoriteShopManager setFavorite:favoriteList];
-    [self.favoriteTableView reloadData];
     
+//    self.shopList = [self.favoriteShopManager getFavoriteList];
+    [self.favoriteTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

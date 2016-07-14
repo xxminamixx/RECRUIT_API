@@ -12,6 +12,8 @@
 #import "ShopListViewController.h"
 #import "KissXMLHotpepperAPIFetcher.h"
 
+// Cellを管理するクラスに移動
+// 他のクラスでも定数を宣言する場所を考慮する
 NSString * const servicearea_tableviewcell = @"ServiceAreaTableViewCell";
 
 
@@ -26,7 +28,6 @@ NSString * const servicearea_tableviewcell = @"ServiceAreaTableViewCell";
     [super viewDidLoad];
      self.navigationItem.title = @"サービスエリア検索";
     
-    // HotpepperAPIに自身のポインタをセット
     KissXMLHotpepperAPIFetcher *serviceAreaFetcher = [KissXMLHotpepperAPIFetcher new];
     
     // 自身の配列に格納するBlocks
@@ -58,6 +59,7 @@ numberOfRowsInSection:(NSInteger)section
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // cellとかでOK
     ServiceAreaTableViewCell *areacell = [_serviceAreaTableView dequeueReusableCellWithIdentifier:servicearea_tableviewcell];
     
     // ラベルに都道府県セット処理

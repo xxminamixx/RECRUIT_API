@@ -14,8 +14,11 @@
 #import "ShopGenreViewController.h"
 
 NSString * const mainStoryboard = @"Main";
+// ServiceAreaを管理してるコントローラに定義する
 NSString * const serviceAreaIDOfStoryboard = @"ServiceArea";
+// Genreを管理しているコントローラに定義する
 NSString * const genreIDOfStoryboard = @"ShopGenre";
+// ShopListを管理しているコントローらに定義する
 NSString * const shopListIDOfStoryboard  = @"Shop";
 
 @interface ViewController ()<UITextFieldDelegate>

@@ -13,6 +13,7 @@
 #import "ShopGenreEntity.h"
 #import "ServiceAreaViewController.h"
 
+// constは変数名の頭に"k"をつける
 NSString * const shopId = @"id";
 NSString * const shopName = @"name";
 NSString * const detail = @"shop_detail_memo";
@@ -30,6 +31,8 @@ NSString * const serviceAreaPath = @"results.service_area";
 
 NSString * const genreCode = @"code";
 NSString * const genreName = @"name";
+
+// APIkeyと固定のURLを作成
 
 @interface KissXMLHotpepperAPIFetcher()
 @end
@@ -50,6 +53,7 @@ NSString * const genreName = @"name";
 
 
 // 都道府県のリクエストURL作成
+// blocksなのでblocksだとわかる変数名/型名
 - (void)serviceAreaRequest:(getServiceArea)serviceAreaList
 {
     // サービスエリアのURL
@@ -125,7 +129,8 @@ NSString * const genreName = @"name";
     for (NSDictionary *elements in shopDict) {
         ShopEntity *shopEntity = [ShopEntity new];
         [shopEntity setShopId: [elements objectForKey: shopId]];
-        [shopEntity setName: [elements objectForKey: shopName]];
+       // [shopEntity setName: [elements objectForKey: shopName]];
+        shopEntity.name = elements[shopName];
         [shopEntity setDetail: [elements objectForKey: detail]];
         [shopEntity setLogo: [elements objectForKey: logo]];
         [shopEntity setOpen: [elements objectForKey: opening]];

@@ -19,12 +19,12 @@ NSString * const nullCupon = @"http://hpr.jp/S/S511.jsp?SP=J000981130&uid=NULLGW
 NSMutableArray *recieve_shop;
 
 @interface ShopListViewController () <shopCellFavoriteDelegate, couponDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *shopTableView;
+
 @property KissXMLHotpepperAPIFetcher *shopFetcher;
 @property BOOL isFavorite; // お気に入り登録されているか判定
 @property double labelAlpha;
-@property NSDate *beforeCellTime;
-@property NSDate *afterCellTime;
 @end
 
 @implementation ShopListViewController
@@ -40,23 +40,21 @@ NSMutableArray *recieve_shop;
         recieve_shop = shopList;
     };
     
-    if (self.areacode != nil) {
+    if (self.areacode) {
         [self.shopFetcher shopRequestWithAreacode:self.areacode getShopList:getShopList];
     }
     
-    if (self.searchShopName != nil) {
+    if (self.searchShopName) {
         [self.shopFetcher shopRequestWithShopName:self.searchShopName getShopList:getShopList];
     }
     
-    if (self.genreCode != nil) {
+    if (self.genreCode) {
         [self.shopFetcher shopRequestWithGenrecode:self.genreCode getShopList:getShopList];
     }
     
     _shopTableView.delegate = self;
     _shopTableView.dataSource = self;
     
-    
-
     //ViewControllerのViewにTableViewCellを登録
     UINib *shopNib = [UINib nibWithNibName:shop_tableviewcell bundle:nil];
     [self.shopTableView registerNib:shopNib forCellReuseIdentifier:shop_tableviewcell];
@@ -102,6 +100,7 @@ numberOfRowsInSection:(NSInteger)section
         shopcell.favoriteButton.alpha = 1;
     }
     
+    //setupWithEntityに変更
     [shopcell setMyPropertyWithEntity:shopEntity];
     //[shopcell setShopLogoWithURL:shopEntity.logo];
     
@@ -123,6 +122,7 @@ numberOfRowsInSection:(NSInteger)section
 
 
 #pragma mark - UITableViewDelegate
+
 // セルがタップされたときの処理
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -137,6 +137,7 @@ numberOfRowsInSection:(NSInteger)section
     [self.navigationController pushViewController:shopDetailView animated:YES];
 }
 
+#pragma mark - shopCellFavoriteDelegate
 
 - (void)favoriteCall:(ShopEntity *)shopEntity
 {

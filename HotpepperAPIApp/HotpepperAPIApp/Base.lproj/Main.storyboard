@@ -69,16 +69,6 @@
                                     <action selector="serviceAreaSearchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="782-nm-gFf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="検索方法を選択してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgK-tI-e8A">
-                                <rect key="frame" x="77" y="266" width="221" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Jor-7n-hVM"/>
-                                    <constraint firstAttribute="width" constant="221" id="lvk-Ds-j3u"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XLj-vL-z05">
                                 <rect key="frame" x="26" y="74" width="253" height="30"/>
                                 <constraints>
@@ -101,6 +91,16 @@
                                     <action selector="searchAdmitButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OM9-SV-SWB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="検索方法を選択してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgK-tI-e8A">
+                                <rect key="frame" x="77" y="266" width="221" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Jor-7n-hVM"/>
+                                    <constraint firstAttribute="width" constant="221" id="lvk-Ds-j3u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -119,6 +119,12 @@
                             <constraint firstItem="TGY-IW-VQ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lyc-nD-YzS"/>
                             <constraint firstItem="XLj-vL-z05" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="s3J-5a-jlP"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="auI-j6-6Dh"/>
+                                <exclude reference="gpY-oR-0AH"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="9hA-oC-ke2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -724,12 +730,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ジャンルがここに入りますジャンルがここに入ります" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UD-15-jxY">
-                                <rect key="frame" x="99" y="403" width="256" height="15"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お店の名前がここに入ります" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhI-Kw-bQv">
                                 <rect key="frame" x="12" y="52" width="319" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -826,6 +826,12 @@
                                     <constraint firstAttribute="height" constant="170" id="q4C-ff-xN6"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ジャンルがここに入りますジャンルがここに入ります" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UD-15-jxY">
+                                <rect key="frame" x="99" y="403" width="256" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

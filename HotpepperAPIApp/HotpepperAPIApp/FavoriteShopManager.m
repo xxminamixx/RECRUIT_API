@@ -176,7 +176,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     
 }
 
-// デリゲートメソッドに配列を引き渡す
+// コントローラに配列を引き渡す
 - (void)setFavorite:(getFavoriteShopList)shopList
 {
     [self preparetionEntity];

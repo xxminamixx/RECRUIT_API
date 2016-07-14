@@ -10,7 +10,8 @@
 #import <CoreData/CoreData.h>
 #import "ShopEntity.h"
 #import "FavoriteShopEntity.h"
-#import "FavoriteViewController.h"
+
+typedef void(^getFavoriteShopList)(NSMutableArray *array);
 
 @protocol FavoriteDelegate <NSObject>
 
@@ -21,13 +22,14 @@
 @interface FavoriteShopManager : NSObject
 
 @property ShopEntity *shopEntity;
-- (void)getFavoriteShop:(ShopEntity *)shopEntity; // お気に入りのEntityを受け取るメソッド
 
+- (void)getFavoriteShop:(ShopEntity *)shopEntity; // お気に入りのEntityを受け取るメソッド
 - (void)allDeleteFavorite;
 - (void)setFavorite:(getFavoriteShopList)shopList;
 - (BOOL)isAlreadyFavorite:(ShopEntity *)shopEnitty;
 - (NSMutableArray *)fetchEntityList;
 - (BOOL)addedShopToFavorite:(NSString *)shopName;
+
 @property (nonatomic, weak) id<FavoriteDelegate> favoriteDelegate;
 @property (nonatomic, strong) NSEntityDescription *entityDescModel;
 @property (nonatomic, strong) NSMutableArray *eventsArray;
