@@ -35,6 +35,10 @@ NSString * const genreName = @"name";
 // APIkeyと固定のURLを作成
 
 @interface KissXMLHotpepperAPIFetcher()
+
+@property NSData *data;
+@property NSMutableArray *shopEntityList;
+
 @end
 
 @implementation KissXMLHotpepperAPIFetcher
@@ -48,7 +52,7 @@ NSString * const genreName = @"name";
     [nameStr appendString:@"&count="];
     [nameStr appendString: self.searchNumberCast];
     NSURL *nameURL = [NSURL URLWithString:[nameStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    shopList([self getShopEntity:nameURL]);
+    [self getShopEntity:nameURL getShopList:shopList];
 }
 
 
@@ -78,7 +82,7 @@ NSString * const genreName = @"name";
     
     //　NSURLにセット
     NSURL *shopURL = [NSURL URLWithString:url];
-    shopList([self getShopEntity:shopURL]);
+    [self getShopEntity:shopURL getShopList:shopList];
 }
 
 // ジャンルコードからお店のリクエストURLを作成
@@ -96,55 +100,60 @@ NSString * const genreName = @"name";
     
     //　NSURLにセット
     NSURL *shopURL = [NSURL URLWithString:url];
-    shopList([self getShopEntity:shopURL]);
-}
+    [self getShopEntity:shopURL getShopList:shopList];}
 
 // ジャンル取得
 - (void)genreRequest:(getShopListOfGenre)shopList
 {
     NSURL *genreURL = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/genre/v1/?key=4554e737d0d5ce93"];
     //[self.genreDelegate getGenre:[self getShopGenre:genreURL]];
-    shopList([self getShopGenre:genreURL]);
+    [self getShopEntity:genreURL getShopList:shopList];
     
 }
 
 // お店の情報が入った配列を返す
-- (NSMutableArray *)getShopEntity:(NSURL *)url
+- (void)getShopEntity:(NSURL *)url getShopList:(getShopList)shopList
 {
-    //xmlファイルの場所の設定
-    NSData *data=[NSData dataWithContentsOfURL:url];
+    dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t q_main   = dispatch_get_main_queue();
+    dispatch_async(q_global, ^{
+        //xmlファイルの場所の設定
+        self.data=[NSData dataWithContentsOfURL:url];
+        //xmlファイルを取得
     
-    //返すデータの配列を作成・初期化
-    NSMutableArray *shopEntityList=[NSMutableArray new];
-    
-    //xmlファイルを取得
-    DDXMLDocument *doc = [[DDXMLDocument alloc]initWithData:data options:0 error:nil];
-    
-    //要素を抜き出す時のルートパスの設定
-    NSDictionary *xml = [[doc rootElement] convertDictionary];
-    
-    //お店10件を格納
-    NSDictionary *shopDict = [xml valueForKeyPath:shopPath];
-    
-    for (NSDictionary *elements in shopDict) {
-        ShopEntity *shopEntity = [ShopEntity new];
-        [shopEntity setShopId: [elements objectForKey: shopId]];
-       // [shopEntity setName: [elements objectForKey: shopName]];
-        shopEntity.name = elements[shopName];
-        [shopEntity setDetail: [elements objectForKey: detail]];
-        [shopEntity setLogo: [elements objectForKey: logo]];
-        [shopEntity setOpen: [elements objectForKey: opening]];
-        [shopEntity setAddress: [elements objectForKey: address]];
-        [shopEntity setGenre: [elements valueForKeyPath:genreNamePath]];
-        // mobile未対応の店が多いためpcサイトを取得
-        [shopEntity setCoupon: [elements valueForKeyPath: couponPCPath]];
-        [shopEntity setLargeLogo: [elements valueForKeyPath: largeLogoPath]];
-        
-        // お店のデータが格納されたEntityを配列に格納
-        [shopEntityList addObject: shopEntity];
-    }
-    
-        return shopEntityList;
+        dispatch_async(q_main, ^{
+            DDXMLDocument *doc = [[DDXMLDocument alloc]initWithData: self.data options:0 error:nil];
+            
+            //返すデータの配列を作成・初期化
+            NSMutableArray *shopEntityList=[NSMutableArray new];
+            
+            //要素を抜き出す時のルートパスの設定
+            NSDictionary *xml = [[doc rootElement] convertDictionary];
+            
+            //お店10件を格納
+            NSDictionary *shopDict = [xml valueForKeyPath:shopPath];
+            
+            for (NSDictionary *elements in shopDict) {
+                ShopEntity *shopEntity = [ShopEntity new];
+                [shopEntity setShopId: [elements objectForKey: shopId]];
+                // [shopEntity setName: [elements objectForKey: shopName]];
+                shopEntity.name = elements[shopName];
+                [shopEntity setDetail: [elements objectForKey: detail]];
+                [shopEntity setLogo: [elements objectForKey: logo]];
+                [shopEntity setOpen: [elements objectForKey: opening]];
+                [shopEntity setAddress: [elements objectForKey: address]];
+                [shopEntity setGenre: [elements valueForKeyPath:genreNamePath]];
+                // mobile未対応の店が多いためpcサイトを取得
+                [shopEntity setCoupon: [elements valueForKeyPath: couponPCPath]];
+                [shopEntity setLargeLogo: [elements valueForKeyPath: largeLogoPath]];
+                
+                // お店のデータが格納されたEntityを配列に格納
+                [shopEntityList addObject: shopEntity];
+                shopList(shopEntityList);
+            }
+
+       });
+    });
 }
 
 
