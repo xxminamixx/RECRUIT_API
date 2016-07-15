@@ -37,7 +37,6 @@ NSString * const genreName = @"name";
 @interface KissXMLHotpepperAPIFetcher()
 
 @property NSData *data;
-@property NSMutableArray *shopEntityList;
 
 @end
 
