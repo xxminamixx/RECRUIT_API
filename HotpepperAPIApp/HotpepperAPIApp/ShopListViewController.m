@@ -34,9 +34,10 @@ NSInteger loadNextCount = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.navigationItem.title = @"検索結果一覧";
-    
     self.shopFetcher = [KissXMLHotpepperAPIFetcher new];
     
+    recieve_shop = [NSMutableArray array];
+    loadNextCount = 0;
     [self getShopList];
     
     _shopTableView.delegate = self;
