@@ -16,7 +16,9 @@
 
 NSString * const shop_tableviewcell = @"ShopTableViewCell";
 NSString * const nullCupon = @"http://hpr.jp/S/S511.jsp?SP=J000981130&uid=NULLGWDOCOMO&vos=hpp336";
+
 NSMutableArray *recieve_shop;
+NSInteger loadNextCount = 0;
 
 @interface ShopListViewController () <shopCellFavoriteDelegate, couponDelegate>
 
@@ -35,22 +37,7 @@ NSMutableArray *recieve_shop;
     
     self.shopFetcher = [KissXMLHotpepperAPIFetcher new];
     
-    // お店受け取りBlocks
-    getShopList getShopList = ^(NSMutableArray *shopList){
-        recieve_shop = shopList;
-    };
-    
-    if (self.areacode) {
-        [self.shopFetcher shopRequestWithAreacode:self.areacode getShopList:getShopList];
-    }
-    
-    if (self.searchShopName) {
-        [self.shopFetcher shopRequestWithShopName:self.searchShopName getShopList:getShopList];
-    }
-    
-    if (self.genreCode) {
-        [self.shopFetcher shopRequestWithGenrecode:self.genreCode getShopList:getShopList];
-    }
+    [self getShopList];
     
     _shopTableView.delegate = self;
     _shopTableView.dataSource = self;
@@ -70,54 +57,81 @@ NSMutableArray *recieve_shop;
     // Dispose of any resources that can be recreated.
 }
 
-
-#pragma mark - UITableViewDataSource 
-
--(NSInteger)tableView:(UITableView *)tableView
-numberOfRowsInSection:(NSInteger)section
+- (void) getShopList
 {
-    //セクションに含まれるセルの数を返す
-    return recieve_shop.count;
+    // お店受け取りBlocks
+    getShopList getShopList = ^(NSMutableArray *shopList){
+        recieve_shop = shopList;
+    };
+    
+    if (self.areacode) {
+        [self.shopFetcher shopRequestWithAreacode:self.areacode getShopList:getShopList loadNextCount:loadNextCount];
+    }
+    
+    if (self.searchShopName) {
+        [self.shopFetcher shopRequestWithShopName:self.searchShopName getShopList:getShopList];
+    }
+    
+    if (self.genreCode) {
+        [self.shopFetcher shopRequestWithGenrecode:self.genreCode getShopList:getShopList];
+    }
 }
 
 
-// TODO: セルの最後まで読み込まないとブロック内が実行されない
-// TODO: セルの再利用で画面に収まるcellが表示されたらこのメソッドが待機状態になる
+#pragma mark - UITableViewDataSource 
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    //セクションに含まれるセルの数を返す
+    return recieve_shop.count + 1;
+
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ShopTableViewCell *shopcell = [_shopTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
-    ShopEntity *shopEntity = recieve_shop[indexPath.row];
     FavoriteShopManager *favoriteShopManager = [FavoriteShopManager new];
     shopcell.favoriteDelegate = self;
     shopcell.couponDeleate = self;
     shopcell.favoriteButton.alpha = 0.2;
     
-    if (shopEntity.coupon != nil) {
+    if (recieve_shop.count > indexPath.row){
+        ShopEntity *shopEntity = recieve_shop[indexPath.row];
+
+        if (shopEntity.coupon != nil) {
+            
+        }
         
+        if ([favoriteShopManager addedShopToFavorite:shopEntity.name]) {
+            shopcell.favoriteButton.alpha = 1;
+        }
+        
+        [shopcell setMyPropertyWithEntity:shopEntity];
+        
+        // URLをNSURLに変換
+        NSURL *url = [NSURL URLWithString:shopEntity.logo];
+        [shopcell imageRefresh:url];
+        
+        return shopcell;
+
+    } else {
+        UITableViewCell *loadNextCell = [UITableViewCell new];
+        loadNextCell.textLabel.text = @"さらに読み込む";
+        return loadNextCell;
     }
-    
-    if ([favoriteShopManager addedShopToFavorite:shopEntity.name]) {
-        shopcell.favoriteButton.alpha = 1;
-    }
-    
-    //setupWithEntityに変更
-    [shopcell setMyPropertyWithEntity:shopEntity];
-    //[shopcell setShopLogoWithURL:shopEntity.logo];
-    
-    // URLをNSURLに変換
-    NSURL *url = [NSURL URLWithString:shopEntity.logo];
-    [shopcell imageRefresh:url];
-    
-    return shopcell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ShopEntity *shopEntity = recieve_shop[indexPath.row];
-     ShopTableViewCell *shopcell = [_shopTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
-    [shopcell setMyPropertyWithEntity:shopEntity];
-    int couponHeight = [shopcell couponHeightChanger];
-    return 125 + couponHeight;
+    if (recieve_shop.count > indexPath.row) {
+        ShopEntity *shopEntity = recieve_shop[indexPath.row];
+         ShopTableViewCell *shopcell = [_shopTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
+        [shopcell setMyPropertyWithEntity:shopEntity];
+        int couponHeight = [shopcell couponHeightChanger];
+        return 125 + couponHeight;
+    } else {
+        return 50;
+    }
 }
 
 
@@ -126,15 +140,23 @@ numberOfRowsInSection:(NSInteger)section
 // セルがタップされたときの処理
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ShopDetailViewController *shopDetailView = [storyboard instantiateViewControllerWithIdentifier:@"ShopDetail"];
-    
-    //次画面へ選択したEntityを渡す
-    ShopEntity *serveShopEnity = recieve_shop[indexPath.row];
-    shopDetailView.shopEntity = serveShopEnity;
-    
-    // 画面をPUSHで遷移させる
-    [self.navigationController pushViewController:shopDetailView animated:YES];
+    if (recieve_shop.count > indexPath.row) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ShopDetailViewController *shopDetailView = [storyboard instantiateViewControllerWithIdentifier:@"ShopDetail"];
+        
+        //次画面へ選択したEntityを渡す
+        ShopEntity *serveShopEnity = recieve_shop[indexPath.row];
+        shopDetailView.shopEntity = serveShopEnity;
+        
+        // 画面をPUSHで遷移させる
+        [self.navigationController pushViewController:shopDetailView animated:YES];
+    } else {
+        // 更読み処理
+        loadNextCount++;
+        [self getShopList];
+        [self.shopTableView reloadData];
+    }
+
 }
 
 #pragma mark - shopCellFavoriteDelegate
@@ -166,6 +188,5 @@ numberOfRowsInSection:(NSInteger)section
     couponViewController.couponStr = couponStr;
     [self.navigationController pushViewController:couponViewController animated:YES];
 }
-
 
 @end

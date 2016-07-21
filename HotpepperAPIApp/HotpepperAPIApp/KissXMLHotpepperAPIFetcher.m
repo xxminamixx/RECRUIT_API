@@ -64,7 +64,7 @@ NSString * const genreName = @"name";
 }
 
 //　都道府県選択画面からお店のリクエストURL作成
-- (void)shopRequestWithAreacode:(NSString *)areaCode getShopList:(getShopList)shopList
+- (void)shopRequestWithAreacode:(NSString *)areaCode getShopList:(getShopList)shopList loadNextCount:(NSInteger)loadNextCount
 {
     NSMutableString *url = [NSMutableString string];
     
@@ -75,6 +75,11 @@ NSString * const genreName = @"name";
     [url appendString:areaCode];
     [url appendString:@"&count="];
     [url appendString: self.searchNumberCast];
+    
+    if (loadNextCount >= 1) {
+        [url appendString:@"&start="];
+        [url appendString: [self loadStartNumber:loadNextCount]];
+    }
     
     //　NSURLにセット
     NSURL *shopURL = [NSURL URLWithString:url];
@@ -202,4 +207,14 @@ NSString * const genreName = @"name";
     NSString *sSearchNum = [NSString stringWithFormat:@"%d", searchNum];
     return  sSearchNum;
 }
+
+// 検索開始値を永続化した値から確定
+- (NSString *)loadStartNumber:(NSInteger)loadNextNumber
+{
+    NSInteger loadStartNum = [[self searchNumberCast] intValue] + ((loadNextNumber -1) * 10) + 1;
+    NSString *loadStartStr = [NSString stringWithFormat:@"%ld",loadStartNum];
+    return loadStartStr;
+}
+
+
 @end

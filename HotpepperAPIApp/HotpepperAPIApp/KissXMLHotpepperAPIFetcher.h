@@ -16,7 +16,7 @@ typedef void(^getShopListOfGenre)(NSMutableArray *array);
 @interface KissXMLHotpepperAPIFetcher : NSObject
 
 - (void)serviceAreaRequest:(getServiceArea)serviceAreaList;
-- (void)shopRequestWithAreacode:(NSString *)areaCode getShopList:(getShopList)shopList;
+- (void)shopRequestWithAreacode:(NSString *)areaCode getShopList:(getShopList)shopList loadNextCount:(NSInteger)loadNextCount;
 - (void)shopRequestWithGenrecode:(NSString *)genreCode getShopList:(getShopList)shopList;
 - (void)shopRequestWithShopName:(NSString *)name getShopList:(getShopList)shopList;
 - (void)genreRequest:(getShopListOfGenre)shopList;
