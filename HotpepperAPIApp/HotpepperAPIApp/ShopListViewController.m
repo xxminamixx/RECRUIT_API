@@ -61,7 +61,14 @@ NSInteger loadNextCount = 0;
 {
     // お店受け取りBlocks
     getShopList getShopList = ^(NSMutableArray *shopList){
-        recieve_shop = shopList;
+        if (loadNextCount == 0) {
+            recieve_shop = shopList;
+        } else {
+            for (ShopEntity * entity in shopList) {
+                [recieve_shop addObject: entity];
+            }
+        }
+        
     };
     
     if (self.areacode) {
