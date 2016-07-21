@@ -72,13 +72,11 @@ NSString * const genreName = @"name";
     [url setString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=4554e737d0d5ce93&service_area="];
     
     //　タップされたエリアコードを追加
-    [url appendString:areaCode];
-    [url appendString:@"&count="];
-    [url appendString: self.searchNumberCast];
+    [url appendString: [NSString stringWithFormat:@"&service_area=%@", areaCode]];
+    [url appendString: [NSString stringWithFormat:@"&count=%@", self.searchNumberCast]];
     
     if (loadNextCount >= 1) {
-        [url appendString:@"&start="];
-        [url appendString: [self loadStartNumber:loadNextCount]];
+        [url appendString: [NSString stringWithFormat:@"&start=%@",[self loadStartNumber: loadNextCount]]];
     }
     
     //　NSURLにセット
