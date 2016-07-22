@@ -135,7 +135,7 @@ NSInteger loadNextCount = 0;
         ShopEntity *shopEntity = recieve_shop[indexPath.row];
          ShopTableViewCell *shopcell = [_shopTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
         [shopcell setMyPropertyWithEntity:shopEntity];
-        int couponHeight = [shopcell couponHeightChanger];
+        NSInteger couponHeight = [shopcell couponHeightChanger];
         return 125 + couponHeight;
     } else {
         return 50;
@@ -169,7 +169,7 @@ NSInteger loadNextCount = 0;
 
 #pragma mark - shopCellFavoriteDelegate
 
-- (void)favoriteCall:(ShopEntity *)shopEntity
+- (void)favoriteDidPush:(ShopEntity *)shopEntity
 {
     NSLog(@"お気に入りがコールされました");
     
@@ -178,7 +178,7 @@ NSInteger loadNextCount = 0;
     if ([favoriteManager isAlreadyFavorite:shopEntity]) {
         // お気に入り登録処理
         // 詳細表示しているお店のEntityをManagerに渡す
-        [favoriteManager getFavoriteShop:shopEntity];
+        [favoriteManager favoriteShop:shopEntity];
         
         // お気に入りされた
         [self.shopTableView reloadData];
@@ -189,7 +189,7 @@ NSInteger loadNextCount = 0;
     }
 }
 
--(void) couponRequest:(NSString *)couponStr
+-(void) couponDidPush:(NSString *)couponStr
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     CuponViewController *couponViewController = [storyboard instantiateViewControllerWithIdentifier:@"Coupon"];

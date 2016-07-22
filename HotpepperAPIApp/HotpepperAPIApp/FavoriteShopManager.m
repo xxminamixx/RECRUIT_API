@@ -41,7 +41,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     return NO;
 }
 
-- (void)preparetionEntity
+- (void)prepareteEntity
 {
     
     //　データベース格納処理
@@ -139,7 +139,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     return YES; //同じ名前がない
 }
 
-- (void)getFavoriteShop:(ShopEntity *)shopEntity
+- (void)favoriteShop:(ShopEntity *)shopEntity
 {
     // コントローラーからお気に入りのお店Entity受け取り処理
     self.shopEntity = shopEntity;
@@ -150,7 +150,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
 
 - (void)saveEntity:(ShopEntity *)shopEntity
 {
-   [self preparetionEntity];
+   [self prepareteEntity];
     
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.managedObjectContext;
@@ -179,7 +179,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
 // コントローラに配列を引き渡す
 - (void)setFavorite:(getFavoriteShopList)shopList
 {
-    [self preparetionEntity];
+    [self prepareteEntity];
     
     //fetch設定を生成
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:kFavoriteEntity];
@@ -191,8 +191,6 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     
     //fetch設定を元に、managedObjectContextからデータを取得
     NSMutableArray *favoriteList = (NSMutableArray *)[self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
-    [self.favoriteDelegate getFavorite: favoriteList];
-    
     shopList(favoriteList);
 }
 

@@ -36,11 +36,11 @@ NSString * const loadImage = @"loadImage.png";
     shopEntity.genre = self.genre;
     shopEntity.largeLogo = self.largeLogo;
     
-    [self.favoriteDelegate favoriteCall:shopEntity];
+    [self.favoriteDelegate favoriteDidPush:shopEntity];
 }
 
 - (IBAction)couponAction:(id)sender {
-    [self.couponDeleate couponRequest: self.coupon];
+    [self.couponDeleate couponDidPush: self.coupon];
 }
 
 - (void)setMyPropertyWithEntity:(ShopEntity *)shopEntity
@@ -55,7 +55,7 @@ NSString * const loadImage = @"loadImage.png";
     self.coupon = shopEntity.coupon;
 }
 
-- (int) couponHeightChanger
+- (NSInteger)couponHeightChanger
 {
     // cuoponボタンの高さを変える
     if (self.coupon != nil) {

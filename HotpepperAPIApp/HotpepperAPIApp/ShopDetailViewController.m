@@ -71,7 +71,7 @@ NSString * const loadingImage = @"loadImage.png";
     if ([favoriteManager isAlreadyFavorite:self.shopEntity]) {
         // お気に入り登録処理
         // 詳細表示しているお店のEntityをManagerに渡す
-        [favoriteManager getFavoriteShop:self.shopEntity];
+        [favoriteManager favoriteShop:self.shopEntity];
        
         //お気に入りボタン透明度変更処理
         self.favoriteButton.alpha = 1;

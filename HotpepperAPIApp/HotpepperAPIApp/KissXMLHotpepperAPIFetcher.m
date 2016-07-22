@@ -14,23 +14,23 @@
 #import "ServiceAreaViewController.h"
 
 // constは変数名の頭に"k"をつける
-NSString * const shopId = @"id";
-NSString * const shopName = @"name";
-NSString * const detail = @"shop_detail_memo";
-NSString * const logo = @"logo_image";
-NSString * const opening = @"open";
-NSString * const address = @"address";
+NSString * const kShopId = @"id";
+NSString * const kShopName = @"name";
+NSString * const kDetail = @"shop_detail_memo";
+NSString * const kLogo = @"logo_image";
+NSString * const kOpening = @"open";
+NSString * const kAddress = @"address";
 
-NSString * const shopPath = @"results.shop";
-NSString * const genrePath = @"results.genre";
-NSString * const genreNamePath = @"genre.name";
-NSString * const couponPCPath = @"coupon_urls.pc";
-NSString * const largeLogoPath = @"photo.mobile.l";
+NSString * const kShopPath = @"results.shop";
+NSString * const kGenrePath = @"results.genre";
+NSString * const kGenreNamePath = @"genre.name";
+NSString * const kCouponPCPath = @"coupon_urls.pc";
+NSString * const kLargeLogoPath = @"photo.mobile.l";
 
-NSString * const serviceAreaPath = @"results.service_area";
+NSString * const kServiceAreaPath = @"results.service_area";
 
-NSString * const genreCode = @"code";
-NSString * const genreName = @"name";
+NSString * const kGenreCode = @"code";
+NSString * const kGenreName = @"name";
 
 // APIkeyと固定のURLを作成
 
@@ -127,21 +127,20 @@ NSString * const genreName = @"name";
     NSDictionary *xml = [[doc rootElement] convertDictionary];
     
     //お店10件を格納
-    NSDictionary *shopDict = [xml valueForKeyPath:shopPath];
+    NSDictionary *shopDict = [xml valueForKeyPath:kShopPath];
     
     for (NSDictionary *elements in shopDict) {
         ShopEntity *shopEntity = [ShopEntity new];
-        [shopEntity setShopId: [elements objectForKey: shopId]];
-       // [shopEntity setName: [elements objectForKey: shopName]];
-        shopEntity.name = elements[shopName];
-        [shopEntity setDetail: [elements objectForKey: detail]];
-        [shopEntity setLogo: [elements objectForKey: logo]];
-        [shopEntity setOpen: [elements objectForKey: opening]];
-        [shopEntity setAddress: [elements objectForKey: address]];
-        [shopEntity setGenre: [elements valueForKeyPath:genreNamePath]];
+        [shopEntity setShopId: [elements objectForKey: kShopId]];
+        shopEntity.name = elements[kShopName];
+        [shopEntity setDetail: [elements objectForKey: kDetail]];
+        [shopEntity setLogo: [elements objectForKey: kLogo]];
+        [shopEntity setOpen: [elements objectForKey: kOpening]];
+        [shopEntity setAddress: [elements objectForKey: kAddress]];
+        [shopEntity setGenre: [elements valueForKeyPath:kGenreNamePath]];
         // mobile未対応の店が多いためpcサイトを取得
-        [shopEntity setCoupon: [elements valueForKeyPath: couponPCPath]];
-        [shopEntity setLargeLogo: [elements valueForKeyPath: largeLogoPath]];
+        [shopEntity setCoupon: [elements valueForKeyPath: kCouponPCPath]];
+        [shopEntity setLargeLogo: [elements valueForKeyPath: kLargeLogoPath]];
         
         // お店のデータが格納されたEntityを配列に格納
         [shopEntityList addObject: shopEntity];
@@ -162,12 +161,12 @@ NSString * const genreName = @"name";
     
     //要素を抜き出す時のルートパスの設定
     NSDictionary *xml = [[doc rootElement] convertDictionary];
-    NSDictionary *serviceAreaDict = [xml valueForKeyPath:serviceAreaPath];
+    NSDictionary *serviceAreaDict = [xml valueForKeyPath:kServiceAreaPath];
     
     for (NSDictionary *dic in serviceAreaDict) {
         ServiceAreaEntity *serviceAreaEntity = [ServiceAreaEntity new];
-        [serviceAreaEntity setName: [dic valueForKey:genreName]];
-        [serviceAreaEntity setCode: [dic valueForKey:genreCode]];
+        [serviceAreaEntity setName: [dic valueForKey:kGenreName]];
+        [serviceAreaEntity setCode: [dic valueForKey:kGenreCode]];
         [serviceAreaList addObject: serviceAreaEntity];
     }
     return serviceAreaList;
@@ -185,12 +184,12 @@ NSString * const genreName = @"name";
     
     //要素を抜き出す時のルートパスの設定
     NSDictionary *xml = [[doc rootElement] convertDictionary];
-    NSDictionary *shopGenreDict = [xml valueForKeyPath:genrePath];
+    NSDictionary *shopGenreDict = [xml valueForKeyPath:kGenrePath];
     
     for (NSDictionary *dic in shopGenreDict) {
         ShopGenreEntity *shopGenreEntity = [ShopGenreEntity new];
-        [shopGenreEntity setGenreCode: [dic valueForKey:genreCode]];
-        [shopGenreEntity setGenreName: [dic valueForKey:genreName]];
+        [shopGenreEntity setGenreCode: [dic valueForKey:kGenreCode]];
+        [shopGenreEntity setGenreName: [dic valueForKey:kGenreName]];
         [shopGenreList addObject: shopGenreEntity];
     }
     return shopGenreList;
