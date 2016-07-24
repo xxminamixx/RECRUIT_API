@@ -1,0 +1,756 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F4FD581CB34C3884B8681BC /* libPods-HotpepperAPIApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96ECCF3DF37F5A69166B8974 /* libPods-HotpepperAPIApp.a */; };
+		E90158711D19124500DF358C /* ServiceAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90158701D19124500DF358C /* ServiceAreaViewController.m */; };
+		E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */; };
+		E90158761D1915CB00DF358C /* ServiceAreaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */; };
+		E92891D31D34752B0021E201 /* ShopGenreEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E92891D21D34752B0021E201 /* ShopGenreEntity.m */; };
+		E92891D61D3479920021E201 /* ShopGenreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E92891D51D3479920021E201 /* ShopGenreViewController.m */; };
+		E92891DA1D3485FD0021E201 /* ShopGenreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E92891D81D3485FD0021E201 /* ShopGenreTableViewCell.m */; };
+		E92891DB1D3485FD0021E201 /* ShopGenreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92891D91D3485FD0021E201 /* ShopGenreTableViewCell.xib */; };
+		E93391AD1D2A0A5E000F4A0F /* config.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A71D2A0A5E000F4A0F /* config.png */; };
+		E93391AE1D2A0A5E000F4A0F /* configFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A81D2A0A5E000F4A0F /* configFilled.png */; };
+		E93391AF1D2A0A5E000F4A0F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391A91D2A0A5E000F4A0F /* home.png */; };
+		E93391B01D2A0A5E000F4A0F /* homeFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391AA1D2A0A5E000F4A0F /* homeFilled.png */; };
+		E93391B11D2A0A5E000F4A0F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391AB1D2A0A5E000F4A0F /* star.png */; };
+		E93391B21D2A0A5E000F4A0F /* starFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = E93391AC1D2A0A5E000F4A0F /* starFilled.png */; };
+		E9357AAE1D2B585900F5C548 /* SearchNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9357AAD1D2B585900F5C548 /* SearchNumberViewController.m */; };
+		E9357AB11D2B91CC00F5C548 /* List.png in Resources */ = {isa = PBXBuildFile; fileRef = E9357AAF1D2B91CC00F5C548 /* List.png */; };
+		E9357AB21D2B91CC00F5C548 /* ListFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = E9357AB01D2B91CC00F5C548 /* ListFilled.png */; };
+		E938CB311D3322C400B7C983 /* CuponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E938CB301D3322C400B7C983 /* CuponViewController.m */; };
+		E938CB361D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E938CB331D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.m */; };
+		E938CB371D33562900B7C983 /* FavoriteShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E938CB351D33562900B7C983 /* FavoriteShopEntity.m */; };
+		E9566C1A1D2363D200DE0556 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9566C191D2363D200DE0556 /* FavoriteViewController.m */; };
+		E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */; };
+		E967FA0E1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E967FA0D1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m */; };
+		E969F5111D26670F000DDD34 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E969F5101D26670F000DDD34 /* ConfigViewController.m */; };
+		E96CC2BB1D2F84DC0067BAD9 /* DDXMLElement+Dictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = E96CC2BA1D2F84DC0067BAD9 /* DDXMLElement+Dictionary.m */; };
+		E96F698F1D24DAA700AAE896 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96F698E1D24DAA700AAE896 /* TabBarController.m */; };
+		E97747801D20CCD7002ABD77 /* ShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */; };
+		E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E97747821D2103BA002ABD77 /* FavoriteShopManager.m */; };
+		E97747991D211E4D002ABD77 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E97747971D211E4D002ABD77 /* Model.xcdatamodeld */; };
+		E99DDF321D18E3E6008374AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF311D18E3E6008374AD /* main.m */; };
+		E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF341D18E3E6008374AD /* AppDelegate.m */; };
+		E99DDF381D18E3E6008374AD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF371D18E3E6008374AD /* HomeViewController.m */; };
+		E99DDF3B1D18E3E6008374AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99DDF391D18E3E6008374AD /* Main.storyboard */; };
+		E99DDF3D1D18E3E6008374AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99DDF3C1D18E3E6008374AD /* Assets.xcassets */; };
+		E99DDF401D18E3E6008374AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99DDF3E1D18E3E6008374AD /* LaunchScreen.storyboard */; };
+		E99DDF4B1D18E3E7008374AD /* HotpepperAPIAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DDF4A1D18E3E7008374AD /* HotpepperAPIAppUITests.m */; };
+		E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */; };
+		E9A180AF1D1F628500D64FC4 /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */; };
+		E9BAE60A1D2E1FFF00EB0245 /* loadImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E9BAE6091D2E1FFF00EB0245 /* loadImage.png */; };
+		E9BAE60D1D2E3CB100EB0245 /* VersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BAE60C1D2E3CB100EB0245 /* VersionViewController.m */; };
+		E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */; };
+		E9D38E9E1D1D296100F8FA0D /* ShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D38E9D1D1D296100F8FA0D /* ShopListViewController.m */; };
+		E9D3B1CF1D2F68A500E81918 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D3B1CE1D2F68A500E81918 /* libxml2.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E99DDF471D18E3E7008374AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E99DDF251D18E3E6008374AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E99DDF2C1D18E3E6008374AD;
+			remoteInfo = HotpepperAPIApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4580FB685ACBF1EB77D69DAB /* Pods-HotpepperAPIApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotpepperAPIApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotpepperAPIApp/Pods-HotpepperAPIApp.debug.xcconfig"; sourceTree = "<group>"; };
+		6BAEA77F35A2894C2B5AB999 /* Pods-HotpepperAPIApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotpepperAPIApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotpepperAPIApp/Pods-HotpepperAPIApp.release.xcconfig"; sourceTree = "<group>"; };
+		96ECCF3DF37F5A69166B8974 /* libPods-HotpepperAPIApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HotpepperAPIApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E901586F1D19124500DF358C /* ServiceAreaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAreaViewController.h; sourceTree = "<group>"; };
+		E90158701D19124500DF358C /* ServiceAreaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaViewController.m; sourceTree = "<group>"; };
+		E90158721D1915CB00DF358C /* ServiceAreaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAreaTableViewCell.h; sourceTree = "<group>"; };
+		E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaTableViewCell.m; sourceTree = "<group>"; };
+		E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceAreaTableViewCell.xib; sourceTree = "<group>"; };
+		E92891D11D34752B0021E201 /* ShopGenreEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopGenreEntity.h; sourceTree = "<group>"; };
+		E92891D21D34752B0021E201 /* ShopGenreEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopGenreEntity.m; sourceTree = "<group>"; };
+		E92891D41D3479920021E201 /* ShopGenreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopGenreViewController.h; sourceTree = "<group>"; };
+		E92891D51D3479920021E201 /* ShopGenreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopGenreViewController.m; sourceTree = "<group>"; };
+		E92891D71D3485FD0021E201 /* ShopGenreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopGenreTableViewCell.h; sourceTree = "<group>"; };
+		E92891D81D3485FD0021E201 /* ShopGenreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopGenreTableViewCell.m; sourceTree = "<group>"; };
+		E92891D91D3485FD0021E201 /* ShopGenreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopGenreTableViewCell.xib; sourceTree = "<group>"; };
+		E92891DC1D34D6F70021E201 /* FavoriteShopManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteShopManager.h; sourceTree = "<group>"; };
+		E93391A71D2A0A5E000F4A0F /* config.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = config.png; sourceTree = "<group>"; };
+		E93391A81D2A0A5E000F4A0F /* configFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = configFilled.png; sourceTree = "<group>"; };
+		E93391A91D2A0A5E000F4A0F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		E93391AA1D2A0A5E000F4A0F /* homeFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeFilled.png; sourceTree = "<group>"; };
+		E93391AB1D2A0A5E000F4A0F /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		E93391AC1D2A0A5E000F4A0F /* starFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starFilled.png; sourceTree = "<group>"; };
+		E9357AAC1D2B585900F5C548 /* SearchNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchNumberViewController.h; sourceTree = "<group>"; };
+		E9357AAD1D2B585900F5C548 /* SearchNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchNumberViewController.m; sourceTree = "<group>"; };
+		E9357AAF1D2B91CC00F5C548 /* List.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = List.png; sourceTree = "<group>"; };
+		E9357AB01D2B91CC00F5C548 /* ListFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListFilled.png; sourceTree = "<group>"; };
+		E938CB2F1D3322C400B7C983 /* CuponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CuponViewController.h; sourceTree = "<group>"; };
+		E938CB301D3322C400B7C983 /* CuponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CuponViewController.m; sourceTree = "<group>"; };
+		E938CB321D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FavoriteShopEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E938CB331D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FavoriteShopEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E938CB341D33562900B7C983 /* FavoriteShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteShopEntity.h; sourceTree = "<group>"; };
+		E938CB351D33562900B7C983 /* FavoriteShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteShopEntity.m; sourceTree = "<group>"; };
+		E9566C181D2363D200DE0556 /* FavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
+		E9566C191D2363D200DE0556 /* FavoriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
+		E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaEntity.m; sourceTree = "<group>"; };
+		E967FA0C1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KissXMLHotpepperAPIFetcher.h; sourceTree = "<group>"; };
+		E967FA0D1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KissXMLHotpepperAPIFetcher.m; sourceTree = "<group>"; };
+		E969F50F1D26670F000DDD34 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		E969F5101D26670F000DDD34 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		E96CC2B91D2F84DC0067BAD9 /* DDXMLElement+Dictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDXMLElement+Dictionary.h"; sourceTree = "<group>"; };
+		E96CC2BA1D2F84DC0067BAD9 /* DDXMLElement+Dictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDXMLElement+Dictionary.m"; sourceTree = "<group>"; };
+		E96CC2BC1D2F9F2F0067BAD9 /* ServiceAreaEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceAreaEntity.h; sourceTree = "<group>"; };
+		E96F698D1D24DAA700AAE896 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		E96F698E1D24DAA700AAE896 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		E977477E1D20CCD7002ABD77 /* ShopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopDetailViewController.h; sourceTree = "<group>"; };
+		E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopDetailViewController.m; sourceTree = "<group>"; };
+		E97747821D2103BA002ABD77 /* FavoriteShopManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteShopManager.m; sourceTree = "<group>"; };
+		E97747981D211E4D002ABD77 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E99DDF2D1D18E3E6008374AD /* HotpepperAPIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotpepperAPIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E99DDF311D18E3E6008374AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E99DDF331D18E3E6008374AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E99DDF341D18E3E6008374AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E99DDF361D18E3E6008374AD /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		E99DDF371D18E3E6008374AD /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		E99DDF3A1D18E3E6008374AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E99DDF3C1D18E3E6008374AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E99DDF3F1D18E3E6008374AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E99DDF411D18E3E6008374AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E99DDF461D18E3E7008374AD /* HotpepperAPIAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotpepperAPIAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E99DDF4A1D18E3E7008374AD /* HotpepperAPIAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotpepperAPIAppUITests.m; sourceTree = "<group>"; };
+		E99DDF4C1D18E3E7008374AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9A180AB1D1F628500D64FC4 /* ShopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopTableViewCell.h; sourceTree = "<group>"; };
+		E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTableViewCell.m; sourceTree = "<group>"; };
+		E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
+		E9BAE6091D2E1FFF00EB0245 /* loadImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadImage.png; sourceTree = "<group>"; };
+		E9BAE60B1D2E3CB100EB0245 /* VersionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionViewController.h; sourceTree = "<group>"; };
+		E9BAE60C1D2E3CB100EB0245 /* VersionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionViewController.m; sourceTree = "<group>"; };
+		E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopEntity.h; sourceTree = "<group>"; };
+		E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopEntity.m; sourceTree = "<group>"; };
+		E9D38E9C1D1D296100F8FA0D /* ShopListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopListViewController.h; sourceTree = "<group>"; };
+		E9D38E9D1D1D296100F8FA0D /* ShopListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopListViewController.m; sourceTree = "<group>"; };
+		E9D3B1CE1D2F68A500E81918 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E99DDF2A1D18E3E6008374AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D3B1CF1D2F68A500E81918 /* libxml2.tbd in Frameworks */,
+				4F4FD581CB34C3884B8681BC /* libPods-HotpepperAPIApp.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E99DDF431D18E3E7008374AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		57268253ED666B9E49B979ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9D3B1CE1D2F68A500E81918 /* libxml2.tbd */,
+				96ECCF3DF37F5A69166B8974 /* libPods-HotpepperAPIApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E933918E1D2A00DA000F4A0F /* image */ = {
+			isa = PBXGroup;
+			children = (
+				E9BAE6091D2E1FFF00EB0245 /* loadImage.png */,
+				E9357AAF1D2B91CC00F5C548 /* List.png */,
+				E9357AB01D2B91CC00F5C548 /* ListFilled.png */,
+				E93391A71D2A0A5E000F4A0F /* config.png */,
+				E93391A81D2A0A5E000F4A0F /* configFilled.png */,
+				E93391A91D2A0A5E000F4A0F /* home.png */,
+				E93391AA1D2A0A5E000F4A0F /* homeFilled.png */,
+				E93391AB1D2A0A5E000F4A0F /* star.png */,
+				E93391AC1D2A0A5E000F4A0F /* starFilled.png */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		E956B9871D1A98050028FA1B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E938CB321D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.h */,
+				E938CB331D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.m */,
+				E938CB341D33562900B7C983 /* FavoriteShopEntity.h */,
+				E938CB351D33562900B7C983 /* FavoriteShopEntity.m */,
+				E96CC2BC1D2F9F2F0067BAD9 /* ServiceAreaEntity.h */,
+				E956B9831D1A53A20028FA1B /* ServiceAreaEntity.m */,
+				E9D38E991D1D1B9B00F8FA0D /* ShopEntity.h */,
+				E9D38E9A1D1D1B9B00F8FA0D /* ShopEntity.m */,
+				E92891D11D34752B0021E201 /* ShopGenreEntity.h */,
+				E92891D21D34752B0021E201 /* ShopGenreEntity.m */,
+				E96CC2B91D2F84DC0067BAD9 /* DDXMLElement+Dictionary.h */,
+				E96CC2BA1D2F84DC0067BAD9 /* DDXMLElement+Dictionary.m */,
+				E967FA0C1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.h */,
+				E967FA0D1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m */,
+				E92891DC1D34D6F70021E201 /* FavoriteShopManager.h */,
+				E97747821D2103BA002ABD77 /* FavoriteShopManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E956B9881D1A98270028FA1B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E99DDF391D18E3E6008374AD /* Main.storyboard */,
+				E9A180AB1D1F628500D64FC4 /* ShopTableViewCell.h */,
+				E9A180AC1D1F628500D64FC4 /* ShopTableViewCell.m */,
+				E9A180AD1D1F628500D64FC4 /* ShopTableViewCell.xib */,
+				E90158721D1915CB00DF358C /* ServiceAreaTableViewCell.h */,
+				E90158731D1915CB00DF358C /* ServiceAreaTableViewCell.m */,
+				E90158741D1915CB00DF358C /* ServiceAreaTableViewCell.xib */,
+				E92891D71D3485FD0021E201 /* ShopGenreTableViewCell.h */,
+				E92891D81D3485FD0021E201 /* ShopGenreTableViewCell.m */,
+				E92891D91D3485FD0021E201 /* ShopGenreTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E956B9891D1A984D0028FA1B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E9357AAC1D2B585900F5C548 /* SearchNumberViewController.h */,
+				E9357AAD1D2B585900F5C548 /* SearchNumberViewController.m */,
+				E96F698D1D24DAA700AAE896 /* TabBarController.h */,
+				E96F698E1D24DAA700AAE896 /* TabBarController.m */,
+				E99DDF331D18E3E6008374AD /* AppDelegate.h */,
+				E99DDF341D18E3E6008374AD /* AppDelegate.m */,
+				E99DDF361D18E3E6008374AD /* HomeViewController.h */,
+				E99DDF371D18E3E6008374AD /* HomeViewController.m */,
+				E901586F1D19124500DF358C /* ServiceAreaViewController.h */,
+				E90158701D19124500DF358C /* ServiceAreaViewController.m */,
+				E9D38E9C1D1D296100F8FA0D /* ShopListViewController.h */,
+				E9D38E9D1D1D296100F8FA0D /* ShopListViewController.m */,
+				E977477E1D20CCD7002ABD77 /* ShopDetailViewController.h */,
+				E977477F1D20CCD7002ABD77 /* ShopDetailViewController.m */,
+				E969F50F1D26670F000DDD34 /* ConfigViewController.h */,
+				E969F5101D26670F000DDD34 /* ConfigViewController.m */,
+				E9566C181D2363D200DE0556 /* FavoriteViewController.h */,
+				E9566C191D2363D200DE0556 /* FavoriteViewController.m */,
+				E9BAE60B1D2E3CB100EB0245 /* VersionViewController.h */,
+				E9BAE60C1D2E3CB100EB0245 /* VersionViewController.m */,
+				E938CB2F1D3322C400B7C983 /* CuponViewController.h */,
+				E938CB301D3322C400B7C983 /* CuponViewController.m */,
+				E92891D41D3479920021E201 /* ShopGenreViewController.h */,
+				E92891D51D3479920021E201 /* ShopGenreViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E956B98A1D1A9A680028FA1B /* Resourcese */ = {
+			isa = PBXGroup;
+			children = (
+				E933918E1D2A00DA000F4A0F /* image */,
+				E97747971D211E4D002ABD77 /* Model.xcdatamodeld */,
+			);
+			name = Resourcese;
+			sourceTree = "<group>";
+		};
+		E99DDF241D18E3E6008374AD = {
+			isa = PBXGroup;
+			children = (
+				E99DDF2F1D18E3E6008374AD /* HotpepperAPIApp */,
+				E99DDF491D18E3E7008374AD /* HotpepperAPIAppUITests */,
+				E99DDF2E1D18E3E6008374AD /* Products */,
+				FC9ACFA87C973EA5B451F2D4 /* Pods */,
+				57268253ED666B9E49B979ED /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E99DDF2E1D18E3E6008374AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E99DDF2D1D18E3E6008374AD /* HotpepperAPIApp.app */,
+				E99DDF461D18E3E7008374AD /* HotpepperAPIAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E99DDF2F1D18E3E6008374AD /* HotpepperAPIApp */ = {
+			isa = PBXGroup;
+			children = (
+				E956B9871D1A98050028FA1B /* Model */,
+				E956B9881D1A98270028FA1B /* View */,
+				E956B9891D1A984D0028FA1B /* Controller */,
+				E956B98A1D1A9A680028FA1B /* Resourcese */,
+				E99DDF3C1D18E3E6008374AD /* Assets.xcassets */,
+				E99DDF3E1D18E3E6008374AD /* LaunchScreen.storyboard */,
+				E99DDF411D18E3E6008374AD /* Info.plist */,
+				E99DDF301D18E3E6008374AD /* Supporting Files */,
+			);
+			path = HotpepperAPIApp;
+			sourceTree = "<group>";
+		};
+		E99DDF301D18E3E6008374AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E99DDF311D18E3E6008374AD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E99DDF491D18E3E7008374AD /* HotpepperAPIAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E99DDF4A1D18E3E7008374AD /* HotpepperAPIAppUITests.m */,
+				E99DDF4C1D18E3E7008374AD /* Info.plist */,
+			);
+			path = HotpepperAPIAppUITests;
+			sourceTree = "<group>";
+		};
+		FC9ACFA87C973EA5B451F2D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4580FB685ACBF1EB77D69DAB /* Pods-HotpepperAPIApp.debug.xcconfig */,
+				6BAEA77F35A2894C2B5AB999 /* Pods-HotpepperAPIApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E99DDF2C1D18E3E6008374AD /* HotpepperAPIApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E99DDF4F1D18E3E7008374AD /* Build configuration list for PBXNativeTarget "HotpepperAPIApp" */;
+			buildPhases = (
+				E25530AF20DF9F55546C6449 /* Check Pods Manifest.lock */,
+				E99DDF291D18E3E6008374AD /* Sources */,
+				E99DDF2A1D18E3E6008374AD /* Frameworks */,
+				E99DDF2B1D18E3E6008374AD /* Resources */,
+				E48E27E3FACFF0BF821F5773 /* Embed Pods Frameworks */,
+				4C7CE921AF183FCA4EF996F2 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HotpepperAPIApp;
+			productName = HotpepperAPIApp;
+			productReference = E99DDF2D1D18E3E6008374AD /* HotpepperAPIApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E99DDF451D18E3E7008374AD /* HotpepperAPIAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E99DDF521D18E3E7008374AD /* Build configuration list for PBXNativeTarget "HotpepperAPIAppUITests" */;
+			buildPhases = (
+				E99DDF421D18E3E7008374AD /* Sources */,
+				E99DDF431D18E3E7008374AD /* Frameworks */,
+				E99DDF441D18E3E7008374AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E99DDF481D18E3E7008374AD /* PBXTargetDependency */,
+			);
+			name = HotpepperAPIAppUITests;
+			productName = HotpepperAPIAppUITests;
+			productReference = E99DDF461D18E3E7008374AD /* HotpepperAPIAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E99DDF251D18E3E6008374AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Minami Kyohei";
+				TargetAttributes = {
+					E99DDF2C1D18E3E6008374AD = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = EX674L8SA3;
+					};
+					E99DDF451D18E3E7008374AD = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = E99DDF2C1D18E3E6008374AD;
+					};
+				};
+			};
+			buildConfigurationList = E99DDF281D18E3E6008374AD /* Build configuration list for PBXProject "HotpepperAPIApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E99DDF241D18E3E6008374AD;
+			productRefGroup = E99DDF2E1D18E3E6008374AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E99DDF2C1D18E3E6008374AD /* HotpepperAPIApp */,
+				E99DDF451D18E3E7008374AD /* HotpepperAPIAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E99DDF2B1D18E3E6008374AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E93391B01D2A0A5E000F4A0F /* homeFilled.png in Resources */,
+				E93391B11D2A0A5E000F4A0F /* star.png in Resources */,
+				E93391AE1D2A0A5E000F4A0F /* configFilled.png in Resources */,
+				E92891DB1D3485FD0021E201 /* ShopGenreTableViewCell.xib in Resources */,
+				E9BAE60A1D2E1FFF00EB0245 /* loadImage.png in Resources */,
+				E9357AB21D2B91CC00F5C548 /* ListFilled.png in Resources */,
+				E9357AB11D2B91CC00F5C548 /* List.png in Resources */,
+				E99DDF401D18E3E6008374AD /* LaunchScreen.storyboard in Resources */,
+				E99DDF3D1D18E3E6008374AD /* Assets.xcassets in Resources */,
+				E90158761D1915CB00DF358C /* ServiceAreaTableViewCell.xib in Resources */,
+				E93391AF1D2A0A5E000F4A0F /* home.png in Resources */,
+				E9A180AF1D1F628500D64FC4 /* ShopTableViewCell.xib in Resources */,
+				E99DDF3B1D18E3E6008374AD /* Main.storyboard in Resources */,
+				E93391AD1D2A0A5E000F4A0F /* config.png in Resources */,
+				E93391B21D2A0A5E000F4A0F /* starFilled.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E99DDF441D18E3E7008374AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C7CE921AF183FCA4EF996F2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotpepperAPIApp/Pods-HotpepperAPIApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E25530AF20DF9F55546C6449 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E48E27E3FACFF0BF821F5773 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotpepperAPIApp/Pods-HotpepperAPIApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E99DDF291D18E3E6008374AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E99DDF381D18E3E6008374AD /* HomeViewController.m in Sources */,
+				E9566C1A1D2363D200DE0556 /* FavoriteViewController.m in Sources */,
+				E97747801D20CCD7002ABD77 /* ShopDetailViewController.m in Sources */,
+				E99DDF351D18E3E6008374AD /* AppDelegate.m in Sources */,
+				E92891DA1D3485FD0021E201 /* ShopGenreTableViewCell.m in Sources */,
+				E956B9841D1A53A20028FA1B /* ServiceAreaEntity.m in Sources */,
+				E9BAE60D1D2E3CB100EB0245 /* VersionViewController.m in Sources */,
+				E938CB361D33562900B7C983 /* FavoriteShopEntity+CoreDataProperties.m in Sources */,
+				E97747831D2103BA002ABD77 /* FavoriteShopManager.m in Sources */,
+				E92891D31D34752B0021E201 /* ShopGenreEntity.m in Sources */,
+				E99DDF321D18E3E6008374AD /* main.m in Sources */,
+				E969F5111D26670F000DDD34 /* ConfigViewController.m in Sources */,
+				E90158711D19124500DF358C /* ServiceAreaViewController.m in Sources */,
+				E9D38E9B1D1D1B9B00F8FA0D /* ShopEntity.m in Sources */,
+				E9D38E9E1D1D296100F8FA0D /* ShopListViewController.m in Sources */,
+				E90158751D1915CB00DF358C /* ServiceAreaTableViewCell.m in Sources */,
+				E96F698F1D24DAA700AAE896 /* TabBarController.m in Sources */,
+				E92891D61D3479920021E201 /* ShopGenreViewController.m in Sources */,
+				E967FA0E1D2F6F9C009DC38F /* KissXMLHotpepperAPIFetcher.m in Sources */,
+				E9357AAE1D2B585900F5C548 /* SearchNumberViewController.m in Sources */,
+				E938CB311D3322C400B7C983 /* CuponViewController.m in Sources */,
+				E96CC2BB1D2F84DC0067BAD9 /* DDXMLElement+Dictionary.m in Sources */,
+				E97747991D211E4D002ABD77 /* Model.xcdatamodeld in Sources */,
+				E938CB371D33562900B7C983 /* FavoriteShopEntity.m in Sources */,
+				E9A180AE1D1F628500D64FC4 /* ShopTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E99DDF421D18E3E7008374AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E99DDF4B1D18E3E7008374AD /* HotpepperAPIAppUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E99DDF481D18E3E7008374AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E99DDF2C1D18E3E6008374AD /* HotpepperAPIApp */;
+			targetProxy = E99DDF471D18E3E7008374AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E99DDF391D18E3E6008374AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E99DDF3A1D18E3E6008374AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E99DDF3E1D18E3E6008374AD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E99DDF3F1D18E3E6008374AD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E99DDF4D1D18E3E7008374AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E99DDF4E1D18E3E7008374AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E99DDF501D18E3E7008374AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4580FB685ACBF1EB77D69DAB /* Pods-HotpepperAPIApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/KissXML\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+				);
+				INFOPLIST_FILE = HotpepperAPIApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.HotpepperAPIApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E99DDF511D18E3E7008374AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BAEA77F35A2894C2B5AB999 /* Pods-HotpepperAPIApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/KissXML\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+				);
+				INFOPLIST_FILE = HotpepperAPIApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.HotpepperAPIApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E99DDF531D18E3E7008374AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HotpepperAPIAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.HotpepperAPIAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HotpepperAPIApp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E99DDF541D18E3E7008374AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HotpepperAPIAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.HotpepperAPIAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HotpepperAPIApp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E99DDF281D18E3E6008374AD /* Build configuration list for PBXProject "HotpepperAPIApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E99DDF4D1D18E3E7008374AD /* Debug */,
+				E99DDF4E1D18E3E7008374AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E99DDF4F1D18E3E7008374AD /* Build configuration list for PBXNativeTarget "HotpepperAPIApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E99DDF501D18E3E7008374AD /* Debug */,
+				E99DDF511D18E3E7008374AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E99DDF521D18E3E7008374AD /* Build configuration list for PBXNativeTarget "HotpepperAPIAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E99DDF531D18E3E7008374AD /* Debug */,
+				E99DDF541D18E3E7008374AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E97747971D211E4D002ABD77 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E97747981D211E4D002ABD77 /* Model.xcdatamodel */,
+			);
+			currentVersion = E97747981D211E4D002ABD77 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E99DDF251D18E3E6008374AD /* Project object */;
+}
