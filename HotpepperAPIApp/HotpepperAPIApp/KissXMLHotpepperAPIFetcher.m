@@ -137,9 +137,11 @@ NSString * const kGenreName = @"name";
         shopEntity.logo = elements[kLogo];
         shopEntity.open = elements[kOpening];
         shopEntity.address = elements[kAddress];
-        shopEntity.genre = elements[kGenreNamePath];
-        shopEntity.coupon = elements[kCouponPCPath];
-        shopEntity.largeLogo = elements[kLargeLogoPath];
+        
+        [shopEntity setGenre: [elements valueForKeyPath:kGenreNamePath]];
+        [shopEntity setLargeLogo: [elements valueForKeyPath: kLargeLogoPath]];
+        [shopEntity setCoupon: [elements valueForKeyPath: kCouponPCPath]];
+
         
         // お店のデータが格納されたEntityを配列に格納
         [shopEntityList addObject: shopEntity];
