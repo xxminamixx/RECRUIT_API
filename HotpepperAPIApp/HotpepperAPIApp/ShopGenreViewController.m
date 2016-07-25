@@ -57,7 +57,7 @@ numberOfRowsInSection:(NSInteger)section
     
     // ラベルに都道府県セット処理
     ShopGenreEntity *shopGenreEnthity = self.genreList[indexPath.row];
-    genreCell.genreNameLabel.text = shopGenreEnthity.genreName;
+    genreCell.genreNameLabel.text = shopGenreEnthity.name;
     
     return genreCell;
 }
@@ -77,7 +77,7 @@ numberOfRowsInSection:(NSInteger)section
    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ShopListViewController *shopView = [storyboard instantiateViewControllerWithIdentifier:@"Shop"];
-    shopView.genreCode = shopGenreEntity.genreCode;
+    shopView.genreCode = shopGenreEntity.code;
     [self.navigationController pushViewController:shopView animated:YES];
     
 }

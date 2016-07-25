@@ -131,16 +131,15 @@ NSString * const kGenreName = @"name";
     
     for (NSDictionary *elements in shopDict) {
         ShopEntity *shopEntity = [ShopEntity new];
-        [shopEntity setShopId: [elements objectForKey: kShopId]];
+        shopEntity.shopId = elements[kShopId];
         shopEntity.name = elements[kShopName];
-        [shopEntity setDetail: [elements objectForKey: kDetail]];
-        [shopEntity setLogo: [elements objectForKey: kLogo]];
-        [shopEntity setOpen: [elements objectForKey: kOpening]];
-        [shopEntity setAddress: [elements objectForKey: kAddress]];
-        [shopEntity setGenre: [elements valueForKeyPath:kGenreNamePath]];
-        // mobile未対応の店が多いためpcサイトを取得
-        [shopEntity setCoupon: [elements valueForKeyPath: kCouponPCPath]];
-        [shopEntity setLargeLogo: [elements valueForKeyPath: kLargeLogoPath]];
+        shopEntity.detail = elements[kDetail];
+        shopEntity.logo = elements[kLogo];
+        shopEntity.open = elements[kOpening];
+        shopEntity.address = elements[kAddress];
+        shopEntity.genre = elements[kGenreNamePath];
+        shopEntity.coupon = elements[kCouponPCPath];
+        shopEntity.largeLogo = elements[kLargeLogoPath];
         
         // お店のデータが格納されたEntityを配列に格納
         [shopEntityList addObject: shopEntity];
@@ -165,8 +164,8 @@ NSString * const kGenreName = @"name";
     
     for (NSDictionary *dic in serviceAreaDict) {
         ServiceAreaEntity *serviceAreaEntity = [ServiceAreaEntity new];
-        [serviceAreaEntity setName: [dic valueForKey:kGenreName]];
-        [serviceAreaEntity setCode: [dic valueForKey:kGenreCode]];
+        serviceAreaEntity.name = dic[kGenreName];
+        serviceAreaEntity.code = dic[kGenreCode];
         [serviceAreaList addObject: serviceAreaEntity];
     }
     return serviceAreaList;
@@ -188,8 +187,8 @@ NSString * const kGenreName = @"name";
     
     for (NSDictionary *dic in shopGenreDict) {
         ShopGenreEntity *shopGenreEntity = [ShopGenreEntity new];
-        [shopGenreEntity setGenreCode: [dic valueForKey:kGenreCode]];
-        [shopGenreEntity setGenreName: [dic valueForKey:kGenreName]];
+        shopGenreEntity.name = dic[kGenreName];
+        shopGenreEntity.code = dic[kGenreCode];
         [shopGenreList addObject: shopGenreEntity];
     }
     return shopGenreList;
