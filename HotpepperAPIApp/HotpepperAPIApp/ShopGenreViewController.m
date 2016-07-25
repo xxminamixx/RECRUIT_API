@@ -13,11 +13,13 @@
 #import "ShopGenreTableViewCell.h"
 #import "ShopListViewController.h"
 
-NSString * const shopGenreCell = @"ShopGenreTableViewCell";
+NSString * const genreIDOfStoryboard = @"ShopGenre";
 
 @interface ShopGenreViewController()<UITableViewDelegate,UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UITableView *genreTableView;
 @property NSMutableArray *genreList;
+
 @end
 
 @implementation ShopGenreViewController
@@ -81,6 +83,5 @@ numberOfRowsInSection:(NSInteger)section
     [self.navigationController pushViewController:shopView animated:YES];
     
 }
-
 
 @end

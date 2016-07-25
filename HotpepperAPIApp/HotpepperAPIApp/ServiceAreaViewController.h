@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-
-
 @interface ServiceAreaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+extern NSString * const serviceAreaIDOfStoryboard;
+
 @end

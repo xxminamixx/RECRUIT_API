@@ -15,12 +15,14 @@
 #import "AppDelegate.h"
 #import "CuponViewController.h"
 
-NSString * const kShopTableViewCell = @"ShopTableViewCell";
 
 @interface FavoriteViewController ()<shopCellFavoriteDelegate, couponDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *favoriteTableView;
+
 @property FavoriteShopManager *favoriteShopManager;
 @property NSMutableArray *shopList;
+
 @end
 
 @implementation FavoriteViewController

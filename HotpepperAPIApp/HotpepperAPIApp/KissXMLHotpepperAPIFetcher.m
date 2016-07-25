@@ -13,7 +13,6 @@
 #import "ShopGenreEntity.h"
 #import "ServiceAreaViewController.h"
 
-// constは変数名の頭に"k"をつける
 NSString * const kShopId = @"id";
 NSString * const kShopName = @"name";
 NSString * const kDetail = @"shop_detail_memo";
@@ -213,6 +212,5 @@ NSString * const kGenreName = @"name";
     NSString *loadStartStr = [NSString stringWithFormat:@"%ld",loadStartNum];
     return loadStartStr;
 }
-
 
 @end

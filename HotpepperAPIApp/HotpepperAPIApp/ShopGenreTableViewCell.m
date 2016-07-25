@@ -8,6 +8,8 @@
 
 #import "ShopGenreTableViewCell.h"
 
+NSString * const shopGenreCell = @"ShopGenreTableViewCell";
+
 @implementation ShopGenreTableViewCell
 
 - (void)awakeFromNib {

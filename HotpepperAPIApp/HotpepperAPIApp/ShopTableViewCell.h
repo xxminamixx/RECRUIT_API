@@ -41,8 +41,6 @@
 @property (weak, nonatomic) NSString *open;
 @property (weak, nonatomic) NSString *coupon;
 
-//headファイルではなく実装ファイルへ
-@property UIImage *loadImage;
 
 // favoriteButtonTappedなど
 - (IBAction)favoriteAction:(id)sender;
@@ -53,6 +51,11 @@
 - (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock;
 - (void)imageRefresh:(NSURL *)url;
 - (NSInteger)couponHeightChanger;
+
+extern NSString * const kShopTableViewCell;
+extern NSString * const kLoadImage;
+extern NSString * const shop_tableviewcell;
+extern NSString * const nullCupon;
 
 @end
 

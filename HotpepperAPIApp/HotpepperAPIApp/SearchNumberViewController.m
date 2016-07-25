@@ -11,6 +11,7 @@
 NSString * const searchNumber = @"SearchNumberSettingKEY";
 
 @interface SearchNumberViewController ()
+
 @property (weak, nonatomic) IBOutlet UIPickerView *searchNumberPicker;
 
 @end
@@ -69,7 +70,5 @@ NSString * const searchNumber = @"SearchNumberSettingKEY";
     
     NSLog(@"%@", castRow);
 }
-
-
 
 @end

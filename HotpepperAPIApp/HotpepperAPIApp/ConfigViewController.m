@@ -103,4 +103,5 @@
     [favoriteShopManager allDeleteFavorite];
 
 }
+
 @end

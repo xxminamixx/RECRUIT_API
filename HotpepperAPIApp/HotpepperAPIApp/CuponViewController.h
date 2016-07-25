@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CuponViewController : UIViewController 
+@interface CuponViewController : UIViewController
+
 @property NSString *couponStr;
+
 @end

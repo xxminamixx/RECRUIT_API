@@ -8,7 +8,6 @@
 
 #import "DDXMLElement+Dictionary.h"
 
-
 NSString * const kTextNodeKey = @"text";
 
 @implementation DDXMLElement (Dictionary)

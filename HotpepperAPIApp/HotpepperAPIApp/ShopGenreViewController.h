@@ -10,4 +10,6 @@
 
 @interface ShopGenreViewController : UIViewController
 
+extern NSString * const genreIDOfStoryboard;
+
 @end

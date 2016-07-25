@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ShopGenreTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *genreNameLabel;
+
+extern NSString * const shopGenreCell;
+
 @end

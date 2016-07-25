@@ -14,8 +14,7 @@
 #import "KissXMLHotpepperAPIFetcher.h"
 #import "CuponViewController.h"
 
-NSString * const shop_tableviewcell = @"ShopTableViewCell";
-NSString * const nullCupon = @"http://hpr.jp/S/S511.jsp?SP=J000981130&uid=NULLGWDOCOMO&vos=hpp336";
+NSString * const shopListIDOfStoryboard  = @"Shop";
 
 NSMutableArray *recieve_shop;
 NSInteger loadNextCount = 0;

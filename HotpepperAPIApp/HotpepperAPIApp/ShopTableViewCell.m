@@ -11,13 +11,17 @@
 #import "UIImageView+WebCache.h"
 #import "UIImageView+WebCache.h"
 
-NSString * const loadImage = @"loadImage.png";
+NSString * const kLoadImage = @"loadImage.png";
+NSString * const kShopTableViewCell = @"ShopTableViewCell";
+NSString * const shop_tableviewcell = @"ShopTableViewCell";
+NSString * const nullCupon = @"http://hpr.jp/S/S511.jsp?SP=J000981130&uid=NULLGWDOCOMO&vos=hpp336";
+UIImage *loadImage;
 
 @implementation ShopTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.loadImage =[UIImage imageNamed: loadImage];
+    loadImage =[UIImage imageNamed: kLoadImage];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -75,7 +79,7 @@ NSString * const loadImage = @"loadImage.png";
 
 - (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
 {
-    [self.shopLogo sd_setImageWithURL:url placeholderImage:self.loadImage options:0 progress:nil completed:completedBlock];
+    [self.shopLogo sd_setImageWithURL:url placeholderImage:loadImage options:0 progress:nil completed:completedBlock];
 }
 
 - (void)imageRefresh:(NSURL *)url

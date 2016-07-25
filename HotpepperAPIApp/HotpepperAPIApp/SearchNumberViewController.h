@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SearchNumberViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+
 @property (strong, nonatomic) IBOutlet UIView *pickerView;
 
 @end

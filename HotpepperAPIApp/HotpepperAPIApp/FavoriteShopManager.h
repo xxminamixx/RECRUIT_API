@@ -13,8 +13,6 @@
 
 typedef void(^getFavoriteShopList)(NSMutableArray *array);
 
-
-
 @interface FavoriteShopManager : NSObject
 
 @property ShopEntity *shopEntity;

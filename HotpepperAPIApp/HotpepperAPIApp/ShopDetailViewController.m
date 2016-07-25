@@ -10,8 +10,7 @@
 #import "FavoriteShopManager.h"
 #import "AppDelegate.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-
-NSString * const loadingImage = @"loadImage.png";
+#import "ShopTableViewCell.h" //　定数loadingImageを使う為
 
 @interface ShopDetailViewController ()
 
@@ -23,8 +22,11 @@ NSString * const loadingImage = @"loadImage.png";
 @property (weak, nonatomic) IBOutlet UILabel *genre;
 @property (strong, nonatomic) IBOutlet UIView *detailView;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
+
 @property UIImage* loadImage;
+
 - (IBAction)favoriteAction:(id)sender;
+
 @end
 
 @implementation ShopDetailViewController
@@ -33,7 +35,7 @@ NSString * const loadingImage = @"loadImage.png";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = _shopEntity.name;
-    self.loadImage = [UIImage imageNamed: loadingImage];
+    self.loadImage = [UIImage imageNamed: kLoadImage];
     
     // selfに変更
     _shopname.text = _shopEntity.name;
@@ -101,6 +103,5 @@ NSString * const loadingImage = @"loadImage.png";
 {
     [self.logo sd_setImageWithURL:url placeholderImage:self.loadImage options:0 progress:nil completed:completedBlock];
 }
-
 
 @end

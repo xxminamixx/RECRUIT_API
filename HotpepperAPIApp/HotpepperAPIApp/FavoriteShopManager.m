@@ -194,7 +194,4 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     shopList(favoriteList);
 }
 
-
-
-
 @end

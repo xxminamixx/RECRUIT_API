@@ -13,7 +13,11 @@
 
 
 @interface ShopListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
 @property NSString *areacode;
 @property NSString *genreCode;
 @property NSString *searchShopName;
+
+extern NSString * const shopListIDOfStoryboard;
+
 @end
