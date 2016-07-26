@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UIView *pickerView;
 
+extern NSString * const searchNumber;
+
 @end

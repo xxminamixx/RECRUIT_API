@@ -12,6 +12,7 @@
 #import "ServiceAreaEntity.h"
 #import "ShopGenreEntity.h"
 #import "ServiceAreaViewController.h"
+#import "SearchNumberViewController.h"
 
 NSString * const kShopId = @"id";
 NSString * const kShopName = @"name";
@@ -200,7 +201,7 @@ NSString * const kGenreName = @"name";
 {
     // 表示件数の取得
     NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
-    int searchNum = ([[searchNumbserSetting objectForKey:@"SearchNumberSettingKEY"] intValue] + 1) * 10;
+    int searchNum = ([[searchNumbserSetting objectForKey:searchNumber] intValue] + 1) * 10;
     NSString *sSearchNum = [NSString stringWithFormat:@"%d", searchNum];
     return  sSearchNum;
 }
