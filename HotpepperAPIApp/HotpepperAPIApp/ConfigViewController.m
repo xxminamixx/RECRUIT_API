@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Minami Kyohei. All rights reserved.
 //
 
+#import "HomeViewController.h" // 定数mainstoryboardを使うため
 #import "ConfigViewController.h"
 #import "FavoriteShopManager.h"
 #import "SearchNumberViewController.h"
@@ -47,7 +48,7 @@
 
 #pragma mark - Version Confirmation
 - (IBAction)versionAction:(id)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStoryboard bundle:nil];
     VersionViewController *versionViewController = [storyboard instantiateViewControllerWithIdentifier:@"Version"];
     [self.navigationController pushViewController:versionViewController animated:YES];
 }
@@ -61,7 +62,7 @@
     self.searchNumberViewController.pickerView.frame = CGRectMake(0, 0, 100, 100);
     [self.configViewController.configView addSubview:self.searchNumberViewController.pickerView];
      */
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStoryboard bundle:nil];
     
     // 遷移先のViewControllerをStoryBoardをもとに作成
     //ここで送るメッセージはsroryboard ID

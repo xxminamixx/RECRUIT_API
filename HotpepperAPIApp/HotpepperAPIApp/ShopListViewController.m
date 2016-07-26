@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Minami Kyohei. All rights reserved.
 //
 
+#import "HomeViewController.h" // 定数mainstoryboardを使うため
 #import "ShopListViewController.h"
 #import "ShopTableViewCell.h"
 #import "ShopEntity.h"
@@ -148,7 +149,7 @@ NSInteger loadNextCount = 0;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (recieve_shop.count > indexPath.row) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStoryboard bundle:nil];
         ShopDetailViewController *shopDetailView = [storyboard instantiateViewControllerWithIdentifier:@"ShopDetail"];
         
         //次画面へ選択したEntityを渡す
@@ -190,7 +191,7 @@ NSInteger loadNextCount = 0;
 
 -(void) couponDidPush:(NSString *)couponStr
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStoryboard bundle:nil];
     CuponViewController *couponViewController = [storyboard instantiateViewControllerWithIdentifier:@"Coupon"];
     couponViewController.couponStr = couponStr;
     [self.navigationController pushViewController:couponViewController animated:YES];

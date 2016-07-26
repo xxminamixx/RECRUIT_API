@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Minami Kyohei. All rights reserved.
 //
 
+#import "HomeViewController.h" // 定数mainstoryboardを使うため
 #import "FavoriteViewController.h"
 #import "ShopTableViewCell.h"
 #import "ShopEntity.h"
@@ -100,7 +101,7 @@ numberOfRowsInSection:(NSInteger)section
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //ここで送るメッセージはstoryboard名前の“Main.storyboard”
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStoryboard bundle:nil];
     
     // 遷移先のViewControllerをStoryBoardをもとに作成
     //ここで送るメッセージはsroryboard ID
@@ -143,7 +144,7 @@ numberOfRowsInSection:(NSInteger)section
 
 - (void) couponDidPush:(NSString *)couponStr
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStoryboard bundle:nil];
     CuponViewController *couponViewController = [storyboard instantiateViewControllerWithIdentifier:@"Coupon"];
     couponViewController.couponStr = couponStr;
     [self.navigationController pushViewController:couponViewController animated:YES];

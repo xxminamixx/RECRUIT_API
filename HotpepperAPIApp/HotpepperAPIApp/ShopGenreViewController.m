@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Minami Kyohei. All rights reserved.
 //
 
+#import "HomeViewController.h" // 定数mainstoryboardを使うため
 #import "ShopGenreViewController.h"
 #import "KissXMLHotpepperAPIFetcher.h"
 #import "ServiceAreaTableViewCell.h"
@@ -77,7 +78,7 @@ numberOfRowsInSection:(NSInteger)section
     ShopGenreEntity *shopGenreEntity = [ShopGenreEntity new];
     shopGenreEntity = self.genreList[indexPath.row];
    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStoryboard bundle:nil];
     ShopListViewController *shopView = [storyboard instantiateViewControllerWithIdentifier:@"Shop"];
     shopView.genreCode = shopGenreEntity.code;
     [self.navigationController pushViewController:shopView animated:YES];
