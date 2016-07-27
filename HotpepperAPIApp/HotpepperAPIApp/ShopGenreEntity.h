@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface ShopGenreEntity : NSObject
-// サービスエリアエンティティと統一する
-@property (nonatomic, strong) NSString *genreCode;
-@property (nonatomic, strong) NSString *genreName;
+
+@property (nonatomic, strong) NSString *code;
+@property (nonatomic, strong) NSString *name;
+
 @end

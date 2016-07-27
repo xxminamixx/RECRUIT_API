@@ -13,24 +13,17 @@
 
 typedef void(^getFavoriteShopList)(NSMutableArray *array);
 
-@protocol FavoriteDelegate <NSObject>
-
-- (void)getFavorite:(NSMutableArray *)favoriteShop;
-
-@end
-
 @interface FavoriteShopManager : NSObject
 
 @property ShopEntity *shopEntity;
 
-- (void)getFavoriteShop:(ShopEntity *)shopEntity; // お気に入りのEntityを受け取るメソッド
+- (void)favoriteShop:(ShopEntity *)shopEntity; // お気に入りのEntityを受け取るメソッド
 - (void)allDeleteFavorite;
 - (void)setFavorite:(getFavoriteShopList)shopList;
 - (BOOL)isAlreadyFavorite:(ShopEntity *)shopEnitty;
 - (NSMutableArray *)fetchEntityList;
 - (BOOL)addedShopToFavorite:(NSString *)shopName;
 
-@property (nonatomic, weak) id<FavoriteDelegate> favoriteDelegate;
 @property (nonatomic, strong) NSEntityDescription *entityDescModel;
 @property (nonatomic, strong) NSMutableArray *eventsArray;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
