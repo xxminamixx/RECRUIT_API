@@ -17,16 +17,19 @@
 
 NSString * const shopListIDOfStoryboard  = @"Shop";
 
-NSMutableArray *recieve_shop;
+
 NSInteger loadNextCount = 0;
 
 @interface ShopListViewController () <shopCellFavoriteDelegate, couponDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *shopTableView;
 
+@property NSMutableArray *shopList;
 @property KissXMLHotpepperAPIFetcher *shopFetcher;
 @property BOOL isFavorite; // お気に入り登録されているか判定
 @property double labelAlpha;
+
+
 @end
 
 @implementation ShopListViewController
@@ -36,7 +39,7 @@ NSInteger loadNextCount = 0;
      self.navigationItem.title = @"検索結果一覧";
     self.shopFetcher = [KissXMLHotpepperAPIFetcher new];
     
-    recieve_shop = [NSMutableArray array];
+    self.shopList = [NSMutableArray array];
     loadNextCount = 0;
     [self getShopList];
     
@@ -63,10 +66,10 @@ NSInteger loadNextCount = 0;
     // お店受け取りBlocks
     getShopList getShopList = ^(NSMutableArray *shopList){
         if (loadNextCount == 0) {
-            recieve_shop = shopList;
+            self.shopList = shopList;
         } else {
             for (ShopEntity * entity in shopList) {
-                [recieve_shop addObject: entity];
+                [self.shopList addObject: entity];
             }
         }
         
@@ -91,7 +94,7 @@ NSInteger loadNextCount = 0;
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //セクションに含まれるセルの数を返す
-    return recieve_shop.count + 1;
+    return self.shopList.count + 1;
 
 }
 
@@ -103,8 +106,8 @@ NSInteger loadNextCount = 0;
     shopcell.couponDeleate = self;
     shopcell.favoriteButton.alpha = 0.2;
     
-    if (recieve_shop.count > indexPath.row){
-        ShopEntity *shopEntity = recieve_shop[indexPath.row];
+    if (self.shopList.count > indexPath.row){
+        ShopEntity *shopEntity = self.shopList[indexPath.row];
 
         if (shopEntity.coupon != nil) {
             
@@ -131,8 +134,8 @@ NSInteger loadNextCount = 0;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (recieve_shop.count > indexPath.row) {
-        ShopEntity *shopEntity = recieve_shop[indexPath.row];
+    if (self.shopList.count > indexPath.row) {
+        ShopEntity *shopEntity = self.shopList[indexPath.row];
          ShopTableViewCell *shopcell = [_shopTableView dequeueReusableCellWithIdentifier:shop_tableviewcell];
         [shopcell setMyPropertyWithEntity:shopEntity];
         NSInteger couponHeight = [shopcell couponHeightChanger];
@@ -148,12 +151,12 @@ NSInteger loadNextCount = 0;
 // セルがタップされたときの処理
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (recieve_shop.count < indexPath.row) {
+    if (self.shopList.count > indexPath.row) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStoryboard bundle:nil];
         ShopDetailViewController *shopDetailView = [storyboard instantiateViewControllerWithIdentifier:@"ShopDetail"];
         
         //次画面へ選択したEntityを渡す
-        ShopEntity *serveShopEnity = recieve_shop[indexPath.row];
+        ShopEntity *serveShopEnity = self.shopList[indexPath.row];
         shopDetailView.shopEntity = serveShopEnity;
         
         // 画面をPUSHで遷移させる
