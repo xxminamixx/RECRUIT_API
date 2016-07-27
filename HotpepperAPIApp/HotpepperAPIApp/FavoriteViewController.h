@@ -11,6 +11,8 @@
 
 
 @interface FavoriteViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
 @end

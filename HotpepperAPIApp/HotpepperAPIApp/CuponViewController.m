@@ -10,8 +10,10 @@
 #import <WebKit/WebKit.h>
 
 @interface CuponViewController () <WKNavigationDelegate>
+
 @property (strong, nonatomic) IBOutlet UIView *couponViewController;
 @property (strong, nonatomic) WKWebView *webView;
+
 @end
 
 @implementation CuponViewController
@@ -70,6 +72,5 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 
 @end

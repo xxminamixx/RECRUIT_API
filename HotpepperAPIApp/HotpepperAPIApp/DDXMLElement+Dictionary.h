@@ -9,5 +9,7 @@
 #import <KissXML/KissXML.h>
 
 @interface DDXMLElement (Dictionary)
+
 - (NSDictionary *)convertDictionary;
+
 @end

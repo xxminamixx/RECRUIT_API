@@ -11,11 +11,15 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @protocol shopCellFavoriteDelegate <NSObject>
-- (void) favoriteCall:(ShopEntity *)shopEntity;
+
+- (void) favoriteDidPush:(ShopEntity *)shopEntity;
+
 @end
 
 @protocol couponDelegate <NSObject>
-- (void) couponRequest:(NSString *)couponStr;
+
+- (void) couponDidPush:(NSString *)couponStr;
+
 @end
 
 @interface ShopTableViewCell : UITableViewCell
@@ -37,8 +41,6 @@
 @property (weak, nonatomic) NSString *open;
 @property (weak, nonatomic) NSString *coupon;
 
-//headファイルではなく実装ファイルへ
-@property UIImage *loadImage;
 
 // favoriteButtonTappedなど
 - (IBAction)favoriteAction:(id)sender;
@@ -48,8 +50,12 @@
 - (void)setShopLogoWithURL:(NSString*)url;
 - (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock;
 - (void)imageRefresh:(NSURL *)url;
-// NSIntegerにする int使わない
-- (int)couponHeightChanger;
+- (NSInteger)couponHeightChanger;
+
+extern NSString * const kShopTableViewCell;
+extern NSString * const kLoadImage;
+extern NSString * const shop_tableviewcell;
+extern NSString * const nullCupon;
 
 @end
 
