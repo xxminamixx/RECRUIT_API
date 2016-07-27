@@ -138,11 +138,9 @@ NSString * const kAPIKey = @"key=4554e737d0d5ce93";
         shopEntity.logo = elements[kLogo];
         shopEntity.open = elements[kOpening];
         shopEntity.address = elements[kAddress];
-        
-        [shopEntity setGenre: [elements valueForKeyPath:kGenreNamePath]];
-        [shopEntity setLargeLogo: [elements valueForKeyPath: kLargeLogoPath]];
-        [shopEntity setCoupon: [elements valueForKeyPath: kCouponPCPath]];
-
+        shopEntity.genre = [elements valueForKeyPath:kGenreNamePath];
+        shopEntity.largeLogo = [elements valueForKeyPath: kLargeLogoPath];
+        shopEntity.coupon = [elements valueForKeyPath: kCouponPCPath];
         
         // お店のデータが格納されたEntityを配列に格納
         [shopEntityList addObject: shopEntity];
