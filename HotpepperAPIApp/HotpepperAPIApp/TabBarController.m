@@ -11,14 +11,14 @@
 #import "ConfigViewController.h"
 #import "HomeViewController.h"
 
-NSString * const homeImageStr = @"home.png";
-NSString * const homeImageFilledStr = @"homeFilled.png";
-NSString * const favoImageStr = @"star.png";
-NSString * const favoImageFilledStr = @"starFilled.png";
-NSString * const configImageStr = @"config.png";
-NSString * const configImageFilledStr = @"configFilled.png";
-NSString * const listImageStr = @"List.png";
-NSString * const listFailledImageStr = @"ListFilled.png";
+NSString * const kHomeImageStr = @"home.png";
+NSString * const kHomeImageFilledStr = @"homeFilled.png";
+NSString * const kFavoImageStr = @"star.png";
+NSString * const kFavoImageFilledStr = @"starFilled.png";
+NSString * const kConfigImageStr = @"config.png";
+NSString * const kConfigImageFilledStr = @"configFilled.png";
+NSString * const kListImageStr = @"List.png";
+NSString * const kListFailledImageStr = @"ListFilled.png";
 
 
 @interface TabBarController ()
@@ -49,14 +49,14 @@ NSString * const listFailledImageStr = @"ListFilled.png";
     favoItem.title = @"favorite";
     configItem.title = @"config";
     
-    homeItem.image = [[UIImage imageNamed:homeImageStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    homeItem.selectedImage = [[UIImage imageNamed:homeImageFilledStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    homeItem.image = [[UIImage imageNamed:kHomeImageStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    homeItem.selectedImage = [[UIImage imageNamed:kHomeImageFilledStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    favoItem.image = [[UIImage imageNamed:favoImageStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    favoItem.selectedImage = [[UIImage imageNamed:favoImageFilledStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    favoItem.image = [[UIImage imageNamed:kFavoImageStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    favoItem.selectedImage = [[UIImage imageNamed:kFavoImageFilledStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    configItem.image = [[UIImage imageNamed:configImageStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    configItem.selectedImage = [[UIImage imageNamed:configImageFilledStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    configItem.image = [[UIImage imageNamed:kConfigImageStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    configItem.selectedImage = [[UIImage imageNamed:kConfigImageFilledStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,6 +67,5 @@ NSString * const listFailledImageStr = @"ListFilled.png";
 {
     NSLog(@"タブバーが押されました。");
 }
-
 
 @end

@@ -10,5 +10,7 @@
 
 @interface ViewController : UIViewController
 
+extern NSString * const mainStoryboard;
+
 @end
 

@@ -9,6 +9,8 @@
 #import "ServiceAreaTableViewCell.h"
 #import "ServiceAreaEntity.h"
 
+NSString * const servicearea_tableviewcell = @"ServiceAreaTableViewCell";
+
 @implementation ServiceAreaTableViewCell
 
 - (void)awakeFromNib {

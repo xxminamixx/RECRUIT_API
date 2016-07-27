@@ -6,20 +6,20 @@
 //  Copyright © 2016年 Minami Kyohei. All rights reserved.
 //
 
+#import "HomeViewController.h" // 定数mainstoryboardを使うため
 #import "ServiceAreaViewController.h"
 #import "ServiceAreaTableViewCell.h"
 #import "ServiceAreaEntity.h"
 #import "ShopListViewController.h"
 #import "KissXMLHotpepperAPIFetcher.h"
 
-// Cellを管理するクラスに移動
-// 他のクラスでも定数を宣言する場所を考慮する
-NSString * const servicearea_tableviewcell = @"ServiceAreaTableViewCell";
-
+NSString * const serviceAreaIDOfStoryboard = @"ServiceArea";
 
 @interface ServiceAreaViewController ()
+
 @property (weak, nonatomic) IBOutlet UITableView *serviceAreaTableView;
 @property NSMutableArray *serviceAreaList;
+
 @end
 
 @implementation ServiceAreaViewController
@@ -64,7 +64,7 @@ numberOfRowsInSection:(NSInteger)section
     
     // ラベルに都道府県セット処理
     ServiceAreaEntity *areaEnthity = self.serviceAreaList[indexPath.row];
-    areacell.areaname_label.text = areaEnthity.name;
+    areacell.areaNameLabel.text = areaEnthity.name;
     
     return areacell;
 }
@@ -84,7 +84,7 @@ numberOfRowsInSection:(NSInteger)section
     
     // ストーリーボードを指定する
     //ここで送るメッセージはstoryboard名前の“Main.storyboard”
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStoryboard bundle:nil];
     
     // 遷移先のViewControllerをStoryBoardをもとに作成
     //ここで送るメッセージはsroryboard ID

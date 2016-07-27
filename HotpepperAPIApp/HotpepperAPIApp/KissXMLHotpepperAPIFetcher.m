@@ -12,27 +12,27 @@
 #import "ServiceAreaEntity.h"
 #import "ShopGenreEntity.h"
 #import "ServiceAreaViewController.h"
+#import "SearchNumberViewController.h"
 
-// constは変数名の頭に"k"をつける
-NSString * const shopId = @"id";
-NSString * const shopName = @"name";
-NSString * const detail = @"shop_detail_memo";
-NSString * const logo = @"logo_image";
-NSString * const opening = @"open";
-NSString * const address = @"address";
+NSString * const kShopId = @"id";
+NSString * const kShopName = @"name";
+NSString * const kDetail = @"shop_detail_memo";
+NSString * const kLogo = @"logo_image";
+NSString * const kOpening = @"open";
+NSString * const kAddress = @"address";
 
-NSString * const shopPath = @"results.shop";
-NSString * const genrePath = @"results.genre";
-NSString * const genreNamePath = @"genre.name";
-NSString * const couponPCPath = @"coupon_urls.pc";
-NSString * const largeLogoPath = @"photo.mobile.l";
+NSString * const kShopPath = @"results.shop";
+NSString * const kGenrePath = @"results.genre";
+NSString * const kGenreNamePath = @"genre.name";
+NSString * const kCouponPCPath = @"coupon_urls.pc";
+NSString * const kLargeLogoPath = @"photo.mobile.l";
+NSString * const kServiceAreaPath = @"results.service_area";
 
-NSString * const serviceAreaPath = @"results.service_area";
+NSString * const kGenreCode = @"code";
+NSString * const kGenreName = @"name";
 
-NSString * const genreCode = @"code";
-NSString * const genreName = @"name";
-
-// APIkeyと固定のURLを作成
+NSString * const kHotpepperURL = @"https://webservice.recruit.co.jp/hotpepper";
+NSString * const kAPIKey = @"key=4554e737d0d5ce93";
 
 @interface KissXMLHotpepperAPIFetcher()
 
@@ -63,11 +63,11 @@ NSString * const genreName = @"name";
     NSURL *areaURL = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/service_area/v1/?key=4554e737d0d5ce93"];
     
     //一覧画面に取得したお店の配列を渡す
-    serviceAreaList([self getServiceArea:areaURL]);
+    serviceAreaList([self getServiceArea:areaURL getShopList:serviceAreaList]);
 }
 
 //　都道府県選択画面からお店のリクエストURL作成
-- (void)shopRequestWithAreacode:(NSString *)areaCode getShopList:(getShopList)shopList
+- (void)shopRequestWithAreacode:(NSString *)areaCode getShopList:(getShopList)shopList loadNextCount:(NSInteger)loadNextCount
 {
     NSMutableString *url = [NSMutableString string];
     
@@ -75,9 +75,12 @@ NSString * const genreName = @"name";
     [url setString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=4554e737d0d5ce93&service_area="];
     
     //　タップされたエリアコードを追加
-    [url appendString:areaCode];
-    [url appendString:@"&count="];
-    [url appendString: self.searchNumberCast];
+    [url appendString: [NSString stringWithFormat:@"&service_area=%@", areaCode]];
+    [url appendString: [NSString stringWithFormat:@"&count=%@", self.searchNumberCast]];
+    
+    if (loadNextCount >= 1) {
+        [url appendString: [NSString stringWithFormat:@"&start=%@",[self loadStartNumber: loadNextCount]]];
+    }
     
     //　NSURLにセット
     NSURL *shopURL = [NSURL URLWithString:url];
@@ -99,64 +102,57 @@ NSString * const genreName = @"name";
     
     //　NSURLにセット
     NSURL *shopURL = [NSURL URLWithString:url];
-    [self getShopEntity:shopURL getShopList:shopList];}
+    [self getShopEntity:shopURL getShopList:shopList];
+}
 
 // ジャンル取得
 - (void)genreRequest:(getShopListOfGenre)shopList
 {
     NSURL *genreURL = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/genre/v1/?key=4554e737d0d5ce93"];
-    //[self.genreDelegate getGenre:[self getShopGenre:genreURL]];
-    [self getShopEntity:genreURL getShopList:shopList];
-    
+    shopList([self getShopGenre:genreURL]);
 }
 
 // お店の情報が入った配列を返す
 - (void)getShopEntity:(NSURL *)url getShopList:(getShopList)shopList
 {
-    dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_queue_t q_main   = dispatch_get_main_queue();
-    dispatch_async(q_global, ^{
-        //xmlファイルの場所の設定
-        self.data=[NSData dataWithContentsOfURL:url];
-        //xmlファイルを取得
-    
-        dispatch_async(q_main, ^{
-            DDXMLDocument *doc = [[DDXMLDocument alloc]initWithData: self.data options:0 error:nil];
-            
-            //返すデータの配列を作成・初期化
-            NSMutableArray *shopEntityList=[NSMutableArray new];
-            
-            //要素を抜き出す時のルートパスの設定
-            NSDictionary *xml = [[doc rootElement] convertDictionary];
-            
-            //お店10件を格納
-            NSDictionary *shopDict = [xml valueForKeyPath:shopPath];
-            
-            for (NSDictionary *elements in shopDict) {
-                ShopEntity *shopEntity = [ShopEntity new];
-                [shopEntity setShopId: [elements objectForKey: shopId]];
-                // [shopEntity setName: [elements objectForKey: shopName]];
-                shopEntity.name = elements[shopName];
-                [shopEntity setDetail: [elements objectForKey: detail]];
-                [shopEntity setLogo: [elements objectForKey: logo]];
-                [shopEntity setOpen: [elements objectForKey: opening]];
-                [shopEntity setAddress: [elements objectForKey: address]];
-                [shopEntity setGenre: [elements valueForKeyPath:genreNamePath]];
-                // mobile未対応の店が多いためpcサイトを取得
-                [shopEntity setCoupon: [elements valueForKeyPath: couponPCPath]];
-                [shopEntity setLargeLogo: [elements valueForKeyPath: largeLogoPath]];
-                
-                // お店のデータが格納されたEntityを配列に格納
-                [shopEntityList addObject: shopEntity];
-                shopList(shopEntityList);
-            }
 
-       });
-    });
+    //xmlファイルの場所の設定
+    NSData *data=[NSData dataWithContentsOfURL:url];
+    
+    //返すデータの配列を作成・初期化
+    NSMutableArray *shopEntityList=[NSMutableArray new];
+    
+    //xmlファイルを取得
+    DDXMLDocument *doc = [[DDXMLDocument alloc]initWithData:data options:0 error:nil];
+    
+    //要素を抜き出す時のルートパスの設定
+    NSDictionary *xml = [[doc rootElement] convertDictionary];
+    
+    //お店10件を格納
+    NSDictionary *shopDict = [xml valueForKeyPath:kShopPath];
+    
+    for (NSDictionary *elements in shopDict) {
+        ShopEntity *shopEntity = [ShopEntity new];
+        shopEntity.shopId = elements[kShopId];
+        shopEntity.name = elements[kShopName];
+        shopEntity.detail = elements[kDetail];
+        shopEntity.logo = elements[kLogo];
+        shopEntity.open = elements[kOpening];
+        shopEntity.address = elements[kAddress];
+        
+        [shopEntity setGenre: [elements valueForKeyPath:kGenreNamePath]];
+        [shopEntity setLargeLogo: [elements valueForKeyPath: kLargeLogoPath]];
+        [shopEntity setCoupon: [elements valueForKeyPath: kCouponPCPath]];
+
+        
+        // お店のデータが格納されたEntityを配列に格納
+        [shopEntityList addObject: shopEntity];
+    }
+    shopList(shopEntityList);
 }
 
 
-- (NSMutableArray *)getServiceArea:(NSURL *)url
+- (NSMutableArray *)getServiceArea:(NSURL *)url getShopList:(getShopList)shopList
 {
     //xmlファイルの場所の設定
     NSData *data=[NSData dataWithContentsOfURL:url];
@@ -167,15 +163,16 @@ NSString * const genreName = @"name";
     
     //要素を抜き出す時のルートパスの設定
     NSDictionary *xml = [[doc rootElement] convertDictionary];
-    NSDictionary *serviceAreaDict = [xml valueForKeyPath:serviceAreaPath];
+    NSDictionary *serviceAreaDict = [xml valueForKeyPath:kServiceAreaPath];
     
     for (NSDictionary *dic in serviceAreaDict) {
         ServiceAreaEntity *serviceAreaEntity = [ServiceAreaEntity new];
-        [serviceAreaEntity setName: [dic valueForKey:genreName]];
-        [serviceAreaEntity setCode: [dic valueForKey:genreCode]];
+        serviceAreaEntity.name = dic[kGenreName];
+        serviceAreaEntity.code = dic[kGenreCode];
         [serviceAreaList addObject: serviceAreaEntity];
     }
     return serviceAreaList;
+
 }
 
 // ジャンルEntityの配列を返す
@@ -190,12 +187,12 @@ NSString * const genreName = @"name";
     
     //要素を抜き出す時のルートパスの設定
     NSDictionary *xml = [[doc rootElement] convertDictionary];
-    NSDictionary *shopGenreDict = [xml valueForKeyPath:genrePath];
+    NSDictionary *shopGenreDict = [xml valueForKeyPath:kGenrePath];
     
     for (NSDictionary *dic in shopGenreDict) {
         ShopGenreEntity *shopGenreEntity = [ShopGenreEntity new];
-        [shopGenreEntity setGenreCode: [dic valueForKey:genreCode]];
-        [shopGenreEntity setGenreName: [dic valueForKey:genreName]];
+        shopGenreEntity.name = dic[kGenreName];
+        shopGenreEntity.code = dic[kGenreCode];
         [shopGenreList addObject: shopGenreEntity];
     }
     return shopGenreList;
@@ -206,8 +203,17 @@ NSString * const genreName = @"name";
 {
     // 表示件数の取得
     NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
-    int searchNum = ([[searchNumbserSetting objectForKey:@"SearchNumberSettingKEY"] intValue] + 1) * 10;
+    int searchNum = ([[searchNumbserSetting objectForKey:searchNumber] intValue] + 1) * 10;
     NSString *sSearchNum = [NSString stringWithFormat:@"%d", searchNum];
     return  sSearchNum;
 }
+
+// 検索開始値を永続化した値から確定
+- (NSString *)loadStartNumber:(NSInteger)loadNextNumber
+{
+    NSInteger loadStartNum = [[self searchNumberCast] intValue] + ((loadNextNumber -1) * 10) + 1;
+    NSString *loadStartStr = [NSString stringWithFormat:@"%ld",loadStartNum];
+    return loadStartStr;
+}
+
 @end

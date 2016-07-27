@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Minami Kyohei. All rights reserved.
 //
 
+#import "HomeViewController.h" // 定数mainstoryboardを使うため
 #import "ShopGenreViewController.h"
 #import "KissXMLHotpepperAPIFetcher.h"
 #import "ServiceAreaTableViewCell.h"
@@ -13,11 +14,13 @@
 #import "ShopGenreTableViewCell.h"
 #import "ShopListViewController.h"
 
-NSString * const shopGenreCell = @"ShopGenreTableViewCell";
+NSString * const genreIDOfStoryboard = @"ShopGenre";
 
 @interface ShopGenreViewController()<UITableViewDelegate,UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UITableView *genreTableView;
 @property NSMutableArray *genreList;
+
 @end
 
 @implementation ShopGenreViewController
@@ -57,7 +60,7 @@ numberOfRowsInSection:(NSInteger)section
     
     // ラベルに都道府県セット処理
     ShopGenreEntity *shopGenreEnthity = self.genreList[indexPath.row];
-    genreCell.genreNameLabel.text = shopGenreEnthity.genreName;
+    genreCell.genreNameLabel.text = shopGenreEnthity.name;
     
     return genreCell;
 }
@@ -75,12 +78,11 @@ numberOfRowsInSection:(NSInteger)section
     ShopGenreEntity *shopGenreEntity = [ShopGenreEntity new];
     shopGenreEntity = self.genreList[indexPath.row];
    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStoryboard bundle:nil];
     ShopListViewController *shopView = [storyboard instantiateViewControllerWithIdentifier:@"Shop"];
-    shopView.genreCode = shopGenreEntity.genreCode;
+    shopView.genreCode = shopGenreEntity.code;
     [self.navigationController pushViewController:shopView animated:YES];
     
 }
-
 
 @end
