@@ -26,13 +26,13 @@ NSString * const kGenrePath = @"results.genre";
 NSString * const kGenreNamePath = @"genre.name";
 NSString * const kCouponPCPath = @"coupon_urls.pc";
 NSString * const kLargeLogoPath = @"photo.mobile.l";
-
 NSString * const kServiceAreaPath = @"results.service_area";
 
 NSString * const kGenreCode = @"code";
 NSString * const kGenreName = @"name";
 
-// APIkeyと固定のURLを作成
+NSString * const kHotpepperURL = @"https://webservice.recruit.co.jp/hotpepper";
+NSString * const kAPIKey = @"key=4554e737d0d5ce93";
 
 @interface KissXMLHotpepperAPIFetcher()
 @end
