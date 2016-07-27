@@ -43,7 +43,7 @@ NSString * const kAPIKey = @"key=4554e737d0d5ce93";
 @implementation KissXMLHotpepperAPIFetcher
 
 //　店舗名検索
-- (void)shopRequestWithShopName:(NSString *)name getShopList:(getShopList)shopList
+- (void)shopRequestWithShopName:(NSString *)name fetchCompleteBlock:(didFetchShopListBloack)fetchCompleteBlock
 {
     NSMutableString *nameStr = [NSMutableString string];
     [nameStr setString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=4554e737d0d5ce93&name="];
@@ -51,23 +51,22 @@ NSString * const kAPIKey = @"key=4554e737d0d5ce93";
     [nameStr appendString:@"&count="];
     [nameStr appendString: self.searchNumberCast];
     NSURL *nameURL = [NSURL URLWithString:[nameStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    [self getShopEntity:nameURL getShopList:shopList];
+    [self getShopEntity:nameURL fetchCompleteBlock:fetchCompleteBlock];
 }
 
 
 // 都道府県のリクエストURL作成
-// blocksなのでblocksだとわかる変数名/型名
-- (void)serviceAreaRequest:(getServiceArea)serviceAreaList
+- (void)serviceAreaRequest:(didFetchServiceAreaBlock)didFetchServiceAreaBlock
 {
     // サービスエリアのURL
     NSURL *areaURL = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/service_area/v1/?key=4554e737d0d5ce93"];
     
     //一覧画面に取得したお店の配列を渡す
-    serviceAreaList([self getServiceArea:areaURL getShopList:serviceAreaList]);
+    didFetchServiceAreaBlock([self getServiceArea:areaURL getShopList:didFetchServiceAreaBlock]);
 }
 
 //　都道府県選択画面からお店のリクエストURL作成
-- (void)shopRequestWithAreacode:(NSString *)areaCode getShopList:(getShopList)shopList loadNextCount:(NSInteger)loadNextCount
+- (void)shopRequestWithAreacode:(NSString *)areaCode fetchCompleteBlock:(didFetchShopListBloack)fetchCompleteBlock loadNextCount:(NSInteger)loadNextCount
 {
     NSMutableString *url = [NSMutableString string];
     
@@ -84,11 +83,11 @@ NSString * const kAPIKey = @"key=4554e737d0d5ce93";
     
     //　NSURLにセット
     NSURL *shopURL = [NSURL URLWithString:url];
-    [self getShopEntity:shopURL getShopList:shopList];
+    [self getShopEntity:shopURL fetchCompleteBlock:fetchCompleteBlock];
 }
 
 // ジャンルコードからお店のリクエストURLを作成
-- (void)shopRequestWithGenrecode:(NSString *)genreCode getShopList:(getShopList)shopList
+- (void)shopRequestWithGenrecode:(NSString *)genreCode fetchCompleteBlock:(didFetchShopListBloack)fetchCompleteBlock
 {
     NSMutableString *url = [NSMutableString string];
     
@@ -102,18 +101,18 @@ NSString * const kAPIKey = @"key=4554e737d0d5ce93";
     
     //　NSURLにセット
     NSURL *shopURL = [NSURL URLWithString:url];
-    [self getShopEntity:shopURL getShopList:shopList];
+    [self getShopEntity:shopURL fetchCompleteBlock:fetchCompleteBlock];
 }
 
 // ジャンル取得
-- (void)genreRequest:(getShopListOfGenre)shopList
+- (void)genreRequest:(didGetchShopListOfGenreBlock)didGetchShopListOfGenreBlock
 {
     NSURL *genreURL = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/genre/v1/?key=4554e737d0d5ce93"];
-    shopList([self getShopGenre:genreURL]);
+    didGetchShopListOfGenreBlock([self getShopGenre:genreURL]);
 }
 
 // お店の情報が入った配列を返す
-- (void)getShopEntity:(NSURL *)url getShopList:(getShopList)shopList
+- (void)getShopEntity:(NSURL *)url fetchCompleteBlock:(didFetchShopListBloack)fetchCompleteBlock
 {
 
     //xmlファイルの場所の設定
@@ -148,11 +147,11 @@ NSString * const kAPIKey = @"key=4554e737d0d5ce93";
         // お店のデータが格納されたEntityを配列に格納
         [shopEntityList addObject: shopEntity];
     }
-    shopList(shopEntityList);
+    fetchCompleteBlock:fetchCompleteBlock(shopEntityList);
 }
 
 
-- (NSMutableArray *)getServiceArea:(NSURL *)url getShopList:(getShopList)shopList
+- (NSMutableArray *)getServiceArea:(NSURL *)url getShopList:(didFetchShopListBloack)shopList
 {
     //xmlファイルの場所の設定
     NSData *data=[NSData dataWithContentsOfURL:url];

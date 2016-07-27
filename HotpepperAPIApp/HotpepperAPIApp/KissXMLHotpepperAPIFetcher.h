@@ -9,16 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "DDXMLDocument.h"
 
-typedef void(^getServiceArea)(NSMutableArray *serviceAreaList);
-typedef void(^getShopList)(NSMutableArray *array);
-typedef void(^getShopListOfGenre)(NSMutableArray *array);
+typedef void(^didFetchServiceAreaBlock)(NSMutableArray *serviceAreaList);
+typedef void(^didFetchShopListBloack)(NSMutableArray *array);
+typedef void(^didGetchShopListOfGenreBlock)(NSMutableArray *array);
 
 @interface KissXMLHotpepperAPIFetcher : NSObject
 
-- (void)serviceAreaRequest:(getServiceArea)serviceAreaList;
-- (void)shopRequestWithAreacode:(NSString *)areaCode getShopList:(getShopList)shopList loadNextCount:(NSInteger)loadNextCount;
-- (void)shopRequestWithGenrecode:(NSString *)genreCode getShopList:(getShopList)shopList;
-- (void)shopRequestWithShopName:(NSString *)name getShopList:(getShopList)shopList;
-- (void)genreRequest:(getShopListOfGenre)shopList;
+- (void)serviceAreaRequest:(didFetchServiceAreaBlock)didFetchServiceAreaBlock;
+- (void)shopRequestWithAreacode:(NSString *)areaCode fetchCompleteBlock:(didFetchShopListBloack)fetchCompleteBlock loadNextCount:(NSInteger)loadNextCount;
+- (void)shopRequestWithGenrecode:(NSString *)genreCode fetchCompleteBlock:(didFetchShopListBloack)fetchCompleteBlock;
+- (void)shopRequestWithShopName:(NSString *)name fetchCompleteBlock:(didFetchShopListBloack)fetchCompleteBlock;
+- (void)genreRequest:(didGetchShopListOfGenreBlock)didGetchShopListOfGenreBlock;
 
 @end

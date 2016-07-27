@@ -31,11 +31,11 @@ NSString * const serviceAreaIDOfStoryboard = @"ServiceArea";
     KissXMLHotpepperAPIFetcher *serviceAreaFetcher = [KissXMLHotpepperAPIFetcher new];
     
     // 自身の配列に格納するBlocks
-    getServiceArea getServiceArea = ^(NSMutableArray *serviceAreaList){
+    didGetchShopListOfGenreBlock didGetchShopListOfGenreBlock = ^(NSMutableArray *serviceAreaList){
         self.serviceAreaList = serviceAreaList;
     };
     
-    [serviceAreaFetcher serviceAreaRequest:getServiceArea];
+    [serviceAreaFetcher serviceAreaRequest:didGetchShopListOfGenreBlock];
     
     self.serviceAreaTableView.delegate = self;
     self.serviceAreaTableView.dataSource = self;

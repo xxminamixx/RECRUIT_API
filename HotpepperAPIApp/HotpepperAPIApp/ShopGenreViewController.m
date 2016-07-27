@@ -33,11 +33,11 @@ NSString * const genreIDOfStoryboard = @"ShopGenre";
     self.genreTableView.dataSource = self;
     
     // お店受け取りBlocks
-    getShopListOfGenre getShopList = ^(NSMutableArray *shopList){
+    didGetchShopListOfGenreBlock didGetchShopListOfGenreBlock = ^(NSMutableArray *shopList){
         self.genreList = shopList;
     };
     
-    [fetcher genreRequest:getShopList];
+    [fetcher genreRequest:didGetchShopListOfGenreBlock];
     
     UINib *shopGenreNib = [UINib nibWithNibName:shopGenreCell bundle:nil];
     [self.genreTableView registerNib:shopGenreNib forCellReuseIdentifier:shopGenreCell];

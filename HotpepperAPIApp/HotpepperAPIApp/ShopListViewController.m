@@ -64,7 +64,7 @@ NSInteger loadNextCount = 0;
 - (void) getShopList
 {
     // お店受け取りBlocks
-    getShopList getShopList = ^(NSMutableArray *shopList){
+    didFetchShopListBloack fetchCompleteBlock = ^(NSMutableArray *shopList){
         if (loadNextCount == 0) {
             self.shopList = shopList;
         } else {
@@ -76,15 +76,15 @@ NSInteger loadNextCount = 0;
     };
     
     if (self.areacode) {
-        [self.shopFetcher shopRequestWithAreacode:self.areacode getShopList:getShopList loadNextCount:loadNextCount];
+        [self.shopFetcher shopRequestWithAreacode:self.areacode fetchCompleteBlock:fetchCompleteBlock loadNextCount:loadNextCount];
     }
     
     if (self.searchShopName) {
-        [self.shopFetcher shopRequestWithShopName:self.searchShopName getShopList:getShopList];
+        [self.shopFetcher shopRequestWithShopName:self.searchShopName fetchCompleteBlock:fetchCompleteBlock];
     }
     
     if (self.genreCode) {
-        [self.shopFetcher shopRequestWithGenrecode:self.genreCode getShopList:getShopList];
+        [self.shopFetcher shopRequestWithGenrecode:self.genreCode fetchCompleteBlock:fetchCompleteBlock];
     }
 }
 
