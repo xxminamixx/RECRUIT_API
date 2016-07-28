@@ -31,8 +31,8 @@ NSString * const kServiceAreaPath = @"results.service_area";
 NSString * const kGenreCode = @"code";
 NSString * const kGenreName = @"name";
 
-NSString * const kHotpepperURL = @"https://webservice.recruit.co.jp/hotpepper";
-NSString * const kAPIKey = @"key=4554e737d0d5ce93";
+NSString * const kHotpepperURL = @"https://webservice.recruit.co.jp/hotpepper/";
+NSString * const kAPIKey = @"?key=4554e737d0d5ce93";
 
 @interface KissXMLHotpepperAPIFetcher()
 
@@ -46,10 +46,11 @@ NSString * const kAPIKey = @"key=4554e737d0d5ce93";
 - (void)shopRequestWithShopName:(NSString *)name fetchCompleteBlock:(didFetchShopListBloack)fetchCompleteBlock
 {
     NSMutableString *nameStr = [NSMutableString string];
-    [nameStr setString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=4554e737d0d5ce93&name="];
-    [nameStr appendString:name];
-    [nameStr appendString:@"&count="];
-    [nameStr appendString: self.searchNumberCast];
+    [nameStr setString:kHotpepperURL];
+    [nameStr appendString:@"gourmet/v1/"];
+    [nameStr appendString:kAPIKey];
+    [nameStr appendString:[NSString stringWithFormat:@"&name=%@",name]];
+    [nameStr appendString:[NSString stringWithFormat:@"&count=%@", self.searchNumberCast]];
     NSURL *nameURL = [NSURL URLWithString:[nameStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     [self getShopEntity:nameURL fetchCompleteBlock:fetchCompleteBlock];
 }
