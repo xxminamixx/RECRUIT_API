@@ -60,11 +60,11 @@ NSString * const kAPIKey = @"?key=4554e737d0d5ce93";
 - (void)serviceAreaRequest:(didFetchServiceAreaBlock)didFetchServiceAreaBlock
 {
     // サービスエリアのURL
-    NSMutableString *serviceAreaStr = [NSMutableString string];
-    [serviceAreaStr setString:kHotpepperURL];
-    [serviceAreaStr appendString:@"service_area/v1/"];
-    [serviceAreaStr appendString:kAPIKey];
-    NSURL *areaURL = [NSURL URLWithString:[serviceAreaStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSMutableString *serviceAreaSearchStr = [NSMutableString string];
+    [serviceAreaSearchStr setString:kHotpepperURL];
+    [serviceAreaSearchStr appendString:@"service_area/v1/"];
+    [serviceAreaSearchStr appendString:kAPIKey];
+    NSURL *areaURL = [NSURL URLWithString:[serviceAreaSearchStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
     //一覧画面に取得したお店の配列を渡す
     didFetchServiceAreaBlock([self getServiceArea:areaURL getShopList:didFetchServiceAreaBlock]);
@@ -73,38 +73,37 @@ NSString * const kAPIKey = @"?key=4554e737d0d5ce93";
 //　都道府県選択画面からお店のリクエストURL作成
 - (void)shopRequestWithAreacode:(NSString *)areaCode fetchCompleteBlock:(didFetchShopListBloack)fetchCompleteBlock loadNextCount:(NSInteger)loadNextCount
 {
-    NSMutableString *serviceAreaSearchStr = [NSMutableString string];
+    NSMutableString *shopSearchWithAreaCodeStr = [NSMutableString string];
     
-    [serviceAreaSearchStr setString:kHotpepperURL];
-    [serviceAreaSearchStr appendString:@"gourmet/v1/"];
-    [serviceAreaSearchStr appendString:kAPIKey];
-    [serviceAreaSearchStr appendString: [NSString stringWithFormat:@"&service_area=%@", areaCode]];
-    [serviceAreaSearchStr appendString: [NSString stringWithFormat:@"&count=%@", self.searchNumberCast]];
+    [shopSearchWithAreaCodeStr setString:kHotpepperURL];
+    [shopSearchWithAreaCodeStr appendString:@"gourmet/v1/"];
+    [shopSearchWithAreaCodeStr appendString:kAPIKey];
+    [shopSearchWithAreaCodeStr appendString: [NSString stringWithFormat:@"&service_area=%@", areaCode]];
+    [shopSearchWithAreaCodeStr appendString: [NSString stringWithFormat:@"&count=%@", self.searchNumberCast]];
     
     if (loadNextCount >= 1) {
-        [serviceAreaSearchStr appendString: [NSString stringWithFormat:@"&start=%@",[self loadStartNumber: loadNextCount]]];
+        [shopSearchWithAreaCodeStr appendString: [NSString stringWithFormat:@"&start=%@",[self loadStartNumber: loadNextCount]]];
     }
     
     //　NSURLにセット
-    NSURL *shopURL = [NSURL URLWithString:serviceAreaSearchStr];
+    NSURL *shopURL = [NSURL URLWithString:shopSearchWithAreaCodeStr];
     [self getShopEntity:shopURL fetchCompleteBlock:fetchCompleteBlock];
 }
 
 // ジャンルコードからお店のリクエストURLを作成
 - (void)shopRequestWithGenrecode:(NSString *)genreCode fetchCompleteBlock:(didFetchShopListBloack)fetchCompleteBlock
 {
-    NSMutableString *url = [NSMutableString string];
+    NSMutableString *shopGenreSearchStr = [NSMutableString string];
     
     //　shop検索の雛形
-    [url setString:@"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=4554e737d0d5ce93&genre="];
-    
-    //　タップされたジャンルコードを追加
-    [url appendString:genreCode];
-    [url appendString:@"&count="];
-    [url appendString: self.searchNumberCast];
+    [shopGenreSearchStr setString:kHotpepperURL];
+    [shopGenreSearchStr appendString:@"gourmet/v1/"];
+    [shopGenreSearchStr appendString:kAPIKey];
+    [shopGenreSearchStr appendString:[NSString stringWithFormat:@"&genre=%@",genreCode]];
+    [shopGenreSearchStr appendString: [NSString stringWithFormat:@"&count=%@", self.searchNumberCast]];
     
     //　NSURLにセット
-    NSURL *shopURL = [NSURL URLWithString:url];
+    NSURL *shopURL = [NSURL URLWithString:shopGenreSearchStr];
     [self getShopEntity:shopURL fetchCompleteBlock:fetchCompleteBlock];
 }
 
