@@ -72,7 +72,6 @@ NSInteger loadNextCount = 0;
                 [self.shopList addObject: entity];
             }
         }
-        
     };
     
     if (self.areacode) {
@@ -87,7 +86,6 @@ NSInteger loadNextCount = 0;
         [self.shopFetcher shopRequestWithGenrecode:self.genreCode fetchCompleteBlock:fetchCompleteBlock];
     }
 }
-
 
 #pragma mark - UITableViewDataSource 
 

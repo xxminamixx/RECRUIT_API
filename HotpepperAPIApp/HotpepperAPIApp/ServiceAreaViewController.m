@@ -50,8 +50,7 @@ NSString * const serviceAreaIDOfStoryboard = @"ServiceArea";
     [super didReceiveMemoryWarning];
 }
 
--(NSInteger)tableView:(UITableView *)tableView
-numberOfRowsInSection:(NSInteger)section
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //セクションに含まれるセルの数を返す
     return self.serviceAreaList.count;
