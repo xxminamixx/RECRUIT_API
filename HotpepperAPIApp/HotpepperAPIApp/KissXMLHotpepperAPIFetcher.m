@@ -33,6 +33,9 @@ NSString * const kGenreName = @"name";
 
 NSString * const kHotpepperURL = @"https://webservice.recruit.co.jp/hotpepper/";
 NSString * const kAPIKey = @"?key=4554e737d0d5ce93";
+NSString * const kGourmetSearchParameter = @"gourmet/v1/";
+NSString * const kGenreSearchParameter = @"genre/v1/";
+NSString * const kServiceAreaSearchParameter = @"service_area/v1/";
 
 @interface KissXMLHotpepperAPIFetcher()
 
@@ -47,7 +50,7 @@ NSString * const kAPIKey = @"?key=4554e737d0d5ce93";
 {
     NSMutableString *nameStr = [NSMutableString string];
     [nameStr setString:kHotpepperURL];
-    [nameStr appendString:@"gourmet/v1/"];
+    [nameStr appendString:kGourmetSearchParameter];
     [nameStr appendString:kAPIKey];
     [nameStr appendString:[NSString stringWithFormat:@"&name=%@",name]];
     [nameStr appendString:[NSString stringWithFormat:@"&count=%@", self.searchNumberCast]];
@@ -62,7 +65,7 @@ NSString * const kAPIKey = @"?key=4554e737d0d5ce93";
     // サービスエリアのURL
     NSMutableString *serviceAreaSearchStr = [NSMutableString string];
     [serviceAreaSearchStr setString:kHotpepperURL];
-    [serviceAreaSearchStr appendString:@"service_area/v1/"];
+    [serviceAreaSearchStr appendString:kServiceAreaSearchParameter];
     [serviceAreaSearchStr appendString:kAPIKey];
     NSURL *areaURL = [NSURL URLWithString:[serviceAreaSearchStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
@@ -76,7 +79,7 @@ NSString * const kAPIKey = @"?key=4554e737d0d5ce93";
     NSMutableString *shopSearchWithAreaCodeStr = [NSMutableString string];
     
     [shopSearchWithAreaCodeStr setString:kHotpepperURL];
-    [shopSearchWithAreaCodeStr appendString:@"gourmet/v1/"];
+    [shopSearchWithAreaCodeStr appendString:kGourmetSearchParameter];
     [shopSearchWithAreaCodeStr appendString:kAPIKey];
     [shopSearchWithAreaCodeStr appendString: [NSString stringWithFormat:@"&service_area=%@", areaCode]];
     [shopSearchWithAreaCodeStr appendString: [NSString stringWithFormat:@"&count=%@", self.searchNumberCast]];
@@ -93,24 +96,28 @@ NSString * const kAPIKey = @"?key=4554e737d0d5ce93";
 // ジャンルコードからお店のリクエストURLを作成
 - (void)shopRequestWithGenrecode:(NSString *)genreCode fetchCompleteBlock:(didFetchShopListBloack)fetchCompleteBlock
 {
-    NSMutableString *shopGenreSearchStr = [NSMutableString string];
+    NSMutableString *shopSearchWithGenreCodeStr = [NSMutableString string];
     
     //　shop検索の雛形
-    [shopGenreSearchStr setString:kHotpepperURL];
-    [shopGenreSearchStr appendString:@"gourmet/v1/"];
-    [shopGenreSearchStr appendString:kAPIKey];
-    [shopGenreSearchStr appendString:[NSString stringWithFormat:@"&genre=%@",genreCode]];
-    [shopGenreSearchStr appendString: [NSString stringWithFormat:@"&count=%@", self.searchNumberCast]];
+    [shopSearchWithGenreCodeStr setString:kHotpepperURL];
+    [shopSearchWithGenreCodeStr appendString:kGourmetSearchParameter];
+    [shopSearchWithGenreCodeStr appendString:kAPIKey];
+    [shopSearchWithGenreCodeStr appendString:[NSString stringWithFormat:@"&genre=%@",genreCode]];
+    [shopSearchWithGenreCodeStr appendString: [NSString stringWithFormat:@"&count=%@", self.searchNumberCast]];
     
     //　NSURLにセット
-    NSURL *shopURL = [NSURL URLWithString:shopGenreSearchStr];
+    NSURL *shopURL = [NSURL URLWithString:shopSearchWithGenreCodeStr];
     [self getShopEntity:shopURL fetchCompleteBlock:fetchCompleteBlock];
 }
 
 // ジャンル取得
 - (void)genreRequest:(didGetchShopListOfGenreBlock)didGetchShopListOfGenreBlock
 {
-    NSURL *genreURL = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/genre/v1/?key=4554e737d0d5ce93"];
+    NSMutableString *shopGenreSearchStr = [NSMutableString string];
+    [shopGenreSearchStr setString:kHotpepperURL];
+    [shopGenreSearchStr appendString:kGenreSearchParameter];
+    [shopGenreSearchStr appendString:kAPIKey];
+    NSURL *genreURL = [NSURL URLWithString:shopGenreSearchStr];
     didGetchShopListOfGenreBlock([self getShopGenre:genreURL]);
 }
 
