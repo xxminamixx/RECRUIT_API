@@ -60,7 +60,11 @@ NSString * const kAPIKey = @"?key=4554e737d0d5ce93";
 - (void)serviceAreaRequest:(didFetchServiceAreaBlock)didFetchServiceAreaBlock
 {
     // サービスエリアのURL
-    NSURL *areaURL = [NSURL URLWithString:@"https://webservice.recruit.co.jp/hotpepper/service_area/v1/?key=4554e737d0d5ce93"];
+    NSMutableString *serviceAreaStr = [NSMutableString string];
+    [serviceAreaStr setString:kHotpepperURL];
+    [serviceAreaStr appendString:@"service_area/v1/"];
+    [serviceAreaStr appendString:kAPIKey];
+    NSURL *areaURL = [NSURL URLWithString:[serviceAreaStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
     //一覧画面に取得したお店の配列を渡す
     didFetchServiceAreaBlock([self getServiceArea:areaURL getShopList:didFetchServiceAreaBlock]);
