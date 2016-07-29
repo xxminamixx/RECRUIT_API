@@ -19,5 +19,6 @@
 @property (nonatomic, strong) NSString *detail;
 @property (nonatomic, strong) NSString *shopId;
 @property (nonatomic, strong) NSString *coupon;
+@property (nonatomic, strong) NSString *parking;
 
 @end

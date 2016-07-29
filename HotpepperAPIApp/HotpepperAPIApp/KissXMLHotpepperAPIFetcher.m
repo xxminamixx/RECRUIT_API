@@ -151,6 +151,7 @@ NSString * const kServiceAreaSearchParameter = @"service_area/v1/";
         shopEntity.genre = [elements valueForKeyPath:kGenreNamePath];
         shopEntity.largeLogo = [elements valueForKeyPath: kLargeLogoPath];
         shopEntity.coupon = [elements valueForKeyPath: kCouponPCPath];
+        shopEntity.parking = [elements valueForKeyPath:@"parking"];
         
         // お店のデータが格納されたEntityを配列に格納
         [shopEntityList addObject: shopEntity];

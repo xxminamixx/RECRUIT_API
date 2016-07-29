@@ -32,7 +32,6 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     
     for (int i = 0; i < mutableFetchResults.count; i++) {
         ShopEntity *fetchShopEntity = mutableFetchResults[i];
-        
         // フェッチしたEntityと表示しているセルのEntityの名前が同じならお気に入りボタンステータス変更
         if ([fetchShopEntity.name isEqualToString: shopName]) {
             return YES; //　一致
@@ -168,6 +167,7 @@ NSString * const kFavoriteEntity = @"FavoriteShopEntity";
     [favoriteEntity setGenre: self.shopEntity.genre];
     [favoriteEntity setCoupon: self.shopEntity.coupon];
     [favoriteEntity setLargeLogo: self.shopEntity.largeLogo];
+    [favoriteEntity setParking: self.shopEntity.parking];
     
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {

@@ -39,6 +39,7 @@ UIImage *loadImage;
     shopEntity.open = self.open;
     shopEntity.genre = self.genre;
     shopEntity.largeLogo = self.largeLogo;
+    shopEntity.parking = self.parking;
     
     [self.favoriteDelegate favoriteDidPush:shopEntity];
 }
@@ -57,6 +58,12 @@ UIImage *loadImage;
     self.open = shopEntity.open;
     self.genre = shopEntity.genre;
     self.coupon = shopEntity.coupon;
+    self.parking = shopEntity.parking;
+    
+#define DEBUG 1
+#ifdef DEBUG
+    NSLog(@"%@",self.parking);
+#endif
 }
 
 - (NSInteger)couponHeightChanger

@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *open;
 @property (nullable, nonatomic, retain) NSString *shopId;
 @property (nullable, nonatomic, retain) NSString *coupon;
+@property (nullable, nonatomic, retain) NSString *parking;
 
 @end
 

@@ -22,5 +22,6 @@
 @dynamic open;
 @dynamic shopId;
 @dynamic coupon;
+@dynamic parking;
 
 @end

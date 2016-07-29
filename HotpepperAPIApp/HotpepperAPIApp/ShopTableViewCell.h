@@ -40,7 +40,7 @@
 @property (weak, nonatomic) NSString *genre;
 @property (weak, nonatomic) NSString *open;
 @property (weak, nonatomic) NSString *coupon;
-
+@property (weak, nonatomic) NSString *parking;
 
 // favoriteButtonTappedなど
 - (IBAction)favoriteAction:(id)sender;
