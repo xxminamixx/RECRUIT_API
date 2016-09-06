@@ -33,8 +33,12 @@ NSString * const serviceAreaIDOfStoryboard = @"ServiceArea";
     // 自身の配列に格納するBlocks
     didGetchShopListOfGenreBlock didGetchShopListOfGenreBlock = ^(NSMutableArray *serviceAreaList){
         self.serviceAreaList = serviceAreaList;
+        // Indicator OFF
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     };
     
+    // Indicator ON
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [serviceAreaFetcher serviceAreaRequest:didGetchShopListOfGenreBlock];
     
     self.serviceAreaTableView.delegate = self;

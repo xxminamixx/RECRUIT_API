@@ -86,7 +86,9 @@ UIImage *loadImage;
 
 - (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
 {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [self.shopLogo sd_setImageWithURL:url placeholderImage:loadImage options:0 progress:nil completed:completedBlock];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (void)imageRefresh:(NSURL *)url

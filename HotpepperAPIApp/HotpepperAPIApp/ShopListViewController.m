@@ -63,6 +63,8 @@ NSInteger loadNextCount = 0;
 
 - (void) getShopList
 {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+
     // お店受け取りBlocks
     didFetchShopListBloack fetchCompleteBlock = ^(NSMutableArray *shopList){
         if (loadNextCount == 0) {
@@ -72,6 +74,7 @@ NSInteger loadNextCount = 0;
                 [self.shopList addObject: entity];
             }
         }
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     };
     
     if (self.areacode) {

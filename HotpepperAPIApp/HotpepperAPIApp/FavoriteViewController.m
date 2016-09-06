@@ -117,6 +117,7 @@ numberOfRowsInSection:(NSInteger)section
 
 - (void)favoriteDidPush:(ShopEntity *)shopEntity
 {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     NSLog(@"お気に入り");
     
     // マネージャーに投げて既にお気に入りに登録されているかチェックする
@@ -140,6 +141,7 @@ numberOfRowsInSection:(NSInteger)section
         // お気に入り登録がされず削除処理がされた
         [self.favoriteTableView reloadData];
     }
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (void) couponDidPush:(NSString *)couponStr

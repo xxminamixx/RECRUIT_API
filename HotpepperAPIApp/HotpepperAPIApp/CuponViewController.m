@@ -21,6 +21,7 @@
 - (void)loadView
 {
     [super loadView];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     // WKWebView インスタンスの生成
     self.webView = [WKWebView new];
@@ -67,6 +68,7 @@
     NSURL *url = [NSURL URLWithString: self.couponStr];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (void)didReceiveMemoryWarning {
